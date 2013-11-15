@@ -1,0 +1,70 @@
+body{margin:0px;
+padding:0px;
+font-family: Arial; font-size: 12px;
+}
+
+#container{
+	/*background-image: url('background.png');*/
+	background-repeat: repeat-x;
+	width:100%;
+	height:100%;
+	min-height: 100%;
+}
+#topo{
+background-image: url('topo.png');
+background-repeat: repeat-x;
+width:100%;
+height:90px;
+}
+
+#rodape{
+background-image: url('rodape.png');
+background-repeat: repeat-x;
+width:100%;
+height:91px;
+}
+#menu{
+background: transparent;
+width:100%;
+height:400px;
+}
+
+#login{
+background-image: url('LoginArea.png');
+width:594px;
+height:387px;
+margin:auto;
+margin-top:100px;
+
+}
+
+#elementos{
+position:absolute;
+background: transparent;
+width:300px;
+height:200px;
+margin-left:147;
+margin-top:22;
+
+}
+
+
+
+
+#menu ul{
+list-style-type: none;
+}
+
+#menu ul li{
+display: inline;
+padding:10px;
+}
+
+#menu ul li a{
+color:#000;
+text-decoration: none;
+}
+
+#menu ul li a:hover{
+text-decoration:underline;
+}

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>ImCarm</display-name>
+	
+	<servlet>
+		<servlet-name>ServletControler</servlet-name>
+		<servlet-class>com.viviano.imcarm.servicetowork.ServletControler</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletControler</servlet-name>
+		<url-pattern>/ServletControler</url-pattern>
+	</servlet-mapping>
+	<!--
+	<servlet>
+		<servlet-name>AutenticaUsuario</servlet-name>
+		<servlet-class>servlet.AutenticaUsuario</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AutenticaUsuario</servlet-name>
+		<url-pattern>/AutenticaUsuario</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>GravaIrma</servlet-name>
+		<servlet-class>servlet.GravaIrma</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GravaIrma</servlet-name>
+		<url-pattern>/GravaIrma</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AlteraIrma</servlet-name>
+		<servlet-class>servlet.AlteraIrma</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AlteraIrma</servlet-name>
+		<url-pattern>/AlteraIrma</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SalvaAlteracoes</servlet-name>
+		<servlet-class>servlet.SalvaAlteracoes</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SalvaAlteracoes</servlet-name>
+		<url-pattern>/SalvaAlteracoes</url-pattern>
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>GravaFormanda</servlet-name>
+		<servlet-class>servlet.GravaFormanda</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GravaFormanda</servlet-name>
+		<url-pattern>/GravaFormanda</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AlteraFormandas</servlet-name>
+		<servlet-class>servlet.AlteraFormandas</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AlteraFormandas</servlet-name>
+		<url-pattern>/AlteraFormandas</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SalvaAlteracoesFormanda</servlet-name>
+		<servlet-class>servlet.SalvaAlteracoesFormanda</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SalvaAlteracoesFormanda</servlet-name>
+		<url-pattern>/SalvaAlteracoesFormanda</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>GravaCasasDeMissao</servlet-name>
+		<servlet-class>servlet.GravaCasasDeMissao</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GravaCasasDeMissao</servlet-name>
+		<url-pattern>/GravaCasasDeMissao</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ExibeCasasDeMissao</servlet-name>
+		<servlet-class>servlet.ExibeCasasDeMissao</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ExibeCasasDeMissao</servlet-name>
+		<url-pattern>/ExibeCasasDeMissao</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SalvaAlteracoesCasasDeMissao</servlet-name>
+		<servlet-class>servlet.SalvaAlteracoesCasasDeMissao</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SalvaAlteracoesCasasDeMissao</servlet-name>
+		<url-pattern>/SalvaAlteracoesCasasDeMissao</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ExibeIrmasParaAdicionarACasaDeMissao</servlet-name>
+		<servlet-class>servlet.ExibeIrmasParaAdicionarACasaDeMissao</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ExibeIrmasParaAdicionarACasaDeMissao</servlet-name>
+		<url-pattern>/ExibeIrmasParaAdicionarACasaDeMissao</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ExibeCasasDeMissaoParaAdicionarIrmas</servlet-name>
+		<servlet-class>servlet.ExibeCasasDeMissaoParaAdicionarIrmas</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ExibeCasasDeMissaoParaAdicionarIrmas</servlet-name>
+		<url-pattern>/ExibeCasasDeMissaoParaAdicionarIrmas</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SalvaACasasDeMissaoParaAdicioarIrmas</servlet-name>
+		<servlet-class>servlet.SalvaACasasDeMissaoParaAdicioarIrmas</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SalvaACasasDeMissaoParaAdicioarIrmas</servlet-name>
+		<url-pattern>/SalvaACasasDeMissaoParaAdicioarIrmas</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SalvarIrmasParaAdicioarACasasDeMissao</servlet-name>
+		<servlet-class>servlet.SalvarIrmasParaAdicioarACasasDeMissao</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SalvarIrmasParaAdicioarACasasDeMissao</servlet-name>
+		<url-pattern>/SalvarIrmasParaAdicioarACasasDeMissao</url-pattern>
+	</servlet-mapping>
+	-->
+	</web-app>

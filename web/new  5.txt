@@ -1,0 +1,75 @@
+package servlet;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import dao.LoginDao;
+import excecoes.LoginInvalidoException;
+
+import bean.LoginBean;
+
+public class AutenticaUsuario extends HttpServlet{
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
+		doPost(request, response);
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
+		LoginBean loginBean = new LoginBean(new Double(request.getParameter("usuario")), request.getParameter("senha"));
+		LoginBean loginBean2 = new LoginBean();
+		LoginDao loginDao = new LoginDao();
+		String mensagemDeErro = new String();
+		
+		RequestDispatcher dispatcherSucesso = this.getServletContext().getRequestDispatcher("/ImCarm/usuarioLogado.jsp");
+		RequestDispatcher dispatcherErro = this.getServletContext().getRequestDispatcher("/erro.jsp");
+		try {
+		 loginBean2 = loginDao.getLoginBean(loginBean.getCpfFreira(), loginBean.getSenha());
+		
+		} catch (ClassNotFoundException e) {
+			mensagemDeErro = e.getMessage();
+			request.setAttribute("mensagemDeErro", mensagemDeErro);
+			try {
+				dispatcherErro.forward(request, response);
+			} catch (ServletException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		} catch (SQLException e) {
+			mensagemDeErro = e.getMessage();
+			request.setAttribute("mensagemDeErro", mensagemDeErro);
+			try {
+				dispatcherErro.forward(request, response);
+			} catch (ServletException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();	
+			}
+		}
+		
+		if (loginBean2.getCpfFreira() == 0){
+			mensagemDeErro = "UsuarioInvalido. Não é Possível Logar.";
+			request.setAttribute("mensagemDeErro", mensagemDeErro);
+			try {
+				dispatcherErro.forward(request, response);
+			} catch (ServletException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+			
+		else{
+			try {
+				dispatcherSucesso.forward(request, response);
+			} catch (ServletException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+}

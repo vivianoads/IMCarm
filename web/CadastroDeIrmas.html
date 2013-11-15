@@ -1,0 +1,189 @@
+<!--<html>
+	<head>
+		<title>Bem Vindo</title>
+		<link href="EstiloUsuarioLogado.css" rel="stylesheet" type="text/css">
+	</head>
+	
+	<body>
+	
+		<div id="container"> 
+			
+			<div id="topo">
+			
+			</div>
+			
+			<div id="menu">
+			
+				<div id="login">
+				
+					<div id="elementos">
+					
+					<form name="cadastroIrmas" action="/ImCarm/GravaIrma" method="post">	
+					<table cellspacing="37" width="500">
+						<tr>
+							<td><b>Nome Civil:</b></td> 
+							<td> <input size="50" type="text" name="nome_civil" ></td> 								
+						</tr>
+						<tr>
+							<td><b>Nome Religioso:</b></td> 
+							<td><input size="50" type="text" name="nome_religioso"></td> 								
+						</tr>
+						<tr>
+							<td><b>Nome do Pai:</b></td> 
+							<td><input size="50" type="text" name="nome_pai"></td> 								
+						</tr>
+						<tr>
+							<td><b>Nome da Mãe:</b></td> 
+							<td><input size="50" type="text" name="nome_mae"></td> 								
+						</tr>
+						<tr>
+							<td><b>RG:</b></td> 
+							<td><input size="50" type="number" name="rg"></td> 								
+						</tr>
+						<tr>
+							<td><b>CPF:</b></td> 
+							<td><input size="50" type="number" name="cpf"></td> 								
+						</tr>
+						<tr>
+							<td><b>Data de Nascimento:</b></td> 
+							<td><input type="text" name="data_nascimento" maxlength="10"></td> 								
+						</tr>
+						<tr>
+							<td><b>Data - Aspirantado</b></td> 
+							<td><input type="text" name="data_aspirantado" maxlength="10"></td> 								
+						</tr>
+						<tr>
+							<td><b>Data - Postulantado</b></td> 
+							<td><input type="text" name="data_postulantado" maxlength="10"></td> 								
+						</tr>
+						<tr>
+							<td><b>Data - Noviciado Canônico</b></td> 
+							<td><input type="text" name="data_noviciado" maxlength="10"></td> 								
+						</tr>
+						<tr>
+							<td><b>Data - Profissão Temporária</b></td> 
+							<td><input type="text" name="data_profissao_temporaria" maxlength="10"></td> 								
+						</tr>
+						<tr>
+							<td><b>Data - Profissão Perpétua</b></b></td> 
+							<td><input type="text" name="data_profissao_perpetua" maxlength="10"></td> 								
+						</tr>
+						<tr>
+							<td></td>
+							<td align = "center"><input type="submit" value="Confirmar"></td>
+						</tr>
+						
+						</table>
+						
+					</form>
+					</div>			
+						
+					
+				</div>
+			
+			</div>
+			
+			<div id="rodape">
+			</div>
+		
+		</div>
+		
+	</body>
+</html>-->
+
+<html>
+	<head>
+		<title>Cadastrar Irmã</title>
+		<link href="EstiloCadastroDeIrmas.css" rel="stylesheet" type="text/css">
+	</head>
+	
+	<body>
+	
+		<div id="container"> 
+			
+			<div id="topo">
+			
+			</div>
+			
+			<div id="menu">
+			
+				<div id="login">
+				
+					<div id="elementos">
+					
+					<form name="cadastroIrmas" action="/ImCarm/ServletControler?action=2" method="post">	
+					<table cellspacing="35" width="590">
+						<tr>
+							<td colspan="2" align="center"><h3>Cadastrar Irmã</h3></td>
+						</tr>
+						<tr>
+							<td><b>Nome Civil:</b></td> 
+							<td> <input size="50" type="text" name="nome_civil" ></td> 								
+						</tr>
+						<tr>
+							<td><b>Nome Religioso:</b></td> 
+							<td><input size="50" type="text" name="nome_religioso"></td> 								
+						</tr>
+						<tr>
+							<td><b>Nome do Pai:</b></td> 
+							<td><input size="50" type="text" name="nome_pai"></td> 								
+						</tr>
+						<tr>
+							<td><b>Nome da Mãe:</b></td> 
+							<td><input size="50" type="text" name="nome_mae"></td> 								
+						</tr>
+						<tr>
+							<td><b>RG:</b></td> 
+							<td><input size="50" type="number" name="rg"></td> 								
+						</tr>
+						<tr>
+							<td><b>CPF:</b></td> 
+							<td><input size="50" type="number" name="cpf"></td> 								
+						</tr>
+						<tr>
+							<td><b>Data de Nascimento:</b></td> 
+							<td><input type="text" name="data_nascimento" maxlength="10"></td> 								
+						</tr>
+						<tr>
+							<td><b>Data - Aspirantado</b></td> 
+							<td><input type="text" name="data_aspirantado" maxlength="10"></td> 								
+						</tr>
+						<tr>
+							<td><b>Data - Postulantado</b></td> 
+							<td><input type="text" name="data_postulantado" maxlength="10"></td> 								
+						</tr>
+						<tr>
+							<td><b>Data - Noviciado Canônico</b></td> 
+							<td><input type="text" name="data_noviciado" maxlength="10"></td> 								
+						</tr>
+						<tr>
+							<td><b>Data - Profissão Temporária</b></td> 
+							<td><input type="text" name="data_profissao_temporaria" maxlength="10"></td> 								
+						</tr>
+						<tr>
+							<td><b>Data - Profissão Perpétua</b></b></td> 
+							<td><input type="text" name="data_profissao_perpetua" maxlength="10"></td> 								
+						</tr>
+						<tr>
+							<td></td>
+							<td align = "center"><input type="submit" value="Confirmar"></td>
+						</tr>
+						
+						</table>
+						
+					</form>
+					
+					</div>			
+						
+					
+				</div>
+			
+			</div>
+			
+			<div id="rodape">
+			</div>
+		
+		</div>
+		
+	</body>
+</html>
