@@ -22,23 +22,23 @@ public class AutenticaUsuario extends HttpServlet{
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
-		LoginBean loginBean = new LoginBean(new Double(request.getParameter("usuario")), request.getParameter("senha"));
-		LoginDao loginDao = new LoginDao();
-		String mensagemDeErro = new String();
-		LoginBean loginBean2 = new LoginBean();
-				
-		try {
-			loginBean2 = loginDao.getLoginBean(loginBean.getCpfFreira(), loginBean.getSenha());
-			if (loginBean2 != null){
-				request.getSession().setAttribute("usuarioLogado", loginBean2);
-				response.sendRedirect("/ImCarm/usuariologado.jsp");
-			}
-			else{response.sendRedirect("/ImCarm/errologin.html");
-			
-			}
-		} catch (SQLException e) {
-			response.sendRedirect("/ImCarm/erro.html");
-		}
+//		LoginBean loginBean = new LoginBean(request.getParameter("usuario"), request.getParameter("senha"));
+//		LoginDao loginDao = new LoginDao();
+//		String mensagemDeErro = new String();
+//		LoginBean loginBean2 = new LoginBean();
+//				
+//		try {
+//			loginBean2 = loginDao.getLoginBean(loginBean.getLoginFreira(), loginBean.getSenha());
+//			if (loginBean2 != null){
+//				request.getSession().setAttribute("usuarioLogado", loginBean2);
+//				response.sendRedirect("/ImCarm/usuariologado.jsp");
+//			}
+//			else{response.sendRedirect("/ImCarm/errologin.html");
+//			
+//			}
+//		} catch (SQLException e) {
+//			response.sendRedirect("/ImCarm/erro.html");
+//		}
 		
 		
 		

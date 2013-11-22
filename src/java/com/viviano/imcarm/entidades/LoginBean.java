@@ -1,24 +1,25 @@
 package com.viviano.imcarm.entidades;
 
 public class LoginBean {
-	private double cpfFreira;
+	private String loginFreira;
 	private String senha;
+        private Integer idFreira;
 	
 	public LoginBean(){
 		
 	}
 
-	public LoginBean(double cpfFreira, String senha) {
-		this.cpfFreira = cpfFreira;
+	public LoginBean(String loginFreira, String senha) {
+		this.loginFreira = loginFreira;
 		this.senha = senha;
 	}
 
-	public double getCpfFreira() {
-		return cpfFreira;
+	public String getLoginFreira() {
+		return loginFreira;
 	}
 
-	public void setCpfFreira(double cpfFreira) {
-		this.cpfFreira = cpfFreira;
+	public void setloginFreira(String loginFreira) {
+		this.loginFreira = loginFreira;
 	}
 
 	public String getSenha() {
@@ -28,6 +29,14 @@ public class LoginBean {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
+    public Integer getIdFreira() {
+        return idFreira;
+    }
+
+    public void setIdFreira(Integer idFreira) {
+        this.idFreira = idFreira;
+    }
 	
 	
 

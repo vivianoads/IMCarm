@@ -10,9 +10,11 @@ import com.viviano.imcarm.entidades.CongregacaoBean;
 import com.viviano.imcarm.entidades.FraternidadeBean;
 import com.viviano.imcarm.entidades.FreiraBean;
 import com.viviano.imcarm.entidades.FreiraEquipeBean;
+import com.viviano.imcarm.entidades.LoginBean;
 import com.viviano.imcarm.persistencia.CongregacaoDao;
 import com.viviano.imcarm.persistencia.FraternidadeDao;
 import com.viviano.imcarm.persistencia.FreiraDao;
+import com.viviano.imcarm.persistencia.LoginDao;
 
 
 
@@ -160,8 +162,19 @@ public class App {
 		
 		//ResidenciaFraternidade
 		
-		FraternidadeDao fraternidadeDao = new FraternidadeDao();
-		System.out.println(fraternidadeDao.getFraternidade(11).getIdFraternidade());
+//		FraternidadeDao fraternidadeDao = new FraternidadeDao();
+//		System.out.println(fraternidadeDao.getFraternidade(11).getIdFraternidade());
+            
+            
+            //testar Login
+            
+//            LoginDao ld = new LoginDao();
+//            LoginBean lbean = ld.getLoginBean("sineide", "123");
+//            System.out.println("Login" + lbean.getLoginFreira());
+//            System.out.println("Senha" + lbean.getSenha());
+            
+            
+            
 	}
 
 }

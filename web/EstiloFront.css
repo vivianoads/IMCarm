@@ -8,7 +8,7 @@ font-family: Arial; font-size: 12px;
 	background-repeat: repeat-x;
 	width:100%;
 	height:100%;
-	min-height: 100%;
+	/*min-height: 100%;*/
 }
 #topo{
 background-image: url('topo.png');
@@ -17,25 +17,39 @@ width:100%;
 height:90px;
 }
 
+#conteudo_topo{
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    margin-left: 20%;
+    background-color: transparent;
+}
+
+#login{
+/*background-image: url('LoginArea.png');
+width:594px;
+height:387px;
+margin:auto;
+margin-top:120px;*/
+
+background: transparent;
+    width:594px;
+    height:387px;
+    margin:auto;
+    margin-top:120px;
+    border:0px solid #ffffff;
+    box-shadow:0px 0px 5px #000000;
+    border-radius:0px 0px 2px 2px;
+    -moz-border-radius:0px 0px 2px 2px;
+    -webkit-border-radius:0px 0px 2px 2px;
+    cursor:pointer;
+}
+
 #rodape{
 background-image: url('rodape.png');
 background-repeat: repeat-x;
 width:100%;
 height:91px;
-}
-#menu{
-background: transparent;
-width:100%;
-height:400px;
-}
-
-#login{
-background-image: url('LoginArea.png');
-width:594px;
-height:387px;
-margin:auto;
-margin-top:100px;
-
 }
 
 #elementos{
@@ -43,13 +57,35 @@ position:absolute;
 background: transparent;
 width:300px;
 height:200px;
-margin-left:147;
-margin-top:22;
+margin-left:147px;
+margin-top:22px;
 
 }
 
-
-
+.i2Style{
+font:bold 14px Tahoma, Geneva, sans-serif;
+font-style:normal;
+color:#ffffff;
+background:#8B4513;/*#CC3300;*/
+border:0px solid #ffffff;
+text-shadow:0px -1px 1px #222222;
+box-shadow:2px 2px 5px #000000;
+-moz-box-shadow:2px 2px 5px #000000;
+-webkit-box-shadow:2px 2px 5px #000000;
+border-radius:2px 2px 2px 2px;
+-moz-border-radius:2px 2px 2px 2px;
+-webkit-border-radius:2px 2px 2px 2px;
+width:124px;
+padding:8px 11px;
+cursor:pointer;
+margin:0 auto;
+margin-left: 7%;
+}
+.i2Style:active{
+cursor:pointer;
+position:relative;
+top:2px;
+}
 
 #menu ul{
 list-style-type: none;

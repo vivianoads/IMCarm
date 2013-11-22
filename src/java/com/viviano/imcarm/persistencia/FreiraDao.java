@@ -52,6 +52,7 @@ public class FreiraDao {
 		
 		if (rs.next()){
 			freiraBean = new FreiraBean();
+                        freiraBean.setId(rs.getInt("id"));
 			freiraBean.setCpf(rs.getDouble("cpf"));
 			freiraBean.setNomeCivil(rs.getString("nome_civil"));
 			freiraBean.setNomeReligioso(rs.getString("nome_religioso"));
@@ -64,6 +65,18 @@ public class FreiraDao {
 			freiraBean.setDataNoviciadoCanonico(rs.getString("data_noviciado_canonico"));
 			freiraBean.setDataProfissaoTemporaria(rs.getString("data_profissao_temporaria"));
 			freiraBean.setDataProfissaoPerpetua(rs.getString("data_profissao_perpetua"));
+                        freiraBean.setTelefone(rs.getString("telefone"));
+                        freiraBean.setEmail(rs.getString("email"));
+                        freiraBean.setTipoAtivo(rs.getString("tipo_ativo"));
+                        freiraBean.setAtivo(rs.getString("ativo"));
+                        freiraBean.setRuaFamilia(rs.getString("rua_familia"));
+                        freiraBean.setNumeroFamilia(rs.getString("numero_familia"));
+                        freiraBean.setBairroFamilia(rs.getString("bairro_familia"));
+                        freiraBean.setCidadeFamilia(rs.getString("cidade_familia"));
+                        freiraBean.setTipoInativo(rs.getString("tipo_inativo"));
+                        freiraBean.setDiocese(rs.getString("diocese"));
+                        freiraBean.setCepFamilia(rs.getString("cep_familia"));
+                        freiraBean.setEstadoFamilia(rs.getString("estado_familia"));
 			
 		}
 		
@@ -74,7 +87,51 @@ public class FreiraDao {
 		return freiraBean;
 	}
 	
-	
+        //
+        public FreiraBean getFreiraBean(int idFreira) throws ClassNotFoundException, SQLException{
+		Connection con = conexao.getConnection();
+		String sql = "SELECT * FROM freira WHERE id = ? ";
+		PreparedStatement ps = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		ps.setInt(1, idFreira);
+                ResultSet rs = ps.executeQuery();
+		FreiraBean freiraBean = null;
+		if (rs.next()){
+			freiraBean = new FreiraBean();
+                        freiraBean.setId(rs.getInt("id"));
+			freiraBean.setCpf(rs.getDouble("cpf"));
+			freiraBean.setNomeCivil(rs.getString("nome_civil"));
+			freiraBean.setNomeReligioso(rs.getString("nome_religioso"));
+			freiraBean.setRg(rs.getDouble("rg"));
+			freiraBean.setDataNascimento(rs.getString("data_nascimento"));
+			freiraBean.setNomePai(rs.getString("nome_pai"));
+			freiraBean.setNomeMae(rs.getString("nome_mae"));
+			freiraBean.setDataAspirantado(rs.getString("data_aspirantado"));
+			freiraBean.setDataPostulantado(rs.getString("data_postulantado"));
+			freiraBean.setDataNoviciadoCanonico(rs.getString("data_noviciado_canonico"));
+			freiraBean.setDataProfissaoTemporaria(rs.getString("data_profissao_temporaria"));
+			freiraBean.setDataProfissaoPerpetua(rs.getString("data_profissao_perpetua"));
+                        freiraBean.setTelefone(rs.getString("telefone"));
+                        freiraBean.setEmail(rs.getString("email"));
+                        freiraBean.setTipoAtivo(rs.getString("tipo_ativo"));
+                        freiraBean.setAtivo(rs.getString("ativo"));
+                        freiraBean.setRuaFamilia(rs.getString("rua_familia"));
+                        freiraBean.setNumeroFamilia(rs.getString("numero_familia"));
+                        freiraBean.setBairroFamilia(rs.getString("bairro_familia"));
+                        freiraBean.setCidadeFamilia(rs.getString("cidade_familia"));
+                        freiraBean.setTipoInativo(rs.getString("tipo_inativo"));
+                        freiraBean.setDiocese(rs.getString("diocese"));
+                        freiraBean.setCepFamilia(rs.getString("cep_familia"));
+                        freiraBean.setEstadoFamilia(rs.getString("estado_familia"));
+			
+		}
+		
+		ps.close();
+		rs.close();
+		con.close();
+		
+		return freiraBean;
+	}
+	//
 	public List<FreiraBean> getAllFreiraBean() throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
 		String sql = "SELECT * FROM freira";

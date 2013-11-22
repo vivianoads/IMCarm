@@ -1,11 +1,13 @@
 package com.viviano.imcarm.persistencia;
 
+import com.viviano.imcarm.entidades.FreiraBean;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.viviano.imcarm.entidades.LoginBean;
+import java.sql.PreparedStatement;
 
 
 public class LoginDao {
@@ -15,21 +17,29 @@ public class LoginDao {
 		conexao = new Conexao();
 	}
 	
-	public LoginBean getLoginBean(double cpfFreira, String senha) throws SQLException{
+	public FreiraBean getLoginBean(String loginFreira, String senha) throws SQLException, ClassNotFoundException{
 		Connection con = conexao.getConnection();
-		String sql = "SELECT * FROM login WHERE id_freira = '" + cpfFreira + "' AND senha ILIKE'" + senha + "'";
-		Statement stat = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-		ResultSet rs = stat.executeQuery(sql);
+		String sql = "SELECT * FROM login WHERE login_freira like ? AND senha ILIKE ?";
+                PreparedStatement ps = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		ps.setString(1, loginFreira);
+                ps.setString(2, senha);
+                ResultSet rs = ps.executeQuery();
 		LoginBean loginBean = null;
-		if (rs.next()){
+                FreiraBean freiraBean = null;
+		if (rs.first()){
 			loginBean = new LoginBean();
-			loginBean.setCpfFreira(rs.getDouble("id_freira"));
+			loginBean.setloginFreira(rs.getString("login_freira"));
 			loginBean.setSenha(rs.getString("senha"));
+                        loginBean.setIdFreira(rs.getInt("id_freira"));
 		}
+                if(loginBean != null){
+                    FreiraDao freiraDao = new FreiraDao();
+                    freiraBean = freiraDao.getFreiraBean(loginBean.getIdFreira());
+                }
 		rs.close();
-		stat.close();
+		ps.close();
 		con.close();
-		return loginBean;
+		return freiraBean;
 	}
 
 /*

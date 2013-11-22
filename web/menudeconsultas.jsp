@@ -4,7 +4,7 @@
 <html>
     <head>
         <title>Bem Vindo</title>
-        <link href="EstiloCadastroDeCongregacoes.css" rel="stylesheet" type="text/css">
+        <link href="EstiloMenuDeConsultas.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div id="container"> 
@@ -53,14 +53,29 @@
                     </div>
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
-                            <a href="/ImCarm/#">
-                                <button class="i2Style_menu">Criar Congregação</button>
+                            <a href="/ImCarm_2.0/#">
+                                <button class="i2Style_menu">Buscar Freira Idade Rel Perpétua</button>
                             </a>
-                            <a href="/ImCarm/#">
-                                <button class="i2Style_menu">Modificar Congregação</button>
+                            <a href="/ImCarm_2.0/#">
+                                <button class="i2Style_menu">Buscar Freira Idade Rel Simples</button>
                             </a>
-                            <a href="/ImCarm/#">
-                                <button class="i2Style_menu">Apagar Congregação</button>
+                            <a href="/ImCarm_2.0/#">
+                                <button class="i2Style_menu">Buscar Freira Idade Civil</button>
+                            </a>
+                            <a href="/ImCarm_2.0/#">
+                                <button class="i2Style_menu">Buscar Formandas</button>
+                            </a>
+                            <a href="/ImCarm_2.0/#">
+                                <button class="i2Style_menu">Buscar Formandas por Fase</button>
+                            </a>
+                            <a href="/ImCarm_2.0/#">
+                                <button class="i2Style_menu">Buscar Irmãs</button>
+                            </a>
+                            <a href="/ImCarm_2.0/#">
+                                <button class="i2Style_menu">Buscar Fraternidades</button>
+                            </a>
+                            <a href="/ImCarm_2.0/#">
+                                <button class="i2Style_menu">Buscar Congregacao</button>
                             </a>
                         </div>
                     </div>
@@ -75,8 +90,16 @@
 
 
 
-        <!--        
-                <div id="container">
+
+
+
+
+
+
+
+
+
+        <!--        <div id="container">
                     <div id="topo">
                     </div>
                     <div id="menu">
@@ -87,10 +110,21 @@
                                         <td>Seja Bem Vindo ${usuarioLogado.cpfFreira}</td>
                                     </tr>
                                     <tr>
-                                        <td><a href="/ImCarm/#"><img src="IconeAdicionarCongregacoes.png"></a></td> 
-                                        <td><a href="/ImCarm/#"><img src="IconeAlterarDadosCongregacoes.png"></a></td> 
-                                        <td><a href="/ImCarm/#"><img src="IconeApagarCongregacoes.png"></a></td> 
+                                        <td><a href="/ImCarm/formcadastracasademissao.jsp"><img src="IconeAdicionarCasasdeMissao.png"></a></td> 
+                                        <td><a href="/ImCarm/ServletControler?action=10"><img src="IconeAlterarDadosCasasdeMissao.png"></a></td> 
+                                        <td><a href="/ImCarm/ServletControler?action=10"><img src="IconeApagarCasasdeMissao.png"></a></td> 
+        
                                     </tr>
+                                    <tr>
+                                        <td><a href="/ImCarm/ExibeCasasDeMissaoParaAdicionarIrmas"><img src="IconeAdicionarIrmas.png"></a></td> 
+                                        <td><a href="/ImCarm/#"><img src="IconeTransferirIrmas.png"></a></td> 
+                                        <td></td> 
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/ImCarm/#"><img src="IconeAdicionarCoordenacao.png"></a></td> 
+                                        <td><a href="/ImCarm/#"><img src="IconeAlterarDadosDeCoordenacao.png"></a></td> 
+                                        <td></td> 
+                                    <tr>
                                 </table>
                             </div>
                         </div>
