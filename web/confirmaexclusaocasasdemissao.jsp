@@ -6,7 +6,7 @@
     <head>
         <!--<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">-->
         <title>Cadastro de Casa de Missão</title>
-        <link href="EstiloConfirmaCadastroDeCasasDeMissao.css" rel="stylesheet" type="text/css">
+        <link href="EstiloConfirmaexclusaoDeCasasDeMissao.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div id="container"> 
@@ -58,70 +58,76 @@
                     </div>
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
-                            <h3 align="center">Confirma Cadastro de Fraternidade</h3>
+                            <h3 align="center">Fraternidade Excluída com Sucesso</h3>
                             <b>Nome:</b>
                             <b>${fraternidadebean.nome}</b>
+                            <br/>
                             <b>Data de Fundação:</b> 
                             <b>${fraternidadebean.dataFundacao}</b>
                             <br/>
                             <br/>
-                            <br/>
                             <b>Rua:</b>
                             <b>${fraternidadebean.rua}</b>
+                            <br/>
                             <b>Numero:</b>
                             <b>${fraternidadebean.numeroCasa}</b>
+                            <br/>
+                            <br/>
                             <b>Bairro:</b>
                             <b>${fraternidadebean.bairro}</b>
                             <br/>
-                            <br/>
-                            <br/>
                             <b>Cidade:</b>
                             <b>${fraternidadebean.cidade}</b>
+                            <br/>
+                            <br/>
                             <b>CEP:</b>
                             <b>${fraternidadebean.cep}</b>
+                            <br/>
                             <b>UF:</b>
                             <b>${fraternidadebean.uf}</b>
                             <br/>
                             <br/>
-                            <br/>
                             <b>Telefone:</b>
                             <b>${fraternidadebean.telefone}</b>
+                            <br/>
                             <b>Email:</b>
                             <b>${fraternidadebean.email}</b>
                             <br/>
                             <br/>
-                            <br/>
                             <b>Diocese</b>
                             <b>${fraternidadebean.diocese}</b>
+                            <br/>
                             <b>Bispo</b>
                             <b>${fraternidadebean.bispo}</b>
                             <br/>
-                            <br/>
-                            <br/>
                             <b>Status</b>
                             <b>${fraternidadebean.status}</b>
-                            ${fraternidadebean.idFraternidade}
                             <br/>
                             <div id="linha_buttons">
                                 <div id="option_buttons_1">
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="14">
-                                        <input type="hidden" name="id_fraternidade" value="${fraternidadebean.idFraternidade}">
-                                        <input type="submit" class="i2Style_apagar" value="Calcelar">
-                                    </form>
-                                </div>
-                                <div id="option_buttons_2">
-                                    <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="13">
-                                        <input type="hidden" name="id_fraternidade" value="${fraternidadebean.idFraternidade}">
-                                        <input type="hidden" name="option" value="alterar">
-                                        <input type="submit" class="i2Style_alterar" value="Alterar Dados">
+                                        <input type="hidden" name="nome" value="${fraternidadebean.nome}">
+                                        <input type="hidden" name="data_fundacao" maxlength="10" value="${fraternidadebean.dataFundacao}">
+                                        <input type="hidden" name="rua" value="${fraternidadebean.rua}">
+                                        <input type="hidden" name="numero" value="${fraternidadebean.numeroCasa}">
+                                        <input type="hidden" name="bairro" value="${fraternidadebean.bairro}">
+                                        <input type="hidden" name="cidade" value="${fraternidadebean.cidade}">
+                                        <input type="hidden" name="cep" value="${fraternidadebean.cep}">
+                                        <input type="hidden" name="uf" maxlength="2" value="${fraternidadebean.uf}">
+                                        <input type="hidden" name="telefone" value="${fraternidadebean.telefone}">
+                                        <input type="hidden" name="email" value="${fraternidadebean.email}">
+                                        <input type="hidden" name="diocese" value="${fraternidadebean.diocese}">
+                                        <input type="hidden" name="bispo" value="${fraternidadebean.bispo}">
+                                        <input type="hidden" name="status" value="${fraternidadebean.status}">
+                                        <input type="hidden" name="action" value="8">
+                                        <input type="submit" class="i2Style_apagar" value="Reverter Exclusão">
                                     </form>
                                 </div>
                                 <div id="option_buttons_3">
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
                                         <input type="hidden" name="action" value="15">
-                                        <input type="submit" class="i2Style" value="Confirma">
+                                        <input type="hidden" name="id_fraternidade" value="${fraternidadebean.idFraternidade}">
+                                        <input type="submit" class="i2Style" value="Confirmar Exclusão">
                                     </form>
                                 </div>
                             </div>

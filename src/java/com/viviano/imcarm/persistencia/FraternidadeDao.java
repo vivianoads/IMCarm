@@ -22,7 +22,7 @@ public class FraternidadeDao {
 	
 	public void gravaFraternidade(FraternidadeBean fraternidade) throws SQLException, ClassNotFoundException{
 		Connection con = conexao.getConnection();
-		String sql = "INSERT INTO fraternidade (nome, status, data_fundacao, rua, numero, bairro, cidade, uf, diocese, bispo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO fraternidade (nome, status, data_fundacao, rua, numero, bairro, cidade, uf, diocese, bispo, cep, telefone, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, fraternidade.getNome());
 		ps.setString(2, fraternidade.getStatus());
@@ -34,6 +34,9 @@ public class FraternidadeDao {
 		ps.setString(8, fraternidade.getUf());
 		ps.setString(9, fraternidade.getDiocese());
 		ps.setString(10, fraternidade.getBispo());
+                ps.setString(11, fraternidade.getCep());
+                ps.setString(12, fraternidade.getTelefone());
+                ps.setString(13, fraternidade.getEmail());
 		ps.execute();
 		ps.close();
 		con.close();
@@ -41,9 +44,10 @@ public class FraternidadeDao {
 	
 	public FraternidadeBean getFraternidade(int idFraternidade) throws SQLException, ClassNotFoundException{
 		Connection con = conexao.getConnection();
-		String sql = "SELECT * FROM fraternidade WHERE id_fraternidade ='" + idFraternidade + "'";
-		Statement stat = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-		ResultSet rs = stat.executeQuery(sql);
+		String sql = "SELECT * FROM fraternidade WHERE id_fraternidade = ?";
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		stat.setInt(1, idFraternidade);
+                ResultSet rs = stat.executeQuery();
 		FraternidadeBean fraternidadeBean = new FraternidadeBean();
 		if (rs.next()){
 			fraternidadeBean.setIdFraternidade(rs.getInt("id_fraternidade"));
@@ -57,6 +61,9 @@ public class FraternidadeDao {
 			fraternidadeBean.setUf(rs.getString("uf"));
 			fraternidadeBean.setDiocese(rs.getString("diocese"));
 			fraternidadeBean.setBispo(rs.getString("bispo"));
+                        fraternidadeBean.setCep(rs.getString("cep"));
+                        fraternidadeBean.setTelefone(rs.getString("telefone"));
+                        fraternidadeBean.setEmail(rs.getString("email"));
 		}
 		
 		stat.close();
@@ -67,9 +74,10 @@ public class FraternidadeDao {
 	
 	public FraternidadeBean getFraternidadePorNome(String nomeFraternidade) throws SQLException, ClassNotFoundException{
 		Connection con = conexao.getConnection();
-		String sql = "SELECT * FROM fraternidade WHERE nome ilike '" + nomeFraternidade + "'";
-		Statement stat = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-		ResultSet rs = stat.executeQuery(sql);
+		String sql = "SELECT * FROM fraternidade WHERE nome like ?";
+		PreparedStatement stat = con.prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		stat.setString(1, nomeFraternidade);
+                ResultSet rs = stat.executeQuery();
 		FraternidadeBean fraternidadeBean = null;
 		if (rs.next()){
 			fraternidadeBean = new FraternidadeBean();
@@ -84,6 +92,9 @@ public class FraternidadeDao {
 			fraternidadeBean.setUf(rs.getString("uf"));
 			fraternidadeBean.setDiocese(rs.getString("diocese"));
 			fraternidadeBean.setBispo(rs.getString("bispo"));
+                        fraternidadeBean.setCep(rs.getString("cep"));
+                        fraternidadeBean.setTelefone(rs.getString("telefone"));
+                        fraternidadeBean.setEmail(rs.getString("email"));
 		}
 		
 		stat.close();
@@ -111,6 +122,9 @@ public class FraternidadeDao {
 			fraternidadeBean.setUf(rs.getString("uf"));
 			fraternidadeBean.setDiocese(rs.getString("diocese"));
 			fraternidadeBean.setBispo(rs.getString("bispo"));
+                        fraternidadeBean.setCep(rs.getString("cep"));
+                        fraternidadeBean.setTelefone(rs.getString("telefone"));
+                        fraternidadeBean.setEmail(rs.getString("email"));
 			
 			fraternidades.add(fraternidadeBean);
 		}
@@ -123,7 +137,7 @@ public class FraternidadeDao {
 	
 	public void alteraFraternidade(int idFraternidade, FraternidadeBean fraternidade) throws SQLException, ClassNotFoundException{
 		Connection con  = conexao.getConnection();
-		String sql = "UPDATE fraternidade SET nome = ?, status = ?, data_fundacao = ?, rua = ?, numero = ?, bairro = ?, cidade = ?, uf = ?, diocese = ?, bispo = ? WHERE id_fraternidade ='" + idFraternidade + "'";
+		String sql = "UPDATE fraternidade SET nome = ?, status = ?, data_fundacao = ?, rua = ?, numero = ?, bairro = ?, cidade = ?, uf = ?, diocese = ?, bispo = ?, cep = ?, telefone = ?, email = ? WHERE id_fraternidade = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, fraternidade.getNome());
 		ps.setString(2, fraternidade.getStatus());
@@ -135,6 +149,10 @@ public class FraternidadeDao {
 		ps.setString(8, fraternidade.getUf());
 		ps.setString(9, fraternidade.getDiocese());
 		ps.setString(10, fraternidade.getBispo());
+                ps.setString(11, fraternidade.getCep());
+                ps.setString(12, fraternidade.getTelefone());
+                ps.setString(13, fraternidade.getEmail());
+                ps.setInt(14, idFraternidade);
 		
 		ps.executeUpdate();
 		ps.close();

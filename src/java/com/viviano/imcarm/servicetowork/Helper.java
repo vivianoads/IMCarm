@@ -7,7 +7,11 @@ import tests.AlteraIrma;
 
 import com.viviano.imcarm.commands.AlteraFormandaCommand;
 import com.viviano.imcarm.commands.AlteraIrmaCommand;
+import com.viviano.imcarm.commands.ApagarFraternidadeCommand;
+import com.viviano.imcarm.commands.CancelaCadastroCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.Command;
+import com.viviano.imcarm.commands.ConfirmaCadastroFraternidadeCommand;
+import com.viviano.imcarm.commands.EditaDadosCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.ExibeCasasDeMissaoCommand;
 import com.viviano.imcarm.commands.GravaCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.GravaFormandaCommand;
@@ -17,6 +21,7 @@ import com.viviano.imcarm.commands.LogoutCommand;
 import com.viviano.imcarm.commands.SalvaAlteracoesCasasDeMissaoCommand;
 import com.viviano.imcarm.commands.SalvaAlteracoesIrmaCommand;
 import com.viviano.imcarm.commands.SalvaalteracoesFormandaCommand;
+import com.viviano.imcarm.commands.VerificaUsuarioLogadoCommand;
 
 public class Helper {
 	
@@ -37,6 +42,12 @@ public class Helper {
 		mapCommands.put("9", new SalvaAlteracoesCasasDeMissaoCommand());
 		mapCommands.put("10", new ExibeCasasDeMissaoCommand());
 		mapCommands.put("11", new LogoutCommand());
+                mapCommands.put("12", new VerificaUsuarioLogadoCommand());
+                mapCommands.put("13", new EditaDadosCasaDeMissaoCommand());
+                mapCommands.put("14", new CancelaCadastroCasaDeMissaoCommand());
+                mapCommands.put("15", new ConfirmaCadastroFraternidadeCommand());
+                mapCommands.put("16", new ApagarFraternidadeCommand());
+               
 	}
 	
 	public static Helper getInstance(){

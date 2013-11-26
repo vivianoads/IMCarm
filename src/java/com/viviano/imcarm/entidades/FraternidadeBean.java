@@ -5,7 +5,7 @@ import java.util.Date;
 public class FraternidadeBean { 
 	
 	private int idFraternidade;
-	private String nome, status, rua, bairro, cidade, uf, diocese, bispo, numeroCasa, dataFundacao;
+	private String nome, status, rua, bairro, cidade, uf, diocese, bispo, numeroCasa, dataFundacao, cep, telefone, email;
 	
 	
 	public FraternidadeBean() {
@@ -156,6 +156,30 @@ public class FraternidadeBean {
 	public void setDataFundacao(String dataFundacao) {
 		this.dataFundacao = dataFundacao;
 	}
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 	
 	
 

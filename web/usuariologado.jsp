@@ -27,9 +27,14 @@
                     <div id="menu">
                         <div id="conteudo_menu">
                             <div id="linha_menu">
-                                <a href="/ImCarm_2.0/cadastrodecasasdemissao.jsp">
+                                <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                    <input type=hidden name="action" value="12">
+                                    <input type=hidden name="next_url" value="cadastrodecasasdemissao.jsp">
+                                    <input type="image" src="IconeCadastrarCasaDeMissao.png">
+                                </form>
+<!--                                <a href="/ImCarm_2.0/cadastrodecasasdemissao.jsp">
                                     <img src="IconeCadastrarCasaDeMissao.png">
-                                </a>
+                                </a>-->
                             </div>
                             <div id="linha_menu">
                                 <a href="/ImCarm_2.0/cadastrodecongregacoes.jsp">

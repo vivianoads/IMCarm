@@ -25,15 +25,19 @@
                 <div id="conteudo_centro">
                     <div id="menu">
                         <div id="conteudo_menu">
-                            <div id="linha_menu">
-                                <a href="/ImCarm_2.0/cadastrodecasasdemissao.jsp">
-                                    <img src="IconeCadastrarCasaDeMissao.png">
-                                </a>
+                            <div id="linha_menu_escolhida">
+                                <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                    <input type=hidden name="action" value="12">
+                                    <input type=hidden name="next_url" value="cadastrodecasasdemissao.jsp">
+                                    <input type="image" src="IconeCadastrarCasaDeMissao.png">
+                                </form>
                             </div>
                             <div id="linha_menu">
-                                <a href="/ImCarm_2.0/cadastrodecongregacoes.jsp">
-                                    <img src="IconeCadastrarCongregacao.png">
-                                </a>
+                                <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                    <input type=hidden name="action" value="12">
+                                    <input type=hidden name="next_url" value="cadastrodecongregacoes.jsp">
+                                    <input type="image" src="IconeCadastrarCongregacao.png">
+                                </form>
                             </div>
                             <div id="linha_menu">
                                 <a href="/ImCarm_2.0/cadastrodeformandas.jsp">
@@ -54,27 +58,51 @@
                     </div>
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
-                            <a href="/ImCarm/formcadastracasademissao.jsp">
-                                <button class="i2Style_menu">Criar Fraternidade</button>
-                            </a>
-                            <a href="/ImCarm/ServletControler?action=10">
-                                <button class="i2Style_menu">Modificar Fraternidade</button>
-                            </a>
-                            <a href="/ImCarm/ServletControler?action=10">
-                                <button class="i2Style_menu">Apagar Fraternidade</button>
-                            </a>
-                            <a href="/ImCarm/ExibeCasasDeMissaoParaAdicionarIrmas">
-                                <button class="i2Style_menu">Adicionar Irmã à Fraternidade</button>
-                            </a>
-                            <a href="/ImCarm/#">
-                                <button class="i2Style_menu">Transferir Irmã</button>
-                            </a>
-                            <a href="/ImCarm/#">
-                                <button class="i2Style_menu">Criar Coordenacao</button>
-                            </a>
-                            <a href="/ImCarm/#">
-                                <button class="i2Style_menu">Modificar Coordenação</button>
-                            </a>
+                            <div id="linha_menu_interno">
+                                <div id="conteudo_menu_interno1">
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="12">
+                                        <input type=hidden name="next_url" value="formcadastracasademissao.jsp">
+                                        <button class="i2Style_menu">Criar Fraternidade</button>
+                                    </form>
+                                </div>
+                                <div id="conteudo_menu_interno2">
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="10">
+                                        <input type=hidden name="initial_index" value="0">
+                                        <input type=hidden name="next_url" value="formcadastracasademissao.jsp">
+                                        <button class="i2Style_menu">Modificar Fraternidade</button>
+                                    </form>
+                                </div>
+                                <div id="conteudo_menu_interno3">
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="10">
+                                        <input type=hidden name="initial_index" value="0">
+                                        <input type=hidden name="next_url" value="formcadastracasademissao.jsp">
+                                        <button class="i2Style_menu">Apagar Fraternidade</button>
+                                    </form>
+                                </div>
+                                <div id="conteudo_menu_interno4">
+                                    <a href="/ImCarm/ExibeCasasDeMissaoParaAdicionarIrmas">
+                                        <button class="i2Style_menu">Adicionar Irmã à Fraternidade</button>
+                                    </a>
+                                </div>
+                                <div id="conteudo_menu_interno5">
+                                    <a href="/ImCarm/#">
+                                        <button class="i2Style_menu">Transferir Irmã</button>
+                                    </a>
+                                </div>
+                                <div id="conteudo_menu_interno6">
+                                    <a href="/ImCarm/#">
+                                        <button class="i2Style_menu">Criar Coordenacao</button>
+                                    </a>
+                                </div>
+                                <div id="conteudo_menu_interno7">
+                                    <a href="/ImCarm/#">
+                                        <button class="i2Style_menu">Modificar Coordenação</button>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -82,21 +110,8 @@
             <div id="rodape">
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </body>
+</html>
         <!--        <div id="container">
                     <div id="topo">
                     </div>
@@ -130,5 +145,3 @@
                     <div id="rodape">
                     </div>
                 </div>-->
-    </body>
-</html>

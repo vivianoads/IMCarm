@@ -174,6 +174,13 @@ public class App {
 //            System.out.println("Senha" + lbean.getSenha());
             
             
+//            Integer i = 78;
+//            System.out.println(i/10+1);
+            Integer[] paginacao = new Integer[78/10+1];
+            for(int i = 0; i <paginacao.length; i++){
+                    paginacao[i] = i+1;
+                    System.out.println(paginacao[i]);
+                }
             
 	}
 

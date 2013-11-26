@@ -5,7 +5,7 @@
     <head>
         <title>Cadastra Casa de Missão</title>
         <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
-        <link href="EstiloFormularioCadastroDeCasasDeMissao.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
+        <link href="Estilolistacasasdemissaoparaeditar.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
     </head>
 
     <body>
@@ -58,55 +58,48 @@
                     </div>
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
-                            <form name="cadastroFormandas" action="/ImCarm_2.0/ServletControler" method="post">	
-                                <h3 align="center">Cadastrar Casa de Missão</h3>
-                                <h5>${mensagem_erro}</h5>
-                                <b>Nome:</b>
-                                <input size="90" type="text" name="nome" value="${fraternidadebean.nome}">
-                                <b>Data de Fundação:</b> 
-                                <input size="10" type="text" name="data_fundacao" maxlength="10" value="${fraternidadebean.dataFundacao}">
-                                <br/>
-                                <br/>
-                                <br/>
-                                <b>Rua:</b>
-                                <input size="53" type="text" name="rua" value="${fraternidadebean.rua}">
-                                <b>Numero:</b>
-                                <input size="5" type="text" name="numero" value="${fraternidadebean.numeroCasa}">
-                                <b>Bairro:</b>
-                                <input size="40" type="text" name="bairro" value="${fraternidadebean.bairro}">
-                                <br/>
-                                <br/>
-                                <br/>
-                                <b>Cidade:</b>
-                                <input size="75" type="text" name="cidade" value="${fraternidadebean.cidade}">
-                                <b>CEP:</b>
-                                <input size="22" type="text" name="cep" value="${fraternidadebean.cep}">
-                                <b>UF:</b>
-                                <input size="5" type="text" name="uf" maxlength="2" value="${fraternidadebean.uf}">
-                                <br/>
-                                <br/>
-                                <br/>
-                                <b>Telefone:</b>
-                                <input size="30" type="text" name="telefone" value="${fraternidadebean.telefone}">
-                                <b>Email:</b>
-                                <input size="79" type="text" name="email" value="${fraternidadebean.email}">
-                                <br/>
-                                <br/>
-                                <br/>
-                                <b>Diocese</b>
-                                <input size="55" type="text" name="diocese" value="${fraternidadebean.diocese}">
-                                <b>Bispo</b>
-                                <input size="56" type="text" name="bispo" value="${fraternidadebean.bispo}">
-                                <br/>
-                                <br/>
-                                <br/>
-                                <b>Status</b>
-                                <input size="50" type="radio" name="status" value="ativa" checked><b>Ativa</b>
-                                <input size="50" type="radio" name="status" value="inativa"><b>Inativa</b>
-                                <input type="hidden" name="action" value="8">
-                                <input type="submit" class="i2Style" value="Salvar">
-
-                            </form>
+                            <h3 align="center">Alterar Fraternidade</h3>
+                            <c:forEach items="${fraternidadespaginada}" var="fraternidade">
+                                <div id="linha_conteudo">
+                                    <div id="linha_conteudo_nome">
+                                        ${fraternidade.nome}
+                                    </div>
+                                    <div id="linha_conteudo_alterar">
+                                        <form action="/ImCarm_2.0/ServletControler" method="post">
+                                            <input type=hidden name="action" value="13">
+                                            <input type=hidden name="id_fraternidade" value="${fraternidade.idFraternidade}">
+                                            <button class="i2Style_alterar">alterar</button>
+                                        </form>
+                                    </div>
+                                    <div id="linha_conteudo_apagar">
+                                        <form action="/ImCarm_2.0/ServletControler" method="post">
+                                            <input type="hidden" name="action" value="16">
+                                            <input type="hidden" name="id_fraternidade" value="${fraternidade.idFraternidade}">
+                                            <button class="i2Style_apagar">apagar</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </c:forEach>
+                            <table>
+                                <tr>
+                                    <c:forEach items="${paginacao}" var="pagina">
+                                        <td>
+                                            <form action="/ImCarm_2.0/ServletControler" method="post">
+                                                <input type="hidden" name="action" value="17">
+                                                <input type="hidden" name="pagina" value="${pagina}">
+                                                <input type="submit" value="${pagina}">
+                                            </form>
+                                        </td>
+                                    </c:forEach>
+                                </tr>
+                            </table>
+                            
+<!--                                <form action="/ImCarm_2.0/ServletControler" method="post">
+                                    <input type="hidden" name="action" value="17">
+                                    <input type="hidden" name="pagina" value="${pagina}">
+                                    <input type="submit" value="${pagina}">
+                                </form>-->
+                            
                         </div>
                     </div>
                 </div>
