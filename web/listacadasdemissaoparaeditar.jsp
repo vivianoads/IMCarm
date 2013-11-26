@@ -87,6 +87,7 @@
                                             <form action="/ImCarm_2.0/ServletControler" method="post">
                                                 <input type="hidden" name="action" value="10">
                                                 <input type="hidden" name="initial_index" value="${pagina}">
+                                                <input type=hidden name="next_url" value="listacadasdemissaoparaeditar.jsp">
                                                 <input type="submit" value="${pagina}">
                                             </form>
                                         </td>

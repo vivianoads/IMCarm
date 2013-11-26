@@ -58,24 +58,24 @@
                     </div>
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
-                            <h3 align="center">Alterar Fraternidade</h3>
+                            <h3 align="center">Selecionar Fraternidade para Adicionar Irmãs</h3>
                             <c:forEach items="${fraternidadespaginada}" var="fraternidade">
                                 <div id="linha_conteudo">
                                     <div id="linha_conteudo_nome">
                                         ${fraternidade.nome}
                                     </div>
-                                    <div id="linha_conteudo_alterar">
+<!--                                    <div id="linha_conteudo_alterar">
                                         <form action="/ImCarm_2.0/ServletControler" method="post">
                                             <input type=hidden name="action" value="13">
                                             <input type=hidden name="id_fraternidade" value="${fraternidade.idFraternidade}">
-                                            <button class="i2Style_alterar">alterar</button>
+                                            <button class="i2Style_alterar">Adicionar Irmãs</button>
                                         </form>
-                                    </div>
+                                    </div>-->
                                     <div id="linha_conteudo_apagar">
                                         <form action="/ImCarm_2.0/ServletControler" method="post">
-                                            <input type="hidden" name="action" value="16">
+                                            <input type="hidden" name="action" value="10">
                                             <input type="hidden" name="id_fraternidade" value="${fraternidade.idFraternidade}">
-                                            <button class="i2Style_apagar">apagar</button>
+                                            <button class="i2Style_apagar">Adicionar Irmãs</button>
                                         </form>
                                     </div>
                                 </div>
@@ -87,6 +87,7 @@
                                             <form action="/ImCarm_2.0/ServletControler" method="post">
                                                 <input type="hidden" name="action" value="10">
                                                 <input type="hidden" name="initial_index" value="${pagina}">
+                                                <input type=hidden name="next_url" value="listacadasdemissaoparaadicionarirmas.jsp">
                                                 <input type="submit" value="${pagina}">
                                             </form>
                                         </td>

@@ -17,7 +17,7 @@ public class ExibeCasasDeMissaoCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request) {
-        String nextPage = "listacadasdemissaoparaeditar.jsp";
+        String nextPage = request.getParameter("next_url");//"listacadasdemissaoparaeditar.jsp";
         Integer initialIndex = new Integer(request.getParameter("initial_index"));
         if(initialIndex != 0){
             initialIndex = initialIndex-1;

@@ -97,7 +97,7 @@ position: absolute;
 #linha_conteudo_apagar{
     width: 20%;
     height: 5%;
-    background-color: transparent;
+    background-color: red;
     position: absolute;
     margin-left: 66%;
 }
@@ -316,11 +316,11 @@ box-shadow:2px 2px 5px #000000;
 border-radius:2px 2px 2px 2px;
 -moz-border-radius:2px 2px 2px 2px;
 -webkit-border-radius:2px 2px 2px 2px;
-width:124px;
+width:154px;
 padding:2px 11px;
 cursor:pointer;
 margin:0 auto;
-margin-left: 25%;
+margin-left: 15%;
 }
 .i2Style_apagar:active{
 cursor:pointer;

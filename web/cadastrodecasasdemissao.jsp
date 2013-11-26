@@ -70,7 +70,7 @@
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
                                         <input type=hidden name="action" value="10">
                                         <input type=hidden name="initial_index" value="0">
-                                        <input type=hidden name="next_url" value="formcadastracasademissao.jsp">
+                                        <input type=hidden name="next_url" value="listacadasdemissaoparaeditar.jsp">
                                         <button class="i2Style_menu">Modificar Fraternidade</button>
                                     </form>
                                 </div>
@@ -78,14 +78,17 @@
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
                                         <input type=hidden name="action" value="10">
                                         <input type=hidden name="initial_index" value="0">
-                                        <input type=hidden name="next_url" value="formcadastracasademissao.jsp">
+                                        <input type=hidden name="next_url" value="listacadasdemissaoparaeditar.jsp">
                                         <button class="i2Style_menu">Apagar Fraternidade</button>
                                     </form>
                                 </div>
                                 <div id="conteudo_menu_interno4">
-                                    <a href="/ImCarm/ExibeCasasDeMissaoParaAdicionarIrmas">
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="10">
+                                        <input type=hidden name="initial_index" value="0">
+                                        <input type=hidden name="next_url" value="listacadasdemissaoparaadicionarirmas.jsp">
                                         <button class="i2Style_menu">Adicionar Irmã à Fraternidade</button>
-                                    </a>
+                                    </form>
                                 </div>
                                 <div id="conteudo_menu_interno5">
                                     <a href="/ImCarm/#">
