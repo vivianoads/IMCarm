@@ -17,16 +17,23 @@ public class ExibeCasasDeMissaoCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request) {
-        String nextPage = "/listacadasdemissaoparaeditar.jsp";
+        String nextPage = "listacadasdemissaoparaeditar.jsp";
         Integer initialIndex = new Integer(request.getParameter("initial_index"));
+        if(initialIndex != 0){
+            initialIndex = initialIndex-1;
+            initialIndex = initialIndex*10;
+        }
+        
+        System.out.println("initialIndex= "+initialIndex);
         FraternidadeDao fraternidadeDao = new FraternidadeDao();
         List<FraternidadeBean> fraternidades = new ArrayList<FraternidadeBean>();
         List<FraternidadeBean> fraternidadespaginada = new ArrayList<FraternidadeBean>();
 
         try {
             fraternidades = fraternidadeDao.getAllFraternidade();
-            for (int i = initialIndex; i <= initialIndex + 10; i++) {
-                fraternidadespaginada.add(fraternidades.get(i));
+            for (int i = initialIndex; i < initialIndex + 10; i++) {
+                System.out.println("i= " +i);
+                if(i<fraternidades.size()) fraternidadespaginada.add(fraternidades.get(i));
             }
             Integer[] paginacao = new Integer[fraternidades.size() / 10 + 1];
             for (int i = 0; i < paginacao.length; i++) {

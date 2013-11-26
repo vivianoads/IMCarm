@@ -176,11 +176,15 @@ public class App {
             
 //            Integer i = 78;
 //            System.out.println(i/10+1);
-            Integer[] paginacao = new Integer[78/10+1];
-            for(int i = 0; i <paginacao.length; i++){
-                    paginacao[i] = i+1;
-                    System.out.println(paginacao[i]);
-                }
+//            Integer[] paginacao = new Integer[78/10+1];
+//            for(int i = 0; i <paginacao.length; i++){
+//                    paginacao[i] = i+1;
+//                    System.out.println(paginacao[i]);
+//                }
+//            
+            String x = "-10";
+            Integer i = new Integer(x);
+            System.out.println(i+10);
             
 	}
 
