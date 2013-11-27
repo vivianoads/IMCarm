@@ -91,9 +91,12 @@
                                     </form>
                                 </div>
                                 <div id="conteudo_menu_interno5">
-                                    <a href="/ImCarm/#">
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="20">
+                                        <input type=hidden name="initial_index_freira" value="0">
+                                        <input type=hidden name="next_url" value="listafreirasparatransferirdecasademissao.jsp">
                                         <button class="i2Style_menu">Transferir Irmã</button>
-                                    </a>
+                                    </form>
                                 </div>
                                 <div id="conteudo_menu_interno6">
                                     <a href="/ImCarm/#">

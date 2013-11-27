@@ -5,7 +5,7 @@
     <head>
         <title>Cadastra Casa de Missão</title>
         <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
-        <link href="Estilolistacasasdemissaoparaadicionarirmas.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
+        <link href="Estilolistairmasparatransferiridecasasdemissao.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
     </head>
 
     <body>
@@ -58,11 +58,11 @@
                     </div>
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
-                            <h3 align="center">Selecionar Fraternidade para Adicionar Irmãs</h3>
-                            <c:forEach items="${fraternidadespaginada}" var="fraternidade">
+                            <h3 align="center">Selecionar Irmã para Adicionar à fraternidade **${fraternidade.nome}**</h3>
+                            <c:forEach items="${freiraspaginada}" var="freira">
                                 <div id="linha_conteudo">
                                     <div id="linha_conteudo_nome">
-                                        ${fraternidade.nome} + ${fraternidade.idFraternidade}
+                                        ${freira.nomeCivil}
                                     </div>
 <!--                                    <div id="linha_conteudo_alterar">
                                         <form action="/ImCarm_2.0/ServletControler" method="post">
@@ -73,11 +73,11 @@
                                     </div>-->
                                     <div id="linha_conteudo_apagar">
                                         <form action="/ImCarm_2.0/ServletControler" method="post">
-                                            <input type="hidden" name="action" value="17">
-                                            <input type="hidden" name="id_fraternidade" value="${fraternidade.idFraternidade}">
-                                            <input type="hidden" name="initial_index_freira" value="0">
-                                            <input type="hidden" name="next_url" value="listafreirasparaadicionaracasasdemissao.jsp">
-                                            <button class="i2Style_apagar">Adicionar Irmãs</button>
+                                            <input type="hidden" name="action" value="21">
+                                            <input type="hidden" name="id_freira" value="${freira.id}">
+                                            <input type="hidden" name="next_url" value="listacasademissaoparatransferirirmas.jsp">
+                                            <input type="hidden" name="initial_index" value="0">
+                                            <button class="i2Style_apagar">Transferir Irmã</button>
                                         </form>
                                     </div>
                                 </div>
@@ -87,9 +87,9 @@
                                     <c:forEach items="${paginacao}" var="pagina">
                                         <td>
                                             <form action="/ImCarm_2.0/ServletControler" method="post">
-                                                <input type="hidden" name="action" value="10">
-                                                <input type="hidden" name="initial_index" value="${pagina}">
-                                                <input type=hidden name="next_url" value="listacadasdemissaoparaadicionarirmas.jsp">
+                                                <input type="hidden" name="action" value="20">
+                                                <input type="hidden" name="initial_index_freira" value="${pagina}">
+                                                <input type=hidden name="next_url" value="listafreirasparatransferirdecasademissao.jsp">
                                                 <input type="submit" value="${pagina}">
                                             </form>
                                         </td>

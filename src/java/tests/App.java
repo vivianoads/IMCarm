@@ -182,10 +182,20 @@ public class App {
 //                    System.out.println(paginacao[i]);
 //                }
 //            
-            String x = "-10";
-            Integer i = new Integer(x);
-            System.out.println(i+10);
+//            String x = "-10";
+//            Integer i = new Integer(x);
+//            System.out.println(i+10);
             
-	}
+            
+            FreiraDao freiraDao = new FreiraDao();
+            List<Integer> idFreiras = new ArrayList<Integer>();
+            List<FreiraBean> freiras = new ArrayList<FreiraBean>();
+
+            idFreiras = freiraDao.getAllFreiraBeanSemAgregacao();
+            
+            for (Integer freiraBean : idFreiras) {
+                System.out.println(freiraBean);
+            }
+        }
 
 }

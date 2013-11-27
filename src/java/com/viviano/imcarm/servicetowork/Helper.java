@@ -1,5 +1,6 @@
 package com.viviano.imcarm.servicetowork;
 
+import com.viviano.imcarm.commands.AdicionaIrmaACasadeMissaoCommand;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,6 +9,7 @@ import tests.AlteraIrma;
 import com.viviano.imcarm.commands.AlteraFormandaCommand;
 import com.viviano.imcarm.commands.AlteraIrmaCommand;
 import com.viviano.imcarm.commands.ApagarFraternidadeCommand;
+import com.viviano.imcarm.commands.CancelaAdicaodeFreiraACasaDeMissao;
 import com.viviano.imcarm.commands.CancelaCadastroCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.Command;
 import com.viviano.imcarm.commands.ConfirmaCadastroFraternidadeCommand;
@@ -16,6 +18,9 @@ import com.viviano.imcarm.commands.ExibeCasasDeMissaoCommand;
 import com.viviano.imcarm.commands.GravaCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.GravaFormandaCommand;
 import com.viviano.imcarm.commands.GravaIrmaCommand;
+import com.viviano.imcarm.commands.ListaCasasDeMissaoParaTransferirIrma;
+import com.viviano.imcarm.commands.ListaIrmasParaAdicionarACasaDeMissao;
+import com.viviano.imcarm.commands.ListaIrmasParaTransferirDeCasaDeMissao;
 import com.viviano.imcarm.commands.LoginCommand;
 import com.viviano.imcarm.commands.LogoutCommand;
 import com.viviano.imcarm.commands.SalvaAlteracoesCasasDeMissaoCommand;
@@ -47,7 +52,11 @@ public class Helper {
                 mapCommands.put("14", new CancelaCadastroCasaDeMissaoCommand());
                 mapCommands.put("15", new ConfirmaCadastroFraternidadeCommand());
                 mapCommands.put("16", new ApagarFraternidadeCommand());
-               
+                mapCommands.put("17", new ListaIrmasParaAdicionarACasaDeMissao());
+                mapCommands.put("18", new AdicionaIrmaACasadeMissaoCommand());
+                mapCommands.put("19", new CancelaAdicaodeFreiraACasaDeMissao());
+                mapCommands.put("20", new ListaIrmasParaTransferirDeCasaDeMissao());
+                mapCommands.put("21", new ListaCasasDeMissaoParaTransferirIrma());
 	}
 	
 	public static Helper getInstance(){

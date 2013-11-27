@@ -5,7 +5,7 @@
     <head>
         <title>Cadastra Casa de Missão</title>
         <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
-        <link href="Estilolistacasasdemissaoparaadicionarirmas.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
+        <link href="Estilolistacasasdemissaoparatransferirrirmas.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
     </head>
 
     <body>
@@ -58,7 +58,7 @@
                     </div>
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
-                            <h3 align="center">Selecionar Fraternidade para Adicionar Irmãs</h3>
+                            <h3 align="center">Selecionar Fraternidade para Transferir a Irmã ${freira.nomeCivil}</h3>
                             <c:forEach items="${fraternidadespaginada}" var="fraternidade">
                                 <div id="linha_conteudo">
                                     <div id="linha_conteudo_nome">
@@ -75,9 +75,9 @@
                                         <form action="/ImCarm_2.0/ServletControler" method="post">
                                             <input type="hidden" name="action" value="17">
                                             <input type="hidden" name="id_fraternidade" value="${fraternidade.idFraternidade}">
-                                            <input type="hidden" name="initial_index_freira" value="0">
-                                            <input type="hidden" name="next_url" value="listafreirasparaadicionaracasasdemissao.jsp">
-                                            <button class="i2Style_apagar">Adicionar Irmãs</button>
+                                            <input type="hidden" name="id_freira" value="${freira.id}">
+                                            <input type="hidden" name="next_url" value="confirmatransferenciadeirmaparacasademissao.jsp">
+                                            <button class="i2Style_apagar">Transferir</button>
                                         </form>
                                     </div>
                                 </div>

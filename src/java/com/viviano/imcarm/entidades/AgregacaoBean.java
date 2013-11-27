@@ -2,54 +2,38 @@ package com.viviano.imcarm.entidades;
 
 public class AgregacaoBean {
 	
-	private int congregacao;
-	private int fraternidade;
-	private double freira;
+	private Integer fraternidade;
+	private Integer freira;
 	
 	
 	public AgregacaoBean(){
 		
 	}
-	public AgregacaoBean(int congregacao, int fraternidade,
-			double freira) {
+	public AgregacaoBean( Integer fraternidade,
+			Integer freira) {
 		
-		this.congregacao = congregacao;
+		
 		this.fraternidade = fraternidade;
 		this.freira = freira;
 	}
 
 
-	public int getCongregacao() {
-		return congregacao;
-	}
+    public Integer getFraternidade() {
+        return fraternidade;
+    }
+
+    public void setFraternidade(Integer fraternidade) {
+        this.fraternidade = fraternidade;
+    }
+
+    public Integer getFreira() {
+        return freira;
+    }
+
+    public void setFreira(Integer freira) {
+        this.freira = freira;
+    }
 
 
-	public void setCongregacao(int congregacao) {
-		this.congregacao = congregacao;
-	}
-
-
-	public int getFraternidade() {
-		return fraternidade;
-	}
-
-
-	public void setFraternidade(int fraternidade) {
-		this.fraternidade = fraternidade;
-	}
-
-
-	public double getFreira() {
-		return freira;
-	}
-
-
-	public void setFreira(double freira) {
-		this.freira = freira;
-	}
 	
-	
-	
-	
-
 }

@@ -22,10 +22,10 @@ public class AgregacaoDao {
 	
 	public void gravaAgregacao(AgregacaoBean agregacaoBean) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "INSERT INTO agregacao (id_fraternidade, cpf_freira) VALUES (?, ?)";
+		String sql = "INSERT INTO agregacao (id_fraternidade, id_freira) VALUES (?, ?)";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setInt(1, agregacaoBean.getFraternidade());
-		ps.setDouble(2, agregacaoBean.getFreira());
+		ps.setInt(2, agregacaoBean.getFreira());
 		
 		ps.execute();
 		ps.close();
@@ -33,15 +33,17 @@ public class AgregacaoDao {
 	}	
 	
 	
-	public AgregacaoBean getAgregacao(int idFraternidade, double cpfFreira) throws ClassNotFoundException, SQLException{
+	public AgregacaoBean getAgregacao(Integer idFraternidade, Integer idFreira) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "SELECT * FROM agregacao WHERE id_fraternidade = '" + idFraternidade + "' AND cpf_freira = '" + cpfFreira + "'";
-		Statement stat = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-		ResultSet rs = stat.executeQuery(sql);
+		String sql = "SELECT * FROM agregacao WHERE id_fraternidade = ? AND id_freira = ?";
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		stat.setInt(1, idFraternidade);
+                stat.setInt(2, idFreira);
+                ResultSet rs = stat.executeQuery();
 		AgregacaoBean agregacaoBean = new AgregacaoBean();
 		if (rs.next()){
 			agregacaoBean.setFraternidade(rs.getInt("id_fraternidade"));
-			agregacaoBean.setFreira(rs.getDouble("cpf_freira"));
+			agregacaoBean.setFreira(rs.getInt("id_freira"));
 		}
 		
 		rs.close();
@@ -60,7 +62,7 @@ public class AgregacaoDao {
 		if (rs.next()){
 			agregacaoBean = new AgregacaoBean();
 			agregacaoBean.setFraternidade(rs.getInt("id_fraternidade"));
-			agregacaoBean.setFreira(rs.getDouble("cpf_freira"));
+			agregacaoBean.setFreira(rs.getInt("id_freira"));
 		}
 		
 		rs.close();
@@ -79,9 +81,8 @@ public class AgregacaoDao {
 		
 		while (rs.next()){
 			AgregacaoBean agregacaoBean = new AgregacaoBean();
-			agregacaoBean.setCongregacao(rs.getInt("id_congregacao"));
 			agregacaoBean.setFraternidade(rs.getInt("id_fraternidade"));
-			agregacaoBean.setFreira(rs.getDouble("cpf_freira"));
+			agregacaoBean.setFreira(rs.getInt("id_freira"));
 			agregacoes.add(agregacaoBean);
 		}
 		
@@ -92,23 +93,26 @@ public class AgregacaoDao {
 		return agregacoes;
 	}
 	
-	public void alteraAgregacoes(int idCongregacao, int idFraternidade, double cpfFreira, AgregacaoBean agregacaoBean) throws ClassNotFoundException, SQLException{
+	public void alteraAgregacoes(Integer idFraternidade, Integer idFreira, AgregacaoBean agregacaoBean) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "UPDATE agregacao SET id_congregacao = ?, id_fraternidade = ?, cpf_freira = ? WHERE  id_congregacao = '" + idCongregacao + "' AND id_fraternidade = '" + idFraternidade + "' AND cpf_freira = '" + cpfFreira + "'";
+		String sql = "UPDATE agregacao SET id_fraternidade = ?, id_freira = ? WHERE  id_fraternidade = ? AND cpf_freira = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setInt(1, agregacaoBean.getCongregacao());
-		ps.setInt(2, agregacaoBean.getFraternidade());
-		ps.setDouble(3, agregacaoBean.getFreira());
+		ps.setInt(1, agregacaoBean.getFraternidade());
+		ps.setInt(2, agregacaoBean.getFreira());
+                ps.setInt(3, idFraternidade);
+                ps.setInt(4, idFreira);
 		
 		ps.executeUpdate();
 		ps.close();
 		con.close();
 	}
 	
-	public void apagaAgregacao(int idCongregacao, int idFraternidade, double cpfFreira) throws ClassNotFoundException, SQLException{
+	public void apagaAgregacao(Integer idFraternidade, Integer idFreira) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "DELETE FROM agregacao WHERE  id_congregacao = '" + idCongregacao + "' AND id_fraternidade = '" + idFraternidade + "' AND cpf_freira = '" + cpfFreira + "'";
+		String sql = "DELETE FROM agregacao WHERE id_fraternidade = ? AND id_freira = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
+                ps.setInt(1, idFraternidade);
+                ps.setInt(2, idFreira);
 		ps.executeUpdate();
 		ps.close();
 		con.close();
