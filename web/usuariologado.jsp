@@ -37,9 +37,13 @@
                                 </a>-->
                             </div>
                             <div id="linha_menu">
-                                <a href="/ImCarm_2.0/cadastrodecongregacoes.jsp">
+                                <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                    <input type=hidden name="action" value="29">
+                                    <input type="image" src="IconeCadastrarCongregacao.png">
+                                </form>
+<!--                                <a href="/ImCarm_2.0/cadastrodecongregacoes.jsp">
                                     <img src="IconeCadastrarCongregacao.png">
-                                </a>
+                                </a>-->
                             </div>
                             <div id="linha_menu">
                                 <a href="/ImCarm_2.0/cadastrodeformandas.jsp">

@@ -42,6 +42,52 @@ public class FreiraDao {
 		ps.close();
 		con.close();
 	}
+        
+        public List<FreiraBean> getAllFreiraBeanComAgregacaoEspecifica(Integer idFraternidade) throws ClassNotFoundException, SQLException{
+		Connection con = conexao.getConnection();
+		String sql = "SELECT DISTINCT f.* FROM (freira f join agregacao a on f.id = a.id_freira) WHERE a.id_fraternidade = ?";
+		List<FreiraBean> freiras = new ArrayList<FreiraBean>();
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		stat.setInt(1, idFraternidade);
+                ResultSet rs = stat.executeQuery();
+		while (rs.next()){
+			FreiraBean freiraBean = new FreiraBean();
+                        freiraBean.setId(rs.getInt("id"));
+			freiraBean.setCpf(rs.getDouble("cpf"));
+			freiraBean.setNomeCivil(rs.getString("nome_civil"));
+			freiraBean.setNomeReligioso(rs.getString("nome_religioso"));
+			freiraBean.setRg(rs.getDouble("rg"));
+			freiraBean.setDataNascimento(rs.getString("data_nascimento"));
+			freiraBean.setNomePai(rs.getString("nome_pai"));
+			freiraBean.setNomeMae(rs.getString("nome_mae"));
+			freiraBean.setDataAspirantado(rs.getString("data_aspirantado"));
+			freiraBean.setDataPostulantado(rs.getString("data_postulantado"));
+			freiraBean.setDataNoviciadoCanonico(rs.getString("data_noviciado_canonico"));
+			freiraBean.setDataProfissaoTemporaria(rs.getString("data_profissao_temporaria"));
+			freiraBean.setDataProfissaoPerpetua(rs.getString("data_profissao_perpetua"));
+                        freiraBean.setTelefone(rs.getString("telefone"));
+                        freiraBean.setEmail(rs.getString("email"));
+                        freiraBean.setTipoAtivo(rs.getString("tipo_ativo"));
+                        freiraBean.setAtivo(rs.getString("ativo"));
+                        freiraBean.setRuaFamilia(rs.getString("rua_familia"));
+                        freiraBean.setNumeroFamilia(rs.getString("numero_familia"));
+                        freiraBean.setBairroFamilia(rs.getString("bairro_familia"));
+                        freiraBean.setCidadeFamilia(rs.getString("cidade_familia"));
+                        freiraBean.setTipoInativo(rs.getString("tipo_inativo"));
+                        freiraBean.setDiocese(rs.getString("diocese"));
+                        freiraBean.setCepFamilia(rs.getString("cep_familia"));
+                        freiraBean.setEstadoFamilia(rs.getString("estado_familia"));
+			
+			freiras.add(freiraBean);
+		}
+		
+		stat.close();
+		rs.close();
+		con.close();
+		          System.out.println(freiras.size());
+		return freiras;
+	}
+        
 	
 	public FreiraBean getFreiraBean(double cpf) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();

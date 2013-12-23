@@ -36,7 +36,7 @@ public class ListaIrmasParaTransferirDeCasaDeMissao implements Command{
         List<FreiraBean> freirasapaginada = new ArrayList<FreiraBean>();
 
         try {
-            freiras = freiraDao.getAllFreiraBeanSemAgregacao();
+            freiras = freiraDao.getAllFreiraBeanComAgregacao();
             for (int i = initialIndex; i < initialIndex + 10; i++) {
                 if(i<freiras.size()) freirasapaginada.add(freiras.get(i));
             }

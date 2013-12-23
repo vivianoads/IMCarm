@@ -99,14 +99,20 @@
                                     </form>
                                 </div>
                                 <div id="conteudo_menu_interno6">
-                                    <a href="/ImCarm/#">
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="10">
+                                        <input type=hidden name="initial_index" value="0">
+                                        <input type=hidden name="next_url" value="listacadasdemissaoparaadicionarcoordenacao.jsp">
                                         <button class="i2Style_menu">Criar Coordenacao</button>
-                                    </a>
+                                    </form>
                                 </div>
                                 <div id="conteudo_menu_interno7">
-                                    <a href="/ImCarm/#">
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="10">
+                                        <input type=hidden name="initial_index" value="0">
+                                        <input type=hidden name="next_url" value="listacadasdemissaoparaeditarcoordenacao.jsp">
                                         <button class="i2Style_menu">Modificar Coordenação</button>
-                                    </a>
+                                    </form>
                                 </div>
                             </div>
                         </div>

@@ -5,7 +5,7 @@
     <head>
         <title>Cadastra Casa de Missão</title>
         <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
-        <link href="Estilolistacasasdemissaoparatransferirrirmas.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
+        <link href="EstiloFormularioCadastroDeCoordenacaoDeCasasDeMissao.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
     </head>
 
     <body>
@@ -58,51 +58,71 @@
                     </div>
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
-                            <h3 align="center">Selecionar Fraternidade para Transferir a Irmã ${freira.nomeCivil}</h3>
-                            <c:forEach items="${fraternidadespaginada}" var="fraternidade">
-                                <div id="linha_conteudo">
-                                    <div id="linha_conteudo_nome">
-                                        ${fraternidade.nome} + ${fraternidade.idFraternidade}
-                                    </div>
-<!--                                    <div id="linha_conteudo_alterar">
-                                        <form action="/ImCarm_2.0/ServletControler" method="post">
-                                            <input type=hidden name="action" value="13">
-                                            <input type=hidden name="id_fraternidade" value="${fraternidade.idFraternidade}">
-                                            <button class="i2Style_alterar">Adicionar Irmãs</button>
-                                        </form>
-                                    </div>-->
-                                    <div id="linha_conteudo_apagar">
-                                        <form action="/ImCarm_2.0/ServletControler" method="post">
-                                            <input type="hidden" name="action" value="22">
-                                            <input type="hidden" name="id_fraternidade" value="${fraternidade.idFraternidade}">
-                                            <input type="hidden" name="id_freira" value="${freira.id}">
-                                            <input type="hidden" name="next_url" value="confirmatransferencidefreiradecasademissao.jsp">
-                                            <button class="i2Style_apagar">Transferir</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </c:forEach>
-                            <table>
-                                <tr>
-                                    <c:forEach items="${paginacao}" var="pagina">
-                                        <td>
-                                            <form action="/ImCarm_2.0/ServletControler" method="post">
-                                                <input type="hidden" name="action" value="10">
-                                                <input type="hidden" name="initial_index" value="${pagina}">
-                                                <input type=hidden name="next_url" value="listacadasdemissaoparaadicionarirmas.jsp">
-                                                <input type="submit" value="${pagina}">
-                                            </form>
-                                        </td>
-                                    </c:forEach>
-                                </tr>
-                            </table>
-                            
-<!--                                <form action="/ImCarm_2.0/ServletControler" method="post">
-                                    <input type="hidden" name="action" value="17">
-                                    <input type="hidden" name="pagina" value="${pagina}">
-                                    <input type="submit" value="${pagina}">
-                                </form>-->
-                            
+
+                            <h3 align="center">Cadastrar Coordenação de Casa de Missão</h3>
+                            <h5>${mensagem_erro}</h5>
+                            <b>Fraternidade:</b>
+                            <b>${fraternidade.nome}</b>
+                            <br/>
+                            <br/>
+                            <b>Coordenadora:</b> 
+                            ${coordenadora.nomeReligioso}
+                            <br/>
+                            <form action="/ImCarm_2.0/ServletControler" method="post">
+                                <input type="hidden" name="action" value="24">
+                                <input type="hidden" name="initial_index_freira" value="0">
+                                <input type="hidden" name="id_fraternidade" value="${fraternidade.idFraternidade}">
+                                ${fraternidade.idFraternidade}
+                                <input type="hidden" name="id_coordenadora" value="${coordenadora.id}">
+                                ${coordenadora.id}
+                                <input type="hidden" name="id_tesoureira" value="${tesoureira.id}">
+                                ${tesoureira.id}
+                                <input type="hidden" name="id_secretaria" value="${secretaria.id}">
+                                ${secretaria.id}
+                                <input type="hidden" name="next_url" value="lista_irma_para_escolher_coordenadora.jsp">
+                                <input type="submit" value="Add Coordenadora">
+                            </form>
+                            <br/>
+                            <b>Tesoureira:</b> 
+                            ${tesoureira.nomeReligioso}
+                            <form action="/ImCarm_2.0/ServletControler" method="post">
+                                <input type="hidden" name="action" value="24">
+                                <input type="hidden" name="initial_index_freira" value="0">
+                                <input type="hidden" name="id_fraternidade" value="${fraternidade.idFraternidade}">
+
+                                <input type="hidden" name="id_coordenadora" value="${coordenadora.id}">
+                                <input type="hidden" name="id_tesoureira" value="${tesoureira.id}">
+                                <input type="hidden" name="id_secretaria" value="${secretaria.id}">    
+                                <input type="hidden" name="next_url" value="lista_irma_para_escolher_tesoureira.jsp">
+                                <input type="submit" value="Add Tesoureira">
+                            </form>
+                            <br/>
+                            <b>Secretária:</b> 
+                            ${secretaria.nomeReligioso}
+                            <form action="/ImCarm_2.0/ServletControler" method="post">
+                                <input type="hidden" name="action" value="24">
+                                <input type="hidden" name="initial_index_freira" value="0">
+                                <input type="hidden" name="id_fraternidade" value="${fraternidade.idFraternidade}">
+                                <input type="hidden" name="id_coordenadora" value="${coordenadora.id}">
+                                <input type="hidden" name="id_tesoureira" value="${tesoureira.id}">
+                                <input type="hidden" name="id_secretaria" value="${secretaria.id}">
+                                <input type="hidden" name="next_url" value="lista_irma_para_escolher_secretaria.jsp">
+                                <input type="submit" value="Add Secretária">
+                            </form>
+                            <form action="/ImCarm_2.0/ServletControler" method="post">
+                                <input type="hidden" name="action" value="26">
+                                <input type="date" name="data_inicio">
+                                <input type="date" name="data_termino">
+                                <b>Esta é a atual Coordenação desta Fraternidade?</b>
+                                <input type="radio" name="is_atual" value="Sim"> Sim
+                                <input type="radio" name="is_atual" value="Não" checked> Não
+                                <input type="hidden" name="id_fraternidade" value="${fraternidade.idFraternidade}">
+                                <input type="hidden" name="id_coordenadora" value="${coordenadora.id}">
+                                <input type="hidden" name="id_tesoureira" value="${tesoureira.id}">
+                                <input type="hidden" name="id_secretaria" value="${secretaria.id}">
+                                <input type="submit" value="Salvar">
+                            </form>
+
                         </div>
                     </div>
                 </div>

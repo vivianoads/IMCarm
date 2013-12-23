@@ -159,10 +159,11 @@ public class FraternidadeDao {
 		con.close();
 	}
 	
-	public void apagaFraternidade(int idFraternidade) throws ClassNotFoundException, SQLException{
+	public void apagaFraternidade(Integer idFraternidade) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "DELETE FROM fraternidade WHERE id_fraternidade ='" + idFraternidade + "'";
+		String sql = "DELETE FROM fraternidade WHERE id_fraternidade = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
+                ps.setInt(1, idFraternidade);
 		ps.executeUpdate();
 		ps.close();
 		con.close();

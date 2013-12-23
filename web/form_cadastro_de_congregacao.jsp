@@ -3,9 +3,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <title>Cadastra Casa de Missão</title>
+        <title>Cadastra Congregação</title>
         <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
-        <link href="Estilolistacasasdemissaoparatransferirrirmas.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
+        <link href="estilo_form_cadastro_de_congregacao.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
     </head>
 
     <body>
@@ -27,17 +27,18 @@
                 <div id="conteudo_centro">
                     <div id="menu">
                         <div id="conteudo_menu">
-                            <div id="linha_menu_escolhida">
+                            <div id="linha_menu">
                                 <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
                                     <input type=hidden name="action" value="12">
                                     <input type=hidden name="next_url" value="cadastrodecasasdemissao.jsp">
                                     <input type="image" src="IconeCadastrarCasaDeMissao.png">
                                 </form>
                             </div>
-                            <div id="linha_menu">
-                                <a href="/ImCarm_2.0/cadastrodecongregacoes.jsp">
-                                    <img src="IconeCadastrarCongregacao.png">
-                                </a>
+                            <div id="linha_menu_escolhida">
+                                <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                    <input type=hidden name="action" value="29">
+                                    <input type="image" src="IconeCadastrarCongregacao.png">
+                                </form>
                             </div>
                             <div id="linha_menu">
                                 <a href="/ImCarm_2.0/cadastrodeformandas.jsp">
@@ -58,51 +59,45 @@
                     </div>
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
-                            <h3 align="center">Selecionar Fraternidade para Transferir a Irmã ${freira.nomeCivil}</h3>
-                            <c:forEach items="${fraternidadespaginada}" var="fraternidade">
-                                <div id="linha_conteudo">
-                                    <div id="linha_conteudo_nome">
-                                        ${fraternidade.nome} + ${fraternidade.idFraternidade}
-                                    </div>
-<!--                                    <div id="linha_conteudo_alterar">
-                                        <form action="/ImCarm_2.0/ServletControler" method="post">
-                                            <input type=hidden name="action" value="13">
-                                            <input type=hidden name="id_fraternidade" value="${fraternidade.idFraternidade}">
-                                            <button class="i2Style_alterar">Adicionar Irmãs</button>
-                                        </form>
-                                    </div>-->
-                                    <div id="linha_conteudo_apagar">
-                                        <form action="/ImCarm_2.0/ServletControler" method="post">
-                                            <input type="hidden" name="action" value="22">
-                                            <input type="hidden" name="id_fraternidade" value="${fraternidade.idFraternidade}">
-                                            <input type="hidden" name="id_freira" value="${freira.id}">
-                                            <input type="hidden" name="next_url" value="confirmatransferencidefreiradecasademissao.jsp">
-                                            <button class="i2Style_apagar">Transferir</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </c:forEach>
-                            <table>
-                                <tr>
-                                    <c:forEach items="${paginacao}" var="pagina">
-                                        <td>
-                                            <form action="/ImCarm_2.0/ServletControler" method="post">
-                                                <input type="hidden" name="action" value="10">
-                                                <input type="hidden" name="initial_index" value="${pagina}">
-                                                <input type=hidden name="next_url" value="listacadasdemissaoparaadicionarirmas.jsp">
-                                                <input type="submit" value="${pagina}">
-                                            </form>
-                                        </td>
-                                    </c:forEach>
-                                </tr>
-                            </table>
-                            
-<!--                                <form action="/ImCarm_2.0/ServletControler" method="post">
-                                    <input type="hidden" name="action" value="17">
-                                    <input type="hidden" name="pagina" value="${pagina}">
-                                    <input type="submit" value="${pagina}">
-                                </form>-->
-                            
+                            <form name="cadastroFormandas" action="/ImCarm_2.0/ServletControler" method="post">	
+                                <h3 align="center">Cadastrar/Alterar Congregação</h3>
+                                <h5>${mensagem_erro}</h5>
+                                <b>Nome:</b>
+                                <input size="80" type="text" name="nome" value="${congregacao.nome}">
+                                <b>Data de Fundação:</b>
+                                <input type="date" name="data_fundacao" value="${congregacao.dataFundacao}">
+                                <br/>
+                                <br/>
+                                <b>Carisma:</b>
+                                <input size="123" type="text" name="carisma" value="${congregacao.carisma}">
+                                <br/>
+                                <br/>
+                                <b>Lema:</b>
+                                <input size="125" type="text" name="lema" value="${congregacao.lema}">
+                                <br/>
+                                <br/>
+                                <b>Data de Agregação à Órdem:</b>
+                                <input type="date" name="data_agregacao_a_ordem" value="${congregacao.dataAgregacaoOrdem}">
+                                <b>Data de Ereção Canônica:</b>
+                                <input type="date" name="data_erecao_canonica" value="${congregacao.dataErecaoCanonica}">
+                                <br/>
+                                <br/>
+                                <b>Cidade de Fundação:</b>
+                                <input size="80" type="text" name="cidade_fundacao" value="${congregacao.cidadeFundacao}">
+                                <br/>
+                                <br/>
+                                <b>Fundador</b>
+                                <input size="52" type="text" name="fundador" value="${congregacao.fundador}">
+                                <b>Cofundador</b>
+                                <input size="52" type="text" name="co_fundador" value="${congregacao.coFundador}">
+                                <br/>
+                                <br/>
+                                <input type="hidden" name="action" value="31">
+                                <input type="hidden" name="id_congregacao" value="${congregacao.idCongregacao}">
+                                id = ${congregacao.idCongregacao}
+                                <input type="hidden" name="option" value="${option}">
+                                <input type="submit" class="i2Style" value="Salvar">
+                            </form>
                         </div>
                     </div>
                 </div>

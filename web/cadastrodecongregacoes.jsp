@@ -13,8 +13,9 @@
                     <img src="informatize_logo_system.png">
                 </div>
                 <div id="user_options">
+                    Usuario Logado: 
                     <br/>
-                    Usuario Logado:  [ VIVIANO ] ${usuariologado.nome}
+                    [ ${usuarioLogado.nomeCivil} ] 
                     <br/>
                     <br/>
                     <button class="i2Style_logout"> Sair</button>
@@ -25,14 +26,18 @@
                     <div id="menu">
                         <div id="conteudo_menu">
                             <div id="linha_menu">
-                                <a href="/ImCarm_2.0/cadastrodecasasdemissao.jsp">
-                                    <img src="IconeCadastrarCasaDeMissao.png">
-                                </a>
+                                <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                    <input type=hidden name="action" value="12">
+                                    <input type=hidden name="next_url" value="cadastrodecasasdemissao.jsp">
+                                    <input type="image" src="IconeCadastrarCasaDeMissao.png">
+                                </form>
                             </div>
-                            <div id="linha_menu">
-                                <a href="/ImCarm_2.0/cadastrodecongregacoes.jsp">
-                                    <img src="IconeCadastrarCongregacao.png">
-                                </a>
+                            <div id="linha_menu_escolhida">
+                                <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                    <input type=hidden name="action" value="12">
+                                    <input type=hidden name="next_url" value="cadastrodecongregacoes.jsp">
+                                    <input type="image" src="IconeCadastrarCongregacao.png">
+                                </form>
                             </div>
                             <div id="linha_menu">
                                 <a href="/ImCarm_2.0/cadastrodeformandas.jsp">
@@ -53,7 +58,64 @@
                     </div>
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
-                            <a href="/ImCarm/#">
+                            <div id="linha_menu_interno">
+                                <div id="conteudo_menu_interno1">
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="30">
+                                        <!--<input type=hidden name="next_url" value="formcadastracasademissao.jsp">-->
+                                        <button class="i2Style_menu">Criar Congregação</button>
+                                    </form>
+                                </div>
+                                <div id="conteudo_menu_interno2">
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="10">
+                                        <input type=hidden name="initial_index" value="0">
+                                        <input type=hidden name="next_url" value="listacadasdemissaoparaeditar.jsp">
+                                        <button class="i2Style_menu">Modificar Congregação</button>
+                                    </form>
+                                </div>
+                                <div id="conteudo_menu_interno3">
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="10">
+                                        <input type=hidden name="initial_index" value="0">
+                                        <input type=hidden name="next_url" value="listacadasdemissaoparaeditar.jsp">
+                                        <button class="i2Style_menu">Apagar Congregação</button>
+                                    </form>
+                                </div>
+<!--                                <div id="conteudo_menu_interno4">
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="10">
+                                        <input type=hidden name="initial_index" value="0">
+                                        <input type=hidden name="next_url" value="listacadasdemissaoparaadicionarirmas.jsp">
+                                        <button class="i2Style_menu">##</button>
+                                    </form>
+                                </div>
+                                <div id="conteudo_menu_interno5">
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="20">
+                                        <input type=hidden name="initial_index_freira" value="0">
+                                        <input type=hidden name="next_url" value="listafreirasparatransferirdecasademissao.jsp">
+                                        <button class="i2Style_menu">##</button>
+                                    </form>
+                                </div>
+                                <div id="conteudo_menu_interno6">
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="10">
+                                        <input type=hidden name="initial_index" value="0">
+                                        <input type=hidden name="next_url" value="listacadasdemissaoparaadicionarcoordenacao.jsp">
+                                        <button class="i2Style_menu">##</button>
+                                    </form>
+                                </div>
+                                <div id="conteudo_menu_interno7">
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="10">
+                                        <input type=hidden name="initial_index" value="0">
+                                        <input type=hidden name="next_url" value="listacadasdemissaoparaeditarcoordenacao.jsp">
+                                        <button class="i2Style_menu">##</button>
+                                    </form>
+                                </div>-->
+                            </div>
+<!--                            <a href="/ImCarm/#">
                                 <button class="i2Style_menu">Criar Congregação</button>
                             </a>
                             <a href="/ImCarm/#">
@@ -61,7 +123,7 @@
                             </a>
                             <a href="/ImCarm/#">
                                 <button class="i2Style_menu">Apagar Congregação</button>
-                            </a>
+                            </a>-->
                         </div>
                     </div>
                 </div>
@@ -84,7 +146,7 @@
                             <div id="elementos">
                                 <table cellspacing="37" width="780">
                                     <tr>
-                                        <td>Seja Bem Vindo ${usuarioLogado.cpfFreira}</td>
+                                        <td>Seja Bem Vindo </td>
                                     </tr>
                                     <tr>
                                         <td><a href="/ImCarm/#"><img src="IconeAdicionarCongregacoes.png"></a></td> 

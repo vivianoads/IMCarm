@@ -1,25 +1,3 @@
-package tests;
-
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-
-import com.viviano.imcarm.entidades.CongregacaoBean;
-import com.viviano.imcarm.entidades.FraternidadeBean;
-import com.viviano.imcarm.entidades.FreiraBean;
-import com.viviano.imcarm.entidades.FreiraEquipeBean;
-import com.viviano.imcarm.entidades.LoginBean;
-import com.viviano.imcarm.persistencia.CongregacaoDao;
-import com.viviano.imcarm.persistencia.FraternidadeDao;
-import com.viviano.imcarm.persistencia.FreiraDao;
-import com.viviano.imcarm.persistencia.LoginDao;
-
-
-
-public class App {
-	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		
 //		FraternidadeDao fraternidadeDao =  new FraternidadeDao();
 //		FraternidadeBean fraternidadeBean = new FraternidadeBean();
@@ -186,16 +164,30 @@ public class App {
 //            Integer i = new Integer(x);
 //            System.out.println(i+10);
             
+//            ERROR
+//            FreiraDao freiraDao = new FreiraDao();
+//            List<Integer> idFreiras = new ArrayList<Integer>();
+//            List<FreiraBean> freiras = new ArrayList<FreiraBean>();
+//
+//            idFreiras = freiraDao.getAllFreiraBeanSemAgregacao();
+//            
+//            for (Integer freiraBean : idFreiras) {
+//                System.out.println(freiraBean);
+//            }
             
-            FreiraDao freiraDao = new FreiraDao();
-            List<Integer> idFreiras = new ArrayList<Integer>();
-            List<FreiraBean> freiras = new ArrayList<FreiraBean>();
-
-            idFreiras = freiraDao.getAllFreiraBeanSemAgregacao();
+//            AgregacaoBean agregacaoBean = new AgregacaoBean();
+//            agregacaoBean.setFraternidade(21);
+//            agregacaoBean.setFreira(6);
+//            
+//            AgregacaoDao agregacaoDao = new AgregacaoDao();
+//            agregacaoDao.alteraAgregacoes(33, 6, agregacaoBean);
             
-            for (Integer freiraBean : idFreiras) {
-                System.out.println(freiraBean);
-            }
-        }
-
-}
+//            Calendar c = Calendar.getInstance();
+//            c.set(2013, 12, 01);
+////            System.out.println(c);
+//            Calendar c2 = Calendar.getInstance();
+//            
+//            c.setTimeInMillis(1388630819464L);
+//            c2.setTimeInMillis(1354416419464L);
+//            
+//            System.out.println(c2);

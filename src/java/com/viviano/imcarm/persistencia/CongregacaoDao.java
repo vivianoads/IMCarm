@@ -25,6 +25,7 @@ public class CongregacaoDao {
 
 		Connection con = conexao.getConnection();
 
+                
 		String sqlInsercao = "INSERT INTO Congregacao (Nome, Carisma, Lema, Data_fundacao, Data_agregacao_ordem, Data_erecao_canonica, Cidade_fundacao, Fundador, Co_fundador) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		PreparedStatement ps = con.prepareStatement(sqlInsercao);
@@ -32,17 +33,38 @@ public class CongregacaoDao {
 		ps.setString(1, congregacao.getNome());
 		ps.setString(2, congregacao.getCarisma());
 		ps.setString(3, congregacao.getLema());
-		ps.setDate(4, (Date) congregacao.getDataFundacao());
-		ps.setDate(5, (Date) congregacao.getDataAgregacaoOrdem());
-		ps.setDate(6, (Date) congregacao.getDataErecaoCanonica());
+		ps.setString(4, congregacao.getDataFundacao());
+		ps.setString(5, congregacao.getDataAgregacaoOrdem());
+		ps.setString(6, congregacao.getDataErecaoCanonica());
 		ps.setString(7, congregacao.getCidadeFundacao());
-		ps.setString(8, congregacao.getCidadeFundacao());
-		ps.setString(9, congregacao.getFundador());
-		ps.setString(10, congregacao.getCoFundador());
+		ps.setString(8, congregacao.getFundador());
+		ps.setString(9, congregacao.getCoFundador());
 
-		ps.execute();
+                if(this.getCountCongregacao() == 0){
+                    ps.execute();
+                }else{
+                    throw new SQLException("Congregação Já está cadastrada");
+                }
 		ps.close();
 		con.close();
+	}
+        
+        public Integer getCountCongregacao() throws ClassNotFoundException, SQLException{
+		
+		Connection con = conexao.getConnection();
+		
+		String sql = "SELECT COUNT(*) FROM congregacao";
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		ResultSet rs = stat.executeQuery();
+		Integer countCongregacao = 0;
+		if(rs.first()){
+                    countCongregacao = rs.getInt(1);
+		}
+		rs.close();
+		stat.close();
+		con.close();
+		
+		return countCongregacao;
 	}
 	
 	public CongregacaoBean getCongregacao(int id_congregacao) throws ClassNotFoundException, SQLException{
@@ -58,9 +80,9 @@ public class CongregacaoDao {
 			congregacaoBean.setNome(rs.getString("nome"));
 			congregacaoBean.setCarisma(rs.getString("carisma"));
 			congregacaoBean.setLema(rs.getString("lema"));
-			congregacaoBean.setDataFundacao(rs.getDate("data_fundacao"));
-			congregacaoBean.setDataAgregacaoOrdem(rs.getDate("data_agregacao_ordem"));
-			congregacaoBean.setDataErecaoCanonica(rs.getDate("data_erecao_canonica"));
+			congregacaoBean.setDataFundacao(rs.getString("data_fundacao"));
+			congregacaoBean.setDataAgregacaoOrdem(rs.getString("data_agregacao_ordem"));
+			congregacaoBean.setDataErecaoCanonica(rs.getString("data_erecao_canonica"));
 			congregacaoBean.setFundador(rs.getString("fundador"));
 			congregacaoBean.setCoFundador(rs.getString("co_fundador"));
 			congregacaoBean.setCidadeFundacao(rs.getString("cidade_fundacao"));
@@ -69,6 +91,33 @@ public class CongregacaoDao {
 		stat.close();
 		con.close();
 		
+		return congregacaoBean;
+	}
+        
+        public CongregacaoBean getCongregacao() throws ClassNotFoundException, SQLException{
+		
+		Connection con = conexao.getConnection();
+		
+		String sql = "SELECT * FROM congregacao";
+		Statement stat = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		ResultSet rs = stat.executeQuery(sql);
+		CongregacaoBean congregacaoBean = new CongregacaoBean();
+		while (rs.next()){
+			congregacaoBean.setIdCongregacao(rs.getInt("id_congregacao"));
+			congregacaoBean.setNome(rs.getString("nome"));
+			congregacaoBean.setCarisma(rs.getString("carisma"));
+			congregacaoBean.setLema(rs.getString("lema"));
+			congregacaoBean.setDataFundacao(rs.getString("data_fundacao"));
+			congregacaoBean.setDataAgregacaoOrdem(rs.getString("data_agregacao_ordem"));
+			congregacaoBean.setDataErecaoCanonica(rs.getString("data_erecao_canonica"));
+			congregacaoBean.setFundador(rs.getString("fundador"));
+			congregacaoBean.setCoFundador(rs.getString("co_fundador"));
+			congregacaoBean.setCidadeFundacao(rs.getString("cidade_fundacao"));
+		}
+		rs.close();
+		stat.close();
+		con.close();
+		System.out.println(congregacaoBean.getIdCongregacao());
 		return congregacaoBean;
 	}
 	
@@ -86,9 +135,9 @@ public class CongregacaoDao {
 				congregacaoBean.setNome(rs.getString("nome"));
 				congregacaoBean.setCarisma(rs.getString("carisma"));
 				congregacaoBean.setLema(rs.getString("lema"));
-				congregacaoBean.setDataFundacao(rs.getDate("data_fundacao"));
-				congregacaoBean.setDataAgregacaoOrdem(rs.getDate("data_agregacao_ordem"));
-				congregacaoBean.setDataErecaoCanonica(rs.getDate("data_erecao_canonica"));
+				congregacaoBean.setDataFundacao(rs.getString("data_fundacao"));
+				congregacaoBean.setDataAgregacaoOrdem(rs.getString("data_agregacao_ordem"));
+				congregacaoBean.setDataErecaoCanonica(rs.getString("data_erecao_canonica"));
 				congregacaoBean.setFundador(rs.getString("fundador"));
 				congregacaoBean.setCoFundador(rs.getString("co_fundador"));
 				congregacaoBean.setCidadeFundacao(rs.getString("cidade_fundacao"));
@@ -101,27 +150,31 @@ public class CongregacaoDao {
 			return congregacoes;
 		}
 	
-	public void alteraCongregacao(String nomeCongregacao, CongregacaoBean congregacaoBean) throws ClassNotFoundException, SQLException{
+	public void alteraCongregacao(int idCongregacao, CongregacaoBean congregacaoBean) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "UPDATE congregacao SET id_congregacao = ?, nome = ?, carisma = ?, lema = ?, data_fundacao = ?, data_agregacao_ordem = ?, data_erecao_canonica = ?, cidade_fundacao = ?, fundador = ?, co_fundador = ? WHERE nome ILIKE'" + nomeCongregacao + "'";
+		String sql = "UPDATE congregacao SET nome = ?, carisma = ?, lema = ?, data_fundacao = ?, data_agregacao_ordem = ?, data_erecao_canonica = ?, cidade_fundacao = ?, fundador = ?, co_fundador = ? WHERE id_congregacao = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setInt(1, congregacaoBean.getIdCongregacao());
-		ps.setString(2, congregacaoBean.getNome());
-		ps.setString(3, congregacaoBean.getCarisma());
-		ps.setString(4, congregacaoBean.getLema());
-		ps.setDate(5, (Date) congregacaoBean.getDataFundacao());
-		ps.setDate(6, (Date) congregacaoBean.getDataAgregacaoOrdem());
-		ps.setDate(7, (Date) congregacaoBean.getDataErecaoCanonica());
-		ps.setString(8, congregacaoBean.getCidadeFundacao());
-		ps.setString(9, congregacaoBean.getFundador());
-		ps.setString(10, congregacaoBean.getCoFundador());
-		
+		ps.setString(1, congregacaoBean.getNome());
+		ps.setString(2, congregacaoBean.getCarisma());
+		ps.setString(3, congregacaoBean.getLema());
+		ps.setString(4, congregacaoBean.getDataFundacao());
+		ps.setString(5, congregacaoBean.getDataAgregacaoOrdem());
+		ps.setString(6, congregacaoBean.getDataErecaoCanonica());
+		ps.setString(7, congregacaoBean.getCidadeFundacao());
+		ps.setString(8, congregacaoBean.getFundador());
+		ps.setString(9, congregacaoBean.getCoFundador());
+                ps.setInt(10, idCongregacao);
+                
+		ps.executeUpdate();
+		ps.close();
+		con.close();
 	}
 	
-	public void apagaCongregacao(String nomeCongregacao) throws ClassNotFoundException, SQLException{
+	public void apagaCongregacao(Integer idCongregacao) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "DELETE FROM congregacao WHERE nome ILIKE'" + nomeCongregacao + "'";
+		String sql = "DELETE FROM congregacao WHERE id_congregacao = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
+                ps.setInt(1, idCongregacao);
 		ps.executeUpdate();
 		ps.close();
 		con.close();

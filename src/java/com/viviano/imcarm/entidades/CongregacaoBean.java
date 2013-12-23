@@ -1,112 +1,93 @@
 package com.viviano.imcarm.entidades;
 
-import java.util.Date;
-
 public class CongregacaoBean {
-	
-	private int idCongregacao;
-	private String nome, carisma, lema, cidadeFundacao, fundador, coFundador;
-	private Date dataFundacao, dataAgregacaoOrdem, DataErecaoCanonica;
-	
-	public CongregacaoBean(int idCongregacao, String nome, String carisma,
-			String lema, String cidadeFundacao, String fundador,
-			String coFundador, Date dataFundacao, Date dataAgregacaoOrdem,
-			Date dataErecaoCanonica) {
-		this.idCongregacao = idCongregacao;
-		this.nome = nome;
-		this.carisma = carisma;
-		this.lema = lema;
-		this.cidadeFundacao = cidadeFundacao;
-		this.fundador = fundador;
-		this.coFundador = coFundador;
-		this.dataFundacao = dataFundacao;
-		this.dataAgregacaoOrdem = dataAgregacaoOrdem;
-		DataErecaoCanonica = dataErecaoCanonica;
-		
-	}
 
-	
-	public CongregacaoBean(){
-		
-	}
-	public int getIdCongregacao() {
-		return idCongregacao;
-	}
+    private int idCongregacao;
+    private String nome, carisma, lema, cidadeFundacao, fundador, coFundador;
+    private String dataFundacao, dataAgregacaoOrdem, dataErecaoCanonica;
 
-	public void setIdCongregacao(int idCongregacao) {
-		this.idCongregacao = idCongregacao;
-	}
+    public CongregacaoBean() {
 
-	public String getNome() {
-		return nome;
-	}
+    }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public int getIdCongregacao() {
+        return idCongregacao;
+    }
 
-	public String getCarisma() {
-		return carisma;
-	}
+    public void setIdCongregacao(int idCongregacao) {
+        this.idCongregacao = idCongregacao;
+    }
 
-	public void setCarisma(String carisma) {
-		this.carisma = carisma;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public String getLema() {
-		return lema;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public void setLema(String lema) {
-		this.lema = lema;
-	}
+    public String getCarisma() {
+        return carisma;
+    }
 
-	public String getCidadeFundacao() {
-		return cidadeFundacao;
-	}
+    public void setCarisma(String carisma) {
+        this.carisma = carisma;
+    }
 
-	public void setCidadeFundacao(String cidadeFundacao) {
-		this.cidadeFundacao = cidadeFundacao;
-	}
+    public String getLema() {
+        return lema;
+    }
 
-	public String getFundador() {
-		return fundador;
-	}
+    public void setLema(String lema) {
+        this.lema = lema;
+    }
 
-	public void setFundador(String fundador) {
-		this.fundador = fundador;
-	}
+    public String getCidadeFundacao() {
+        return cidadeFundacao;
+    }
 
-	public String getCoFundador() {
-		return coFundador;
-	}
+    public void setCidadeFundacao(String cidadeFundacao) {
+        this.cidadeFundacao = cidadeFundacao;
+    }
 
-	public void setCoFundador(String coFundador) {
-		this.coFundador = coFundador;
-	}
+    public String getFundador() {
+        return fundador;
+    }
 
-	public Date getDataFundacao() {
-		return dataFundacao;
-	}
+    public void setFundador(String fundador) {
+        this.fundador = fundador;
+    }
 
-	public void setDataFundacao(Date dataFundacao) {
-		this.dataFundacao = dataFundacao;
-	}
+    public String getCoFundador() {
+        return coFundador;
+    }
 
-	public Date getDataAgregacaoOrdem() {
-		return dataAgregacaoOrdem;
-	}
+    public void setCoFundador(String coFundador) {
+        this.coFundador = coFundador;
+    }
 
-	public void setDataAgregacaoOrdem(Date dataAgregacaoOrdem) {
-		this.dataAgregacaoOrdem = dataAgregacaoOrdem;
-	}
+    public String getDataFundacao() {
+        return dataFundacao;
+    }
 
-	public Date getDataErecaoCanonica() {
-		return DataErecaoCanonica;
-	}
+    public void setDataFundacao(String dataFundacao) {
+        this.dataFundacao = dataFundacao;
+    }
 
-	public void setDataErecaoCanonica(Date dataErecaoCanonica) {
-		DataErecaoCanonica = dataErecaoCanonica;
-	}
+    public String getDataAgregacaoOrdem() {
+        return dataAgregacaoOrdem;
+    }
+
+    public void setDataAgregacaoOrdem(String dataAgregacaoOrdem) {
+        this.dataAgregacaoOrdem = dataAgregacaoOrdem;
+    }
+
+    public String getDataErecaoCanonica() {
+        return dataErecaoCanonica;
+    }
+
+    public void setDataErecaoCanonica(String dataErecaoCanonica) {
+        this.dataErecaoCanonica = dataErecaoCanonica;
+    }
 
 }

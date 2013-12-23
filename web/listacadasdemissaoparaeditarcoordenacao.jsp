@@ -5,7 +5,7 @@
     <head>
         <title>Cadastra Casa de Missão</title>
         <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
-        <link href="Estilolistacasasdemissaoparatransferirrirmas.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
+        <link href="estilolistacasasdemissaoparaeditarcoordenacao.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
     </head>
 
     <body>
@@ -58,7 +58,7 @@
                     </div>
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
-                            <h3 align="center">Selecionar Fraternidade para Transferir a Irmã ${freira.nomeCivil}</h3>
+                            <h3 align="center">Selecionar Fraternidade para Editar Coordenação</h3>
                             <c:forEach items="${fraternidadespaginada}" var="fraternidade">
                                 <div id="linha_conteudo">
                                     <div id="linha_conteudo_nome">
@@ -73,13 +73,12 @@
                                     </div>-->
                                     <div id="linha_conteudo_apagar">
                                         <form action="/ImCarm_2.0/ServletControler" method="post">
-                                            <input type="hidden" name="action" value="22">
+                                            <input type="hidden" name="action" value="28">
                                             <input type="hidden" name="id_fraternidade" value="${fraternidade.idFraternidade}">
-                                            <input type="hidden" name="id_freira" value="${freira.id}">
-                                            <input type="hidden" name="next_url" value="confirmatransferencidefreiradecasademissao.jsp">
-                                            <button class="i2Style_apagar">Transferir</button>
+                                            <input type="hidden" name="next_url" value="confirma_edicao_de_coordenacao_de_casa_de_missao.jsp">
+                                            <button class="i2Style_apagar">Editar Coordenacao</button>
                                         </form>
-                                    </div>
+                                    </div> 
                                 </div>
                             </c:forEach>
                             <table>
@@ -89,7 +88,7 @@
                                             <form action="/ImCarm_2.0/ServletControler" method="post">
                                                 <input type="hidden" name="action" value="10">
                                                 <input type="hidden" name="initial_index" value="${pagina}">
-                                                <input type=hidden name="next_url" value="listacadasdemissaoparaadicionarirmas.jsp">
+                                                <input type=hidden name="next_url" value="listacadasdemissaoparaeditarcoordenacao.jsp">
                                                 <input type="submit" value="${pagina}">
                                             </form>
                                         </td>

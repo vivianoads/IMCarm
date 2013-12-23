@@ -53,11 +53,12 @@ public class AgregacaoDao {
 		return agregacaoBean;
 	}
 	
-	public AgregacaoBean getAgregacaoFreira(double cpfFreira) throws ClassNotFoundException, SQLException{
+	public AgregacaoBean getAgregacaoFreira(Integer idFreira) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "SELECT * FROM agregacao WHERE cpf_freira = '" + cpfFreira + "'";
-		Statement stat = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-		ResultSet rs = stat.executeQuery(sql);
+		String sql = "SELECT * FROM agregacao WHERE id_freira = ?";
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		stat.setInt(1, idFreira);
+                ResultSet rs = stat.executeQuery();
 		AgregacaoBean agregacaoBean = null;
 		if (rs.next()){
 			agregacaoBean = new AgregacaoBean();
@@ -95,7 +96,7 @@ public class AgregacaoDao {
 	
 	public void alteraAgregacoes(Integer idFraternidade, Integer idFreira, AgregacaoBean agregacaoBean) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "UPDATE agregacao SET id_fraternidade = ?, id_freira = ? WHERE  id_fraternidade = ? AND cpf_freira = ?";
+		String sql = "UPDATE agregacao SET id_fraternidade = ?, id_freira = ? WHERE  id_fraternidade = ? AND id_freira = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setInt(1, agregacaoBean.getFraternidade());
 		ps.setInt(2, agregacaoBean.getFreira());

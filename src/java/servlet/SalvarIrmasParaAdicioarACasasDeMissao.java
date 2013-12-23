@@ -47,7 +47,7 @@ public class SalvarIrmasParaAdicioarACasasDeMissao extends HttpServlet{
 	}
 	 for(int i = 0; i < irmas.length; i++){
 		 agregacaoBean.setFraternidade(id);
-		 agregacaoBean.setFreira(new Double(irmas[i]));		 
+//ERROR NESTE LOCAL		 agregacaoBean.setFreira(new Double(irmas[i]));		 
 		 try {
 			if (agregacaoDao.getAgregacaoFreira(agregacaoBean.getFreira()) == null){
 				agregacoesPossiveis.add(agregacaoBean);

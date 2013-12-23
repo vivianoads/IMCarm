@@ -4,28 +4,39 @@ import com.viviano.imcarm.commands.AdicionaIrmaACasadeMissaoCommand;
 import java.util.HashMap;
 import java.util.Map;
 
-import tests.AlteraIrma;
 
 import com.viviano.imcarm.commands.AlteraFormandaCommand;
 import com.viviano.imcarm.commands.AlteraIrmaCommand;
+import com.viviano.imcarm.commands.ApagarCongregacao;
 import com.viviano.imcarm.commands.ApagarFraternidadeCommand;
+import com.viviano.imcarm.commands.CadastraCongregacao;
+import com.viviano.imcarm.commands.CadastrarCoordenacaoDeFraternidadeCommand;
 import com.viviano.imcarm.commands.CancelaAdicaodeFreiraACasaDeMissao;
 import com.viviano.imcarm.commands.CancelaCadastroCasaDeMissaoCommand;
+import com.viviano.imcarm.commands.CancelaCadastroCoordenacaoCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.Command;
 import com.viviano.imcarm.commands.ConfirmaCadastroFraternidadeCommand;
+import com.viviano.imcarm.commands.EditaCoordenacaoCommand;
 import com.viviano.imcarm.commands.EditaDadosCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.ExibeCasasDeMissaoCommand;
 import com.viviano.imcarm.commands.GravaCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.GravaFormandaCommand;
 import com.viviano.imcarm.commands.GravaIrmaCommand;
+import com.viviano.imcarm.commands.IrFormAlteraDadosCongregacao;
+import com.viviano.imcarm.commands.IrFormCadastroDeCongregacao;
+import com.viviano.imcarm.commands.IrParaCadastroDeCongregacao;
 import com.viviano.imcarm.commands.ListaCasasDeMissaoParaTransferirIrma;
 import com.viviano.imcarm.commands.ListaIrmasParaAdicionarACasaDeMissao;
+import com.viviano.imcarm.commands.ListaIrmasParaGerarCoordenacao;
 import com.viviano.imcarm.commands.ListaIrmasParaTransferirDeCasaDeMissao;
 import com.viviano.imcarm.commands.LoginCommand;
 import com.viviano.imcarm.commands.LogoutCommand;
 import com.viviano.imcarm.commands.SalvaAlteracoesCasasDeMissaoCommand;
 import com.viviano.imcarm.commands.SalvaAlteracoesIrmaCommand;
 import com.viviano.imcarm.commands.SalvaalteracoesFormandaCommand;
+import com.viviano.imcarm.commands.SalvarCoordenacaoDeFraternidade;
+import com.viviano.imcarm.commands.SelecionaCoordenadoraFraternidade;
+import com.viviano.imcarm.commands.TransferirIrmaDeCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.VerificaUsuarioLogadoCommand;
 
 public class Helper {
@@ -57,6 +68,18 @@ public class Helper {
                 mapCommands.put("19", new CancelaAdicaodeFreiraACasaDeMissao());
                 mapCommands.put("20", new ListaIrmasParaTransferirDeCasaDeMissao());
                 mapCommands.put("21", new ListaCasasDeMissaoParaTransferirIrma());
+                mapCommands.put("22", new TransferirIrmaDeCasaDeMissaoCommand());
+                mapCommands.put("23", new CadastrarCoordenacaoDeFraternidadeCommand());
+                mapCommands.put("24", new ListaIrmasParaGerarCoordenacao());
+                mapCommands.put("25", new SelecionaCoordenadoraFraternidade());
+                mapCommands.put("26", new SalvarCoordenacaoDeFraternidade());
+                mapCommands.put("27", new CancelaCadastroCoordenacaoCasaDeMissaoCommand());
+                mapCommands.put("28", new EditaCoordenacaoCommand());
+                mapCommands.put("29", new IrParaCadastroDeCongregacao());
+                mapCommands.put("30", new IrFormCadastroDeCongregacao());
+                mapCommands.put("31", new CadastraCongregacao());
+                mapCommands.put("32", new IrFormAlteraDadosCongregacao());
+                mapCommands.put("33", new ApagarCongregacao());
 	}
 	
 	public static Helper getInstance(){
