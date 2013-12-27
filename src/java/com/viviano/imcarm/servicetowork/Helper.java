@@ -22,13 +22,17 @@ import com.viviano.imcarm.commands.ExibeCasasDeMissaoCommand;
 import com.viviano.imcarm.commands.GravaCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.GravaFormandaCommand;
 import com.viviano.imcarm.commands.GravaIrmaCommand;
+import com.viviano.imcarm.commands.IrCadastroFormandasCommand;
+import com.viviano.imcarm.commands.IrCadastroFreiraCommand;
 import com.viviano.imcarm.commands.IrFormAlteraDadosCongregacao;
+import com.viviano.imcarm.commands.IrFormCadastraGovernoGeralCommand;
 import com.viviano.imcarm.commands.IrFormCadastroDeCongregacao;
 import com.viviano.imcarm.commands.IrParaCadastroDeCongregacao;
 import com.viviano.imcarm.commands.ListaCasasDeMissaoParaTransferirIrma;
 import com.viviano.imcarm.commands.ListaIrmasParaAdicionarACasaDeMissao;
 import com.viviano.imcarm.commands.ListaIrmasParaGerarCoordenacao;
 import com.viviano.imcarm.commands.ListaIrmasParaTransferirDeCasaDeMissao;
+import com.viviano.imcarm.commands.ListaIrmasSelecionarMadre;
 import com.viviano.imcarm.commands.LoginCommand;
 import com.viviano.imcarm.commands.LogoutCommand;
 import com.viviano.imcarm.commands.SalvaAlteracoesCasasDeMissaoCommand;
@@ -36,6 +40,7 @@ import com.viviano.imcarm.commands.SalvaAlteracoesIrmaCommand;
 import com.viviano.imcarm.commands.SalvaalteracoesFormandaCommand;
 import com.viviano.imcarm.commands.SalvarCoordenacaoDeFraternidade;
 import com.viviano.imcarm.commands.SelecionaCoordenadoraFraternidade;
+import com.viviano.imcarm.commands.SelecionaMadreGeralParaGovernoGeralCommand;
 import com.viviano.imcarm.commands.TransferirIrmaDeCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.VerificaUsuarioLogadoCommand;
 
@@ -80,6 +85,11 @@ public class Helper {
                 mapCommands.put("31", new CadastraCongregacao());
                 mapCommands.put("32", new IrFormAlteraDadosCongregacao());
                 mapCommands.put("33", new ApagarCongregacao());
+                mapCommands.put("34", new IrCadastroFormandasCommand());
+                mapCommands.put("35", new IrCadastroFreiraCommand());
+                mapCommands.put("36", new IrFormCadastraGovernoGeralCommand());
+                mapCommands.put("37", new ListaIrmasSelecionarMadre());
+                mapCommands.put("38", new SelecionaMadreGeralParaGovernoGeralCommand());
 	}
 	
 	public static Helper getInstance(){

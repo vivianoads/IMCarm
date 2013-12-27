@@ -46,19 +46,31 @@
                                 </a>-->
                             </div>
                             <div id="linha_menu">
-                                <a href="/ImCarm_2.0/cadastrodeformandas.jsp">
+                                <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                    <input type=hidden name="action" value="34">
+                                    <input type="image" src="IconeCadastrarFormandas.png">
+                                </form>
+<!--                                <a href="/ImCarm_2.0/cadastrodeformandas.jsp">
                                     <img src="IconeCadastrarFormandas.png">
-                                </a>
+                                </a>-->
                             </div>
                             <div id="linha_menu">
-                                <a href="/ImCarm_2.0/cadastrodeirmas.jsp">
+                                <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                    <input type=hidden name="action" value="35">
+                                    <input type="image" src="IconeCadastrarFreiras.png">
+                                </form>
+<!--                                <a href="/ImCarm_2.0/cadastrodeirmas.jsp">
                                     <img src="IconeCadastrarFreiras.png">
-                                </a>
+                                </a>-->
                             </div>
                             <div id="linha_menu">
-                                <a href="/ImCarm/#">
+                                <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                    <input type=hidden name="action" value="*">
+                                    <input type="image" src="IconeRealizarBuscasNoSistema.png">
+                                </form>
+<!--                                <a href="/ImCarm/#">
                                     <img src="IconeRealizarBuscasNoSistema.png">
-                                </a>
+                                </a>-->
                             </div>
                         </div>
                     </div>

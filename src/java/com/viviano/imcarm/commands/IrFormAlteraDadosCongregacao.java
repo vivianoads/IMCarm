@@ -22,12 +22,11 @@ public class IrFormAlteraDadosCongregacao implements Command{
     @Override
     public String execute(HttpServletRequest request) {
         String nextPage = "form_cadastro_de_congregacao.jsp";
-        Integer idCongregacao = new Integer(request.getParameter("id_congregacao"));
         String option = request.getParameter("option");
         CongregacaoDao congregacaoDao = new CongregacaoDao();
         CongregacaoBean congregacaoBean = new CongregacaoBean();
         try {
-            congregacaoBean = congregacaoDao.getCongregacao(idCongregacao);
+            congregacaoBean = congregacaoDao.getCongregacao();
             request.setAttribute("congregacao", congregacaoBean);
             request.setAttribute("option", option);
         } catch (ClassNotFoundException ex) {

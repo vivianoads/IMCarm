@@ -68,42 +68,40 @@
                                 </div>
                                 <div id="conteudo_menu_interno2">
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type=hidden name="action" value="10">
-                                        <input type=hidden name="initial_index" value="0">
-                                        <input type=hidden name="next_url" value="listacadasdemissaoparaeditar.jsp">
+                                        <input type=hidden name="action" value="32">
                                         <button class="i2Style_menu">Modificar Congregação</button>
                                     </form>
                                 </div>
                                 <div id="conteudo_menu_interno3">
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type=hidden name="action" value="10">
-                                        <input type=hidden name="initial_index" value="0">
-                                        <input type=hidden name="next_url" value="listacadasdemissaoparaeditar.jsp">
-                                        <button class="i2Style_menu">Apagar Congregação</button>
+                                        <input type=hidden name="action" value="36">
+<!--                                        <input type=hidden name="initial_index" value="0">
+                                        <input type=hidden name="next_url" value="listacadasdemissaoparaeditar.jsp">-->
+                                        <button class="i2Style_menu">Add Governo Geral</button>
                                     </form>
                                 </div>
-<!--                                <div id="conteudo_menu_interno4">
+                                <div id="conteudo_menu_interno4">
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type=hidden name="action" value="10">
+                                        <input type=hidden name="action" value="*">
                                         <input type=hidden name="initial_index" value="0">
                                         <input type=hidden name="next_url" value="listacadasdemissaoparaadicionarirmas.jsp">
-                                        <button class="i2Style_menu">##</button>
+                                        <button class="i2Style_menu">Definir Gov. Geral Atual</button>
                                     </form>
                                 </div>
                                 <div id="conteudo_menu_interno5">
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
                                         <input type=hidden name="action" value="20">
-                                        <input type=hidden name="initial_index_freira" value="0">
-                                        <input type=hidden name="next_url" value="listafreirasparatransferirdecasademissao.jsp">
-                                        <button class="i2Style_menu">##</button>
+<!--                                        <input type=hidden name="initial_index_freira" value="0">
+                                        <input type=hidden name="next_url" value="listafreirasparatransferirdecasademissao.jsp">-->
+                                        <button class="i2Style_menu">Modificar Gov. Geral</button>
                                     </form>
                                 </div>
                                 <div id="conteudo_menu_interno6">
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type=hidden name="action" value="10">
+                                        <input type=hidden name="action" value="*">
                                         <input type=hidden name="initial_index" value="0">
                                         <input type=hidden name="next_url" value="listacadasdemissaoparaadicionarcoordenacao.jsp">
-                                        <button class="i2Style_menu">##</button>
+                                        <button class="i2Style_menu">Adicionar Eq. de Serviço</button>
                                     </form>
                                 </div>
                                 <div id="conteudo_menu_interno7">
@@ -111,9 +109,13 @@
                                         <input type=hidden name="action" value="10">
                                         <input type=hidden name="initial_index" value="0">
                                         <input type=hidden name="next_url" value="listacadasdemissaoparaeditarcoordenacao.jsp">
-                                        <button class="i2Style_menu">##</button>
+                                        <button class="i2Style_menu">Modificar Eq. de Serviço</button>
+                                        <!--INTERNO A ESSE MENU DEVE SER MOSTRADO UM FORMULÁRIO DE ALTERAÇÃO
+                                        DE DADOS DE EQUIPE DE SERVIÇO E BOTÕES DE ADIÇÃO E BAIXA DE IRMÃS E FORMANDAS
+                                        
+                                        *ERRO: A TABELA GREGAÇÃO DEVE SER SUBSTITUIDA PELA TABELA RESIDENCIA FRATERNIDADE-->
                                     </form>
-                                </div>-->
+                                </div>
                             </div>
 <!--                            <a href="/ImCarm/#">
                                 <button class="i2Style_menu">Criar Congregação</button>

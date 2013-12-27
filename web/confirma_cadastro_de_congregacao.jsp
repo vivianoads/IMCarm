@@ -109,7 +109,6 @@
                                 <div id="option_buttons_2">
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
                                         <input type="hidden" name="action" value="32">
-                                        <input type="hidden" name="id_congregacao" value="${congregacao.idCongregacao}">
                                         <input type="hidden" name="option" value="alterar">
                                         
                                         <input type="submit" class="i2Style_alterar" value="Alterar Dados">

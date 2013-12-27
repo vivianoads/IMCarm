@@ -13,8 +13,9 @@
                     <img src="informatize_logo_system.png">
                 </div>
                 <div id="user_options">
+                    Usuario Logado:  
                     <br/>
-                    Usuario Logado:  [ VIVIANO ] ${usuariologado.nome}
+                    [ ${usuariologado.nomeCivil} ] 
                     <br/>
                     <br/>
                     <button class="i2Style_logout"> Sair</button>
@@ -60,7 +61,16 @@
                                 <button class="i2Style_menu">Modificar Formanda</button>
                             </a>
                             <a href="/ImCarm_2.0/ServletControler?action=7">
-                                <button class="i2Style_menu">Apagar Formanda</button>
+                                <button class="i2Style_menu">Dar Baixa em Formanda</button>
+                            </a>
+                            <a href="/ImCarm_2.0/ServletControler?action=7">
+                                <button class="i2Style_menu">Add Formanda a Fase de Formação</button>
+                            </a>
+                            <a href="/ImCarm_2.0/ServletControler?action=7">
+                                <button class="i2Style_menu">Trocar Formanda de Fase de Formação</button>
+                            </a>
+                            <a href="/ImCarm_2.0/ServletControler?action=7">
+                                <button class="i2Style_menu">Transformar Formanda em Freira</button>
                             </a>
                         </div>
                     </div>
@@ -85,7 +95,7 @@
                     <div id="elementos">
                         <table cellspacing="37" width="780">
                             <tr>
-                                <td>Seja Bem Vindo ${usuarioLogado.cpfFreira}</td>
+                                <td>Seja Bem Vindo </td>
                             </tr>
                             <tr>
                                 <td><a href="/ImCarm/formcadastraformanda.jsp"><img src="IconeAdicionarFormandas.png"></a></td> 
