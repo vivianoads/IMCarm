@@ -14,8 +14,10 @@ import com.viviano.imcarm.commands.CadastrarCoordenacaoDeFraternidadeCommand;
 import com.viviano.imcarm.commands.CancelaAdicaodeFreiraACasaDeMissao;
 import com.viviano.imcarm.commands.CancelaCadastroCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.CancelaCadastroCoordenacaoCasaDeMissaoCommand;
+import com.viviano.imcarm.commands.CancelaCadastroGovernoGeral;
 import com.viviano.imcarm.commands.Command;
 import com.viviano.imcarm.commands.ConfirmaCadastroFraternidadeCommand;
+import com.viviano.imcarm.commands.ConfirmaCadastroGovernoGeral;
 import com.viviano.imcarm.commands.EditaCoordenacaoCommand;
 import com.viviano.imcarm.commands.EditaDadosCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.ExibeCasasDeMissaoCommand;
@@ -27,6 +29,7 @@ import com.viviano.imcarm.commands.IrCadastroFreiraCommand;
 import com.viviano.imcarm.commands.IrFormAlteraDadosCongregacao;
 import com.viviano.imcarm.commands.IrFormCadastraGovernoGeralCommand;
 import com.viviano.imcarm.commands.IrFormCadastroDeCongregacao;
+import com.viviano.imcarm.commands.IrFormCadastroEquipeDeServico;
 import com.viviano.imcarm.commands.IrParaCadastroDeCongregacao;
 import com.viviano.imcarm.commands.ListaCasasDeMissaoParaTransferirIrma;
 import com.viviano.imcarm.commands.ListaIrmasParaAdicionarACasaDeMissao;
@@ -37,9 +40,12 @@ import com.viviano.imcarm.commands.LoginCommand;
 import com.viviano.imcarm.commands.LogoutCommand;
 import com.viviano.imcarm.commands.SalvaAlteracoesCasasDeMissaoCommand;
 import com.viviano.imcarm.commands.SalvaAlteracoesIrmaCommand;
+import com.viviano.imcarm.commands.SalvaEquipeDeServico;
 import com.viviano.imcarm.commands.SalvaalteracoesFormandaCommand;
 import com.viviano.imcarm.commands.SalvarCoordenacaoDeFraternidade;
+import com.viviano.imcarm.commands.SalvarGovernoGeralCommand;
 import com.viviano.imcarm.commands.SelecionaCoordenadoraFraternidade;
+import com.viviano.imcarm.commands.SelecionaCoordenadoraParaEquipeDeServicoCommand;
 import com.viviano.imcarm.commands.SelecionaMadreGeralParaGovernoGeralCommand;
 import com.viviano.imcarm.commands.TransferirIrmaDeCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.VerificaUsuarioLogadoCommand;
@@ -90,6 +96,12 @@ public class Helper {
                 mapCommands.put("36", new IrFormCadastraGovernoGeralCommand());
                 mapCommands.put("37", new ListaIrmasSelecionarMadre());
                 mapCommands.put("38", new SelecionaMadreGeralParaGovernoGeralCommand());
+                mapCommands.put("39", new SalvarGovernoGeralCommand());
+                mapCommands.put("40", new CancelaCadastroGovernoGeral());
+                mapCommands.put("41", new ConfirmaCadastroGovernoGeral());
+                mapCommands.put("42", new IrFormCadastroEquipeDeServico());
+                mapCommands.put("43", new SelecionaCoordenadoraParaEquipeDeServicoCommand());
+                mapCommands.put("44", new SalvaEquipeDeServico());
 	}
 	
 	public static Helper getInstance(){

@@ -10,7 +10,7 @@ public class GovernoGeralBean {
         private FreiraBean[] conselhoFiscal = new FreiraBean[3];
         private String dataInicio;
         private String dataTermino;
-        private Boolean isaAtual;
+        private String isaAtual;
 	
 	public GovernoGeralBean(){
 		
@@ -89,11 +89,11 @@ public class GovernoGeralBean {
         this.conselheirasSuplentes = conselheirasSuplentes;
     }
 
-    public Boolean isIsaAtual() {
+    public String getIsaAtual() {
         return isaAtual;
     }
 
-    public void setIsaAtual(Boolean isaAtual) {
+    public void setIsaAtual(String isaAtual) {
         this.isaAtual = isaAtual;
     }
 

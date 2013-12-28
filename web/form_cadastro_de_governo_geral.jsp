@@ -184,18 +184,14 @@
                                 <br/>
                                 <b>Data Início: &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Data Término:</b>
                                 <form action="/ImCarm_2.0/ServletControler" method="post">
-                                    <input type="hidden" name="action" value="26">
+                                    <input type="hidden" name="action" value="39">
                                     <input type="date" name="data_inicio">
                                     <input type="date" name="data_termino">
                                     <br/>
                                     <br/>
                                     <b>Este é o Governo Geral Atual?</b>
-                                    <input type="radio" name="is_atual" value="Sim"> Sim
-                                    <input type="radio" name="is_atual" value="Não" checked> Não
-                                    <input type="hidden" name="id_fraternidade" value="${fraternidade.idFraternidade}">
-                                    <input type="hidden" name="id_coordenadora" value="${coordenadora.id}">
-                                    <input type="hidden" name="id_tesoureira" value="${tesoureira.id}">
-                                    <input type="hidden" name="id_secretaria" value="${secretaria.id}">
+                                    <input type="radio" name="is_atual" value="sim"> Sim
+                                    <input type="radio" name="is_atual" value="nao" checked> Não
                                     <input class="i2Style_menu" type="submit" value="Salvar">
                                 </form>
                             </div>

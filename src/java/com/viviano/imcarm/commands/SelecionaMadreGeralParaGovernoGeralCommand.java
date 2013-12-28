@@ -52,6 +52,7 @@ public class SelecionaMadreGeralParaGovernoGeralCommand implements Command{
         } catch (SQLException ex) {
             Logger.getLogger(SelecionaMadreGeralParaGovernoGeralCommand.class.getName()).log(Level.SEVERE, null, ex);
         }
+        System.out.println(request.getSession().getId());
         
         return nextPage;
     }

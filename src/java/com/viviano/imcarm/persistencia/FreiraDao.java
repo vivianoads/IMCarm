@@ -142,6 +142,7 @@ public class FreiraDao {
                 ResultSet rs = ps.executeQuery();
 		FreiraBean freiraBean = null;
 		if (rs.next()){
+                    if(rs.getInt("id") != 0){
 			freiraBean = new FreiraBean();
                         freiraBean.setId(rs.getInt("id"));
 			freiraBean.setCpf(rs.getDouble("cpf"));
@@ -168,7 +169,7 @@ public class FreiraDao {
                         freiraBean.setDiocese(rs.getString("diocese"));
                         freiraBean.setCepFamilia(rs.getString("cep_familia"));
                         freiraBean.setEstadoFamilia(rs.getString("estado_familia"));
-			
+                    }
 		}
 		
 		ps.close();

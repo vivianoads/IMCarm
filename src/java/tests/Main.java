@@ -7,7 +7,11 @@
 package tests;
 
 import com.viviano.imcarm.entidades.CongregacaoBean;
+import com.viviano.imcarm.entidades.FreiraBean;
+import com.viviano.imcarm.entidades.GovernoGeralBean;
 import com.viviano.imcarm.persistencia.CongregacaoDao;
+import com.viviano.imcarm.persistencia.FreiraDao;
+import com.viviano.imcarm.persistencia.GovernoGeralDao;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -50,8 +54,39 @@ public class Main {
 //            
 //        }
         
-        String x = "viviano1";
-        Integer index = new Integer(x.substring(x.length()-1));
-        System.out.println(index+1);
+//        String x = "viviano1";
+//        Integer index = new Integer(x.substring(x.length()-1));
+//        System.out.println(index+1);
+        
+        GovernoGeralBean gb = new GovernoGeralBean();
+        GovernoGeralDao gDao = new GovernoGeralDao();
+        FreiraBean IrSineide = new FreiraBean();
+        FreiraDao fd = new FreiraDao();
+       
+        try {
+            IrSineide = fd.getFreiraBean(1);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println(IrSineide.getNomeCivil());
+        
+        gb.setMadreGeral(IrSineide);
+        gb.setViceGeral(IrSineide);
+        gb.setEconomaGeral(IrSineide);
+        try {
+            gDao.gravaGovernoGeral(gb);
+            gb = gDao.getUltimoGovernoGeralCadastrado();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println(gb.getIdGoverno());
+        System.out.println("ok");
+        
+        
+        
     }
 }

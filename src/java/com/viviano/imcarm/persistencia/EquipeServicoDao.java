@@ -25,7 +25,7 @@ public class EquipeServicoDao {
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setDouble(1, equipeServicoBean.getCoordenadora());
 		ps.setString(2, equipeServicoBean.getNome());
-		ps.setInt(3, equipeServicoBean.getgovernoGeral());
+		ps.setInt(3, equipeServicoBean.getGoverno());
 		
 		ps.execute();
 		ps.close();
@@ -40,9 +40,9 @@ public class EquipeServicoDao {
 		EquipeServicoBean equipeServicoBean = new EquipeServicoBean();
 		if (rs.next()){
 			equipeServicoBean.setIdEquipe(rs.getInt("id_equipe"));
-			equipeServicoBean.setCoordenadora(rs.getDouble("coordenadora"));
+			equipeServicoBean.setCoordenadora(rs.getInt("coordenadora"));
 			equipeServicoBean.setNome(rs.getString("nome"));
-			equipeServicoBean.setIdGoverno(rs.getInt("id_governo"));
+			equipeServicoBean.setGoverno(rs.getInt("id_governo"));
 		}
 		
 		rs.close();
@@ -61,9 +61,9 @@ public class EquipeServicoDao {
 		if (rs.next()){
 			EquipeServicoBean equipeServicoBean = new EquipeServicoBean();
 			equipeServicoBean.setIdEquipe(rs.getInt("id_equipe"));
-			equipeServicoBean.setCoordenadora(rs.getDouble("coordenadora"));
+			equipeServicoBean.setCoordenadora(rs.getInt("coordenadora"));
 			equipeServicoBean.setNome(rs.getString("nome"));
-			equipeServicoBean.setIdGoverno(rs.getInt("id_governo"));
+			equipeServicoBean.setGoverno(rs.getInt("id_governo"));
 			equipes.add(equipeServicoBean);
 		}
 		
@@ -72,6 +72,25 @@ public class EquipeServicoDao {
 		con.close();
 		
 		return equipes;
+	}
+        public EquipeServicoBean getUltimoEquipeServicoBeanCadastrada() throws ClassNotFoundException, SQLException{
+		Connection con = conexao.getConnection();
+		String sql = "SELECT * FROM equipe_servico";
+		Statement stat = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		ResultSet rs = stat.executeQuery(sql);
+		EquipeServicoBean equipe = null;
+		while(rs.next()){
+			equipe = new EquipeServicoBean();
+			equipe.setIdEquipe(rs.getInt("id_equipe"));
+			equipe.setCoordenadora(rs.getInt("coordenadora"));
+			equipe.setNome(rs.getString("nome"));
+			equipe.setGoverno(rs.getInt("id_governo"));
+		}
+		rs.close();
+		rs.close();
+		con.close();
+		
+		return equipe;
 	}
 	
 	public void alteraEquipeServico(int idEquipe, EquipeServicoBean equipeServicoBean) throws ClassNotFoundException, SQLException{
