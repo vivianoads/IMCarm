@@ -27,7 +27,7 @@ import com.viviano.imcarm.commands.EditaCoordenacaoCommand;
 import com.viviano.imcarm.commands.EditaDadosCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.ExibeCasasDeMissaoCommand;
 import com.viviano.imcarm.commands.GravaCasaDeMissaoCommand;
-import com.viviano.imcarm.commands.GravaFormandaCommand;
+import com.viviano.imcarm.commands.SalvarFormandaCommand;
 import com.viviano.imcarm.commands.GravaIrmaCommand;
 import com.viviano.imcarm.commands.IrCadastroFormandasCommand;
 import com.viviano.imcarm.commands.IrCadastroFreiraCommand;
@@ -35,6 +35,7 @@ import com.viviano.imcarm.commands.IrFormAlteraDadosCongregacao;
 import com.viviano.imcarm.commands.IrFormCadastraGovernoGeralCommand;
 import com.viviano.imcarm.commands.IrFormCadastroDeCongregacao;
 import com.viviano.imcarm.commands.IrFormCadastroEquipeDeServico;
+import com.viviano.imcarm.commands.IrFormCadastroFormandasCommand;
 import com.viviano.imcarm.commands.IrParaCadastroDeCongregacao;
 import com.viviano.imcarm.commands.IrformModificarEquipeDeServiço;
 import com.viviano.imcarm.commands.ListaCasasDeMissaoParaTransferirIrma;
@@ -71,7 +72,7 @@ public class Helper {
 		mapCommands.put("2", new GravaIrmaCommand());
 		mapCommands.put("3", new AlteraIrmaCommand());
 		mapCommands.put("4", new SalvaAlteracoesIrmaCommand());
-		mapCommands.put("5", new GravaFormandaCommand());
+		mapCommands.put("5", new SalvarFormandaCommand());
 		mapCommands.put("6", new SalvaalteracoesFormandaCommand());
 		mapCommands.put("7", new AlteraFormandaCommand());
 		mapCommands.put("8", new GravaCasaDeMissaoCommand());
@@ -120,6 +121,7 @@ public class Helper {
                 mapCommands.put("51", new SalvaAlteracoesEquipeDeServicoCommand());
                 mapCommands.put("52", new ConfirmaAlteraçãoDeEquipeDeservicoCommand());
                 mapCommands.put("53", new CancelaModificacaoEquipeDeServicoCommand());
+                mapCommands.put("54", new IrFormCadastroFormandasCommand());
 	}
 	
 	public static Helper getInstance(){

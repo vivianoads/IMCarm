@@ -61,8 +61,7 @@
                             <div id="linha_menu_interno">
                                 <div id="conteudo_menu_interno1">
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type=hidden name="action" value="30">
-                                        <!--<input type=hidden name="next_url" value="formcadastracasademissao.jsp">-->
+                                        <input type=hidden name="action" value="54">
                                         <button class="i2Style_menu">Criar Formanda</button>
                                     </form>
                                 </div>
@@ -85,19 +84,21 @@
                                         <input type=hidden name="action" value="*">
                                         <input type=hidden name="initial_index" value="0">
                                         <input type=hidden name="next_url" value="listacadasdemissaoparaadicionarirmas.jsp">
-                                        <button class="i2Style_menu">Add Formanda a Fase de Formação</button>
+                                        <button class="i2Style_menu">Add Formanda à Formação</button>
                                     </form>
                                 </div>
                                 <div id="conteudo_menu_interno5">
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
                                         <input type=hidden name="action" value="*">
-                                        <button class="i2Style_menu">Trocar Formanda de Fase de Formação</button>
+                                        <button class="i2Style_menu">Permuta de Fase</button>
                                     </form>
                                 </div>
                                 <div id="conteudo_menu_interno6">
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
                                         <input type=hidden name="action" value="*">
-                                        <button class="i2Style_menu">Transformar Formanda em Freira</button>
+                                        <button class="i2Style_menu">Conclusão da Formação</button>
+                                        <!--DEPENDE DE TER CONCLUÍDO O CADASTRO DE FREIRAS, POIS DAQUI, O USUÁRIO DEVE SER REDIRECIONADO 
+                                        PARA A PÁGINA DE FORMULÁRIO DE CADASTRO DE FREIRA PARA SEREM INFORMADOS OS DADOS COMPLEMENTARES AO CADASTRO-->
                                     </form>
                                 </div>
                                 <div id="conteudo_menu_interno7">

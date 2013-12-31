@@ -3,19 +3,22 @@ package com.viviano.imcarm.entidades;
 public class FormandaBean {
 	private int idFormanda;
 	private String nome;
-        private String nomePai; 
-        private String nomeMae;
+        private String dataNascimento;
+        private String pai; 
+        private String mae;
         private String rua;
+        private String numero;
         private String bairro;
         private String cidade;
         private String uf;
         private String diocese;
-        private String numeroCasa;
         private String telefone;
         private String cep;
         private String email;
-        private String estado;
-        private String motivoEstadoInativo;
+        private String atividade;
+        private String motivoInatividade;
+        private String etapa;
+        private String dataEtapaAtual;
 
     public int getIdFormanda() {
         return idFormanda;
@@ -33,20 +36,28 @@ public class FormandaBean {
         this.nome = nome;
     }
 
-    public String getNomePai() {
-        return nomePai;
+    public String getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setNomePai(String nomePai) {
-        this.nomePai = nomePai;
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
-    public String getNomeMae() {
-        return nomeMae;
+    public String getPai() {
+        return pai;
     }
 
-    public void setNomeMae(String nomeMae) {
-        this.nomeMae = nomeMae;
+    public void setPai(String pai) {
+        this.pai = pai;
+    }
+
+    public String getMae() {
+        return mae;
+    }
+
+    public void setMae(String mae) {
+        this.mae = mae;
     }
 
     public String getRua() {
@@ -55,6 +66,14 @@ public class FormandaBean {
 
     public void setRua(String rua) {
         this.rua = rua;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 
     public String getBairro() {
@@ -89,14 +108,6 @@ public class FormandaBean {
         this.diocese = diocese;
     }
 
-    public String getNumeroCasa() {
-        return numeroCasa;
-    }
-
-    public void setNumeroCasa(String numeroCasa) {
-        this.numeroCasa = numeroCasa;
-    }
-
     public String getTelefone() {
         return telefone;
     }
@@ -121,21 +132,40 @@ public class FormandaBean {
         this.email = email;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getAtividade() {
+        return atividade;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setAtividade(String atividade) {
+        this.atividade = atividade;
     }
 
-    public String getMotivoEstadoInativo() {
-        return motivoEstadoInativo;
+    public String getMotivoInatividade() {
+        return motivoInatividade;
     }
 
-    public void setMotivoEstadoInativo(String motivoEstadoInativo) {
-        this.motivoEstadoInativo = motivoEstadoInativo;
+    public void setMotivoInatividade(String motivoInatividade) {
+        this.motivoInatividade = motivoInatividade;
     }
+
+
+    public String getEtapa() {
+        return etapa;
+    }
+
+    public void setEtapa(String etapa) {
+        this.etapa = etapa;
+    }
+
+    public String getDataEtapaAtual() {
+        return dataEtapaAtual;
+    }
+
+    public void setDataEtapaAtual(String dataEtapaAtual) {
+        this.dataEtapaAtual = dataEtapaAtual;
+    }
+
+   
 	
 	
 }
