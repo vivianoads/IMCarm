@@ -118,8 +118,8 @@
                             <div id="linha_buttons">
                                 <div id="option_buttons_1">
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="33">
-                                        <input type="hidden" name="id_congregacao" value="${congregacao.idCongregacao}">
+                                        <input type="hidden" name="action" value="56">
+                                        <input type="hidden" name="id_formanda_Cancelar" value="${formandagravada.idFormanda}">
                                         <input type="submit" class="i2Style_apagar" value="Calcelar">
                                     </form>
                                 </div>
