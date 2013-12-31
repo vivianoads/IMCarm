@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.viviano.imcarm.commands.AlteraFormandaCommand;
 import com.viviano.imcarm.commands.AlteraIrmaCommand;
+import com.viviano.imcarm.commands.AlterarDadosFormandaCommand;
 import com.viviano.imcarm.commands.ApagaEquipeDeServico;
 import com.viviano.imcarm.commands.ApagarCongregacao;
 import com.viviano.imcarm.commands.ApagarFraternidadeCommand;
@@ -16,6 +17,7 @@ import com.viviano.imcarm.commands.CadastrarCoordenacaoDeFraternidadeCommand;
 import com.viviano.imcarm.commands.CancelaAdicaodeFreiraACasaDeMissao;
 import com.viviano.imcarm.commands.CancelaCadastroCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.CancelaCadastroCoordenacaoCasaDeMissaoCommand;
+import com.viviano.imcarm.commands.CancelaCadastroFormandaCommand;
 import com.viviano.imcarm.commands.CancelaCadastroGovernoGeral;
 import com.viviano.imcarm.commands.CancelaModificacaoEquipeDeServicoCommand;
 import com.viviano.imcarm.commands.Command;
@@ -122,6 +124,8 @@ public class Helper {
                 mapCommands.put("52", new ConfirmaAlteraçãoDeEquipeDeservicoCommand());
                 mapCommands.put("53", new CancelaModificacaoEquipeDeServicoCommand());
                 mapCommands.put("54", new IrFormCadastroFormandasCommand());
+                mapCommands.put("55", new AlterarDadosFormandaCommand());
+                mapCommands.put("56", new CancelaCadastroFormandaCommand());
 	}
 	
 	public static Helper getInstance(){

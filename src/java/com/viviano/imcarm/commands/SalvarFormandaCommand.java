@@ -10,6 +10,8 @@ import com.viviano.imcarm.entidades.FormandaBean;
 import com.viviano.imcarm.entidades.LoginBean;
 import com.viviano.imcarm.persistencia.FormandaDao;
 import com.viviano.imcarm.servicetowork.VerificaUsuario;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SalvarFormandaCommand implements Command{
 
@@ -57,18 +59,35 @@ public class SalvarFormandaCommand implements Command{
                 f.setUf(uf);
                 
 		FormandaDao formandaDao = new FormandaDao();
+                String opcao = request.getParameter("opcao");
+                System.out.println("opcao = " + opcao);
+                System.out.println("f.getNome = " + f.getNome());
 		if (!f.getNome().isEmpty()){
-//                    opcao aqui
-                    try {
-			formandaDao.gravaFormanda(f);
-			FormandaBean formandaBeanGravada = formandaDao.getUltimaFormandaBeanCadastrada();
-			request.setAttribute("formandagravada", formandaBeanGravada);
-			nextPage = "confirma_cadastro_de_formanda.jsp";
-                    } catch (ClassNotFoundException e) {
-			e.printStackTrace();
-                    } catch (SQLException e) {
-			e.printStackTrace();
-                    } 
+                    
+                    if(opcao.equals("alterar")){
+                        try {
+                            formandaDao.alteraFormanda(new Integer(request.getParameter("id_formanda")), f);
+                            System.out.println("Alterou Formanda");
+                            FormandaBean formandaBeanGravada = formandaDao.getFormandaBean(new Integer(request.getParameter("id_formanda")));
+                            request.setAttribute("formandagravada", formandaBeanGravada);
+                            nextPage = "confirma_cadastro_de_formanda.jsp";
+                        } catch (ClassNotFoundException ex) {
+                            Logger.getLogger(SalvarFormandaCommand.class.getName()).log(Level.SEVERE, null, ex);
+                        } catch (SQLException ex) {
+                            Logger.getLogger(SalvarFormandaCommand.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }else {
+                        try {
+                            formandaDao.gravaFormanda(f);
+                            FormandaBean formandaBeanGravada = formandaDao.getUltimaFormandaBeanCadastrada();
+                            request.setAttribute("formandagravada", formandaBeanGravada);
+                            nextPage = "confirma_cadastro_de_formanda.jsp";
+                        } catch (ClassNotFoundException e) {
+                            e.printStackTrace();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }else{
 			request.setAttribute("formanda", f);
                     }

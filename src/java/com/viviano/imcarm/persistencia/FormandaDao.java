@@ -45,13 +45,15 @@ public class FormandaDao {
 		con.close();
 	}
 	
-	public FormandaBean getFormandaBean(int idFormanda) throws ClassNotFoundException, SQLException{
+	public FormandaBean getFormandaBean(Integer idFormanda) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
 		String sql = "SELECT * FROM formanda WHERE id_formanda = ?";
 		PreparedStatement ps = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-		ResultSet rs = ps.executeQuery();
+		ps.setInt(1, idFormanda);
+                ResultSet rs = ps.executeQuery();
 		FormandaBean formandaBean = new FormandaBean();
 		if (rs.next()) {
+                    formandaBean.setIdFormanda(rs.getInt("id_formanda"));
                     formandaBean.setNome(rs.getString("nome"));
                     formandaBean.setPai(rs.getString("nome_pai"));
                     formandaBean.setMae(rs.getString("nome_mae"));
@@ -85,6 +87,7 @@ public class FormandaDao {
 		FormandaBean formandaBean = null;
 		while(rs.next()) {
                     formandaBean = new FormandaBean();
+                    formandaBean.setIdFormanda(rs.getInt("id_formanda"));
                     formandaBean.setNome(rs.getString("nome"));
                     formandaBean.setPai(rs.getString("nome_pai"));
                     formandaBean.setMae(rs.getString("nome_mae"));
@@ -143,13 +146,13 @@ public class FormandaDao {
 	
 	public void alteraFormanda(int idFormanda, FormandaBean formandaBean) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "UPDATE formanda SET nome = ?, nome_pai = ?, nome_mae = ?, rua = ?, numero = ?, bairro = ?, cidade = ?, uf = ?, diocese = ?, telefone = ?, cep = ?, email = ?, ativo = ?, inativo_motivo = ? WHERE id_formanda = ?";
+		String sql = "UPDATE formanda SET nome = ?, nome_pai = ?, nome_mae = ?, rua = ?, numero = ?, bairro = ?, cidade = ?, uf = ?, diocese = ?, telefone = ?, cep = ?, email = ?, ativo = ?, inativo_motivo = ?, data_etapa_atual = ?, data_nascimento = ?, etapa_formacao = ? WHERE id_formanda = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, formandaBean.getNome());
-		ps.setString(2, formandaBean.getNomePai());
-		ps.setString(3, formandaBean.getNomeMae());
+		ps.setString(2, formandaBean.getPai());
+		ps.setString(3, formandaBean.getMae());
 		ps.setString(4, formandaBean.getRua());
-		ps.setString(5, formandaBean.getNumeroCasa());
+		ps.setString(5, formandaBean.getNumero());
 		ps.setString(6, formandaBean.getBairro());
 		ps.setString(7, formandaBean.getCidade());
 		ps.setString(8, formandaBean.getUf());
@@ -157,9 +160,12 @@ public class FormandaDao {
                 ps.setString(10, formandaBean.getTelefone());
                 ps.setString(11, formandaBean.getCep());
                 ps.setString(12, formandaBean.getEmail());
-                ps.setString(13, formandaBean.getEstado());
-                ps.setString(14, formandaBean.getMotivoEstadoInativo());
-                ps.setInt(15, idFormanda);
+                ps.setString(13, formandaBean.getAtividade());
+                ps.setString(14, formandaBean.getMotivoInatividade());
+                ps.setString(15, formandaBean.getDataEtapaAtual());
+                ps.setString(16, formandaBean.getDataNascimento());
+                ps.setString(17, formandaBean.getEtapa());
+                ps.setInt(18, idFormanda);
 		
 		ps.executeUpdate();
 		ps.close();
@@ -168,8 +174,9 @@ public class FormandaDao {
 	
 	public void apagaFormandaBean(int idFormanda) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "DELETE FROM formanda WHERE id_formanda = '" + idFormanda + "'";
+		String sql = "DELETE FROM formanda WHERE id_formanda = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
+                ps.setInt(1, idFormanda);
 		ps.executeUpdate();
 		ps.close();
 		con.close();

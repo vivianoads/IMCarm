@@ -8,10 +8,12 @@ package tests;
 
 import com.viviano.imcarm.entidades.CongregacaoBean;
 import com.viviano.imcarm.entidades.EquipeServicoBean;
+import com.viviano.imcarm.entidades.FormandaBean;
 import com.viviano.imcarm.entidades.FreiraBean;
 import com.viviano.imcarm.entidades.GovernoGeralBean;
 import com.viviano.imcarm.persistencia.CongregacaoDao;
 import com.viviano.imcarm.persistencia.EquipeServicoDao;
+import com.viviano.imcarm.persistencia.FormandaDao;
 import com.viviano.imcarm.persistencia.FreiraDao;
 import com.viviano.imcarm.persistencia.GovernoGeralDao;
 import java.sql.SQLException;
@@ -131,20 +133,77 @@ public class Main {
 //        }
 //        System.out.println("}");
         
-        EquipeServicoBean esb = new EquipeServicoBean();
-        esb.setCoordenadora(1);
-        esb.setGoverno(33);
-        esb.setIdEquipe(5);
-        esb.setNome("AAAAA");
+//        EquipeServicoBean esb = new EquipeServicoBean();
+//        esb.setCoordenadora(1);
+//        esb.setGoverno(33);
+//        esb.setIdEquipe(5);
+//        esb.setNome("AAAAA");
+//        
+//        EquipeServicoDao dao = new EquipeServicoDao();
+//        try {
+//            dao.alteraEquipeServico(5, esb);
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         
-        EquipeServicoDao dao = new EquipeServicoDao();
+                String nome = "nome";
+                String pai = "pai";
+                String mae = "mae";
+                String rua = "rua";
+                String numero = "numero";
+                String bairro = "bairro";
+                String cidade = "cidade";
+                String uf = "uf";
+                String cep = "cep";
+                String diocese = "diocese";
+                String dataNascimento = "data_nasc";
+                String email = "email";
+                String telefone = "telefone";
+                String etapaFormacaoAtual = "etapa_formacao_atual";
+                String dataIngressoEtapaAtual = "data_ing";
+                String atividade = "ativid";
+                String motivoInatividade = "motivo_inatividade";
+		
+                FormandaBean f = new FormandaBean();
+                
+                f.setNome(nome);
+                f.setAtividade(atividade);
+                f.setBairro(bairro);
+                f.setCep(cep);
+                f.setCidade(cidade);
+                f.setDataEtapaAtual(dataIngressoEtapaAtual);
+                f.setDataNascimento(dataNascimento);
+                f.setDiocese(diocese);
+                f.setEmail(email);
+                f.setEtapa(etapaFormacaoAtual);
+                f.setMae(mae);
+                f.setMotivoInatividade(motivoInatividade);
+                f.setNumero(numero);
+                f.setPai(pai);
+                f.setRua(rua);
+                f.setTelefone(telefone);
+                f.setUf(uf);
+                
+                FormandaDao dao = new FormandaDao();
+                FormandaBean gravada = null;
+                try {
+                    dao.gravaFormanda(f);
+                    gravada =  dao.getUltimaFormandaBeanCadastrada();
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }   
+        
+                gravada.setNome("ALTERADO");
         try {
-            dao.alteraEquipeServico(5, esb);
+            dao.alteraFormanda(gravada.getIdFormanda(), gravada);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }
 }

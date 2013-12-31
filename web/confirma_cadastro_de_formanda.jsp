@@ -108,7 +108,7 @@
                                 <br/>
                                 <br/>
                             
-                            
+                            ${formandagravada.idFormanda}
                             
                             
                             
@@ -125,8 +125,8 @@
                                 </div>
                                 <div id="option_buttons_2">
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="32">
-                                        <input type="hidden" name="option" value="alterar">
+                                        <input type="hidden" name="action" value="55">
+                                        <input type="hidden" name="id_formanda_alterar_dados" value="${formandagravada.idFormanda}">
                                         
                                         <input type="submit" class="i2Style_alterar" value="Alterar Dados">
                                     </form>

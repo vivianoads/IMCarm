@@ -131,7 +131,8 @@
                                 <br/>
                                 <br/>
                                 <input type="hidden" name="action" value="5">
-                                <input type="hidden" name="option" value="${option}">
+                                <input type="hidden" name="opcao" value="${opcao}">
+                                <input type="hidden" name="id_formanda" value="${formanda.idFormanda}">
                                 <input type="submit" class="i2Style" value="Salvar">
                             </form>
                         </div>
