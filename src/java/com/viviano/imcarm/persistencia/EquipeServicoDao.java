@@ -21,7 +21,7 @@ public class EquipeServicoDao {
 	
 	public void gravaEquipeServico(EquipeServicoBean equipeServicoBean) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "INSERT INTO equipe_servico (coordenadora, nome character, id_governo) VALUES (?, ?, ?)";
+		String sql = "INSERT INTO equipe_servico (coordenadora, nome , id_governo) VALUES (?, ?, ?)";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setDouble(1, equipeServicoBean.getCoordenadora());
 		ps.setString(2, equipeServicoBean.getNome());
@@ -73,6 +73,28 @@ public class EquipeServicoDao {
 		
 		return equipes;
 	}
+        public List<EquipeServicoBean> getAllEquipeServicoBeanDeGovernoGeral(Integer idGovernoAtual) throws ClassNotFoundException, SQLException{
+		Connection con = conexao.getConnection();
+		String sql = "SELECT * FROM equipe_servico WHERE id_governo = ?";
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		stat.setInt(1, idGovernoAtual);
+                ResultSet rs = stat.executeQuery();
+		List<EquipeServicoBean> equipes = new ArrayList<EquipeServicoBean>();
+		while (rs.next()){
+			EquipeServicoBean equipeServicoBean = new EquipeServicoBean();
+			equipeServicoBean.setIdEquipe(rs.getInt("id_equipe"));
+			equipeServicoBean.setCoordenadora(rs.getInt("coordenadora"));
+			equipeServicoBean.setNome(rs.getString("nome"));
+			equipeServicoBean.setGoverno(rs.getInt("id_governo"));
+			equipes.add(equipeServicoBean);
+		}
+		
+		rs.close();
+		rs.close();
+		con.close();
+		
+		return equipes;
+	}
         public EquipeServicoBean getUltimoEquipeServicoBeanCadastrada() throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
 		String sql = "SELECT * FROM equipe_servico";
@@ -95,12 +117,12 @@ public class EquipeServicoDao {
 	
 	public void alteraEquipeServico(int idEquipe, EquipeServicoBean equipeServicoBean) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "UPDATE FROM equipe_servico SET id_equipe = ?, coordenadora = ?, nome = ?, id_governo = ? WHERE id_equipe ='" + idEquipe + "'";
+		String sql = "UPDATE equipe_servico SET coordenadora = ?, nome = ?, id_governo = ? WHERE id_equipe = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setInt(1, equipeServicoBean.getIdEquipe());
-		ps.setDouble(2, equipeServicoBean.getCoordenadora());
-		ps.setString(3, equipeServicoBean.getNome());
-		ps.setInt(4, equipeServicoBean.getIdEquipe());
+		ps.setDouble(1, equipeServicoBean.getCoordenadora());
+		ps.setString(2, equipeServicoBean.getNome());
+                ps.setInt(3, equipeServicoBean.getGoverno());
+		ps.setInt(4, idEquipe);
 		
 		ps.executeUpdate();
 		ps.close();

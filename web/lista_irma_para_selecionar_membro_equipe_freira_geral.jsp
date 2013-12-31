@@ -5,7 +5,7 @@
     <head>
         <title>Cadastra Casa de Missão</title>
         <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
-        <link href="estilo_lista_irmas_para_selecionar_madre.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
+        <link href="estilo_lista_irmas_para_selecionar_membro_equipe_servico.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
     </head>
 
     <body>
@@ -58,32 +58,28 @@
                     </div>
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
-                            <h3 align="center"> Escolher a Coordenadora para Equipe de Serviço</h3>
+                            <h3 align="center"> Escolher Freira para Integrar Equipe de Serviço</h3>
                             <c:forEach items="${freiraspaginada}" var="freira">
                                 <div id="linha_conteudo">
                                     <div id="linha_conteudo_nome">
                                         ${freira.nomeReligioso}
                                     </div>
-<!--                                    <div id="linha_conteudo_alterar">
-                                        <form action="/ImCarm_2.0/ServletControler" method="post">
+                                    <!--<div id="linha_conteudo_alterar">-->
+<!--                                        <form action="/ImCarm_2.0/ServletControler" method="post">
                                             <input type=hidden name="action" value="13">
-                                            <input type=hidden name="id_fraternidade" value="${fraternidade.idFraternidade}">
-                                            <button class="i2Style_alterar">Adicionar Irmãs</button>
-                                        </form>
-                                    </div>-->
+                                            <input type=hidden name="id_fraternidade" value="${fraternidade.idFraternidade}">-->
+                                            <!--<button class="i2Style_alterar">Adicionar Irmãs</button>-->
+                                        <!--</form>-->
+                                    <!--</div>-->
                                     <div id="linha_conteudo_apagar">
                                         <form action="/ImCarm_2.0/ServletControler" method="post">
-                                            <c:choose>
-                                                <c:when test="${opcao eq 'modificar'}">
-                                                    <input type="hidden" name="action" value="43">
-                                                    <input type="hidden" name="option" value="modificar">
-                                                </c:when>
-                                                <c:otherwise>
-                                                    <input type="hidden" name="action" value="43">
-                                                </c:otherwise>
-                                            </c:choose>
-                                            <input type="hidden" name="id_freira" value="${freira.id}">
-                                            <button class="i2Style_apagar">Coordenadora</button>
+                                            <input type="hidden" name="action" value="49">
+                                            <input type="hidden" name="id_associar" value="${freira.id}">
+                                            <input type="hidden" name="tipo_associacao" value="freira">
+                                            <b style="font: bold 14px Tahoma">Funcão: </b>
+                                            <input style="width: 200px" type="text" name="funcao_associar">
+                                            <input type="submit"  class="i2Style_apagar" value="Selecionar">
+                                            <!--class="i2Style_apagar"-->
                                         </form>
                                     </div>
                                 </div>

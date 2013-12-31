@@ -7,17 +7,22 @@ import java.util.Map;
 
 import com.viviano.imcarm.commands.AlteraFormandaCommand;
 import com.viviano.imcarm.commands.AlteraIrmaCommand;
+import com.viviano.imcarm.commands.ApagaEquipeDeServico;
 import com.viviano.imcarm.commands.ApagarCongregacao;
 import com.viviano.imcarm.commands.ApagarFraternidadeCommand;
+import com.viviano.imcarm.commands.AssociaFreiraOuFormandaAEquipeDeServico;
 import com.viviano.imcarm.commands.CadastraCongregacao;
 import com.viviano.imcarm.commands.CadastrarCoordenacaoDeFraternidadeCommand;
 import com.viviano.imcarm.commands.CancelaAdicaodeFreiraACasaDeMissao;
 import com.viviano.imcarm.commands.CancelaCadastroCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.CancelaCadastroCoordenacaoCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.CancelaCadastroGovernoGeral;
+import com.viviano.imcarm.commands.CancelaModificacaoEquipeDeServicoCommand;
 import com.viviano.imcarm.commands.Command;
+import com.viviano.imcarm.commands.ConfirmaAlteraçãoDeEquipeDeservicoCommand;
 import com.viviano.imcarm.commands.ConfirmaCadastroFraternidadeCommand;
 import com.viviano.imcarm.commands.ConfirmaCadastroGovernoGeral;
+import com.viviano.imcarm.commands.DesassociaFreiraOuFormandaDeEquipeDeServico;
 import com.viviano.imcarm.commands.EditaCoordenacaoCommand;
 import com.viviano.imcarm.commands.EditaDadosCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.ExibeCasasDeMissaoCommand;
@@ -31,14 +36,18 @@ import com.viviano.imcarm.commands.IrFormCadastraGovernoGeralCommand;
 import com.viviano.imcarm.commands.IrFormCadastroDeCongregacao;
 import com.viviano.imcarm.commands.IrFormCadastroEquipeDeServico;
 import com.viviano.imcarm.commands.IrParaCadastroDeCongregacao;
+import com.viviano.imcarm.commands.IrformModificarEquipeDeServiço;
 import com.viviano.imcarm.commands.ListaCasasDeMissaoParaTransferirIrma;
+import com.viviano.imcarm.commands.ListaEquipesParaEditar;
 import com.viviano.imcarm.commands.ListaIrmasParaAdicionarACasaDeMissao;
 import com.viviano.imcarm.commands.ListaIrmasParaGerarCoordenacao;
 import com.viviano.imcarm.commands.ListaIrmasParaTransferirDeCasaDeMissao;
+import com.viviano.imcarm.commands.ListaIrmasSelecionarFormandaParaIntegrarEquipeDeServicoCommand;
 import com.viviano.imcarm.commands.ListaIrmasSelecionarMadre;
 import com.viviano.imcarm.commands.LoginCommand;
 import com.viviano.imcarm.commands.LogoutCommand;
 import com.viviano.imcarm.commands.SalvaAlteracoesCasasDeMissaoCommand;
+import com.viviano.imcarm.commands.SalvaAlteracoesEquipeDeServicoCommand;
 import com.viviano.imcarm.commands.SalvaAlteracoesIrmaCommand;
 import com.viviano.imcarm.commands.SalvaEquipeDeServico;
 import com.viviano.imcarm.commands.SalvaalteracoesFormandaCommand;
@@ -102,6 +111,15 @@ public class Helper {
                 mapCommands.put("42", new IrFormCadastroEquipeDeServico());
                 mapCommands.put("43", new SelecionaCoordenadoraParaEquipeDeServicoCommand());
                 mapCommands.put("44", new SalvaEquipeDeServico());
+                mapCommands.put("45", new ApagaEquipeDeServico());
+                mapCommands.put("46", new ListaEquipesParaEditar());
+                mapCommands.put("47", new IrformModificarEquipeDeServiço());
+                mapCommands.put("48", new ListaIrmasSelecionarFormandaParaIntegrarEquipeDeServicoCommand());
+                mapCommands.put("49", new AssociaFreiraOuFormandaAEquipeDeServico());
+                mapCommands.put("50", new DesassociaFreiraOuFormandaDeEquipeDeServico());
+                mapCommands.put("51", new SalvaAlteracoesEquipeDeServicoCommand());
+                mapCommands.put("52", new ConfirmaAlteraçãoDeEquipeDeservicoCommand());
+                mapCommands.put("53", new CancelaModificacaoEquipeDeServicoCommand());
 	}
 	
 	public static Helper getInstance(){

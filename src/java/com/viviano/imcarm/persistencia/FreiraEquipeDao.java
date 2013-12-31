@@ -20,9 +20,9 @@ public class FreiraEquipeDao {
 	
 	public void gravaFreiraEquipe(FreiraEquipeBean freiraEquipeBean) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "INSERT INTO freira_equipe (cpf_freira, id_equipe, funcao) VALUES (?, ?, ?)";
+		String sql = "INSERT INTO freira_equipe (id_freira, id_equipe, funcao) VALUES (?, ?, ?)";
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setDouble(1, freiraEquipeBean.getFreira());
+		ps.setInt(1, freiraEquipeBean.getIdFreira());
 		ps.setInt(2, freiraEquipeBean.getEquipe());
 		ps.setString(3, freiraEquipeBean.getFuncao());
 		ps.execute();
@@ -37,7 +37,7 @@ public class FreiraEquipeDao {
 		ResultSet rs = stat.executeQuery(sql);
 		FreiraEquipeBean freiraEquipeBean = new FreiraEquipeBean();
 		if (rs.next()){
-			freiraEquipeBean.setFreira(rs.getDouble("cpf_freira"));
+			freiraEquipeBean.setIdFreira(rs.getInt("id_freira"));
 			freiraEquipeBean.setEquipe(rs.getInt("id_equipe"));
 			freiraEquipeBean.setFuncao(rs.getString("funcao"));
 		}
@@ -48,7 +48,28 @@ public class FreiraEquipeDao {
 		
 		return freiraEquipeBean;
 	}
-	
+	public List<FreiraEquipeBean> getFreiraEquipeBeanPorEquipe(Integer idEquipe) throws ClassNotFoundException, SQLException{
+		Connection con = conexao.getConnection();
+		String sql = "SELECT * FROM freira_equipe WHERE id_equipe = ?";
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		stat.setInt(1, idEquipe);
+                ResultSet rs = stat.executeQuery();
+		List<FreiraEquipeBean> freirasEquipeBean = new ArrayList<FreiraEquipeBean>();
+                FreiraEquipeBean freiraEquipeBean = null;
+		while (rs.next()){
+                        freiraEquipeBean = new FreiraEquipeBean();
+			freiraEquipeBean.setIdFreira(rs.getInt("id_freira"));
+			freiraEquipeBean.setEquipe(rs.getInt("id_equipe"));
+			freiraEquipeBean.setFuncao(rs.getString("funcao"));
+                        freirasEquipeBean.add(freiraEquipeBean);
+		}
+		
+		rs.close();
+		stat.close();
+		con.close();
+		
+		return freirasEquipeBean;
+	}
 	
 	public List<FreiraEquipeBean> getAllFreiraEquipeBean() throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
@@ -58,7 +79,7 @@ public class FreiraEquipeDao {
 		List<FreiraEquipeBean> freirasEquipe = new ArrayList<FreiraEquipeBean>();
 		while (rs.next()){
 			FreiraEquipeBean freiraEquipeBean = new FreiraEquipeBean();
-			freiraEquipeBean.setFreira(rs.getDouble("cpf_freira"));
+			freiraEquipeBean.setIdFreira(rs.getInt("id_freira"));
 			freiraEquipeBean.setEquipe(rs.getInt("id_equipe"));
 			freiraEquipeBean.setFuncao(rs.getString("funcao"));
 			freirasEquipe.add(freiraEquipeBean);
@@ -71,11 +92,11 @@ public class FreiraEquipeDao {
 		return freirasEquipe;
 	}
 	
-	public void alteraFreiraEquipeBean(double cpfFreira, int idEquipe, FreiraEquipeBean freiraEquipeBean) throws ClassNotFoundException, SQLException{
+	public void alteraFreiraEquipeBean(Integer idFreira, int idEquipe, FreiraEquipeBean freiraEquipeBean) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "UPDATE freira_equipe SET cpf_freira = ?, id_equipe = ?, funcao = ? WHERE cpf_freira = '" + cpfFreira + "' AND id_equipe = '" + idEquipe + "'";
+		String sql = "UPDATE freira_equipe SET cpf_freira = ?, id_equipe = ?, funcao = ? WHERE cpf_freira = ERROR'" + idFreira + "' AND id_equipe = '" + idEquipe + "'";
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setDouble(1, freiraEquipeBean.getFreira());
+		ps.setInt(1, freiraEquipeBean.getIdFreira());
 		ps.setInt(2, freiraEquipeBean.getEquipe());
 		ps.setString(3, freiraEquipeBean.getFuncao());
 		
@@ -88,6 +109,15 @@ public class FreiraEquipeDao {
 		Connection con = conexao.getConnection();
 		String sql = "DELETE FROM freira_equipe WHERE cpf_freira = '" + cpfFreira + "' AND id_equipe = '" + idEquipe + "'";
 		PreparedStatement ps = con.prepareStatement(sql);
+		ps.executeUpdate();
+		ps.close();
+		con.close();
+	}
+        public void apagaAllFreiraEquipeBeanPorEquipe(Integer idEquipe) throws ClassNotFoundException, SQLException{
+		Connection con = conexao.getConnection();
+		String sql = "DELETE FROM freira_equipe WHERE id_equipe = ?";
+		PreparedStatement ps = con.prepareStatement(sql);
+                ps.setInt(1, idEquipe);
 		ps.executeUpdate();
 		ps.close();
 		con.close();

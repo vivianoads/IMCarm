@@ -7,12 +7,16 @@
 package tests;
 
 import com.viviano.imcarm.entidades.CongregacaoBean;
+import com.viviano.imcarm.entidades.EquipeServicoBean;
 import com.viviano.imcarm.entidades.FreiraBean;
 import com.viviano.imcarm.entidades.GovernoGeralBean;
 import com.viviano.imcarm.persistencia.CongregacaoDao;
+import com.viviano.imcarm.persistencia.EquipeServicoDao;
 import com.viviano.imcarm.persistencia.FreiraDao;
 import com.viviano.imcarm.persistencia.GovernoGeralDao;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -58,35 +62,89 @@ public class Main {
 //        Integer index = new Integer(x.substring(x.length()-1));
 //        System.out.println(index+1);
         
-        GovernoGeralBean gb = new GovernoGeralBean();
-        GovernoGeralDao gDao = new GovernoGeralDao();
-        FreiraBean IrSineide = new FreiraBean();
-        FreiraDao fd = new FreiraDao();
-       
+//        GovernoGeralBean gb = new GovernoGeralBean();
+//        GovernoGeralDao gDao = new GovernoGeralDao();
+//        FreiraBean IrSineide = new FreiraBean();
+//        FreiraDao fd = new FreiraDao();
+//       
+//        try {
+//            IrSineide = fd.getFreiraBean(1);
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        System.out.println(IrSineide.getNomeCivil());
+//        
+//        gb.setMadreGeral(IrSineide);
+//        gb.setViceGeral(IrSineide);
+//        gb.setEconomaGeral(IrSineide);
+//        try {
+//            gDao.gravaGovernoGeral(gb);
+//            gb = gDao.getUltimoGovernoGeralCadastrado();
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        System.out.println(gb.getIdGoverno());
+//        System.out.println("ok");
+        
+//        FreiraBean freiraBean = new FreiraBean();
+//        FreiraDao freiraDao = new FreiraDao();
+//        try {
+//            freiraBean = freiraDao.getFreiraBean(57);
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        System.out.println(freiraBean.getNomeReligioso());
+        
+        
+//        List<EquipeServicoBean> equipes = new ArrayList<EquipeServicoBean>();
+//        
+//        EquipeServicoBean esb1 = new EquipeServicoBean();
+//        esb1.setCoordenadora(1);
+//        esb1.setGoverno(1);
+//        esb1.setIdEquipe(1);
+//        esb1.setNome("Um");
+//        EquipeServicoBean esb2 = new EquipeServicoBean();
+//        esb2.setCoordenadora(2);
+//        esb2.setGoverno(2);
+//        esb2.setIdEquipe(2);
+//        esb2.setNome("Dois");
+//        
+//        equipes.add(esb1);
+//        
+//        System.out.println("Equipes{");
+//        for(EquipeServicoBean e : equipes){
+//            System.out.println(e.getNome());
+//        }
+//        
+//        System.out.println("}");
+//        
+//        equipes.remove(esb1);
+//        System.out.println("Equipes depois de remove 1{");
+//        for(EquipeServicoBean e : equipes){
+//            System.out.println(e.getNome());
+//        }
+//        System.out.println("}");
+        
+        EquipeServicoBean esb = new EquipeServicoBean();
+        esb.setCoordenadora(1);
+        esb.setGoverno(33);
+        esb.setIdEquipe(5);
+        esb.setNome("AAAAA");
+        
+        EquipeServicoDao dao = new EquipeServicoDao();
         try {
-            IrSineide = fd.getFreiraBean(1);
+            dao.alteraEquipeServico(5, esb);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println(IrSineide.getNomeCivil());
-        
-        gb.setMadreGeral(IrSineide);
-        gb.setViceGeral(IrSineide);
-        gb.setEconomaGeral(IrSineide);
-        try {
-            gDao.gravaGovernoGeral(gb);
-            gb = gDao.getUltimoGovernoGeralCadastrado();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        System.out.println(gb.getIdGoverno());
-        System.out.println("ok");
-        
-        
         
     }
 }

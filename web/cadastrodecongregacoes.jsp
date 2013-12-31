@@ -104,7 +104,7 @@
                                 </div>
                                 <div id="conteudo_menu_interno7">
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type=hidden name="action" value="42">
+                                        <input type=hidden name="action" value="46">
                                         <button class="i2Style_menu">Modificar Eq. de Serviço</button>
                                         <!--INTERNO A ESSE MENU DEVE SER MOSTRADO UM FORMULÁRIO DE ALTERAÇÃO
                                         DE DADOS DE EQUIPE DE SERVIÇO E BOTÕES DE ADIÇÃO E BAIXA DE IRMÃS E FORMANDAS

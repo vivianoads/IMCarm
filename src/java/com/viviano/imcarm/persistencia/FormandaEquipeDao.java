@@ -50,6 +50,28 @@ public class FormandaEquipeDao {
 		
 		return formandaEquipeBean;
 	}
+        public List<FormandaEquipeBean> getFormandaEquipeBeanPorEquipe(Integer idEquipe) throws ClassNotFoundException, SQLException{
+		Connection con = conexao.getConnection();
+		String sql = "SELECT * FROM formanda_equipe WHERE id_equipe = ?";
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		stat.setInt(1, idEquipe);
+                ResultSet rs = stat.executeQuery();
+		FormandaEquipeBean formandaEquipeBean = null;
+		List<FormandaEquipeBean> febs = new ArrayList<FormandaEquipeBean>();
+		while(rs.next()){
+                        formandaEquipeBean = new FormandaEquipeBean();
+			formandaEquipeBean.setFormanda(rs.getInt("id_formanda"));
+			formandaEquipeBean.setEquipe(rs.getInt("id_equipe"));
+			formandaEquipeBean.setFuncao(rs.getString("funcao"));
+                        febs.add(formandaEquipeBean);
+		}
+		
+		rs.close();
+		stat.close();
+		con.close();
+		
+		return febs;
+	}
 	
 	public List<FormandaEquipeBean> getAllFormandaEquipeBean() throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
@@ -86,10 +108,11 @@ public class FormandaEquipeDao {
 		con.close();
 	}
 	
-	public void apagaFormandaEquipe(int idFormanda, int idEquipe) throws ClassNotFoundException, SQLException{
+	public void apagaAllFormandaEquipePorEquipe(Integer idEquipe) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "DELETE FROM formanda_equipe WHERE id_formanda = '" + idFormanda + "' AND id_equipe = '" + idEquipe + "'";
+		String sql = "DELETE FROM formanda_equipe WHERE id_equipe = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
+                ps.setInt(1, idEquipe);
 		ps.executeUpdate();
 		ps.close();
 		con.close();

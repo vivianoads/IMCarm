@@ -31,6 +31,11 @@ public class FormandaDao {
 		ps.setString(7, formandaBean.getCidade());
 		ps.setString(8, formandaBean.getUf());
 		ps.setString(9, formandaBean.getDiocese());
+                ps.setString(10, formandaBean.getTelefone());
+                ps.setString(11, formandaBean.getCep());
+                ps.setString(12, formandaBean.getEmail());
+                ps.setString(13, formandaBean.getEstado());
+                ps.setString(14, formandaBean.getMotivoEstadoInativo());
 		ps.execute();
 		ps.close();
 		con.close();
@@ -53,6 +58,11 @@ public class FormandaDao {
 			formandaBean.setCidade(rs.getString("cidade"));
 			formandaBean.setUf(rs.getString("uf"));
 			formandaBean.setDiocese(rs.getString("diocese"));
+                        formandaBean.setTelefone(rs.getString("telefone"));
+                        formandaBean.setCep(rs.getString("cep"));
+                        formandaBean.setEmail(rs.getString("email"));
+                        formandaBean.setEstado(rs.getString("ativo"));
+                        formandaBean.setMotivoEstadoInativo(rs.getString("inativo_motivo"));
 		}
 		rs.close();
 		stat.close();
@@ -63,8 +73,8 @@ public class FormandaDao {
 	public List<FormandaBean> getAllFormandaBean() throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
 		String sql = "SELECT * FROM formanda";
-		Statement stat = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-		ResultSet rs = stat.executeQuery(sql);
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		ResultSet rs = stat.executeQuery();
 		List<FormandaBean> formandas = new ArrayList<FormandaBean>();
 		while (rs.next()){
 			FormandaBean formandaBean = new FormandaBean();
@@ -78,6 +88,11 @@ public class FormandaDao {
 			formandaBean.setCidade(rs.getString("cidade"));
 			formandaBean.setUf(rs.getString("uf"));
 			formandaBean.setDiocese(rs.getString("diocese"));
+                        formandaBean.setTelefone(rs.getString("telefone"));
+                        formandaBean.setCep(rs.getString("cep"));
+                        formandaBean.setEmail(rs.getString("email"));
+                        formandaBean.setEstado(rs.getString("ativo"));
+                        formandaBean.setMotivoEstadoInativo(rs.getString("inativo_motivo"));
 			formandas.add(formandaBean);
 		}
 		rs.close();
@@ -88,18 +103,23 @@ public class FormandaDao {
 	
 	public void alteraFormanda(int idFormanda, FormandaBean formandaBean) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "UPDATE formanda SET id_formanda = ?, nome = ?, nome_pai = ?, nome_mae = ?, rua = ?, numero = ?, bairro = ?, cidade = ?, uf = ?, diocese = ? WHERE id_formanda = '" + idFormanda + "'";
+		String sql = "UPDATE formanda SET nome = ?, nome_pai = ?, nome_mae = ?, rua = ?, numero = ?, bairro = ?, cidade = ?, uf = ?, diocese = ?, telefone = ?, cep = ?, email = ?, ativo = ?, inativo_motivo = ? WHERE id_formanda = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setInt(1, formandaBean.getIdFormanda());
-		ps.setString(2, formandaBean.getNome());
-		ps.setString(3, formandaBean.getNomePai());
-		ps.setString(4, formandaBean.getNomeMae());
-		ps.setString(5, formandaBean.getRua());
-		ps.setString(6, formandaBean.getNumeroCasa());
-		ps.setString(7, formandaBean.getBairro());
-		ps.setString(8, formandaBean.getCidade());
-		ps.setString(9, formandaBean.getUf());
-		ps.setString(10, formandaBean.getDiocese());
+		ps.setString(1, formandaBean.getNome());
+		ps.setString(2, formandaBean.getNomePai());
+		ps.setString(3, formandaBean.getNomeMae());
+		ps.setString(4, formandaBean.getRua());
+		ps.setString(5, formandaBean.getNumeroCasa());
+		ps.setString(6, formandaBean.getBairro());
+		ps.setString(7, formandaBean.getCidade());
+		ps.setString(8, formandaBean.getUf());
+		ps.setString(9, formandaBean.getDiocese());
+                ps.setString(10, formandaBean.getTelefone());
+                ps.setString(11, formandaBean.getCep());
+                ps.setString(12, formandaBean.getEmail());
+                ps.setString(13, formandaBean.getEstado());
+                ps.setString(14, formandaBean.getMotivoEstadoInativo());
+                ps.setInt(15, idFormanda);
 		
 		ps.executeUpdate();
 		ps.close();

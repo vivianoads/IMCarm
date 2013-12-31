@@ -75,7 +75,7 @@
                                 <br/>
                                 <form name="cadastroFormandas" action="/ImCarm_2.0/ServletControler" method="post">	
                                     <b>Nome:</b>
-                                    <input size="80" type="text" name="nome" value="${equipe.nome}">
+                                    <input size="80" type="text" name="nome_equipe" value="${equipe.nome}">
                                     <input type="hidden" name="action" value="44">
                                     <input type="hidden" name="id_coordenadora" value="${coordenadora_equipe.id}">
                                     <input type="hidden" name="option" value="${option}">
