@@ -67,29 +67,29 @@
                                 </div>
                                 <div id="conteudo_menu_interno2">
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type=hidden name="action" value="32">
+                                        <input type=hidden name="action" value="57">
+                                        <input type="hidden" name="initial_index_formanda" value="0">
                                         <button class="i2Style_menu">Modificar Formanda</button>
                                     </form>
                                 </div>
                                 <div id="conteudo_menu_interno3">
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type=hidden name="action" value="36">
-<!--                                        <input type=hidden name="initial_index" value="0">
-                                        <input type=hidden name="next_url" value="listacadasdemissaoparaeditar.jsp">-->
+                                        <input type=hidden name="action" value="58">
+                                        <input type="hidden" name="initial_index_formanda" value="0">
                                         <button class="i2Style_menu">Dar Baixa em Formanda</button>
                                     </form>
                                 </div>
                                 <div id="conteudo_menu_interno4">
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type=hidden name="action" value="*">
-                                        <input type=hidden name="initial_index" value="0">
-                                        <input type=hidden name="next_url" value="listacadasdemissaoparaadicionarirmas.jsp">
-                                        <button class="i2Style_menu">Add Formanda à Formação</button>
+                                        <input type=hidden name="action" value="61">
+                                        <input type=hidden name="initial_index_formanda" value="0">
+                                        <button class="i2Style_menu">Reativar Formanda</button>
                                     </form>
                                 </div>
                                 <div id="conteudo_menu_interno5">
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type=hidden name="action" value="*">
+                                        <input type=hidden name="action" value="63">
+                                        <input type=hidden name="initial_index_formanda" value="0">
                                         <button class="i2Style_menu">Permuta de Fase</button>
                                     </form>
                                 </div>

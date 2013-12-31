@@ -20,10 +20,13 @@ import com.viviano.imcarm.commands.CancelaCadastroCoordenacaoCasaDeMissaoCommand
 import com.viviano.imcarm.commands.CancelaCadastroFormandaCommand;
 import com.viviano.imcarm.commands.CancelaCadastroGovernoGeral;
 import com.viviano.imcarm.commands.CancelaModificacaoEquipeDeServicoCommand;
+import com.viviano.imcarm.commands.CancelarBaixaFormandaCommand;
 import com.viviano.imcarm.commands.Command;
 import com.viviano.imcarm.commands.ConfirmaAlteraçãoDeEquipeDeservicoCommand;
+import com.viviano.imcarm.commands.ConfirmaCadastroFormandaCommand;
 import com.viviano.imcarm.commands.ConfirmaCadastroFraternidadeCommand;
 import com.viviano.imcarm.commands.ConfirmaCadastroGovernoGeral;
+import com.viviano.imcarm.commands.DarBaixaEmFormandaCommand;
 import com.viviano.imcarm.commands.DesassociaFreiraOuFormandaDeEquipeDeServico;
 import com.viviano.imcarm.commands.EditaCoordenacaoCommand;
 import com.viviano.imcarm.commands.EditaDadosCasaDeMissaoCommand;
@@ -38,17 +41,23 @@ import com.viviano.imcarm.commands.IrFormCadastraGovernoGeralCommand;
 import com.viviano.imcarm.commands.IrFormCadastroDeCongregacao;
 import com.viviano.imcarm.commands.IrFormCadastroEquipeDeServico;
 import com.viviano.imcarm.commands.IrFormCadastroFormandasCommand;
+import com.viviano.imcarm.commands.IrFormPermutaFormanda;
 import com.viviano.imcarm.commands.IrParaCadastroDeCongregacao;
 import com.viviano.imcarm.commands.IrformModificarEquipeDeServiço;
 import com.viviano.imcarm.commands.ListaCasasDeMissaoParaTransferirIrma;
 import com.viviano.imcarm.commands.ListaEquipesParaEditar;
+import com.viviano.imcarm.commands.ListaFormandasEmBaixaParaReativarCommand;
+import com.viviano.imcarm.commands.ListaFormandasParaAlterarCommand;
+import com.viviano.imcarm.commands.ListaFormandasParaApagarCommand;
 import com.viviano.imcarm.commands.ListaIrmasParaAdicionarACasaDeMissao;
 import com.viviano.imcarm.commands.ListaIrmasParaGerarCoordenacao;
 import com.viviano.imcarm.commands.ListaIrmasParaTransferirDeCasaDeMissao;
 import com.viviano.imcarm.commands.ListaIrmasSelecionarFormandaParaIntegrarEquipeDeServicoCommand;
 import com.viviano.imcarm.commands.ListaIrmasSelecionarMadre;
+import com.viviano.imcarm.commands.ListarFormandasParaPermutarFaseDeFormacaoCommand;
 import com.viviano.imcarm.commands.LoginCommand;
 import com.viviano.imcarm.commands.LogoutCommand;
+import com.viviano.imcarm.commands.ReativarFormandaCommand;
 import com.viviano.imcarm.commands.SalvaAlteracoesCasasDeMissaoCommand;
 import com.viviano.imcarm.commands.SalvaAlteracoesEquipeDeServicoCommand;
 import com.viviano.imcarm.commands.SalvaAlteracoesIrmaCommand;
@@ -126,6 +135,14 @@ public class Helper {
                 mapCommands.put("54", new IrFormCadastroFormandasCommand());
                 mapCommands.put("55", new AlterarDadosFormandaCommand());
                 mapCommands.put("56", new CancelaCadastroFormandaCommand());
+                mapCommands.put("57", new ListaFormandasParaAlterarCommand());
+                mapCommands.put("58", new ListaFormandasParaApagarCommand());
+                mapCommands.put("59", new DarBaixaEmFormandaCommand());
+                mapCommands.put("60", new ConfirmaCadastroFormandaCommand());
+                mapCommands.put("61", new ListaFormandasEmBaixaParaReativarCommand());
+                mapCommands.put("62", new ReativarFormandaCommand());
+                mapCommands.put("63", new ListarFormandasParaPermutarFaseDeFormacaoCommand());
+                mapCommands.put("64", new IrFormPermutaFormanda());
 	}
 	
 	public static Helper getInstance(){

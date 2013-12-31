@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.viviano.imcarm.entidades.FaseFormacaoBean;
+import com.viviano.imcarm.entidades.FormandaBean;
 
 
 public class FaseFormacaoDao {
@@ -55,6 +56,28 @@ public class FaseFormacaoDao {
 			FaseFormacaoBean faseFormacaoBean =  new FaseFormacaoBean();
 			faseFormacaoBean.setIdFase(rs.getInt("id_fase"));
 			faseFormacaoBean.setNome(rs.getString("nome"));
+			fases.add(faseFormacaoBean);
+		}
+		
+		rs.close();
+		stat.close();
+		con.close();
+		return fases;
+	}
+        public List<FaseFormacaoBean> getAllFaseFormacaoBeanPorFormanda(Integer idFormanda) throws ClassNotFoundException, SQLException{
+		Connection con = conexao.getConnection();
+		String sql = "SELECT * FROM fase_formacao WHERE id_freira = ?";
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		stat.setInt(1, idFormanda);
+                ResultSet rs = stat.executeQuery();
+		List<FaseFormacaoBean> fases = new ArrayList<FaseFormacaoBean>();
+		while (rs.next()){
+			FaseFormacaoBean faseFormacaoBean =  new FaseFormacaoBean();
+			faseFormacaoBean.setIdFase(rs.getInt("id_fase"));
+			faseFormacaoBean.setNome(rs.getString("nome"));
+                        faseFormacaoBean.setFormanda(new FormandaDao().getFormandaBean(rs.getInt("id_freira")));
+                        faseFormacaoBean.setDataEntrada(rs.getString("data_entrada"));
+                        faseFormacaoBean.setDataSaida(rs.getString("data_saida"));
 			fases.add(faseFormacaoBean);
 		}
 		

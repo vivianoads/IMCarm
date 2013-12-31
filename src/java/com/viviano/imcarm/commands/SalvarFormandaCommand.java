@@ -1,5 +1,6 @@
 package com.viviano.imcarm.commands;
 
+import com.viviano.imcarm.entidades.FaseFormacaoBean;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.viviano.imcarm.entidades.FormandaBean;
 import com.viviano.imcarm.entidades.LoginBean;
+import com.viviano.imcarm.persistencia.FaseFormacaoDao;
 import com.viviano.imcarm.persistencia.FormandaDao;
 import com.viviano.imcarm.servicetowork.VerificaUsuario;
 import java.util.logging.Level;
@@ -69,6 +71,17 @@ public class SalvarFormandaCommand implements Command{
                             formandaDao.alteraFormanda(new Integer(request.getParameter("id_formanda")), f);
                             System.out.println("Alterou Formanda");
                             FormandaBean formandaBeanGravada = formandaDao.getFormandaBean(new Integer(request.getParameter("id_formanda")));
+                            
+                            
+//                            Isso Precisa ser feito
+                            
+//                            FaseFormacaoDao faseFormacaoDao = new FaseFormacaoDao();
+//                            FaseFormacaoBean faseFormacaoBean = new FaseFormacaoBean();
+//                            faseFormacaoBean.setNome(formandaBeanGravada.getEtapa());
+//                            faseFormacaoBean.setFormanda(formandaBeanGravada);
+//                            faseFormacaoBean.setDataEntrada(formandaBeanGravada.getDataEtapaAtual());
+//                            faseFormacaoDao.alteraFaseFormacao(idFaseFormacao, faseFormacaoBean);
+                            
                             request.setAttribute("formandagravada", formandaBeanGravada);
                             nextPage = "confirma_cadastro_de_formanda.jsp";
                         } catch (ClassNotFoundException ex) {
@@ -79,7 +92,18 @@ public class SalvarFormandaCommand implements Command{
                     }else {
                         try {
                             formandaDao.gravaFormanda(f);
+                            
+                            
+                            
                             FormandaBean formandaBeanGravada = formandaDao.getUltimaFormandaBeanCadastrada();
+                            
+//                            FaseFormacaoDao faseFormacaoDao = new FaseFormacaoDao();
+//                            FaseFormacaoBean faseFormacaoBean = new FaseFormacaoBean();
+//                            faseFormacaoBean.setNome(formandaBeanGravada.getEtapa());
+//                            faseFormacaoBean.setFormanda(formandaBeanGravada);
+//                            faseFormacaoBean.setDataEntrada(formandaBeanGravada.getDataEtapaAtual());
+//                            faseFormacaoDao.gravaFaseFormacao(faseFormacaoBean);
+                            
                             request.setAttribute("formandagravada", formandaBeanGravada);
                             nextPage = "confirma_cadastro_de_formanda.jsp";
                         } catch (ClassNotFoundException e) {
