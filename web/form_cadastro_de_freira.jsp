@@ -64,81 +64,81 @@
                                 <h5>${mensagem_erro}</h5>
                                 
                                 <b>Nome Civil: </b>
-                                <input size="55" type="text" name="nome_civil" value="${formanda.nomeCivil}">
+                                <input size="55" type="text" name="nome_civil" value="${freira.nomeCivil}">
                                 
                                 <b>Nome Religioso: </b>
-                                <input size="50" type="text" name="nome_religioso" value="${formanda.nomeReligioso}">
+                                <input size="50" type="text" name="nome_religioso" value="${freira.nomeReligioso}">
                                 <br/>
                                 <b>Data de Nascimento: </b>
-                                <input type="date" name="data_nascimento" value="${formanda.dataNascimento}">
+                                <input type="date" name="data_nascimento" value="${freira.dataNascimento}">
                                 <b>CPF: </b>
-                                <input size="38" type="text" name="cpf" value="${formanda.cpf}">
+                                <input size="38" type="text" name="cpf" value="${freira.cpf}">
                                 <b>RG: </b>
-                                <input size="38" type="text" name="rg" value="${formanda.rg}">
+                                <input size="38" type="text" name="rg" value="${freira.rg}">
                                 </br>
                                 <b>Pai: </b>
-                                <input size="61" type="text" name="nome_pai" value="${formanda.nomePai}">
+                                <input size="61" type="text" name="nome_pai" value="${freira.nomePai}">
                                 <b>Mãe: </b>
-                                <input size="61" type="text" name="nome_mae" value="${formanda.nomeMae}">
+                                <input size="61" type="text" name="nome_mae" value="${freira.nomeMae}">
                                 <br/>
                                 <b>Rua: </b>
-                                <input size="60" type="text" name="rua_familia" value="${formanda.ruaFamilia}">
+                                <input size="60" type="text" name="rua_familia" value="${freira.ruaFamilia}">
                                 <b>Núm.: </b>
-                                <input size="6" type="text" name="numero_familia" value="${formanda.numeroFamilia}">
+                                <input size="6" type="text" name="numero_familia" value="${freira.numeroFamilia}">
                                 <b>Bairro: </b>
-                                <input size="41" type="text" name="bairro_familia" value="${formanda.bairroFamilia}">
+                                <input size="41" type="text" name="bairro_familia" value="${freira.bairroFamilia}">
                                 <br/>
                                 <b>Cidade: </b>
-                                <input size="57" type="text" name="cidade_familia" value="${formanda.cidadeFamilia}">
+                                <input size="57" type="text" name="cidade_familia" value="${freira.cidadeFamilia}">
                                 <b>UF: </b>
-                                <input size="9" type="text" name="estado_familia" value="${formanda.estadoFamilia}">
+                                <input size="9" type="text" name="estado_familia" value="${freira.estadoFamilia}">
                                 <b>CEP: </b>
-                                <input size="43" type="text" name="cep_familia" value="${formanda.cepFamilia}">
+                                <input size="43" type="text" name="cep_familia" value="${freira.cepFamilia}">
                                 <br/>
                                 <b>Diocese: </b>
-                                <input size="38" type="text" name="diocese" value="${formanda.diocese}">
+                                <input size="38" type="text" name="diocese" value="${freira.diocese}">
                                 <b>Tel.: </b>
-                                <input size="26" type="text" name="telefone" value="${formanda.telefone}">
+                                <input size="26" type="text" name="telefone" value="${freira.telefone}">
                                 <b>Email: </b>
-                                <input size="41" type="text" name="email" value="${formanda.email}">
+                                <input size="41" type="text" name="email" value="${freira.email}">
                                 <br/>
                                 <b>Aspirantado: </b>
-                                <input type="date" name="data_aspirantado" value="${formanda.dataAspirantado}">
+                                <input type="date" name="data_aspirantado" value="${freira.dataAspirantado}">
                                 <b>Postulantado: </b>
-                                <input type="date" name="data_postulantado" value="${formanda.dataPostulantado}">
+                                <input type="date" name="data_postulantado" value="${freira.dataPostulantado}">
                                 <b>Noviciado Canônico: </b>
-                                <input type="date" name="data_noviciado_canonico" value="${formanda.dataNoviciadoCanonico}">
+                                <input type="date" name="data_noviciado_canonico" value="${freira.dataNoviciadoCanonico}">
                                 <br/>
                                 <b>Noviciado Apostólico: </b>
-                                <input type="date" name="data_noviciado_apostolico" value="${formanda.dataNoviciadoApostolico}">
+                                <input type="date" name="data_noviciado_apostolico" value="${freira.dataNoviciadoApostolico}">
                                 <b>Juniorado: </b>
-                                <input type="date" name="data_juniorado" value="${formanda.datasJuniorado}">
+                                <input type="date" name="data_juniorado" value="${freira.datasJuniorado}">
                                 <b>Juniorado I Renovação: </b>
-                                <input type="date" name="data_juniorado_1" value="${formanda.datasJuniorado[1]}">
+                                <input type="date" name="data_juniorado_1" value="${freira.datasJunioradoI}">
                                 <br/>
                                 <b>Juniorado II Renov.: </b>
-                                <input type="date" name="data_juniorado_2" value="${formanda.datasJuniorado[2]}">
+                                <input type="date" name="data_juniorado_2" value="${freira.datasJunioradoII}">
                                 <b>Juniorado III Renov.: </b>
-                                <input type="date" name="data_juniorado_3" value="${formanda.datasJuniorado[3]}">
+                                <input type="date" name="data_juniorado_3" value="${freira.datasJunioradoIII}">
                                 <b>Juniorado IV Renov.: </b>
-                                <input type="date" name="data_juniorado_4" value="${formanda.datasJuniorado[4]}">
+                                <input type="date" name="data_juniorado_4" value="${freira.datasJunioradoIV}">
                                 <br/>
                                 <b>Juniorado V Renov.: </b>
-                                <input type="date" name="data_juniorado_5" value="${formanda.datasJuniorado[5]}">
+                                <input type="date" name="data_juniorado_5" value="${freira.datasJunioradoV}">
                                 <b>Juniorado VI Renov.: </b>
-                                <input type="date" name="data_juniorado_6" value="${formanda.datasJuniorado[6]}">
+                                <input type="date" name="data_juniorado_6" value="${freira.datasJunioradoVI}">
                                 <b>Juniorado VII Renov.: </b>
-                                <input type="date" name="data_juniorado_7" value="${formanda.datasJuniorado[7]}">
+                                <input type="date" name="data_juniorado_7" value="${freira.datasJunioradoVII}">
                                 <br/>
                                 <b>Juniorado VIII Renov.: </b>
-                                <input type="date" name="data_juniorado_8" value="${formanda.datasJuniorado[8]}">
+                                <input type="date" name="data_juniorado_8" value="${freira.datasJunioradoVIII}">
                                 <b>Juniorado IX Renov.: </b>
-                                <input type="date" name="data_juniorado_9" value="${formanda.datasJuniorado[9]}">
+                                <input type="date" name="data_juniorado_9" value="${freira.datasJunioradoIX}">
                                 <b>Profissão Simples: </b>
-                                <input type="date" name="data_profissao_temporaria" value="${formanda.dataProfissaoTemporaria}">
+                                <input type="date" name="data_profissao_temporaria" value="${freira.dataProfissaoTemporaria}">
                                 <br/>
                                 <b>Profissão Perpétua: </b>
-                                <input type="date" name="data_profissao_perpetua" value="${formanda.dataProfissaoPerpetua}">
+                                <input type="date" name="data_profissao_perpetua" value="${freira.dataProfissaoPerpetua}">
                                 <b>Atividade: </b>
                                 <input type="radio" name="ativo" value="sim" checked> Ativa
                                 <input type="radio" name="ativo" value="nao"> Inativa
@@ -218,9 +218,10 @@
                                 <b>Motivo(Caso Formanda em estado de INATIVIDADE)</b>
                                 <input size="83" type="text" name="motivo_inatividade" value="${formanda.motivoInatividade}">
                                 <br/>-->
-                                <input type="hidden" name="action" value="*">
+                                <input type="hidden" name="action" value="70">
                                 <input type="hidden" name="opcao" value="${opcao}">
                                 <input type="hidden" name="id_formanda" value="${formanda.idFormanda}">
+                                <input type="hidden" name="id_fase_de_formacao" value="${id_fase_de_formacao}">
                                 <input type="submit" class="i2Style" value="Salvar">
                             </form>
                         </div>

@@ -148,62 +148,67 @@ public class Main {
 //            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
 //        }
         
-                String nome = "nome";
-                String pai = "pai";
-                String mae = "mae";
-                String rua = "rua";
-                String numero = "numero";
-                String bairro = "bairro";
-                String cidade = "cidade";
-                String uf = "uf";
-                String cep = "cep";
-                String diocese = "diocese";
-                String dataNascimento = "data_nasc";
-                String email = "email";
-                String telefone = "telefone";
-                String etapaFormacaoAtual = "etapa_formacao_atual";
-                String dataIngressoEtapaAtual = "data_ing";
-                String atividade = "ativid";
-                String motivoInatividade = "motivo_inatividade";
-		
-                FormandaBean f = new FormandaBean();
-                
-                f.setNome(nome);
-                f.setAtividade(atividade);
-                f.setBairro(bairro);
-                f.setCep(cep);
-                f.setCidade(cidade);
-                f.setDataEtapaAtual(dataIngressoEtapaAtual);
-                f.setDataNascimento(dataNascimento);
-                f.setDiocese(diocese);
-                f.setEmail(email);
-                f.setEtapa(etapaFormacaoAtual);
-                f.setMae(mae);
-                f.setMotivoInatividade(motivoInatividade);
-                f.setNumero(numero);
-                f.setPai(pai);
-                f.setRua(rua);
-                f.setTelefone(telefone);
-                f.setUf(uf);
-                
-                FormandaDao dao = new FormandaDao();
-                FormandaBean gravada = null;
-                try {
-                    dao.gravaFormanda(f);
-                    gravada =  dao.getUltimaFormandaBeanCadastrada();
-                } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (SQLException ex) {
-                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                }   
+//                String nome = "nome";
+//                String pai = "pai";
+//                String mae = "mae";
+//                String rua = "rua";
+//                String numero = "numero";
+//                String bairro = "bairro";
+//                String cidade = "cidade";
+//                String uf = "uf";
+//                String cep = "cep";
+//                String diocese = "diocese";
+//                String dataNascimento = "data_nasc";
+//                String email = "email";
+//                String telefone = "telefone";
+//                String etapaFormacaoAtual = "etapa_formacao_atual";
+//                String dataIngressoEtapaAtual = "data_ing";
+//                String atividade = "ativid";
+//                String motivoInatividade = "motivo_inatividade";
+//		
+//                FormandaBean f = new FormandaBean();
+//                
+//                f.setNome(nome);
+//                f.setAtividade(atividade);
+//                f.setBairro(bairro);
+//                f.setCep(cep);
+//                f.setCidade(cidade);
+//                f.setDataEtapaAtual(dataIngressoEtapaAtual);
+//                f.setDataNascimento(dataNascimento);
+//                f.setDiocese(diocese);
+//                f.setEmail(email);
+//                f.setEtapa(etapaFormacaoAtual);
+//                f.setMae(mae);
+//                f.setMotivoInatividade(motivoInatividade);
+//                f.setNumero(numero);
+//                f.setPai(pai);
+//                f.setRua(rua);
+//                f.setTelefone(telefone);
+//                f.setUf(uf);
+//                
+//                FormandaDao dao = new FormandaDao();
+//                FormandaBean gravada = null;
+//                try {
+//                    dao.gravaFormanda(f);
+//                    gravada =  dao.getUltimaFormandaBeanCadastrada();
+//                } catch (ClassNotFoundException ex) {
+//                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//                } catch (SQLException ex) {
+//                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//                }   
+//        
+//                gravada.setNome("ALTERADO");
+//        try {
+//            dao.alteraFormanda(gravada.getIdFormanda(), gravada);
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         
-                gravada.setNome("ALTERADO");
-        try {
-            dao.alteraFormanda(gravada.getIdFormanda(), gravada);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        
+        for(int i = 0; i< 34; i++){
+            System.out.println("ps.setString("+(i+1)+", freira.get);");
         }
     }
 }

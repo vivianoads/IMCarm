@@ -69,6 +69,7 @@ import com.viviano.imcarm.commands.SalvaAlteracoesIrmaCommand;
 import com.viviano.imcarm.commands.SalvaEquipeDeServico;
 import com.viviano.imcarm.commands.SalvaalteracoesFormandaCommand;
 import com.viviano.imcarm.commands.SalvarCoordenacaoDeFraternidade;
+import com.viviano.imcarm.commands.SalvarFreiraCommand;
 import com.viviano.imcarm.commands.SalvarGovernoGeralCommand;
 import com.viviano.imcarm.commands.SelecionaCoordenadoraFraternidade;
 import com.viviano.imcarm.commands.SelecionaCoordenadoraParaEquipeDeServicoCommand;
@@ -153,6 +154,7 @@ public class Helper {
                 mapCommands.put("67", new IrFormCadastroFreira());
                 mapCommands.put("68", new ListaFormandasParaConcluirFormacaoCommand());
                 mapCommands.put("69", new ConcluirFormacaoFormandaCommand());
+                mapCommands.put("70", new SalvarFreiraCommand());
 	}
 	
 	public static Helper getInstance(){

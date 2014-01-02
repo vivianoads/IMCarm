@@ -30,35 +30,28 @@ public class ConcluirFormacaoFormandaCommand implements Command{
     @Override
     public String execute(HttpServletRequest request) {
         String nextPage = "form_cadastro_de_freira.jsp";
-        Integer idFormanda = new Integer(request.getParameter(""));
-        String dataConclusao = request.getParameter("");
+        Integer idFormanda = new Integer(request.getParameter("id_formanda_concluir"));
+        String dataConclusao = request.getParameter("data_conclusao_formacao");
         
         FormandaDao formandaDao = new FormandaDao();
         FormandaBean formandaBean = new FormandaBean();
         FreiraBean f = new FreiraBean();
+        FaseFormacaoBean faseFormacaoBean = new FaseFormacaoBean();
         
         Map<String, String> fasesConcluidas = new HashMap<String, String>();
         try {
             for(FaseFormacaoBean fase : new FaseFormacaoDao().getAllFaseFormacaoBeanPorFormanda(idFormanda)){
                 fasesConcluidas.put(fase.getNome(), fase.getDataSaida());
             }
-       
-        
-        String[] junioradoRenovacoes = new String[10];
-        junioradoRenovacoes[0] = fasesConcluidas.get("Juniorado"); 
-        junioradoRenovacoes[1] = fasesConcluidas.get("Juniorado - I Renovação"); 
-        junioradoRenovacoes[2] = fasesConcluidas.get("Juniorado - II Renovação"); 
-        junioradoRenovacoes[3] = fasesConcluidas.get("Juniorado - III Renovação");  
-        junioradoRenovacoes[4] = fasesConcluidas.get("Juniorado - IV Renovação");  
-        junioradoRenovacoes[5] = fasesConcluidas.get("Juniorado - V Renovação");  
-        junioradoRenovacoes[6] = fasesConcluidas.get("Juniorado - VI Renovação");  
-        junioradoRenovacoes[7] = fasesConcluidas.get("Juniorado - VII Renovação");  
-        junioradoRenovacoes[8] = fasesConcluidas.get("Juniorado - VIII Renovação");  
-        junioradoRenovacoes[9] = fasesConcluidas.get("Juniorado - IX Renovação"); 
-        
-        
-        
         formandaBean = formandaDao.getFormandaBean(idFormanda);
+        
+        
+        faseFormacaoBean.setFormanda(formandaBean);
+        faseFormacaoBean.setDataEntrada(formandaBean.getDataEtapaAtual());
+        faseFormacaoBean.setDataSaida(dataConclusao);
+        faseFormacaoBean.setNome(formandaBean.getEtapa());
+        
+        new FaseFormacaoDao().gravaFaseFormacao(faseFormacaoBean);
         
         formandaBean.setAtividade("nao");
         formandaBean.setMotivoInatividade("Conclusão da Formação");
@@ -72,13 +65,22 @@ public class ConcluirFormacaoFormandaCommand implements Command{
         f.setCidadeFamilia(formandaBean.getCidade());
         f.setDataAspirantado(fasesConcluidas.get("Aspirantado"));
         f.setDataNascimento(formandaBean.getDataNascimento());
-        f.setDataNoviciadoApostolico("Noviciado Apostólico");
-        f.setDataNoviciadoCanonico("Noviciado Canônico");
-        f.setDataPostulantado("Postulantado");
+        f.setDataNoviciadoApostolico(fasesConcluidas.get("Noviciado Apostólico"));
+        f.setDataNoviciadoCanonico(fasesConcluidas.get("Noviciado Canônico"));
+        f.setDataPostulantado(fasesConcluidas.get("Postulantado"));
         f.setDataProfissaoPerpetua(dataConclusao);
-        f.setDataProfissaoTemporaria("Profissão Simples");
+        f.setDataProfissaoTemporaria(fasesConcluidas.get("Profissão Simples"));
         
-        f.setDatasJuniorado(junioradoRenovacoes);
+        f.setDatasJuniorado(fasesConcluidas.get("Juniorado")); 
+        f.setDatasJunioradoI(fasesConcluidas.get("Juniorado - I Renovação")); 
+        f.setDatasJunioradoII(fasesConcluidas.get("Juniorado - II Renovação")); 
+        f.setDatasJunioradoIII(fasesConcluidas.get("Juniorado - III Renovação"));  
+        f.setDatasJunioradoIV(fasesConcluidas.get("Juniorado - IV Renovação"));  
+        f.setDatasJunioradoV(fasesConcluidas.get("Juniorado - V Renovação"));  
+        f.setDatasJunioradoVI(fasesConcluidas.get("Juniorado - VI Renovação"));  
+        f.setDatasJunioradoVII(fasesConcluidas.get("Juniorado - VII Renovação"));  
+        f.setDatasJunioradoVIII(fasesConcluidas.get("Juniorado - VIII Renovação"));  
+        f.setDatasJunioradoIX(fasesConcluidas.get("Juniorado - IX Renovação"));     
         
         f.setDiocese(formandaBean.getDiocese());
         f.setEmail(formandaBean.getEmail());
@@ -90,6 +92,7 @@ public class ConcluirFormacaoFormandaCommand implements Command{
         f.setRuaFamilia(formandaBean.getRua());
         f.setTelefone(formandaBean.getTelefone());
         
+        faseFormacaoBean = new FaseFormacaoDao().getUltimaFaseFormacaoBeanCadastrada(faseFormacaoBean.getFormanda().getIdFormanda(), faseFormacaoBean.getNome(), faseFormacaoBean.getDataEntrada(), faseFormacaoBean.getDataSaida());
         
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConcluirFormacaoFormandaCommand.class.getName()).log(Level.SEVERE, null, ex);
@@ -97,6 +100,7 @@ public class ConcluirFormacaoFormandaCommand implements Command{
             Logger.getLogger(ConcluirFormacaoFormandaCommand.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        request.setAttribute("id_fase_de_formacao", faseFormacaoBean.getIdFase());
         request.setAttribute("freira", f);
         return nextPage;
     }

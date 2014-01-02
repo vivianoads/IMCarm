@@ -27,7 +27,16 @@ public class FreiraBean {
     private String diocese;
     private String cepFamilia;
     private String estadoFamilia;
-    private String[] datasJuniorado = new String[10];
+    private String datasJuniorado;
+    private String datasJunioradoI;
+    private String datasJunioradoII;
+    private String datasJunioradoIII;
+    private String datasJunioradoIV;
+    private String datasJunioradoV;
+    private String datasJunioradoVI;
+    private String datasJunioradoVII;
+    private String datasJunioradoVIII;
+    private String datasJunioradoIX;
 
     public String getDataNoviciadoApostolico() {
         return dataNoviciadoApostolico;
@@ -37,16 +46,87 @@ public class FreiraBean {
         this.dataNoviciadoApostolico = dataNoviciadoApostolico;
     }
 
-    
-    
-    public String[] getDatasJuniorado() {
+    public String getDatasJuniorado() {
         return datasJuniorado;
     }
 
-    public void setDatasJuniorado(String[] datasJuniorado) {
+    public void setDatasJuniorado(String datasJuniorado) {
         this.datasJuniorado = datasJuniorado;
     }
 
+    public String getDatasJunioradoI() {
+        return datasJunioradoI;
+    }
+
+    public void setDatasJunioradoI(String datasJunioradoI) {
+        this.datasJunioradoI = datasJunioradoI;
+    }
+
+    public String getDatasJunioradoII() {
+        return datasJunioradoII;
+    }
+
+    public void setDatasJunioradoII(String datasJunioradoII) {
+        this.datasJunioradoII = datasJunioradoII;
+    }
+
+    public String getDatasJunioradoIII() {
+        return datasJunioradoIII;
+    }
+
+    public void setDatasJunioradoIII(String datasJunioradoIII) {
+        this.datasJunioradoIII = datasJunioradoIII;
+    }
+
+    public String getDatasJunioradoIV() {
+        return datasJunioradoIV;
+    }
+
+    public void setDatasJunioradoIV(String datasJunioradoIV) {
+        this.datasJunioradoIV = datasJunioradoIV;
+    }
+
+    public String getDatasJunioradoV() {
+        return datasJunioradoV;
+    }
+
+    public void setDatasJunioradoV(String datasJunioradoV) {
+        this.datasJunioradoV = datasJunioradoV;
+    }
+
+    public String getDatasJunioradoVI() {
+        return datasJunioradoVI;
+    }
+
+    public void setDatasJunioradoVI(String datasJunioradoVI) {
+        this.datasJunioradoVI = datasJunioradoVI;
+    }
+
+    public String getDatasJunioradoVII() {
+        return datasJunioradoVII;
+    }
+
+    public void setDatasJunioradoVII(String datasJunioradoVII) {
+        this.datasJunioradoVII = datasJunioradoVII;
+    }
+
+    public String getDatasJunioradoVIII() {
+        return datasJunioradoVIII;
+    }
+
+    public void setDatasJunioradoVIII(String datasJunioradoVIII) {
+        this.datasJunioradoVIII = datasJunioradoVIII;
+    }
+
+    public String getDatasJunioradoIX() {
+        return datasJunioradoIX;
+    }
+
+    public void setDatasJunioradoIX(String datasJunioradoIX) {
+        this.datasJunioradoIX = datasJunioradoIX;
+    }
+
+   
      
     public String getCpf() {
         return cpf;
