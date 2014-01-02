@@ -60,27 +60,86 @@
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
                             <form name="cadastroFormandas" action="/ImCarm_2.0/ServletControler" method="post">	
-                                <h3 align="center">Cadastrar/Alterar Formanda</h3>
+                                <h3 align="center">Cadastrar/Alterar Freira</h3>
                                 <h5>${mensagem_erro}</h5>
-                                <b>Nome: ${formanda.nome}</b>
-                                <b>Data de Nascimento: ${formanda.dataNascimento}</b>
+                                
+                                private Integer id;
+                                
+                                
+                                <b>Nome Civil</b>
+                                private String nomeCivil;
+                                <b></b>
+                                private String nomeReligioso;
+                                <b></b>
+                                private String nomePai;
+                                <b></b>
+                                private String nomeMae;
+                                <b></b>
+                                private String dataNascimento;
+                                <b></b>
+                                private String cpf;
+                                private String rg;
+                                <b></b>
+                                private String dataAspirantado;
+                                private String dataPostulantado;
+                                private String dataNoviciadoCanonico;
+                                private String dataProfissaoTemporaria;
+                                private String dataProfissaoPerpetua;
+                                private String telefone;
+                                private String email;
+                                private String tipoAtivo; 
+                                private String ativo;
+                                private String ruaFamilia;
+                                private String numeroFamilia;
+                                private String bairroFamilia;
+                                private String cidadeFamilia; 
+                                private String tipoInativo;
+                                private String diocese;
+                                private String cepFamilia;
+                                private String estadoFamilia;
+                                
+                                
+                                
+                                
+                                <b>Nome:</b>
+                                <input size="80" type="text" name="nome" value="${formanda.nome}">
+                                <b>Data de Nascimento:</b>
+                                <input type="date" name="data_nascimento" value="${formanda.dataNascimento}">
                                 <br/>
                                 <br/>
-                                Fases da Formação Concluídas: 
+                                <b>Pai:</b>
+                                <input size="59" type="text" name="pai" value="${formanda.pai}">
+                                <b>Mãe:</b>
+                                <input size="59" type="text" name="mae" value="${formanda.mae}">
                                 <br/>
-                                <c:forEach items="${list_fases}" var="fase">
-                                    Nome: ${fase.nome} Data de Entrada: ${fase.dataEntrada} Data de Saída: ${fase.dataSaida}
-                                    <br/>
-                                </c:forEach>
+                                <br/>
+                                <b>Rua:</b>
+                                <input size="58" type="text" name="rua" value="${formanda.rua}">
+                                <b>Núm.:</b>
+                                <input size="6" type="text" name="numero" value="${formanda.numero}">
+                                <b>Bairro:</b>
+                                <input size="39" type="text" name="bairro" value="${formanda.bairro}">
+                                <br/>
+                                <br/>
+                                <b>Cidade:</b>
+                                <input size="55" type="text" name="cidade" value="${formanda.cidade}">
+                                <b>Estado: </b>
+                                <input size="7" type="text" name="uf" value="${formanda.uf}">
+                                <b>CEP: </b>
+                                <input size="39" type="text" name="cep" value="${formanda.cep}">
+                                <br/>
+                                <br/>
+                                <b>Email: </b>
+                                <input size="56" type="text" name="email" value="${formanda.email}">
+                                <b>Tel.: </b>
+                                <input size="15" type="text" name="telefone" value="${formanda.telefone}">
+                                <b>Diocese: </b>
+                                <input size="31" type="text" name="diocese" value="${formanda.diocese}">
                                 <br/>
                                 <br/>
                                 <b>Etapa de Formação Atual: </b>
                                 <b>${formanda.etapa}</b>
-                                <b>Data de Ingressso nesta Etapa: ${formanda.dataEtapaAtual}</b>
-                                <br/>
-                                <br/>
-                                <b>Selecione a NOVA Etapa de Formação: </b>
-                                <select name="etapa_formacao">
+                                <select name="etapa_formacao_atual">
                                     <option value="" selected></option>
                                     <option value="Aspirantado">Aspirantado</option>
                                     <option value="Postulantado">Postulantado</option>
@@ -99,14 +158,20 @@
                                     <option value="Profissão Simples">Profissão Simples</option>
                                     <option value="Profissão Perpétua">Profissão Perpétua</option>
                                 </select>
-                                <b>Data de Ingressso NOVA Etapa:</b>
-                                <input type="date" name="data_ingresso_nova_etapa">
+                                <b>Data de Ingressso nesta Etapa:</b>
+                                <input type="date" name="data_ingresso_etapa_atual" value="${formanda.dataEtapaAtual}">
+                                <br/>
+                                <b>Atividade</b>
+                                <input type="radio" name="atividade" value="sim" checked> Ativa
+                                <input type="radio" name="atividade" value="nao"> Inativa
+                                <br/>
+                                <b>Motivo(Caso Formanda em estado de INATIVIDADE)</b>
+                                <input size="83" type="text" name="motivo_inatividade" value="${formanda.motivoInatividade}">
                                 <br/>
                                 <br/>
-                                <input type="hidden" name="action" value="65">
+                                <input type="hidden" name="action" value="5">
+                                <input type="hidden" name="opcao" value="${opcao}">
                                 <input type="hidden" name="id_formanda" value="${formanda.idFormanda}">
-                                <input type="hidden" name="etapa_antiga" value="${formanda.etapa}">
-                                <input type="hidden" name="data_entrada_etapa_antiga" value="${formanda.dataEtapaAtual}">
                                 <input type="submit" class="i2Style" value="Salvar">
                             </form>
                         </div>
@@ -208,4 +273,40 @@
                 </div>
                 
         </body>
+
+
+
+                                nome_civil character varying(254),
+                                nome_religioso character varying(254),
+                                data_nascimento character varying,
+                                rg double precision,
+                                cpf double precision,
+                                nome_pai character varying(254),
+                                nome_mae character varying(254),
+                                rua_familia character varying(254),
+                                numero_familia character varying(254),
+                                bairro_familia character varying(254),
+                                cidade_familia character varying(254),
+                                estado_familia character varying(2),
+                                cep_familia character varying(8),
+                                diocese character varying(254),
+                                telefone character varying(10),
+                                email character varying(100),
+                                
+                                data_aspirantado character varying,
+                                data_postulantado character varying,
+                                data_noviciado_canonico character varying,
+                                data_profissao_temporaria character varying,
+                                data_profissao_perpetua character varying,
+                                id serial NOT NULL,
+                                
+                                tipo_ativo character varying(20),
+                                ativo character varying(7),
+                                
+                                tipo_inativo character varying(20),
+
+
+
+
+
 </html>-->

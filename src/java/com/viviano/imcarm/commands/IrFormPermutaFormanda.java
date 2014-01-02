@@ -27,7 +27,6 @@ public class IrFormPermutaFormanda implements Command{
     public String execute(HttpServletRequest request) {
         String nextPage = "form_permuta_de_formanda.jsp";
         Integer idFormanda = new Integer(request.getParameter("id_formanda_permuta"));
-        System.out.println("idFormanda " + idFormanda);
         FaseFormacaoDao faseFormacaoDao = new FaseFormacaoDao();
         List<FaseFormacaoBean> faseFormacaoBeans = new ArrayList<FaseFormacaoBean>();
         FormandaBean formandaBean = new FormandaBean();

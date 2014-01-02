@@ -1,20 +1,49 @@
 package com.viviano.imcarm.entidades;
 
-import java.util.Date;
-
 public class FreiraBean {
 
     private Integer id;
-    private double cpf, rg;
-    private String nomeCivil, nomeReligioso, nomePai, nomeMae;
-    private String dataNascimento, dataAspirantado, dataPostulantado,
-            dataNoviciadoCanonico, dataProfissaoTemporaria,
-            dataProfissaoPerpetua, telefone, email, tipoAtivo, 
-            ativo, ruaFamilia, numeroFamilia, bairroFamilia, cidadeFamilia, 
-            tipoInativo, diocese, cepFamilia, estadoFamilia;
+    private String cpf;
+    private String rg;
+    private String nomeCivil;
+    private String nomeReligioso;
+    private String nomePai;
+    private String nomeMae;
+    private String dataNascimento;
+    private String dataAspirantado;
+    private String dataPostulantado;
+    private String dataNoviciadoCanonico;
+    private String dataProfissaoTemporaria;
+    private String dataProfissaoPerpetua;
+    private String telefone;
+    private String email;
+    private String tipoAtivo; 
+    private String ativo;
+    private String ruaFamilia;
+    private String numeroFamilia;
+    private String bairroFamilia;
+    private String cidadeFamilia;
+    private String diocese;
+    private String cepFamilia;
+    private String estadoFamilia;
 
-    public FreiraBean() {
+    public String getCpf() {
+        return cpf;
     }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+
+    
 
     public Integer getId() {
         return id;
@@ -24,42 +53,7 @@ public class FreiraBean {
         this.id = id;
     }
 
-    public FreiraBean(double cpf, double rg, String nomeCivil,
-            String nomeReligioso, String nomePai, String nomeMae,
-            String dataNascimento, String dataAspirantado, String dataPostulantado,
-            String dataNoviciadoCanonico, String dataProfissaoTemporaria,
-            String dataProfissaoPerpetua) {
-
-        this.cpf = cpf;
-        this.rg = rg;
-        this.nomeCivil = nomeCivil;
-        this.nomeReligioso = nomeReligioso;
-        this.nomePai = nomePai;
-        this.nomeMae = nomeMae;
-        this.dataNascimento = dataNascimento;
-        this.dataAspirantado = dataAspirantado;
-        this.dataPostulantado = dataPostulantado;
-        this.dataNoviciadoCanonico = dataNoviciadoCanonico;
-        this.dataProfissaoTemporaria = dataProfissaoTemporaria;
-        this.dataProfissaoPerpetua = dataProfissaoPerpetua;
-    }
-
-    public double getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(double cpf) {
-        this.cpf = cpf;
-    }
-
-    public double getRg() {
-        return rg;
-    }
-
-    public void setRg(double rg) {
-        this.rg = rg;
-    }
-
+    
     public String getNomeCivil() {
         return nomeCivil;
     }
@@ -202,14 +196,6 @@ public class FreiraBean {
 
     public void setCidadeFamilia(String cidadeFamilia) {
         this.cidadeFamilia = cidadeFamilia;
-    }
-
-    public String getTipoInativo() {
-        return tipoInativo;
-    }
-
-    public void setTipoInativo(String tipoInativo) {
-        this.tipoInativo = tipoInativo;
     }
 
     public String getDiocese() {

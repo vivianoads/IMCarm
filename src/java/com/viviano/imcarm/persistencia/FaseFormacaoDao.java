@@ -21,9 +21,12 @@ public class FaseFormacaoDao {
 	
 	public void gravaFaseFormacao(FaseFormacaoBean faseFormacaoBean) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "INSERT INTO fase_formacao (nome) VALUES (?)";
+		String sql = "INSERT INTO fase_formacao (nome, data_entrada, data_saida, id_freira) VALUES (?, ?, ?, ?)";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, faseFormacaoBean.getNome());
+                ps.setString(2, faseFormacaoBean.getDataEntrada());
+                ps.setString(3, faseFormacaoBean.getDataSaida());
+                ps.setInt(4, faseFormacaoBean.getFormanda().getIdFormanda());
 		ps.execute();
 		ps.close();
 		con.close();
@@ -38,6 +41,30 @@ public class FaseFormacaoDao {
 		if (rs.next()){
 			faseFormacaoBean.setIdFase(rs.getInt("id_fase"));
 			faseFormacaoBean.setNome(rs.getString("nome"));
+		}
+		
+		rs.close();
+		stat.close();
+		con.close();
+		return faseFormacaoBean;
+	}
+        
+        public FaseFormacaoBean getUltimaFaseFormacaoBeanCadastrada(Integer idFormanda, String nome, String dataEntrada, String dataSaida) throws ClassNotFoundException, SQLException{
+		Connection con = conexao.getConnection();
+		String sql = "SELECT * FROM fase_formacao WHERE id_freira = ? AND nome like ? AND data_entrada like ? AND data_saida like ?";
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		stat.setInt(1, idFormanda);
+                stat.setString(2, nome);
+                stat.setString(3, dataEntrada);
+                stat.setString(4, dataSaida);
+                ResultSet rs = stat.executeQuery();
+		FaseFormacaoBean faseFormacaoBean =  new FaseFormacaoBean();
+		if (rs.next()){
+			faseFormacaoBean.setIdFase(rs.getInt("id_fase"));
+			faseFormacaoBean.setNome(rs.getString("nome"));
+                        faseFormacaoBean.setDataEntrada(rs.getString("data_entrada"));
+                        faseFormacaoBean.setDataSaida(rs.getString("data_saida"));
+                        faseFormacaoBean.setFormanda(new FormandaDao().getFormandaBean(rs.getInt("id_freira")));
 		}
 		
 		rs.close();

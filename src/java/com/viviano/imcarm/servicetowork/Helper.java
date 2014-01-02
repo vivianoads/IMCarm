@@ -20,6 +20,7 @@ import com.viviano.imcarm.commands.CancelaCadastroCoordenacaoCasaDeMissaoCommand
 import com.viviano.imcarm.commands.CancelaCadastroFormandaCommand;
 import com.viviano.imcarm.commands.CancelaCadastroGovernoGeral;
 import com.viviano.imcarm.commands.CancelaModificacaoEquipeDeServicoCommand;
+import com.viviano.imcarm.commands.CancelaPermutaCommand;
 import com.viviano.imcarm.commands.CancelarBaixaFormandaCommand;
 import com.viviano.imcarm.commands.Command;
 import com.viviano.imcarm.commands.ConfirmaAlteraçãoDeEquipeDeservicoCommand;
@@ -57,6 +58,7 @@ import com.viviano.imcarm.commands.ListaIrmasSelecionarMadre;
 import com.viviano.imcarm.commands.ListarFormandasParaPermutarFaseDeFormacaoCommand;
 import com.viviano.imcarm.commands.LoginCommand;
 import com.viviano.imcarm.commands.LogoutCommand;
+import com.viviano.imcarm.commands.PermutarFormandaCommand;
 import com.viviano.imcarm.commands.ReativarFormandaCommand;
 import com.viviano.imcarm.commands.SalvaAlteracoesCasasDeMissaoCommand;
 import com.viviano.imcarm.commands.SalvaAlteracoesEquipeDeServicoCommand;
@@ -143,6 +145,8 @@ public class Helper {
                 mapCommands.put("62", new ReativarFormandaCommand());
                 mapCommands.put("63", new ListarFormandasParaPermutarFaseDeFormacaoCommand());
                 mapCommands.put("64", new IrFormPermutaFormanda());
+                mapCommands.put("65", new PermutarFormandaCommand());
+                mapCommands.put("66", new CancelaPermutaCommand());
 	}
 	
 	public static Helper getInstance(){
