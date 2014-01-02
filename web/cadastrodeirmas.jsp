@@ -4,7 +4,7 @@
 <html>
     <head>
         <title>Bem Vindo</title>
-        <link href="EstiloCadastroDeFreiras.css" rel="stylesheet" type="text/css">
+        <link href="EstiloCadastroDeCongregacoes.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div id="container"> 
@@ -54,17 +54,68 @@
                     </div>
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
-                            <a href="/ImCarm_2.0/CadastroDeIrmas.html">
-                                <button class="i2Style_menu">Criar <br/> Freira</button>
-                            </a>
-                            <a href="/ImCarm_2.0/alteradadosirma.jsp">
-                                <button class="i2Style_menu">Modificar Freira</button>
-                            </a>
-                            <a href="/ImCarm_2.0/alteradadosirma.jsp">
-                                <button class="i2Style_menu">Dar Baixa em Freira</button>
-                            </a>
+                            <div id="linha_menu_interno">
+                                <div id="conteudo_menu_interno1">
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="67">
+                                        <button class="i2Style_menu">Criar <br/> Freira</button>
+                                    </form>
+                                </div>
+                                <div id="conteudo_menu_interno2">
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="*">
+                                        <input type="hidden" name="initial_index_formanda" value="0">
+                                        <button class="i2Style_menu">Modificar Freira</button>
+                                    </form>
+                                </div>
+                                <div id="conteudo_menu_interno3">
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="*">
+                                        <input type="hidden" name="initial_index_formanda" value="0">
+                                        <button class="i2Style_menu">Dar Baixa em Freira</button>
+                                    </form>
+                                </div>
+                                <div id="conteudo_menu_interno4">
+<!--                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="61">
+                                        <input type=hidden name="initial_index_formanda" value="0">
+                                        <button class="i2Style_menu">Reativar Formanda</button>
+                                    </form>-->
+                                </div>
+                                <div id="conteudo_menu_interno5">
+<!--                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="63">
+                                        <input type=hidden name="initial_index_formanda" value="0">
+                                        <button class="i2Style_menu">Permuta de Fase</button>
+                                    </form>-->
+                                </div>
+                                <div id="conteudo_menu_interno6">
+<!--                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="*">
+                                        <button class="i2Style_menu">Conclusão da Formação</button>
+                                        DEPENDE DE TER CONCLUÍDO O CADASTRO DE FREIRAS, POIS DAQUI, O USUÁRIO DEVE SER REDIRECIONADO 
+                                        PARA A PÁGINA DE FORMULÁRIO DE CADASTRO DE FREIRA PARA SEREM INFORMADOS OS DADOS COMPLEMENTARES AO CADASTRO
+                                    </form>-->
+                                </div>
+                                <div id="conteudo_menu_interno7">
+<!--                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="*">
+                                        <button class="i2Style_menu">**</button>
+                                    </form>-->
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 </div>
             </div>
             <div id="rodape">

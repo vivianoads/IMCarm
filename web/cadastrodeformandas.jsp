@@ -95,7 +95,8 @@
                                 </div>
                                 <div id="conteudo_menu_interno6">
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type=hidden name="action" value="*">
+                                        <input type=hidden name="action" value="68">
+                                        <input type=hidden name="initial_index_formanda" value="0">
                                         <button class="i2Style_menu">Conclusão da Formação</button>
                                         <!--DEPENDE DE TER CONCLUÍDO O CADASTRO DE FREIRAS, POIS DAQUI, O USUÁRIO DEVE SER REDIRECIONADO 
                                         PARA A PÁGINA DE FORMULÁRIO DE CADASTRO DE FREIRA PARA SEREM INFORMADOS OS DADOS COMPLEMENTARES AO CADASTRO-->

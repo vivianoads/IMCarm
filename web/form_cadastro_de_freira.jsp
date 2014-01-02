@@ -5,7 +5,7 @@
     <head>
         <title>Cadastra Congregação</title>
         <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
-        <link href="estilo_form_cadastro_de_formanda.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
+        <link href="estilo_form_cadastro_de_freiras.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
     </head>
 
     <body>
@@ -63,44 +63,94 @@
                                 <h3 align="center">Cadastrar/Alterar Freira</h3>
                                 <h5>${mensagem_erro}</h5>
                                 
-                                private Integer id;
+                                <b>Nome Civil: </b>
+                                <input size="55" type="text" name="nome_civil" value="${formanda.nomeCivil}">
+                                
+                                <b>Nome Religioso: </b>
+                                <input size="50" type="text" name="nome_religioso" value="${formanda.nomeReligioso}">
+                                <br/>
+                                <b>Data de Nascimento: </b>
+                                <input type="date" name="data_nascimento" value="${formanda.dataNascimento}">
+                                <b>CPF: </b>
+                                <input size="38" type="text" name="cpf" value="${formanda.cpf}">
+                                <b>RG: </b>
+                                <input size="38" type="text" name="rg" value="${formanda.rg}">
+                                </br>
+                                <b>Pai: </b>
+                                <input size="61" type="text" name="nome_pai" value="${formanda.nomePai}">
+                                <b>Mãe: </b>
+                                <input size="61" type="text" name="nome_mae" value="${formanda.nomeMae}">
+                                <br/>
+                                <b>Rua: </b>
+                                <input size="60" type="text" name="rua_familia" value="${formanda.ruaFamilia}">
+                                <b>Núm.: </b>
+                                <input size="6" type="text" name="numero_familia" value="${formanda.numeroFamilia}">
+                                <b>Bairro: </b>
+                                <input size="41" type="text" name="bairro_familia" value="${formanda.bairroFamilia}">
+                                <br/>
+                                <b>Cidade: </b>
+                                <input size="57" type="text" name="cidade_familia" value="${formanda.cidadeFamilia}">
+                                <b>UF: </b>
+                                <input size="9" type="text" name="estado_familia" value="${formanda.estadoFamilia}">
+                                <b>CEP: </b>
+                                <input size="43" type="text" name="cep_familia" value="${formanda.cepFamilia}">
+                                <br/>
+                                <b>Diocese: </b>
+                                <input size="38" type="text" name="diocese" value="${formanda.diocese}">
+                                <b>Tel.: </b>
+                                <input size="26" type="text" name="telefone" value="${formanda.telefone}">
+                                <b>Email: </b>
+                                <input size="41" type="text" name="email" value="${formanda.email}">
+                                <br/>
+                                <b>Aspirantado: </b>
+                                <input type="date" name="data_aspirantado" value="${formanda.dataAspirantado}">
+                                <b>Postulantado: </b>
+                                <input type="date" name="data_postulantado" value="${formanda.dataPostulantado}">
+                                <b>Noviciado Canônico: </b>
+                                <input type="date" name="data_noviciado_canonico" value="${formanda.dataNoviciadoCanonico}">
+                                <br/>
+                                <b>Noviciado Apostólico: </b>
+                                <input type="date" name="data_noviciado_apostolico" value="${formanda.dataNoviciadoApostolico}">
+                                <b>Juniorado: </b>
+                                <input type="date" name="data_juniorado" value="${formanda.datasJuniorado}">
+                                <b>Juniorado I Renovação: </b>
+                                <input type="date" name="data_juniorado_1" value="${formanda.datasJuniorado[1]}">
+                                <br/>
+                                <b>Juniorado II Renov.: </b>
+                                <input type="date" name="data_juniorado_2" value="${formanda.datasJuniorado[2]}">
+                                <b>Juniorado III Renov.: </b>
+                                <input type="date" name="data_juniorado_3" value="${formanda.datasJuniorado[3]}">
+                                <b>Juniorado IV Renov.: </b>
+                                <input type="date" name="data_juniorado_4" value="${formanda.datasJuniorado[4]}">
+                                <br/>
+                                <b>Juniorado V Renov.: </b>
+                                <input type="date" name="data_juniorado_5" value="${formanda.datasJuniorado[5]}">
+                                <b>Juniorado VI Renov.: </b>
+                                <input type="date" name="data_juniorado_6" value="${formanda.datasJuniorado[6]}">
+                                <b>Juniorado VII Renov.: </b>
+                                <input type="date" name="data_juniorado_7" value="${formanda.datasJuniorado[7]}">
+                                <br/>
+                                <b>Juniorado VIII Renov.: </b>
+                                <input type="date" name="data_juniorado_8" value="${formanda.datasJuniorado[8]}">
+                                <b>Juniorado IX Renov.: </b>
+                                <input type="date" name="data_juniorado_9" value="${formanda.datasJuniorado[9]}">
+                                <b>Profissão Simples: </b>
+                                <input type="date" name="data_profissao_temporaria" value="${formanda.dataProfissaoTemporaria}">
+                                <br/>
+                                <b>Profissão Perpétua: </b>
+                                <input type="date" name="data_profissao_perpetua" value="${formanda.dataProfissaoPerpetua}">
+                                <b>Atividade: </b>
+                                <input type="radio" name="ativo" value="sim" checked> Ativa
+                                <input type="radio" name="ativo" value="nao"> Inativa
+                                <b>Tipo de Atividade: </b>
+                                <input size="46" type="text" name="tipo_ativo" value="${formanda.tipoAtivo}">
+                                <br/>
                                 
                                 
-                                <b>Nome Civil</b>
-                                private String nomeCivil;
-                                <b></b>
-                                private String nomeReligioso;
-                                <b></b>
-                                private String nomePai;
-                                <b></b>
-                                private String nomeMae;
-                                <b></b>
-                                private String dataNascimento;
-                                <b></b>
-                                private String cpf;
-                                private String rg;
-                                <b></b>
-                                private String dataAspirantado;
-                                private String dataPostulantado;
-                                private String dataNoviciadoCanonico;
-                                private String dataProfissaoTemporaria;
-                                private String dataProfissaoPerpetua;
-                                private String telefone;
-                                private String email;
-                                private String tipoAtivo; 
-                                private String ativo;
-                                private String ruaFamilia;
-                                private String numeroFamilia;
-                                private String bairroFamilia;
-                                private String cidadeFamilia; 
-                                private String tipoInativo;
-                                private String diocese;
-                                private String cepFamilia;
-                                private String estadoFamilia;
                                 
                                 
                                 
-                                
+<!--                                
                                 <b>Nome:</b>
                                 <input size="80" type="text" name="nome" value="${formanda.nome}">
                                 <b>Data de Nascimento:</b>
@@ -167,9 +217,8 @@
                                 <br/>
                                 <b>Motivo(Caso Formanda em estado de INATIVIDADE)</b>
                                 <input size="83" type="text" name="motivo_inatividade" value="${formanda.motivoInatividade}">
-                                <br/>
-                                <br/>
-                                <input type="hidden" name="action" value="5">
+                                <br/>-->
+                                <input type="hidden" name="action" value="*">
                                 <input type="hidden" name="opcao" value="${opcao}">
                                 <input type="hidden" name="id_formanda" value="${formanda.idFormanda}">
                                 <input type="submit" class="i2Style" value="Salvar">

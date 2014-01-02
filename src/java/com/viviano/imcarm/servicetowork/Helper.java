@@ -23,6 +23,7 @@ import com.viviano.imcarm.commands.CancelaModificacaoEquipeDeServicoCommand;
 import com.viviano.imcarm.commands.CancelaPermutaCommand;
 import com.viviano.imcarm.commands.CancelarBaixaFormandaCommand;
 import com.viviano.imcarm.commands.Command;
+import com.viviano.imcarm.commands.ConcluirFormacaoFormandaCommand;
 import com.viviano.imcarm.commands.ConfirmaAlteraçãoDeEquipeDeservicoCommand;
 import com.viviano.imcarm.commands.ConfirmaCadastroFormandaCommand;
 import com.viviano.imcarm.commands.ConfirmaCadastroFraternidadeCommand;
@@ -42,6 +43,7 @@ import com.viviano.imcarm.commands.IrFormCadastraGovernoGeralCommand;
 import com.viviano.imcarm.commands.IrFormCadastroDeCongregacao;
 import com.viviano.imcarm.commands.IrFormCadastroEquipeDeServico;
 import com.viviano.imcarm.commands.IrFormCadastroFormandasCommand;
+import com.viviano.imcarm.commands.IrFormCadastroFreira;
 import com.viviano.imcarm.commands.IrFormPermutaFormanda;
 import com.viviano.imcarm.commands.IrParaCadastroDeCongregacao;
 import com.viviano.imcarm.commands.IrformModificarEquipeDeServiço;
@@ -50,6 +52,7 @@ import com.viviano.imcarm.commands.ListaEquipesParaEditar;
 import com.viviano.imcarm.commands.ListaFormandasEmBaixaParaReativarCommand;
 import com.viviano.imcarm.commands.ListaFormandasParaAlterarCommand;
 import com.viviano.imcarm.commands.ListaFormandasParaApagarCommand;
+import com.viviano.imcarm.commands.ListaFormandasParaConcluirFormacaoCommand;
 import com.viviano.imcarm.commands.ListaIrmasParaAdicionarACasaDeMissao;
 import com.viviano.imcarm.commands.ListaIrmasParaGerarCoordenacao;
 import com.viviano.imcarm.commands.ListaIrmasParaTransferirDeCasaDeMissao;
@@ -147,6 +150,9 @@ public class Helper {
                 mapCommands.put("64", new IrFormPermutaFormanda());
                 mapCommands.put("65", new PermutarFormandaCommand());
                 mapCommands.put("66", new CancelaPermutaCommand());
+                mapCommands.put("67", new IrFormCadastroFreira());
+                mapCommands.put("68", new ListaFormandasParaConcluirFormacaoCommand());
+                mapCommands.put("69", new ConcluirFormacaoFormandaCommand());
 	}
 	
 	public static Helper getInstance(){

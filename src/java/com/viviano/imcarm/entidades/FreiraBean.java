@@ -13,6 +13,7 @@ public class FreiraBean {
     private String dataAspirantado;
     private String dataPostulantado;
     private String dataNoviciadoCanonico;
+    private String dataNoviciadoApostolico;
     private String dataProfissaoTemporaria;
     private String dataProfissaoPerpetua;
     private String telefone;
@@ -26,7 +27,27 @@ public class FreiraBean {
     private String diocese;
     private String cepFamilia;
     private String estadoFamilia;
+    private String[] datasJuniorado = new String[10];
 
+    public String getDataNoviciadoApostolico() {
+        return dataNoviciadoApostolico;
+    }
+
+    public void setDataNoviciadoApostolico(String dataNoviciadoApostolico) {
+        this.dataNoviciadoApostolico = dataNoviciadoApostolico;
+    }
+
+    
+    
+    public String[] getDatasJuniorado() {
+        return datasJuniorado;
+    }
+
+    public void setDatasJuniorado(String[] datasJuniorado) {
+        this.datasJuniorado = datasJuniorado;
+    }
+
+     
     public String getCpf() {
         return cpf;
     }

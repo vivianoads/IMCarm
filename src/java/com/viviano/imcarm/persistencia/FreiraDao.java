@@ -145,10 +145,10 @@ public class FreiraDao {
                     if(rs.getInt("id") != 0){
 			freiraBean = new FreiraBean();
                         freiraBean.setId(rs.getInt("id"));
-			freiraBean.setCpf(rs.getDouble("cpf"));
+			freiraBean.setCpf(rs.getString("cpf"));
 			freiraBean.setNomeCivil(rs.getString("nome_civil"));
 			freiraBean.setNomeReligioso(rs.getString("nome_religioso"));
-			freiraBean.setRg(rs.getDouble("rg"));
+			freiraBean.setRg(rs.getString("rg"));
 			freiraBean.setDataNascimento(rs.getString("data_nascimento"));
 			freiraBean.setNomePai(rs.getString("nome_pai"));
 			freiraBean.setNomeMae(rs.getString("nome_mae"));
@@ -165,7 +165,6 @@ public class FreiraDao {
                         freiraBean.setNumeroFamilia(rs.getString("numero_familia"));
                         freiraBean.setBairroFamilia(rs.getString("bairro_familia"));
                         freiraBean.setCidadeFamilia(rs.getString("cidade_familia"));
-                        freiraBean.setTipoInativo(rs.getString("tipo_inativo"));
                         freiraBean.setDiocese(rs.getString("diocese"));
                         freiraBean.setCepFamilia(rs.getString("cep_familia"));
                         freiraBean.setEstadoFamilia(rs.getString("estado_familia"));
