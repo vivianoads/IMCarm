@@ -27,7 +27,7 @@ public class BuscaFormandaPorNome implements Command{
     @Override
     public String execute(HttpServletRequest request) {
         String nextPage = "lista_formanda_consulta.jsp";
-        String nome = request.getParameter("formanda_por_etapa");
+        String nome = request.getParameter("formanda_por_nome");
         List<FormandaBean> formandas = new ArrayList<FormandaBean>();
         FormandaDao formandaDao = new FormandaDao();
         

@@ -113,7 +113,7 @@
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
                                         <input type="hidden" name="action" value="100">
-                                        <input type="text" name="idade_religiosa_simples" size="20">
+                                        <input type="text" name="formanda_por_nome" size="20">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>

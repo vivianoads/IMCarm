@@ -73,12 +73,6 @@
                                     <br/>
                                     <br/>
                                     <br/>
-                                    <br/>
-                                    <b>***Composição de Equipe: </b> 
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <br/>
                                     <b>Equipes de Serviço do Governo Atual: </b> 
 <!--                                    <b>Idade Civil: </b> 
                                     <br/>
@@ -116,19 +110,6 @@
                                         <input type="hidden" name="action" value="105">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <select name="bodas_votos_simples" style="width: 100px;">
-                                            <c:forEach items="${list_equipes}" var="equipe">
-                                                <option value="${equipe.nome}">${equipe.nome}</option>
-                                            </c:forEach>
-                                        </select>
-                                        <input type="hidden" name="action" value="">
-                                        <input class="i2Style_internal" type="submit" value="Buscar">
-                                    </form>
-                                    <br/>
                                     <br/>
                                     <br/>
                                     

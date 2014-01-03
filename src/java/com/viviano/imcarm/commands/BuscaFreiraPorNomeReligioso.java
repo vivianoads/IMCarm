@@ -25,7 +25,7 @@ public class BuscaFreiraPorNomeReligioso implements Command{
     @Override
     public String execute(HttpServletRequest request) {
         String nextPage = "lista_irma_consulta.jsp";
-        String nome = request.getParameter("nome_civil");
+        String nome = request.getParameter("nome_religioso");
         List<FreiraBean> freiras = new ArrayList<FreiraBean>();
         FreiraDao freiraDao = new FreiraDao();
         
