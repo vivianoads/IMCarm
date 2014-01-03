@@ -63,24 +63,24 @@
                                 </div>
                                 <div id="conteudo_menu_interno2">
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type=hidden name="action" value="*">
-                                        <input type="hidden" name="initial_index_formanda" value="0">
+                                        <input type=hidden name="action" value="74">
+                                        <input type="hidden" name="initial_index_freira" value="0">
                                         <button class="i2Style_menu">Modificar Freira</button>
                                     </form>
                                 </div>
                                 <div id="conteudo_menu_interno3">
                                     <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type=hidden name="action" value="*">
-                                        <input type="hidden" name="initial_index_formanda" value="0">
+                                        <input type=hidden name="action" value="76">
+                                        <input type="hidden" name="initial_index_freira" value="0">
                                         <button class="i2Style_menu">Dar Baixa em Freira</button>
                                     </form>
                                 </div>
                                 <div id="conteudo_menu_interno4">
-<!--                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type=hidden name="action" value="61">
-                                        <input type=hidden name="initial_index_formanda" value="0">
-                                        <button class="i2Style_menu">Reativar Formanda</button>
-                                    </form>-->
+                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                        <input type=hidden name="action" value="80">
+                                        <input type=hidden name="initial_index_freira" value="0">
+                                        <button class="i2Style_menu">Reativar <br/> Freira</button>
+                                    </form>
                                 </div>
                                 <div id="conteudo_menu_interno5">
 <!--                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">

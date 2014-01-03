@@ -447,6 +447,113 @@ public class FreiraDao {
 		
 		return freiras;
 	}
+        
+        public List<FreiraBean> getAllFreiraBeanAtivas() throws ClassNotFoundException, SQLException{
+		Connection con = conexao.getConnection();
+		String sql = "SELECT * FROM freira WHERE ativo like 'sim'";
+		List<FreiraBean> freiras = new ArrayList<FreiraBean>();
+		Statement stat = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		ResultSet rs = stat.executeQuery(sql);
+		while (rs.next()){
+			FreiraBean freira = new FreiraBean();
+			freira.setId(rs.getInt("id"));
+			freira.setCpf(rs.getString("cpf"));
+                        freira.setNomeCivil(rs.getString("nome_civil"));
+                        freira.setNomeReligioso(rs.getString("nome_religioso"));
+                        freira.setRg(rs.getString("rg"));
+                        freira.setDataNascimento(rs.getString("data_nascimento"));
+                        freira.setNomePai(rs.getString("nome_pai"));
+                        freira.setNomeMae(rs.getString("nome_mae"));
+                        freira.setDataAspirantado(rs.getString("data_aspirantado"));
+                        freira.setDataPostulantado(rs.getString("data_postulantado"));
+                        freira.setDataNoviciadoCanonico(rs.getString("data_noviciado_canonico"));
+                        freira.setDataProfissaoTemporaria(rs.getString("data_profissao_temporaria"));
+                        freira.setDataProfissaoPerpetua(rs.getString("data_profissao_perpetua"));
+                        freira.setTelefone(rs.getString("telefone"));
+                        freira.setEmail(rs.getString("email"));
+                        freira.setTipoAtivo(rs.getString("tipo_ativo"));
+                        freira.setAtivo(rs.getString("ativo"));
+                        freira.setRuaFamilia(rs.getString("rua_familia"));
+                        freira.setNumeroFamilia(rs.getString("numero_familia"));
+                        freira.setBairroFamilia(rs.getString("bairro_familia"));
+                        freira.setCidadeFamilia(rs.getString("cidade_familia"));
+                        freira.setDiocese(rs.getString("diocese"));
+                        freira.setCepFamilia(rs.getString("cep_familia"));
+                        freira.setEstadoFamilia(rs.getString("estado_familia"));
+                        freira.setDataNoviciadoApostolico(rs.getString("data_noviciado_apostolico"));
+                        freira.setDatasJuniorado(rs.getString("data_juniorado"));
+                        freira.setDatasJunioradoI(rs.getString("data_juniorado_renovacao_1"));
+                        freira.setDatasJunioradoII(rs.getString("data_juniorado_renovacao_2"));
+                        freira.setDatasJunioradoIII(rs.getString("data_juniorado_renovacao_3"));
+                        freira.setDatasJunioradoIV(rs.getString("data_juniorado_renovacao_4"));
+                        freira.setDatasJunioradoV(rs.getString("data_juniorado_renovacao_5"));
+                        freira.setDatasJunioradoVI(rs.getString("data_juniorado_renovacao_6"));
+                        freira.setDatasJunioradoVII(rs.getString("data_juniorado_renovacao_7"));
+                        freira.setDatasJunioradoVIII(rs.getString("data_juniorado_renovacao_8"));
+                        freira.setDatasJunioradoIX(rs.getString("data_juniorado_renovacao_9"));
+			
+			freiras.add(freira);
+		}
+		
+		stat.close();
+		rs.close();
+		con.close();
+		
+		return freiras;
+	}
+        public List<FreiraBean> getAllFreiraBeanInativas() throws ClassNotFoundException, SQLException{
+		Connection con = conexao.getConnection();
+		String sql = "SELECT * FROM freira WHERE ativo like 'nao'";
+		List<FreiraBean> freiras = new ArrayList<FreiraBean>();
+		Statement stat = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		ResultSet rs = stat.executeQuery(sql);
+		while (rs.next()){
+			FreiraBean freira = new FreiraBean();
+			freira.setId(rs.getInt("id"));
+			freira.setCpf(rs.getString("cpf"));
+                        freira.setNomeCivil(rs.getString("nome_civil"));
+                        freira.setNomeReligioso(rs.getString("nome_religioso"));
+                        freira.setRg(rs.getString("rg"));
+                        freira.setDataNascimento(rs.getString("data_nascimento"));
+                        freira.setNomePai(rs.getString("nome_pai"));
+                        freira.setNomeMae(rs.getString("nome_mae"));
+                        freira.setDataAspirantado(rs.getString("data_aspirantado"));
+                        freira.setDataPostulantado(rs.getString("data_postulantado"));
+                        freira.setDataNoviciadoCanonico(rs.getString("data_noviciado_canonico"));
+                        freira.setDataProfissaoTemporaria(rs.getString("data_profissao_temporaria"));
+                        freira.setDataProfissaoPerpetua(rs.getString("data_profissao_perpetua"));
+                        freira.setTelefone(rs.getString("telefone"));
+                        freira.setEmail(rs.getString("email"));
+                        freira.setTipoAtivo(rs.getString("tipo_ativo"));
+                        freira.setAtivo(rs.getString("ativo"));
+                        freira.setRuaFamilia(rs.getString("rua_familia"));
+                        freira.setNumeroFamilia(rs.getString("numero_familia"));
+                        freira.setBairroFamilia(rs.getString("bairro_familia"));
+                        freira.setCidadeFamilia(rs.getString("cidade_familia"));
+                        freira.setDiocese(rs.getString("diocese"));
+                        freira.setCepFamilia(rs.getString("cep_familia"));
+                        freira.setEstadoFamilia(rs.getString("estado_familia"));
+                        freira.setDataNoviciadoApostolico(rs.getString("data_noviciado_apostolico"));
+                        freira.setDatasJuniorado(rs.getString("data_juniorado"));
+                        freira.setDatasJunioradoI(rs.getString("data_juniorado_renovacao_1"));
+                        freira.setDatasJunioradoII(rs.getString("data_juniorado_renovacao_2"));
+                        freira.setDatasJunioradoIII(rs.getString("data_juniorado_renovacao_3"));
+                        freira.setDatasJunioradoIV(rs.getString("data_juniorado_renovacao_4"));
+                        freira.setDatasJunioradoV(rs.getString("data_juniorado_renovacao_5"));
+                        freira.setDatasJunioradoVI(rs.getString("data_juniorado_renovacao_6"));
+                        freira.setDatasJunioradoVII(rs.getString("data_juniorado_renovacao_7"));
+                        freira.setDatasJunioradoVIII(rs.getString("data_juniorado_renovacao_8"));
+                        freira.setDatasJunioradoIX(rs.getString("data_juniorado_renovacao_9"));
+			
+			freiras.add(freira);
+		}
+		
+		stat.close();
+		rs.close();
+		con.close();
+		
+		return freiras;
+	}
 	
 	public void alteraFreira(Integer idFreira, FreiraBean freira) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
@@ -488,6 +595,35 @@ public class FreiraDao {
                 ps.setString(33, freira.getDatasJunioradoVIII());
                 ps.setString(34, freira.getDatasJunioradoIX());
                 ps.setInt(35, idFreira);
+                
+		ps.executeUpdate();
+		ps.close();
+		con.close();
+	}
+        
+        public void alteraFreira(Integer idFreira, String motivo) throws ClassNotFoundException, SQLException{
+		Connection con = conexao.getConnection();
+		String sql = "UPDATE freira SET tipo_ativo = ?, ativo = ? WHERE id = ?";
+		PreparedStatement ps =  con.prepareStatement(sql);
+                
+                
+                ps.setString(1, motivo);
+                ps.setString(2, "nao");
+                ps.setInt(3, idFreira);
+                
+		ps.executeUpdate();
+		ps.close();
+		con.close();
+	}
+        public void ReativarFreira(Integer idFreira, String novoTipoAtivo) throws ClassNotFoundException, SQLException{
+		Connection con = conexao.getConnection();
+		String sql = "UPDATE freira SET tipo_ativo = ?, ativo = ? WHERE id = ?";
+		PreparedStatement ps =  con.prepareStatement(sql);
+                
+                
+                ps.setString(1, novoTipoAtivo);
+                ps.setString(2, "sim");
+                ps.setInt(3, idFreira);
                 
 		ps.executeUpdate();
 		ps.close();
