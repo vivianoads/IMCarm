@@ -101,6 +101,7 @@ public class ConcluirFormacaoFormandaCommand implements Command{
         }
         
         request.setAttribute("id_fase_de_formacao", faseFormacaoBean.getIdFase());
+        System.out.println("id fase no command de conclusao= " + faseFormacaoBean.getIdFase());
         request.setAttribute("freira", f);
         return nextPage;
     }

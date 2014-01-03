@@ -34,13 +34,17 @@ public class FaseFormacaoDao {
 	
 	public FaseFormacaoBean getFaseFormacaoBean(int idFaseFormacao) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "SELECT * FROM fase_formacao WHERE id_fase = '" + idFaseFormacao + "'";
-		Statement stat = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-		ResultSet rs = stat.executeQuery(sql);
+		String sql = "SELECT * FROM fase_formacao WHERE id_fase = ?";
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		stat.setInt(1, idFaseFormacao);
+                ResultSet rs = stat.executeQuery();
 		FaseFormacaoBean faseFormacaoBean =  new FaseFormacaoBean();
 		if (rs.next()){
 			faseFormacaoBean.setIdFase(rs.getInt("id_fase"));
 			faseFormacaoBean.setNome(rs.getString("nome"));
+                        faseFormacaoBean.setFormanda(new FormandaDao().getFormandaBean(rs.getInt("id_freira")));
+                        faseFormacaoBean.setDataEntrada(rs.getString("data_entrada"));
+                        faseFormacaoBean.setDataSaida(rs.getString("data_saida"));
 		}
 		
 		rs.close();

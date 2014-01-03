@@ -148,7 +148,7 @@
                                 
                                 
                                 
-                                
+                                id_fase_formacao= ${id_fase_de_formacao}
                                 
 <!--                                
                                 <b>Nome:</b>
@@ -219,8 +219,8 @@
                                 <input size="83" type="text" name="motivo_inatividade" value="${formanda.motivoInatividade}">
                                 <br/>-->
                                 <input type="hidden" name="action" value="70">
-                                <input type="hidden" name="opcao" value="${opcao}">
-                                <input type="hidden" name="id_formanda" value="${formanda.idFormanda}">
+                                <input type="hidden" name="option" value="${option}">
+                                <input type="hidden" name="id_freira" value="${freira.id}">
                                 <input type="hidden" name="id_fase_de_formacao" value="${id_fase_de_formacao}">
                                 <input type="submit" class="i2Style" value="Salvar">
                             </form>

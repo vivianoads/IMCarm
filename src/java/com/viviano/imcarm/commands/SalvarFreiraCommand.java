@@ -60,9 +60,18 @@ public class SalvarFreiraCommand implements Command{
         f.setTipoAtivo(request.getParameter("tipo_ativo"));
         
         FreiraDao freiraDao = new FreiraDao();
+        String option = request.getParameter("option");
+        
         try {
-            freiraDao.gravaFreira(f);
-            f = freiraDao.getUltimaFreiraBeanCadastrada();
+            if(option.equals("")){
+                freiraDao.gravaFreira(f);
+                f = freiraDao.getUltimaFreiraBeanCadastrada();
+                
+            }else{
+                Integer idFreira = new Integer(request.getParameter("id_freira"));
+                freiraDao.alteraFreira(idFreira, f);
+                f = freiraDao.getFreiraBean(idFreira);
+            }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(SalvarFreiraCommand.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -71,6 +80,7 @@ public class SalvarFreiraCommand implements Command{
         
         request.setAttribute("freira", f);
         request.setAttribute("id_fase_de_formacao", request.getParameter("id_fase_de_formacao"));
+        System.out.println("Id fase formacao no command de salvar Freira = " + request.getAttribute("id_fase_de_formacao"));
         return nextPage;
     }
     

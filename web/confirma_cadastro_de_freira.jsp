@@ -122,28 +122,30 @@
                                 <br/>
                             
                             
-                            
+                            ${freira.id}
                             
                            
                             <div id="linha_buttons">
                                 <div id="option_buttons_1">
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="*">
-                                        <input type="hidden" name="id_formanda_Cancelar" value="${formandagravada.idFormanda}">
+                                        <input type="hidden" name="action" value="73">
+                                        <input type="hidden" name="id_fase_de_formacao" value="${id_fase_de_formacao}">
+                                        <input type="hidden" name="id_freira" value="${freira.id}">
                                         <input type="submit" class="i2Style_apagar" value="Calcelar">
                                     </form>
                                 </div>
                                 <div id="option_buttons_2">
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="*">
-                                        <input type="hidden" name="id_formanda_alterar_dados" value="${formandagravada.idFormanda}">
+                                        <input type="hidden" name="action" value="71">
                                         
+                                        <input type="hidden" name="id_freira_alterar_dados" value="${freira.id}">
+                                        <input type="hidden" name="id_fase_de_formacao" value="${id_fase_de_formacao}">
                                         <input type="submit" class="i2Style_alterar" value="Alterar Dados">
                                     </form>
                                 </div>
                                 <div id="option_buttons_3">
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="60">
+                                        <input type="hidden" name="action" value="72">
                                         <input type="submit" class="i2Style" value="Confirma">
                                     </form>
                                 </div>

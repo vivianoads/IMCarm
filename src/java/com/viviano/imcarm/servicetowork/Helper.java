@@ -1,6 +1,7 @@
 package com.viviano.imcarm.servicetowork;
 
 import com.viviano.imcarm.commands.AdicionaIrmaACasadeMissaoCommand;
+import com.viviano.imcarm.commands.AlteraDadosFreiraCommand;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,6 +19,7 @@ import com.viviano.imcarm.commands.CancelaAdicaodeFreiraACasaDeMissao;
 import com.viviano.imcarm.commands.CancelaCadastroCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.CancelaCadastroCoordenacaoCasaDeMissaoCommand;
 import com.viviano.imcarm.commands.CancelaCadastroFormandaCommand;
+import com.viviano.imcarm.commands.CancelaCadastroFreiraCommand;
 import com.viviano.imcarm.commands.CancelaCadastroGovernoGeral;
 import com.viviano.imcarm.commands.CancelaModificacaoEquipeDeServicoCommand;
 import com.viviano.imcarm.commands.CancelaPermutaCommand;
@@ -27,6 +29,7 @@ import com.viviano.imcarm.commands.ConcluirFormacaoFormandaCommand;
 import com.viviano.imcarm.commands.ConfirmaAlteraçãoDeEquipeDeservicoCommand;
 import com.viviano.imcarm.commands.ConfirmaCadastroFormandaCommand;
 import com.viviano.imcarm.commands.ConfirmaCadastroFraternidadeCommand;
+import com.viviano.imcarm.commands.ConfirmaCadastroFreiraCommand;
 import com.viviano.imcarm.commands.ConfirmaCadastroGovernoGeral;
 import com.viviano.imcarm.commands.DarBaixaEmFormandaCommand;
 import com.viviano.imcarm.commands.DesassociaFreiraOuFormandaDeEquipeDeServico;
@@ -155,6 +158,9 @@ public class Helper {
                 mapCommands.put("68", new ListaFormandasParaConcluirFormacaoCommand());
                 mapCommands.put("69", new ConcluirFormacaoFormandaCommand());
                 mapCommands.put("70", new SalvarFreiraCommand());
+                mapCommands.put("71", new AlteraDadosFreiraCommand());
+                mapCommands.put("72", new ConfirmaCadastroFreiraCommand());
+                mapCommands.put("73", new CancelaCadastroFreiraCommand());
 	}
 	
 	public static Helper getInstance(){
