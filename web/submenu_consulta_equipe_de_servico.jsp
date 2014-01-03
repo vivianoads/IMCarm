@@ -101,7 +101,7 @@
                                                 <option value="${equipe.idEquipe}">${equipe.nome}</option>
                                             </c:forEach>
                                         </select>
-                                        <input type="hidden" name="action" value="37">
+                                        <input type="hidden" name="action" value="104">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
@@ -113,7 +113,7 @@
                                                 <option value="${equipe.idEquipe}">${equipe.nome}</option>
                                             </c:forEach>
                                         </select>
-                                        <input type="hidden" name="action" value="37">
+                                        <input type="hidden" name="action" value="105">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
@@ -125,9 +125,7 @@
                                                 <option value="${equipe.nome}">${equipe.nome}</option>
                                             </c:forEach>
                                         </select>
-                                        <input type="hidden" name="action" value="37">
-                                        <input type="hidden" name="initial_index_freira" value="0">
-                                        <input type="hidden" name="tipo_cargo" value="madre">
+                                        <input type="hidden" name="action" value="">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
@@ -140,7 +138,7 @@
                                     
                                     
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="37">
+                                        <input type="hidden" name="action" value="106">
                                         <input type="hidden" name="initial_index_freira" value="0">
                                         <input type="hidden" name="tipo_cargo" value="madre">
                                         <!--<input type="number" name="idade_religiosa_simples" size="40">-->

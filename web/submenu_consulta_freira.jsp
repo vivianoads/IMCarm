@@ -100,7 +100,7 @@
                                     <br/>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="*">
+                                        <input type="hidden" name="action" value="86">
                                         <input type="number" name="idade_religiosa_perpetua" size="40">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
@@ -129,7 +129,7 @@
                                             <option value="bodas_Sândalo">Sândalo</option>
                                             <option value="bodas_Cânhamo">Cânhamo</option>
                                         </select>
-                                        <input type="hidden" name="action" value="*">
+                                        <input type="hidden" name="action" value="87">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
@@ -158,25 +158,25 @@
                                             <option value="bodas_Sândalo">Sândalo</option>
                                             <option value="bodas_Cânhamo">Cânhamo</option>
                                         </select>
-                                        <input type="hidden" name="action" value="*">
+                                        <input type="hidden" name="action" value="88">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="*">
+                                        <input type="hidden" name="action" value="89">
                                         <input type="number" name="idade_civil" size="40">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="*">
+                                        <input type="hidden" name="action" value="90">
                                         <input type="text" name="nome_civil" size="20">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="*">
+                                        <input type="hidden" name="action" value="91">
                                         <input type="text" name="nome_religioso" size="20">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
@@ -276,9 +276,7 @@
                                     <br/>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="37">
-                                        <input type="hidden" name="initial_index_freira" value="0">
-                                        <input type="hidden" name="tipo_cargo" value="madre">
+                                        <input type="hidden" name="action" value="92">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
@@ -286,54 +284,42 @@
                                     <br/>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="37">
-                                        <input type="hidden" name="initial_index_freira" value="0">
-                                        <input type="hidden" name="tipo_cargo" value="madre">
+                                        <input type="hidden" name="action" value="93">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
                                     <br/>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="37">
-                                        <input type="hidden" name="initial_index_freira" value="0">
-                                        <input type="hidden" name="tipo_cargo" value="madre">
+                                        <input type="hidden" name="action" value="94">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
                                     <br/>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="37">
-                                        <input type="hidden" name="initial_index_freira" value="0">
-                                        <input type="hidden" name="tipo_cargo" value="madre">
+                                        <input type="hidden" name="action" value="95">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
                                     <br/>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="37">
-                                        <input type="hidden" name="initial_index_freira" value="0">
-                                        <input type="hidden" name="tipo_cargo" value="madre">
+                                        <input type="hidden" name="action" value="96">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
                                     <br/>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="37">
-                                        <input type="hidden" name="initial_index_freira" value="0">
-                                        <input type="hidden" name="tipo_cargo" value="madre">
+                                        <input type="hidden" name="action" value="97">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
                                     <br/>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="37">
-                                        <input type="hidden" name="initial_index_freira" value="0">
-                                        <input type="hidden" name="tipo_cargo" value="madre">
+                                        <input type="hidden" name="action" value="98">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                 </div>
