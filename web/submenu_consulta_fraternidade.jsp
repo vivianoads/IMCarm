@@ -79,7 +79,7 @@
                                     <br/>
                                     <br/>
                                     <br/>
-                                    <b>Fraternidades Ativas: </b> 
+                                    <b>Todas as Fraternidades: </b> 
 <!--                                    <b>Idade Civil: </b> 
                                     <br/>
                                     <br/>
@@ -96,14 +96,12 @@
                                     <br/>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <select name="bodas_votos_simples" style="width: 100px;">
+                                        <select name="freira_por_fraternidade" style="width: 100px;">
                                             <c:forEach items="${list_fraternidades}" var="fraternidade">
-                                                <option value="${fraternidade.nome}">${fraternidade.nome}</option>
+                                                <option value="${fraternidade.idFraternidade}">${fraternidade.nome}</option>
                                             </c:forEach>
                                         </select>
                                         <input type="hidden" name="action" value="37">
-                                        <input type="hidden" name="initial_index_freira" value="0">
-                                        <input type="hidden" name="tipo_cargo" value="madre">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>

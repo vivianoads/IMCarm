@@ -134,6 +134,72 @@ public class FraternidadeDao {
 		con.close();
 		return fraternidades;
 	}
+        
+        public List<FraternidadeBean> getAllFraternidadeAtivas() throws SQLException, ClassNotFoundException{
+		Connection con = conexao.getConnection();
+		String sql = "SELECT * FROM fraternidade WHERE status like ?";
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		stat.setString(1, "ativa");
+                ResultSet rs = stat.executeQuery();
+		List<FraternidadeBean> fraternidades = new ArrayList<FraternidadeBean>();
+		while (rs.next()){
+			FraternidadeBean fraternidadeBean = new FraternidadeBean();
+			fraternidadeBean.setIdFraternidade(rs.getInt("id_fraternidade"));
+			fraternidadeBean.setNome(rs.getString("nome"));
+			fraternidadeBean.setStatus(rs.getString("status"));
+			fraternidadeBean.setDataFundacao(rs.getString("data_fundacao"));
+			fraternidadeBean.setRua(rs.getString("rua"));
+			fraternidadeBean.setNumeroCasa(rs.getString("numero"));
+			fraternidadeBean.setBairro(rs.getString("bairro"));
+			fraternidadeBean.setCidade(rs.getString("cidade"));
+			fraternidadeBean.setUf(rs.getString("uf"));
+			fraternidadeBean.setDiocese(rs.getString("diocese"));
+			fraternidadeBean.setBispo(rs.getString("bispo"));
+                        fraternidadeBean.setCep(rs.getString("cep"));
+                        fraternidadeBean.setTelefone(rs.getString("telefone"));
+                        fraternidadeBean.setEmail(rs.getString("email"));
+			
+			fraternidades.add(fraternidadeBean);
+		}
+		
+		stat.close();
+		rs.close();
+		con.close();
+		return fraternidades;
+	}
+        
+        public List<FraternidadeBean> getAllFraternidadeInativas() throws SQLException, ClassNotFoundException{
+		Connection con = conexao.getConnection();
+		String sql = "SELECT * FROM fraternidade WHERE status like ?";
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		stat.setString(1, "inativa");
+                ResultSet rs = stat.executeQuery();
+		List<FraternidadeBean> fraternidades = new ArrayList<FraternidadeBean>();
+		while (rs.next()){
+			FraternidadeBean fraternidadeBean = new FraternidadeBean();
+			fraternidadeBean.setIdFraternidade(rs.getInt("id_fraternidade"));
+			fraternidadeBean.setNome(rs.getString("nome"));
+			fraternidadeBean.setStatus(rs.getString("status"));
+			fraternidadeBean.setDataFundacao(rs.getString("data_fundacao"));
+			fraternidadeBean.setRua(rs.getString("rua"));
+			fraternidadeBean.setNumeroCasa(rs.getString("numero"));
+			fraternidadeBean.setBairro(rs.getString("bairro"));
+			fraternidadeBean.setCidade(rs.getString("cidade"));
+			fraternidadeBean.setUf(rs.getString("uf"));
+			fraternidadeBean.setDiocese(rs.getString("diocese"));
+			fraternidadeBean.setBispo(rs.getString("bispo"));
+                        fraternidadeBean.setCep(rs.getString("cep"));
+                        fraternidadeBean.setTelefone(rs.getString("telefone"));
+                        fraternidadeBean.setEmail(rs.getString("email"));
+			
+			fraternidades.add(fraternidadeBean);
+		}
+		
+		stat.close();
+		rs.close();
+		con.close();
+		return fraternidades;
+	}
 	
 	public void alteraFraternidade(int idFraternidade, FraternidadeBean fraternidade) throws SQLException, ClassNotFoundException{
 		Connection con  = conexao.getConnection();
