@@ -16,8 +16,10 @@ import com.viviano.imcarm.persistencia.EquipeServicoDao;
 import com.viviano.imcarm.persistencia.FormandaDao;
 import com.viviano.imcarm.persistencia.FreiraDao;
 import com.viviano.imcarm.persistencia.GovernoGeralDao;
+import com.viviano.imcarm.utilconsulta.UtilData;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -207,8 +209,29 @@ public class Main {
 //        }
         
         
-        for(int i = 0; i< 34; i++){
-            System.out.println("ps.setString("+(i+1)+", freira.get);");
+//        for(int i = 0; i< 34; i++){
+//            System.out.println("ps.setString("+(i+1)+", freira.get);");
+//        }
+        
+        
+//        System.out.println(Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
+//        System.out.println(Calendar.getInstance().get(Calendar.MONTH)+1);
+//        System.out.println(Calendar.getInstance().get(Calendar.YEAR));
+        
+//        UtilData ud = new UtilData();
+//        System.out.println(ud.getIdade("1992-01-01"));
+        
+        
+        FreiraDao dao = new FreiraDao();
+        try {
+            for(FreiraBean f : dao.getAllFreiraBeanComStringNoNome("d")){
+                System.out.println(f.getNomeCivil());
+            }
+            dao.getAllFreiraBeanComStringNoNome("d").size();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

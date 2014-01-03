@@ -93,18 +93,14 @@
                                     <br/>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="37">
-                                        <input type="hidden" name="initial_index_freira" value="0">
-                                        <input type="hidden" name="tipo_cargo" value="madre">
+                                        <input type="hidden" name="action" value="85">
                                         <input type="number" name="idade_religiosa_simples" size="40">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="37">
-                                        <input type="hidden" name="initial_index_freira" value="0">
-                                        <input type="hidden" name="tipo_cargo" value="madre">
+                                        <input type="hidden" name="action" value="*">
                                         <input type="number" name="idade_religiosa_perpetua" size="40">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
@@ -133,15 +129,13 @@
                                             <option value="bodas_Sândalo">Sândalo</option>
                                             <option value="bodas_Cânhamo">Cânhamo</option>
                                         </select>
-                                        <input type="hidden" name="action" value="37">
-                                        <input type="hidden" name="initial_index_freira" value="0">
-                                        <input type="hidden" name="tipo_cargo" value="madre">
+                                        <input type="hidden" name="action" value="*">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <select name="bodas_votos_simples" style="width: 100px;">
+                                        <select name="bodas_votos_perpetuos" style="width: 100px;">
                                             <option value="bodas_Papel">Papel</option>
                                             <option value="bodas_Madeira">Madeira</option>
                                             <option value="bodas_Estanho">Estanho</option>
@@ -164,17 +158,13 @@
                                             <option value="bodas_Sândalo">Sândalo</option>
                                             <option value="bodas_Cânhamo">Cânhamo</option>
                                         </select>
-                                        <input type="hidden" name="action" value="37">
-                                        <input type="hidden" name="initial_index_freira" value="0">
-                                        <input type="hidden" name="tipo_cargo" value="madre">
+                                        <input type="hidden" name="action" value="*">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
                                         <input type="hidden" name="action" value="37">
-                                        <input type="hidden" name="initial_index_freira" value="0">
-                                        <input type="hidden" name="tipo_cargo" value="madre">
-                                        <input type="number" name="idade_religiosa_simples" size="40">
+                                        <input type="number" name="idade_civil" size="40">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>

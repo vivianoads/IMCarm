@@ -13,6 +13,7 @@ import com.viviano.imcarm.commands.ApagaEquipeDeServico;
 import com.viviano.imcarm.commands.ApagarCongregacao;
 import com.viviano.imcarm.commands.ApagarFraternidadeCommand;
 import com.viviano.imcarm.commands.AssociaFreiraOuFormandaAEquipeDeServico;
+import com.viviano.imcarm.commands.BuscaFreiraPorIdadeReligiosaSimples;
 import com.viviano.imcarm.commands.CadastraCongregacao;
 import com.viviano.imcarm.commands.CadastrarCoordenacaoDeFraternidadeCommand;
 import com.viviano.imcarm.commands.CancelaAdicaodeFreiraACasaDeMissao;
@@ -183,6 +184,7 @@ public class Helper {
                 mapCommands.put("82", new CancelaReativacaoFreiraCommand());
                 mapCommands.put("83", new IrMenuDeConsultasCommand());
                 mapCommands.put("84", new IrSubmenuEspecifico());
+                mapCommands.put("85", new BuscaFreiraPorIdadeReligiosaSimples());
 	}
 	
 	public static Helper getInstance(){
