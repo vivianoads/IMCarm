@@ -52,7 +52,9 @@ import com.viviano.imcarm.commands.IrFormCadastroEquipeDeServico;
 import com.viviano.imcarm.commands.IrFormCadastroFormandasCommand;
 import com.viviano.imcarm.commands.IrFormCadastroFreira;
 import com.viviano.imcarm.commands.IrFormPermutaFormanda;
+import com.viviano.imcarm.commands.IrMenuDeConsultasCommand;
 import com.viviano.imcarm.commands.IrParaCadastroDeCongregacao;
+import com.viviano.imcarm.commands.IrSubmenuEspecifico;
 import com.viviano.imcarm.commands.IrformModificarEquipeDeServiço;
 import com.viviano.imcarm.commands.ListaCasasDeMissaoParaTransferirIrma;
 import com.viviano.imcarm.commands.ListaEquipesParaEditar;
@@ -179,6 +181,8 @@ public class Helper {
                 mapCommands.put("80", new ListaIrmasParaReativar());
                 mapCommands.put("81", new ReativarFreiraCommand());
                 mapCommands.put("82", new CancelaReativacaoFreiraCommand());
+                mapCommands.put("83", new IrMenuDeConsultasCommand());
+                mapCommands.put("84", new IrSubmenuEspecifico());
 	}
 	
 	public static Helper getInstance(){

@@ -65,7 +65,7 @@
                             </div>
                             <div id="linha_menu">
                                 <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
-                                    <input type=hidden name="action" value="*">
+                                    <input type=hidden name="action" value="83">
                                     <input type="image" src="IconeRealizarBuscasNoSistema.png">
                                 </form>
 <!--                                <a href="/ImCarm/#">
