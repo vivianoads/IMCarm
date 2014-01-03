@@ -163,25 +163,21 @@
                                     </form>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="37">
+                                        <input type="hidden" name="action" value="*">
                                         <input type="number" name="idade_civil" size="40">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="37">
-                                        <input type="hidden" name="initial_index_freira" value="0">
-                                        <input type="hidden" name="tipo_cargo" value="madre">
-                                        <input type="text" name="idade_religiosa_perpetua" size="20">
+                                        <input type="hidden" name="action" value="*">
+                                        <input type="text" name="nome_civil" size="20">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                     <br/>
                                     <br/>
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="37">
-                                        <input type="hidden" name="initial_index_freira" value="0">
-                                        <input type="hidden" name="tipo_cargo" value="madre">
-                                        <input type="text" name="idade_religiosa_perpetua" size="20">
+                                        <input type="hidden" name="action" value="*">
+                                        <input type="text" name="nome_religioso" size="20">
                                         <input class="i2Style_internal" type="submit" value="Buscar">
                                     </form>
                                 </div>

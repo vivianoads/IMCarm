@@ -147,6 +147,115 @@ public class FormandaDao {
 		con.close();
 		return formandas;
 	}
+        
+        public List<FormandaBean> getAllFormandaBeanPorEtapa(String etapa) throws ClassNotFoundException, SQLException{
+		Connection con = conexao.getConnection();
+		String sql = "SELECT * FROM formanda WHERE etapa_formacao like ?";
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		stat.setString(1, etapa);
+                ResultSet rs = stat.executeQuery();
+		List<FormandaBean> formandas = new ArrayList<FormandaBean>();
+                FormandaBean formandaBean = null;
+		while (rs.next()){
+                    formandaBean = new FormandaBean();
+                    formandaBean.setIdFormanda(rs.getInt("id_formanda"));
+                    formandaBean.setNome(rs.getString("nome"));
+                    formandaBean.setPai(rs.getString("nome_pai"));
+                    formandaBean.setMae(rs.getString("nome_mae"));
+                    formandaBean.setRua(rs.getString("rua"));
+                    formandaBean.setNumero(rs.getString("numero"));
+                    formandaBean.setBairro(rs.getString("bairro"));
+                    formandaBean.setCidade(rs.getString("cidade"));
+                    formandaBean.setUf(rs.getString("uf"));
+                    formandaBean.setDiocese(rs.getString("diocese"));
+                    formandaBean.setTelefone(rs.getString("telefone"));
+                    formandaBean.setCep(rs.getString("cep"));
+                    formandaBean.setEmail(rs.getString("email"));
+                    formandaBean.setAtividade(rs.getString("ativo"));
+                    formandaBean.setMotivoInatividade(rs.getString("inativo_motivo"));
+                    formandaBean.setDataEtapaAtual(rs.getString("data_etapa_atual"));
+                    formandaBean.setDataNascimento(rs.getString("data_nascimento"));
+                    formandaBean.setEtapa(rs.getString("etapa_formacao"));
+                    formandas.add(formandaBean);
+		}
+		rs.close();
+		stat.close();
+		con.close();
+		return formandas;
+	}
+        
+        public List<FormandaBean> getAllFormandaBeanPorEquipe(Integer idEquipe) throws ClassNotFoundException, SQLException{
+		Connection con = conexao.getConnection();
+		String sql = "SELECT distinct * FROM (formanda f join formanda_equipe  fe on f.id_formanda = fe.id_formanda) where fe.id_equipe = ?";
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		stat.setInt(1, idEquipe);
+                ResultSet rs = stat.executeQuery();
+		List<FormandaBean> formandas = new ArrayList<FormandaBean>();
+                FormandaBean formandaBean = null;
+		while (rs.next()){
+                    formandaBean = new FormandaBean();
+                    formandaBean.setIdFormanda(rs.getInt("id_formanda"));
+                    formandaBean.setNome(rs.getString("nome"));
+                    formandaBean.setPai(rs.getString("nome_pai"));
+                    formandaBean.setMae(rs.getString("nome_mae"));
+                    formandaBean.setRua(rs.getString("rua"));
+                    formandaBean.setNumero(rs.getString("numero"));
+                    formandaBean.setBairro(rs.getString("bairro"));
+                    formandaBean.setCidade(rs.getString("cidade"));
+                    formandaBean.setUf(rs.getString("uf"));
+                    formandaBean.setDiocese(rs.getString("diocese"));
+                    formandaBean.setTelefone(rs.getString("telefone"));
+                    formandaBean.setCep(rs.getString("cep"));
+                    formandaBean.setEmail(rs.getString("email"));
+                    formandaBean.setAtividade(rs.getString("ativo"));
+                    formandaBean.setMotivoInatividade(rs.getString("inativo_motivo"));
+                    formandaBean.setDataEtapaAtual(rs.getString("data_etapa_atual"));
+                    formandaBean.setDataNascimento(rs.getString("data_nascimento"));
+                    formandaBean.setEtapa(rs.getString("etapa_formacao"));
+                    formandas.add(formandaBean);
+		}
+		rs.close();
+		stat.close();
+		con.close();
+		return formandas;
+	}
+        
+        public List<FormandaBean> getAllFormandaBeanPorNome(String nome) throws ClassNotFoundException, SQLException{
+		Connection con = conexao.getConnection();
+		String sql = "SELECT * FROM formanda WHERE nome ilike ?";
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		stat.setString(1, "%" + nome + "%");
+                ResultSet rs = stat.executeQuery();
+		List<FormandaBean> formandas = new ArrayList<FormandaBean>();
+                FormandaBean formandaBean = null;
+		while (rs.next()){
+                    formandaBean = new FormandaBean();
+                    formandaBean.setIdFormanda(rs.getInt("id_formanda"));
+                    formandaBean.setNome(rs.getString("nome"));
+                    formandaBean.setPai(rs.getString("nome_pai"));
+                    formandaBean.setMae(rs.getString("nome_mae"));
+                    formandaBean.setRua(rs.getString("rua"));
+                    formandaBean.setNumero(rs.getString("numero"));
+                    formandaBean.setBairro(rs.getString("bairro"));
+                    formandaBean.setCidade(rs.getString("cidade"));
+                    formandaBean.setUf(rs.getString("uf"));
+                    formandaBean.setDiocese(rs.getString("diocese"));
+                    formandaBean.setTelefone(rs.getString("telefone"));
+                    formandaBean.setCep(rs.getString("cep"));
+                    formandaBean.setEmail(rs.getString("email"));
+                    formandaBean.setAtividade(rs.getString("ativo"));
+                    formandaBean.setMotivoInatividade(rs.getString("inativo_motivo"));
+                    formandaBean.setDataEtapaAtual(rs.getString("data_etapa_atual"));
+                    formandaBean.setDataNascimento(rs.getString("data_nascimento"));
+                    formandaBean.setEtapa(rs.getString("etapa_formacao"));
+                    formandas.add(formandaBean);
+		}
+		rs.close();
+		stat.close();
+		con.close();
+		return formandas;
+	}
+        
         public List<FormandaBean> getAllFormandaBeanAtivas() throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
 		String sql = "SELECT * FROM formanda WHERE ativo = 'sim'";

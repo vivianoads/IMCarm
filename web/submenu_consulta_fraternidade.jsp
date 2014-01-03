@@ -62,24 +62,24 @@
                                 <div id="left">
                                     <h3 align="center">Consultar Freiras</h3>
                                     <br/>
-                                    <b>Irmãs por Equipe: </b> 
+                                    <b>Irmãs por Fraternidade: </b> 
                                     <br/>
                                     <br/>
                                     <br/>
                                     <br/>
                                     <br/>
-                                    <b>Formandas por Equipe: </b> 
+                                    <b>Fraternidades Ativas: </b> 
                                     <br/>
                                     <br/>
                                     <br/>
                                     <br/>
                                     <br/>
-                                    <b>Composição de Equipe: </b> 
+                                    <b>Fraternidades Inativas: </b> 
                                     <br/>
                                     <br/>
                                     <br/>
                                     <br/>
-                                    <b>Equipes de Serviço do Governo Atual: </b> 
+                                    <b>Fraternidades Ativas: </b> 
 <!--                                    <b>Idade Civil: </b> 
                                     <br/>
                                     <br/>
