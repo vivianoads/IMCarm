@@ -19,7 +19,11 @@
                     <br/> [ ${usuarioLogado.nomeCivil} ] 
                     <br/>
                     <br/>
-                    <button class="i2Style_logout"> Sair</button>
+                    <form action="/ImCarm_2.0/ServletControler" method="post">
+                        <input type=hidden name="action" value="11">
+                        <input type="submit" class="i2Style_logout" value="Sair">
+                    </form>
+                    <!--<button class="i2Style_logout"> Sair</button>-->
                 </div>
             </div>
             <div id="centro">
@@ -29,7 +33,7 @@
                             <div id="linha_menu">
                                 <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
                                     <input type=hidden name="action" value="12">
-                                    <input type=hidden name="next_url" value="cadastrodecasasdemissao.jsp">
+                                    <!--<input type=hidden name="next_url" value="cadastrodecasasdemissao.jsp">-->
                                     <input type="image" src="IconeCadastrarCasaDeMissao.png">
                                 </form>
 <!--                                <a href="/ImCarm_2.0/cadastrodecasasdemissao.jsp">

@@ -27,32 +27,51 @@
                 <div id="conteudo_centro">
                     <div id="menu">
                         <div id="conteudo_menu">
-                            <div id="linha_menu_escolhida">
+                            <div id="linha_menu">
                                 <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
                                     <input type=hidden name="action" value="12">
-                                    <input type=hidden name="next_url" value="cadastrodecasasdemissao.jsp">
+                                    <!--<input type=hidden name="next_url" value="cadastrodecasasdemissao.jsp">-->
                                     <input type="image" src="IconeCadastrarCasaDeMissao.png">
                                 </form>
+<!--                                <a href="/ImCarm_2.0/cadastrodecasasdemissao.jsp">
+                                    <img src="IconeCadastrarCasaDeMissao.png">
+                                </a>-->
                             </div>
                             <div id="linha_menu">
-                                <a href="/ImCarm_2.0/cadastrodecongregacoes.jsp">
+                                <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                    <input type=hidden name="action" value="29">
+                                    <input type="image" src="IconeCadastrarCongregacao.png">
+                                </form>
+<!--                                <a href="/ImCarm_2.0/cadastrodecongregacoes.jsp">
                                     <img src="IconeCadastrarCongregacao.png">
-                                </a>
+                                </a>-->
                             </div>
-                            <div id="linha_menu">
-                                <a href="/ImCarm_2.0/cadastrodeformandas.jsp">
+                            <div id="linha_menu_escolhida">
+                                <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                    <input type=hidden name="action" value="34">
+                                    <input type="image" src="IconeCadastrarFormandas.png">
+                                </form>
+<!--                                <a href="/ImCarm_2.0/cadastrodeformandas.jsp">
                                     <img src="IconeCadastrarFormandas.png">
-                                </a>
+                                </a>-->
                             </div>
                             <div id="linha_menu">
-                                <a href="/ImCarm_2.0/cadastrodeirmas.jsp">
+                                <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                    <input type=hidden name="action" value="35">
+                                    <input type="image" src="IconeCadastrarFreiras.png">
+                                </form>
+<!--                                <a href="/ImCarm_2.0/cadastrodeirmas.jsp">
                                     <img src="IconeCadastrarFreiras.png">
-                                </a>
+                                </a>-->
                             </div>
                             <div id="linha_menu">
-                                <a href="/ImCarm/#">
+                                <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                    <input type=hidden name="action" value="83">
+                                    <input type="image" src="IconeRealizarBuscasNoSistema.png">
+                                </form>
+<!--                                <a href="/ImCarm/#">
                                     <img src="IconeRealizarBuscasNoSistema.png">
-                                </a>
+                                </a>-->
                             </div>
                         </div>
                     </div>

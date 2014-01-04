@@ -6,23 +6,17 @@
 
 package com.viviano.imcarm.commands;
 
-import com.viviano.imcarm.entidades.FreiraBean;
 import javax.servlet.http.HttpServletRequest;
 
 /**
  *
  * @author viviano
  */
-public class VerificaUsuarioLogadoCommand implements Command{
+public class IrFormCadastroFraternidade implements Command{
 
     @Override
     public String execute(HttpServletRequest request) {
-        String nextPage = "cadastrodecasasdemissao.jsp";
-        
-        FreiraBean freiraBean = null;
-        freiraBean = (FreiraBean) request.getSession().getAttribute("usuarioLogado");
-        if(freiraBean != null) nextPage = request.getParameter("next_url");
-        
+        String nextPage = "formcadastracasademissao.jsp";
         return nextPage;
     }
     

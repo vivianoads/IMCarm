@@ -80,6 +80,7 @@ import com.viviano.imcarm.commands.IrFormCadastraGovernoGeralCommand;
 import com.viviano.imcarm.commands.IrFormCadastroDeCongregacao;
 import com.viviano.imcarm.commands.IrFormCadastroEquipeDeServico;
 import com.viviano.imcarm.commands.IrFormCadastroFormandasCommand;
+import com.viviano.imcarm.commands.IrFormCadastroFraternidade;
 import com.viviano.imcarm.commands.IrFormCadastroFreira;
 import com.viviano.imcarm.commands.IrFormPermutaFormanda;
 import com.viviano.imcarm.commands.IrMenuDeConsultasCommand;
@@ -243,6 +244,7 @@ public class Helper {
                 mapCommands.put("112", new BuscaFormandaEspecifica());
                 mapCommands.put("113", new BuscaEquipeDeDervicoEspecifica());
                 mapCommands.put("114", new BuscaFraternidadeEspecifica());
+                mapCommands.put("115", new IrFormCadastroFraternidade());
 	}
 	
 	public static Helper getInstance(){
