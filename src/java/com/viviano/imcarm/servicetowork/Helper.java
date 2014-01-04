@@ -14,19 +14,23 @@ import com.viviano.imcarm.commands.ApagarCongregacao;
 import com.viviano.imcarm.commands.ApagarFraternidadeCommand;
 import com.viviano.imcarm.commands.AssociaFreiraOuFormandaAEquipeDeServico;
 import com.viviano.imcarm.commands.BuscaEquipeDeDervicoDoGovernoAtual;
+import com.viviano.imcarm.commands.BuscaEquipeDeDervicoEspecifica;
 import com.viviano.imcarm.commands.BuscaFormandaAtivas;
+import com.viviano.imcarm.commands.BuscaFormandaEspecifica;
 import com.viviano.imcarm.commands.BuscaFormandaInativas;
 import com.viviano.imcarm.commands.BuscaFormandaPorEquipe;
 import com.viviano.imcarm.commands.BuscaFormandaPorFase;
 import com.viviano.imcarm.commands.BuscaFormandaPorNome;
 import com.viviano.imcarm.commands.BuscaFormandasTodas;
 import com.viviano.imcarm.commands.BuscaFraternidadeAtivas;
+import com.viviano.imcarm.commands.BuscaFraternidadeEspecifica;
 import com.viviano.imcarm.commands.BuscaFraternidadeInativas;
 import com.viviano.imcarm.commands.BuscaFraternidadeTodas;
 import com.viviano.imcarm.commands.BuscaFreiraAtivas;
 import com.viviano.imcarm.commands.BuscaFreiraAtivasEmEstadoRegular;
 import com.viviano.imcarm.commands.BuscaFreiraAtivasEmLicenca;
 import com.viviano.imcarm.commands.BuscaFreiraAtivasEnclaustradas;
+import com.viviano.imcarm.commands.BuscaFreiraEspecifica;
 import com.viviano.imcarm.commands.BuscaFreiraInativas;
 import com.viviano.imcarm.commands.BuscaFreiraInativasPorObito;
 import com.viviano.imcarm.commands.BuscaFreiraInativasPorSaida;
@@ -235,6 +239,10 @@ public class Helper {
                 mapCommands.put("108", new BuscaFraternidadeAtivas());
                 mapCommands.put("109", new BuscaFraternidadeInativas());
                 mapCommands.put("110", new BuscaFraternidadeTodas());
+                mapCommands.put("111", new BuscaFreiraEspecifica());
+                mapCommands.put("112", new BuscaFormandaEspecifica());
+                mapCommands.put("113", new BuscaEquipeDeDervicoEspecifica());
+                mapCommands.put("114", new BuscaFraternidadeEspecifica());
 	}
 	
 	public static Helper getInstance(){

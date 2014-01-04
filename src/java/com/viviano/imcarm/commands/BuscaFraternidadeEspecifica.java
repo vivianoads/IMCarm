@@ -22,16 +22,18 @@ import javax.servlet.http.HttpServletRequest;
  *
  * @author viviano
  */
-public class BuscaFraternidadeAtivas implements Command{
+public class BuscaFraternidadeEspecifica implements Command{
 
     @Override
     public String execute(HttpServletRequest request) {
-        String nextPage = "lista_fraternidade_consulta.jsp";
-        List<FraternidadeBean> fraternidades = new ArrayList<FraternidadeBean>();
+        String nextPage = "especifico_fraternidade_consulta.jsp";
+        Integer idFraternidade = new Integer(request.getParameter("id_fraternidade"));
+//        List<FraternidadeBean> fraternidades = new ArrayList<FraternidadeBean>();
+        FraternidadeBean fraternidade = new FraternidadeBean();
         FraternidadeDao fraternidadeDao = new FraternidadeDao();
         
         try {
-            fraternidades = fraternidadeDao.getAllFraternidadeAtivas();
+            fraternidade = fraternidadeDao.getFraternidade(idFraternidade);
 //            for(FreiraBean f : aux){
 //                if(UtilData.getIdade(f.getDataNascimento()).equals(idade)){
 //                freiras.add(f);
@@ -39,12 +41,12 @@ public class BuscaFraternidadeAtivas implements Command{
 //            }
 //            
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(BuscaFraternidadeAtivas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BuscaFraternidadeEspecifica.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(BuscaFraternidadeAtivas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BuscaFraternidadeEspecifica.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        request.setAttribute("fraternidades", fraternidades);
+        request.setAttribute("fraternidade", fraternidade);
         return nextPage;
     }
     

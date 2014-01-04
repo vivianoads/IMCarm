@@ -44,7 +44,7 @@ public class BuscaFraternidadeInativas implements Command{
             Logger.getLogger(BuscaFraternidadeInativas.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        request.setAttribute("freiras", fraternidades);
+        request.setAttribute("fraternidades", fraternidades);
         return nextPage;
     }
     

@@ -6,9 +6,7 @@
 
 package com.viviano.imcarm.commands;
 
-import com.viviano.imcarm.entidades.FraternidadeBean;
 import com.viviano.imcarm.entidades.FreiraBean;
-import com.viviano.imcarm.persistencia.FraternidadeDao;
 import com.viviano.imcarm.persistencia.FreiraDao;
 import com.viviano.imcarm.utilconsulta.UtilData;
 import java.sql.SQLException;
@@ -22,16 +20,18 @@ import javax.servlet.http.HttpServletRequest;
  *
  * @author viviano
  */
-public class BuscaFraternidadeAtivas implements Command{
+public class BuscaFreiraEspecifica implements Command{
 
     @Override
     public String execute(HttpServletRequest request) {
-        String nextPage = "lista_fraternidade_consulta.jsp";
-        List<FraternidadeBean> fraternidades = new ArrayList<FraternidadeBean>();
-        FraternidadeDao fraternidadeDao = new FraternidadeDao();
+        String nextPage = "especifico_irma_consulta.jsp";
+//        List<FreiraBean> freira = new ArrayList<FreiraBean>();
+        Integer idFreira = new Integer(request.getParameter("id_freira"));
+        FreiraBean freira = new FreiraBean();
+        FreiraDao freiraDao = new FreiraDao();
         
         try {
-            fraternidades = fraternidadeDao.getAllFraternidadeAtivas();
+            freira = freiraDao.getFreiraBean(idFreira);
 //            for(FreiraBean f : aux){
 //                if(UtilData.getIdade(f.getDataNascimento()).equals(idade)){
 //                freiras.add(f);
@@ -39,12 +39,12 @@ public class BuscaFraternidadeAtivas implements Command{
 //            }
 //            
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(BuscaFraternidadeAtivas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BuscaFreiraEspecifica.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(BuscaFraternidadeAtivas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BuscaFreiraEspecifica.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        request.setAttribute("fraternidades", fraternidades);
+        request.setAttribute("freira", freira);
         return nextPage;
     }
     
