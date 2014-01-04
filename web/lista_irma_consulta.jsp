@@ -17,7 +17,18 @@
             </div>
             <div id="centro">
                 <div id="conteudo_centro">
-                            <h3 align="center">Listar Freiras</h3>
+                    <div id="voltar">
+                        <a href="javascript:window.history.go(-1)"><button class="i2Style_alterar">Voltar</button></a>
+                    </div>
+                    <div id="voltar_menu">
+                        <button onClick="javascript:window.print()" class="i2Style_alterar">Imprimir</button>
+<!--                        <form action="/ImCarm_2.0/ServletControler" method="post">
+                            <input type="hidden" name="action" value="83">
+                            <input type="submit" class="i2Style_alterar" value="Menu">
+                        </form>-->
+                    </div>
+                    <h3 align="center">Listar Freiras</h3>
+                    
                             <c:forEach items="${freiras}" var="freira">
                                 <div id="linha_conteudo">
                                     <div id="linha_conteudo_nome">

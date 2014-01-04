@@ -43,9 +43,22 @@ text-align: center;
     background:transparent;
     position: absolute;
 }
-
+#voltar{
+    width: 80px;
+    height: 20px;
+    background-color: transparent;
+    position: absolute;
+    margin-left: 0px;
+}
+#voltar_menu{
+    width: 85px;
+    height: 20px;
+    background-color: transparent;
+    position: absolute;
+    margin-left: 665px;
+}
 #linha_conteudo{
-    width: 750px;
+    width: 735px;
     height: 18px;
     border-style:solid;
     border-width: 1px;
@@ -73,7 +86,7 @@ text-align: center;
     height: 5%;
     background-color: transparent;
     position: absolute;
-    margin-left: 66%;
+    margin-left: 70%;
 }
 
 .i2Style_logout{
@@ -163,15 +176,15 @@ box-shadow:2px 2px 5px #000000;
 border-radius:2px 2px 2px 2px;
 -moz-border-radius:2px 2px 2px 2px;
 -webkit-border-radius:2px 2px 2px 2px;
-width:124px;
+width:80px;
 padding:2px 11px;
 cursor:pointer;
 margin:0 auto;
-margin-left: 25%;
+margin-left: 0px;
 }
 .i2Style_alterar:active{
 cursor:pointer;
-position:relative;
+position:absolute;
 top:2px;
 }
 

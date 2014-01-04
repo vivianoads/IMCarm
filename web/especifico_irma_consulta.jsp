@@ -17,61 +17,87 @@
             </div>
             <div id="centro">
                 <div id="conteudo_centro">
-                            <h3 align="center">Exibe Dados Freiras</h3>
-                            <b>Nome Civil: ${freira.nomeCivil}</b>
-                                <b>Nome Religioso: ${freira.nomeReligioso}</b>
-                                <br/>
-                                <b>Data de Nascimento: ${freira.dataNascimento}</b>
-                                <b>CPF: ${freira.cpf}</b>
-                                <b>RG: ${freira.rg}</b>
-                                </br>
-                                <b>Pai: ${freira.nomePai}</b>
-                                <b>Mãe: ${freira.nomeMae}</b>
-                                <br/>
-                                <b>Rua: ${freira.ruaFamilia}</b>
-                                <b>Núm.: ${freira.numeroFamilia}</b>
-                                <b>Bairro: ${freira.bairroFamilia}</b>
-                                <br/>
-                                <b>Cidade: ${freira.cidadeFamilia}</b>
-                                <b>UF: ${freira.estadoFamilia}</b>
-                                <b>CEP: ${freira.cepFamilia}</b>
-                                <br/>
-                                <b>Diocese: ${freira.diocese}</b>
-                                <b>Tel.: ${freira.telefone}</b>
-                                <b>Email: ${freira.email}</b>
-                                <br/>
-                                <b>Aspirantado: ${freira.dataAspirantado}</b>
-                                <b>Postulantado: ${freira.dataPostulantado}</b>
-                                <b>Noviciado Canônico: ${freira.dataNoviciadoCanonico}</b>
-                                <br/>
-                                <b>Noviciado Apostólico: ${freira.dataNoviciadoApostolico}</b>
-                                <b>Juniorado: ${freira.datasJuniorado}</b>
-                                <b>Juniorado I Renovação: ${freira.datasJunioradoI}</b>
-                                <br/>
-                                <b>Juniorado II Renov.: ${freira.datasJunioradoII}</b>
-                                <b>Juniorado III Renov.: ${freira.datasJunioradoIII}</b>
-                                <b>Juniorado IV Renov.: ${freira.datasJunioradoIV}</b>
-                                <br/>
-                                <b>Juniorado V Renov.: ${freira.datasJunioradoV}</b>
-                                <b>Juniorado VI Renov.: ${freira.datasJunioradoVI}</b>
-                                <b>Juniorado VII Renov.: ${freira.datasJunioradoVII}</b>
-                                <br/>
-                                <b>Juniorado VIII Renov.: ${freira.datasJunioradoVIII}</b>
-                                <b>Juniorado IX Renov.: ${freira.datasJunioradoIX}">
-                                <b>Profissão Simples: ${freira.dataProfissaoTemporaria}</b>
-                                <br/>
-                                <b>Profissão Perpétua: ${freira.dataProfissaoPerpetua}</b>
-                                <b>Atividade: <c:choose>
-                                    <c:when test="${freira.ativo eq 'sim'}">
-                                        <b>Freira Ativa</b>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <b>Freira Inativa</b>
-                                    </c:otherwise>
-                                </c:choose>
-                                <b>Tipo de Atividade: ${freira.tipoAtivo}</b>
-                                <br/>
-                                         
+                    <br/>
+                    <div id="voltar">
+                        <a href="javascript:window.history.go(-1)"><button class="i2Style_alterar">Voltar</button></a>
+                    </div>
+                    <div id="voltar_menu">
+                        <button onClick="javascript:window.print()" class="i2Style_alterar">Imprimir</button>
+<!--                        <form action="/ImCarm_2.0/ServletControler" method="post">
+                            <input type="hidden" name="action" value="83">
+                            <input type="submit" class="i2Style_alterar" value="Menu">
+                        </form>-->
+                    </div>
+                    <h3 align="center">Exibe Dados Freiras</h3>
+                    <br/>
+                    <br/>
+                    <b>Nome Civil: ${freira.nomeCivil}</b>
+                    <br/>
+                    <br/>
+                    <b>Nome Religioso: ${freira.nomeReligioso}</b>
+                    <br/>
+                    <br/>
+                    <b>Data de Nascimento: ${freira.dataNascimento}</b>
+                    <b>CPF: ${freira.cpf}</b>
+                    <b>RG: ${freira.rg}</b>
+                    </br>
+                    <br/>
+                    <b>Pai: ${freira.nomePai}</b>
+                    <b>Mãe: ${freira.nomeMae}</b>
+                    <br/>
+                    <br/>
+                    <b>Rua: ${freira.ruaFamilia}</b>
+                    <b>Núm.: ${freira.numeroFamilia}</b>
+                    <b>Bairro: ${freira.bairroFamilia}</b>
+                    <br/>
+                    <br/>
+                    <b>Cidade: ${freira.cidadeFamilia}</b>
+                    <b>UF: ${freira.estadoFamilia}</b>
+                    <b>CEP: ${freira.cepFamilia}</b>
+                    <br/>
+                    <br/>
+                    <b>Diocese: ${freira.diocese}</b>
+                    <b>Tel.: ${freira.telefone}</b>
+                    <b>Email: ${freira.email}</b>
+                    <br/>
+                    <br/>
+                    <b>Aspirantado: ${freira.dataAspirantado}</b>
+                    <b>Postulantado: ${freira.dataPostulantado}</b>
+                    <b>Noviciado Canônico: ${freira.dataNoviciadoCanonico}</b>
+                    <br/>
+                    <br/>
+                    <b>Noviciado Apostólico: ${freira.dataNoviciadoApostolico}</b>
+                    <b>Juniorado: ${freira.datasJuniorado}</b>
+                    <b>Juniorado I Renovação: ${freira.datasJunioradoI}</b>
+                    <br/>
+                    <br/>
+                    <b>Juniorado II Renov.: ${freira.datasJunioradoII}</b>
+                    <b>Juniorado III Renov.: ${freira.datasJunioradoIII}</b>
+                    <b>Juniorado IV Renov.: ${freira.datasJunioradoIV}</b>
+                    <br/>
+                    <br/>
+                    <b>Juniorado V Renov.: ${freira.datasJunioradoV}</b>
+                    <b>Juniorado VI Renov.: ${freira.datasJunioradoVI}</b>
+                    <b>Juniorado VII Renov.: ${freira.datasJunioradoVII}</b>
+                    <br/>
+                    <br/>
+                    <b>Juniorado VIII Renov.: ${freira.datasJunioradoVIII}</b>
+                    <b>Juniorado IX Renov.: ${freira.datasJunioradoIX}</b>
+                    <b>Profissão Simples: ${freira.dataProfissaoTemporaria}</b>
+                    <br/>
+                    <br/>
+                    <b>Profissão Perpétua: ${freira.dataProfissaoPerpetua}</b>
+                    <b>Atividade: </b>
+                    <c:choose>
+                        <c:when test="${freira.ativo eq 'sim'}">
+                            <b>Freira Ativa</b>
+                        </c:when>
+                        <c:otherwise>
+                            <b>Freira Inativa</b>
+                        </c:otherwise>
+                    </c:choose>
+                    <b>Tipo de Atividade: ${freira.tipoAtivo}</b>
+                    <br/>
                 </div>
             </div>
         </div>

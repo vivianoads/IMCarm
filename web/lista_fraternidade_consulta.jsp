@@ -7,7 +7,6 @@
         <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
         <link href="estilo_lista_irmas_consulta.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
     </head>
-
     <body>
         <div id="container"> 
             <div id="topo">
@@ -17,29 +16,38 @@
             </div>
             <div id="centro">
                 <div id="conteudo_centro">
-                            <h3 align="center">Listar Fraternidades</h3>
-                            <c:forEach items="${fraternidades}" var="fraternidade">
-                                <div id="linha_conteudo">
-                                    <div id="linha_conteudo_nome">
-                                        ${fraternidade.nome}
-                                    </div>
-<!--                                    <div id="linha_conteudo_alterar">
-                                        <form action="/ImCarm_2.0/ServletControler" method="post">
-                                            <input type=hidden name="action" value="13">
-                                            <input type=hidden name="id_fraternidade" value="${fraternidade.idFraternidade}">
-                                            <button class="i2Style_alterar">Adicionar Irmãs</button>
-                                        </form>
-                                    </div>-->
-                                    <div id="linha_conteudo_apagar">
-                                        <form action="/ImCarm_2.0/ServletControler" method="post">
-                                            <input type="hidden" name="action" value="114">
-                                            <input type="hidden" name="id_fraternidade" value="${fraternidade.idFraternidade}">
-                                            <button class="i2Style_apagar">Detalhes</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </c:forEach>
-                                         
+                    <div id="voltar">
+                        <a href="javascript:window.history.go(-1)"><button class="i2Style_alterar">Voltar</button></a>
+                    </div>
+                    <div id="voltar_menu">
+                        <button onClick="javascript:window.print()" class="i2Style_alterar">Imprimir</button>
+<!--                        <form action="/ImCarm_2.0/ServletControler" method="post">
+                            <input type="hidden" name="action" value="83">
+                            <input type="submit" class="i2Style_alterar" value="Menu">
+                        </form>-->
+                    </div>
+                    <h3 align="center">Listar Fraternidades</h3>
+                    <c:forEach items="${fraternidades}" var="fraternidade">
+                        <div id="linha_conteudo">
+                            <div id="linha_conteudo_nome">
+                                ${fraternidade.nome}
+                            </div>
+                            <!--                                    <div id="linha_conteudo_alterar">
+                                                                    <form action="/ImCarm_2.0/ServletControler" method="post">
+                                                                        <input type=hidden name="action" value="13">
+                                                                        <input type=hidden name="id_fraternidade" value="${fraternidade.idFraternidade}">
+                                                                        <button class="i2Style_alterar">Adicionar Irmãs</button>
+                                                                    </form>
+                                                                </div>-->
+                            <div id="linha_conteudo_apagar">
+                                <form action="/ImCarm_2.0/ServletControler" method="post">
+                                    <input type="hidden" name="action" value="114">
+                                    <input type="hidden" name="id_fraternidade" value="${fraternidade.idFraternidade}">
+                                    <button class="i2Style_apagar">Detalhes</button>
+                                </form>
+                            </div>
+                        </div>
+                    </c:forEach>              
                 </div>
             </div>
         </div>
