@@ -46,7 +46,7 @@ public class BuscaFraternidadeEspecifica implements Command{
             Logger.getLogger(BuscaFraternidadeEspecifica.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        request.setAttribute("fraternidade", fraternidade);
+        request.setAttribute("fraternidadebean", fraternidade);
         return nextPage;
     }
     

@@ -30,12 +30,18 @@ public class BuscaFreiraPorBodasDeVotosSimples implements Command{
         Integer idade = Bodas.getBodas(request.getParameter("bodas_votos_simples"));
         List<FreiraBean> freiras = new ArrayList<FreiraBean>();
         FreiraDao freiraDao = new FreiraDao();
-        
+        System.out.println("idade " + idade);
         try {
             List<FreiraBean> aux = freiraDao.getAllFreiraBean();
             for(FreiraBean f : aux){
-                if(UtilData.getIdade(f.getDataProfissaoTemporaria()).equals(idade)){
+                if(idade.equals(1)){
+                    if((UtilData.getIdade(f.getDataProfissaoTemporaria()) >= (idade)) && (UtilData.getIdade(f.getDataProfissaoTemporaria()) <= (idade+3))){
+                    freiras.add(f);
+                }
+                }else{
+                if((UtilData.getIdade(f.getDataProfissaoTemporaria()) >= (idade)) && (UtilData.getIdade(f.getDataProfissaoTemporaria()) <= (idade+4))){
                 freiras.add(f);
+                }
                 }
             }
             

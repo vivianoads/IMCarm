@@ -34,8 +34,14 @@ public class BuscaFreiraPorBodasDeVotosPerpetuos implements Command{
         try {
             List<FreiraBean> aux = freiraDao.getAllFreiraBean();
             for(FreiraBean f : aux){
-                if(UtilData.getIdade(f.getDataProfissaoPerpetua()).equals(idade)){
-                freiras.add(f);
+                if(idade.equals(1)){
+                    if((UtilData.getIdade(f.getDataProfissaoPerpetua())>=(idade))&&(UtilData.getIdade(f.getDataProfissaoPerpetua())<=(idade+3))){
+                    freiras.add(f);
+                    }
+                }else{
+                    if((UtilData.getIdade(f.getDataProfissaoPerpetua())>=(idade))&&(UtilData.getIdade(f.getDataProfissaoPerpetua())<=(idade+4))){
+                    freiras.add(f);
+                }
                 }
             }
             

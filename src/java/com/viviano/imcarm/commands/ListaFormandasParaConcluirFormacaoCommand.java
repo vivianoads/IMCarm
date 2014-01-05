@@ -44,7 +44,7 @@ public class ListaFormandasParaConcluirFormacaoCommand implements Command{
 //            freiras = freiraDao.getAllFreiraBeanSemAgregacao();
             formandas = formandaDao.getAllFormandaBeanAtivas();
             for (int i = initialIndex; i < initialIndex + 10; i++) {
-                if(i<formandas.size()) formandaspaginada.add(formandas.get(i));
+                if((i<formandas.size())&&(formandas.get(i).getEtapa().equalsIgnoreCase("Profissão Perpétua"))) formandaspaginada.add(formandas.get(i));
             }
             Integer[] paginacao = new Integer[formandas.size() / 10 + 1];
             for (int i = 0; i < paginacao.length; i++) {

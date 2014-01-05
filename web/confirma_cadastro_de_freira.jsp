@@ -55,7 +55,7 @@
                                     <img src="IconeCadastrarFormandas.png">
                                 </a>-->
                             </div>
-                            <div id="linha_menu_freira">
+                            <div id="linha_menu_escolhida">
                                 <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
                                     <input type=hidden name="action" value="35">
                                     <input type="image" src="IconeCadastrarFreiras.png">
@@ -125,7 +125,7 @@
                                 <b>Juniorado VII Renov.: ${freira.datasJunioradoVII}</b>
                                 <br/>
                                 <b>Juniorado VIII Renov.: ${freira.datasJunioradoVIII}</b>
-                                <b>Juniorado IX Renov.: ${freira.datasJunioradoIX}">
+                                <b>Juniorado IX Renov.: ${freira.datasJunioradoIX}</b>
                                 <b>Profissão Simples: ${freira.dataProfissaoTemporaria}</b>
                                 <br/>
                                 <b>Profissão Perpétua: ${freira.dataProfissaoPerpetua}</b>
@@ -141,7 +141,7 @@
                                 <br/>
                             
                             
-                            ${freira.id}
+                            <!--${freira.id}-->
                             
                            
                             <div id="linha_buttons">

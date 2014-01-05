@@ -16,10 +16,11 @@ public class UtilData {
     public static Integer getIdade(String dataComparar){
         Integer idade = 0;
         String[] data = new String[3];
-        data = dataComparar.split("-");
-        Integer diaComparar = new Integer(data[2]);
+        System.out.println("data comparar " + dataComparar);
+        data = dataComparar.split("/");
+        Integer diaComparar = new Integer(data[0]);
         Integer mesComparar = new Integer(data[1]);
-        Integer anoComparar = new Integer(data[0]);
+        Integer anoComparar = new Integer(data[2]);
         
         Integer diaAtual = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
         Integer mesAtual = Calendar.getInstance().get(Calendar.MONTH+1);

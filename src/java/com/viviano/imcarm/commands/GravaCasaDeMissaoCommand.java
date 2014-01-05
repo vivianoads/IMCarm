@@ -54,10 +54,10 @@ public class GravaCasaDeMissaoCommand implements Command {
         fraternidadeBean.setEmail(email);
         fraternidadeBean.setTelefone(telefone);
         
-        FreiraBean freiraBean = null;
-        freiraBean = (FreiraBean) request.getSession().getAttribute("usuarioLogado");
-        if (freiraBean != null) {
-            System.out.println("entrou no IF");
+//        FreiraBean freiraBean = null;
+//        freiraBean = (FreiraBean) request.getSession().getAttribute("usuarioLogado");
+//        if (freiraBean != null) {
+//            System.out.println("entrou no IF");
             try {
                 FraternidadeBean fraternidadeBeanAux = fraternidadeDao.getFraternidadePorNome(fraternidadeBean.getNome());
                 System.out.println(fraternidadeBeanAux);
@@ -117,9 +117,9 @@ public class GravaCasaDeMissaoCommand implements Command {
 //            } catch (SQLException e) {
 //                e.printStackTrace();
 //            }
-        } else {
-            nextPage = "";
-        }
+//        } else {
+//            nextPage = "";
+//        }
         return nextPage;
     }
 

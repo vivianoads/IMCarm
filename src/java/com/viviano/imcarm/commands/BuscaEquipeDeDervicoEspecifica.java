@@ -35,10 +35,14 @@ public class BuscaEquipeDeDervicoEspecifica implements Command{
         EquipeServicoBean equipeServico = new EquipeServicoBean();
         EquipeServicoDao equipeServicoDao = new EquipeServicoDao();
 //        GovernoGeralDao governoGeralDao = new GovernoGeralDao();
-        
-        
+        FreiraBean coordenadora = new FreiraBean();
+        List<FormandaBean> listFormandas = new ArrayList<FormandaBean>();
+        List<FreiraBean> listfFreiras = new ArrayList<FreiraBean>();
         try {
             equipeServico = equipeServicoDao.getEquipeServicoBean(idEquipe);
+            coordenadora = new FreiraDao().getFreiraBean(equipeServico.getCoordenadora());
+            listFormandas = new FormandaDao().getAllFormandaBeanPorEquipe(equipeServico.getIdEquipe());
+            listfFreiras = new FreiraDao().getAllFreiraBeanPorEquipe(equipeServico.getIdEquipe());
 //            for(FreiraBean f : aux){
 //                if(UtilData.getIdade(f.getDataNascimento()).equals(idade)){
 //                freiras.add(f);
@@ -50,8 +54,12 @@ public class BuscaEquipeDeDervicoEspecifica implements Command{
         } catch (SQLException ex) {
             Logger.getLogger(BuscaEquipeDeDervicoEspecifica.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+//        System.out.println("FREIRAS SIZE = " + listfFreiras.size());
+//        System.out.println("FORMANDAS SIZE" + listFormandas.size());
         request.setAttribute("equipe", equipeServico);
+        request.setAttribute("coordenadora", coordenadora);
+        request.setAttribute("list_freiras_associar_equipe", listfFreiras);
+        request.setAttribute("list_formandas_associar_equipe", listFormandas);
         return nextPage;
     }
     

@@ -32,11 +32,11 @@
                             <br/>
                             <br/>
                             <b>Coordenadora:</b>
-                                ${coordenadora_equipe.nomeReligioso}
+                                ${coordenadora.nomeReligioso}
                                 <br/>
                                 <br/>
                                 <b>Nome:</b> 
-                                ${nome_equipe}
+                                ${equipe.nome}
                                 <br/>
                                 <c:forEach items="${list_freiras_associar_equipe}" var="freira">
                                     <table>

@@ -125,7 +125,7 @@
                                 <b>Juniorado VII Renov.: ${freira.datasJunioradoVII}</b>
                                 <br/>
                                 <b>Juniorado VIII Renov.: ${freira.datasJunioradoVIII}</b>
-                                <b>Juniorado IX Renov.: ${freira.datasJunioradoIX}">
+                                <b>Juniorado IX Renov.: ${freira.datasJunioradoIX}</b>
                                 <b>Profissão Simples: ${freira.dataProfissaoTemporaria}</b>
                                 <br/>
                                 <b>Profissão Perpétua: ${freira.dataProfissaoPerpetua}</b>

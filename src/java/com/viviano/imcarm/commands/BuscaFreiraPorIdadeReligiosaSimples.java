@@ -32,8 +32,14 @@ public class BuscaFreiraPorIdadeReligiosaSimples implements Command{
         FreiraDao freiraDao = new FreiraDao();
         
         try {
-            List<FreiraBean> aux = freiraDao.getAllFreiraBean();
-            for(FreiraBean f : aux){
+            List<FreiraBean> aux = new ArrayList<FreiraBean>();
+            aux = freiraDao.getAllFreiraBean();
+            System.out.println("aux.size " + aux.size());
+            FreiraBean f = new FreiraBean();
+            for(int i = 0; i < aux.size(); i++){
+                System.out.println("i " + i);
+                f = aux.get(i);
+                System.out.println("aux.get(i) " + aux.get(i));
                 if(UtilData.getIdade(f.getDataProfissaoTemporaria()).equals(idade)){
                 freiras.add(f);
                 }

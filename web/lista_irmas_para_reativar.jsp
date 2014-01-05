@@ -95,7 +95,7 @@
                                             <input type="hidden" name="action" value="81">
                                             <input type="hidden" name="id_freira_reativar" value="${freira.id}">
                                             <b style="font: bold Tahoma">Estado de Atividade: </b>
-                                            <input style="width: 200px" type="text" name="novo_estado_atividade">
+                                            <input style="width: 150px" type="text" name="novo_estado_atividade">
                                             <input type="submit" class="i2Style_apagar"value="Reativar">
                                         </form>
                                     </div>

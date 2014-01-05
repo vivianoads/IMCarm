@@ -43,7 +43,7 @@
                                     <div id="linha_conteudo_apagar">
                                         <form action="/ImCarm_2.0/ServletControler" method="post">
                                             <input type="hidden" name="action" value="112">
-                                            <input type="hidden" name="id_formanda" value="${formanda.id}">
+                                            <input type="hidden" name="id_formanda" value="${formanda.idFormanda}">
                                             <button class="i2Style_apagar">Detalhes</button>
                                         </form>
                                     </div>

@@ -25,7 +25,7 @@ public class LoginCommand implements Command {
         try {
             freiraBean = loginDao.getLoginBean(usuario, senha);
             if (freiraBean != null) {
-                request.setAttribute("usuarioLogado", freiraBean);
+                request.getSession().setAttribute("usuarioLogado", freiraBean);
                 System.out.println(freiraBean.getNomeCivil());
                 nextPage = "usuariologado.jsp";
             } else {

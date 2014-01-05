@@ -8,7 +8,7 @@
         <link href="estilo_form_cadastro_de_equipe_de_servico.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
     </head>
 
-    <body>
+    <body onload="javascript:alert('ATENÇÃO!!!   Antes de Cadastrar uma Equipe de Servico, VERIFIQUE o Governo Geral Atual, pois as Equipes de Serviço serão integradas ao Governo Geral definido como ATUAL até este momento!' )">
         <div id="container"> 
             <div id="topo">
                 <div id="conteudo_topo">

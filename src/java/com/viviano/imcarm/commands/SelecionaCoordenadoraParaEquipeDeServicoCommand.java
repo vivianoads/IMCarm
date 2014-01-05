@@ -23,10 +23,10 @@ public class SelecionaCoordenadoraParaEquipeDeServicoCommand implements Command{
     @Override
     public String execute(HttpServletRequest request) {
         EquipeServicoBean equipeServicoBeanAntigo = (EquipeServicoBean) request.getSession().getAttribute("antigo");
-        System.out.println("Equipe Bean Antigo Na Hora de Selecionar Coordenadora (Início da Classe) = "); 
-        System.out.println("Nome " + equipeServicoBeanAntigo.getNome());
-        System.out.println("Coordenadora " + equipeServicoBeanAntigo.getCoordenadora());
-        System.out.println("id " + equipeServicoBeanAntigo.getIdEquipe());
+//        System.out.println("Equipe Bean Antigo Na Hora de Selecionar Coordenadora (Início da Classe) = "); 
+//        System.out.println("Nome " + equipeServicoBeanAntigo.getNome());
+//        System.out.println("Coordenadora " + equipeServicoBeanAntigo.getCoordenadora());
+//        System.out.println("id " + equipeServicoBeanAntigo.getIdEquipe());
         
         
         String nextPage = "form_cadastro_de_equipe_de_servico.jsp";
@@ -49,35 +49,35 @@ public class SelecionaCoordenadoraParaEquipeDeServicoCommand implements Command{
             nextPage = "form_modificacao_de_equipe_de_servico.jsp";
             request.getSession().setAttribute("coordenadora_equipe", freiraBean);
             equipeServicoBeanAntigo = (EquipeServicoBean) request.getSession().getAttribute("antigo");
-        System.out.println("Equipe Bean Antigo Na Hora de Selecionar Coordenadora (51-55) = "); 
-        System.out.println("Nome " + equipeServicoBeanAntigo.getNome());
-        System.out.println("Coordenadora " + equipeServicoBeanAntigo.getCoordenadora());
-        System.out.println("id " + equipeServicoBeanAntigo.getIdEquipe());
+//        System.out.println("Equipe Bean Antigo Na Hora de Selecionar Coordenadora (51-55) = "); 
+//        System.out.println("Nome " + equipeServicoBeanAntigo.getNome());
+//        System.out.println("Coordenadora " + equipeServicoBeanAntigo.getCoordenadora());
+//        System.out.println("id " + equipeServicoBeanAntigo.getIdEquipe());
             EquipeServicoBean equipeServicoBean = (EquipeServicoBean) request.getSession().getAttribute("equipe");
             equipeServicoBeanAntigo = (EquipeServicoBean) request.getSession().getAttribute("antigo");
-        System.out.println("Equipe Bean Antigo Na Hora de Selecionar Coordenadora (57-61) = "); 
-        System.out.println("Nome " + equipeServicoBeanAntigo.getNome());
-        System.out.println("Coordenadora " + equipeServicoBeanAntigo.getCoordenadora());
-        System.out.println("id " + equipeServicoBeanAntigo.getIdEquipe());
+//        System.out.println("Equipe Bean Antigo Na Hora de Selecionar Coordenadora (57-61) = "); 
+//        System.out.println("Nome " + equipeServicoBeanAntigo.getNome());
+//        System.out.println("Coordenadora " + equipeServicoBeanAntigo.getCoordenadora());
+//        System.out.println("id " + equipeServicoBeanAntigo.getIdEquipe());
             equipeServicoBean.setCoordenadora(freiraBean.getId());
-        equipeServicoBeanAntigo = (EquipeServicoBean) request.getSession().getAttribute("antigo");
-        System.out.println("Equipe Bean Antigo Na Hora de Selecionar Coordenadora (63-) = "); 
-        System.out.println("Nome " + equipeServicoBeanAntigo.getNome());
-        System.out.println("Coordenadora " + equipeServicoBeanAntigo.getCoordenadora());
-        System.out.println("id " + equipeServicoBeanAntigo.getIdEquipe());
+//        equipeServicoBeanAntigo = (EquipeServicoBean) request.getSession().getAttribute("antigo");
+//        System.out.println("Equipe Bean Antigo Na Hora de Selecionar Coordenadora (63-) = "); 
+//        System.out.println("Nome " + equipeServicoBeanAntigo.getNome());
+//        System.out.println("Coordenadora " + equipeServicoBeanAntigo.getCoordenadora());
+//        System.out.println("id " + equipeServicoBeanAntigo.getIdEquipe());
             request.getSession().setAttribute("equipe",equipeServicoBean);
             
         }
         EquipeServicoBean equipeServicoBeanAntigo2 = (EquipeServicoBean) request.getSession().getAttribute("equipe");
-        System.out.println("Equipe Bean Antigo Na Hora de Selecionar Coordenadora = "); 
-        System.out.println("Nome " + equipeServicoBeanAntigo.getNome());
-        System.out.println("Coordenadora " + equipeServicoBeanAntigo.getCoordenadora());
-        System.out.println("id " + equipeServicoBeanAntigo.getIdEquipe());
+//        System.out.println("Equipe Bean Antigo Na Hora de Selecionar Coordenadora = "); 
+//        System.out.println("Nome " + equipeServicoBeanAntigo.getNome());
+//        System.out.println("Coordenadora " + equipeServicoBeanAntigo.getCoordenadora());
+//        System.out.println("id " + equipeServicoBeanAntigo.getIdEquipe());
         EquipeServicoBean equipeServicoBeanAntigo3 = (EquipeServicoBean) request.getSession().getAttribute("antigo");
-        System.out.println("Equipe Bean Na Hora de Selecionar Coordenadora = "); 
-        System.out.println("Nome " + equipeServicoBeanAntigo.getNome());
-        System.out.println("Coordenadora " + equipeServicoBeanAntigo.getCoordenadora());
-        System.out.println("id " + equipeServicoBeanAntigo.getIdEquipe());
+//        System.out.println("Equipe Bean Na Hora de Selecionar Coordenadora = "); 
+//        System.out.println("Nome " + equipeServicoBeanAntigo.getNome());
+//        System.out.println("Coordenadora " + equipeServicoBeanAntigo.getCoordenadora());
+//        System.out.println("id " + equipeServicoBeanAntigo.getIdEquipe());
         return nextPage;
     }
     

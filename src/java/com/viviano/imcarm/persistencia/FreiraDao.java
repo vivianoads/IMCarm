@@ -619,9 +619,10 @@ public class FreiraDao {
 		Connection con = conexao.getConnection();
 		String sql = "SELECT * FROM freira";
 		List<FreiraBean> freiras = new ArrayList<FreiraBean>();
-		Statement stat = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-		ResultSet rs = stat.executeQuery(sql);
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		ResultSet rs = stat.executeQuery();
 		while (rs.next()){
+                    if(rs.getInt("id") != 0){
 			FreiraBean freira = new FreiraBean();
 			freira.setId(rs.getInt("id"));
 			freira.setCpf(rs.getString("cpf"));
@@ -660,6 +661,7 @@ public class FreiraDao {
                         freira.setDatasJunioradoIX(rs.getString("data_juniorado_renovacao_9"));
 			
 			freiras.add(freira);
+                    }
 		}
 		
 		stat.close();

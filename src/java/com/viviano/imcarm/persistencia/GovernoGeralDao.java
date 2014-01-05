@@ -145,7 +145,7 @@ public class GovernoGeralDao {
                     for(int i = 0; i < 2; i++){
                         suplentes[i] = freiraDao.getFreiraBean(rs.getInt("conselheira_suplente_"+(i+1)));
                     }
-                    governoGeralBean.setConselhoFiscal(suplentes);
+                    governoGeralBean.setConselheirasSuplentes(suplentes);
                     
                     FreiraBean[] fiscal = new FreiraBean[3];
                     for(int i = 0; i < 3; i++){

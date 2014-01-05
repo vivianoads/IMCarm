@@ -19,9 +19,9 @@ public class VerificaUsuarioLogadoCommand implements Command{
     public String execute(HttpServletRequest request) {
         String nextPage = "cadastrodecasasdemissao.jsp";
         
-        FreiraBean freiraBean = null;
-        freiraBean = (FreiraBean) request.getSession().getAttribute("usuarioLogado");
-        if(freiraBean != null) nextPage = request.getParameter("next_url");
+//        FreiraBean freiraBean = null;
+//        freiraBean = (FreiraBean) request.getSession().getAttribute("usuarioLogado");
+//        if(freiraBean != null) nextPage = request.getParameter("next_url");
         
         return nextPage;
     }

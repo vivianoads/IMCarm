@@ -223,11 +223,23 @@ public class Main {
         
         
         FreiraDao dao = new FreiraDao();
+//        try {
+//            for(FreiraBean f : dao.getAllFreiraBeanComStringNoNome("d")){
+//                System.out.println(f.getNomeCivil());
+//            }
+//            dao.getAllFreiraBeanComStringNoNome("d").size();
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         try {
-            for(FreiraBean f : dao.getAllFreiraBeanComStringNoNome("d")){
-                System.out.println(f.getNomeCivil());
+           
+            List<FreiraBean> l = new ArrayList<FreiraBean>();
+            l = dao.getAllFreiraBean();
+            for(int i = 0; i<l.size(); i++){
+                System.out.println(l.get(i).getNomeReligioso());
             }
-            dao.getAllFreiraBeanComStringNoNome("d").size();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {

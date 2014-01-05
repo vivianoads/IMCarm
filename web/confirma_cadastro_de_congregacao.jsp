@@ -135,7 +135,7 @@
                                 </div>
                                 <div id="option_buttons_3">
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
-                                        <input type="hidden" name="action" value="*">
+                                        <input type="hidden" name="action" value="29">
                                         <input type="submit" class="i2Style" value="Confirma">
                                     </form>
                                 </div>

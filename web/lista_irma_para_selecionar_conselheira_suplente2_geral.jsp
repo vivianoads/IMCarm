@@ -95,7 +95,7 @@
                                             <input type="hidden" name="action" value="38">
                                             <input type="hidden" name="id_freira" value="${freira.id}">
                                             <input type="hidden" name="tipo_cargo" value="${tipo_cargo}">
-                                            <button class="i2Style_apagar">Conselheira Suplente [2]</button>
+                                            <button class="i2Style_apagar">Cons. Suplente [2]</button>
                                         </form>
                                     </div>
                                 </div>

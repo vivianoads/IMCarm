@@ -73,6 +73,8 @@ public class FormandaEquipeDao {
 		return febs;
 	}
 	
+        
+        
 	public List<FormandaEquipeBean> getAllFormandaEquipeBean() throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
 		String sql = "SELECT * FROM formanda_equipe";

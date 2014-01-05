@@ -54,10 +54,10 @@ public class ListaIrmasSelecionarMadre implements Command{
             e.printStackTrace();
         }
         EquipeServicoBean equipeServicoBeanAntigo = (EquipeServicoBean) request.getSession().getAttribute("antigo");
-        System.out.println("Equipe Bean Antigo Na Hora de Escolher a Coordenadora = "); 
-        System.out.println("Nome " + equipeServicoBeanAntigo.getNome());
-        System.out.println("Coordenadora " + equipeServicoBeanAntigo.getCoordenadora());
-        System.out.println("id " + equipeServicoBeanAntigo.getIdEquipe());
+//        System.out.println("Equipe Bean Antigo Na Hora de Escolher a Coordenadora = "); 
+//        System.out.println("Nome " + equipeServicoBeanAntigo.getNome());
+//        System.out.println("Coordenadora " + equipeServicoBeanAntigo.getCoordenadora());
+//        System.out.println("id " + equipeServicoBeanAntigo.getIdEquipe());
         return nextPage;
     }
 }
