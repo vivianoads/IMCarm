@@ -5,7 +5,7 @@
 <html>
     <head>
         <!--<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">-->
-        <title>Cadastro de Casa de Missão</title>
+        <title>#INFORMATIZE</title>
         <link href="EstiloConfirmaCadastroDeCasasDeMissao.css" rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -106,7 +106,7 @@
                     </div>
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
-                            <h3 align="center">Confirma Cadastro de Fraternidade</h3>
+                            <h3 align="center">Fraternidade cadastrada com Sucesso</h3>
                             <b>Nome:</b>
                             ${fraternidadebean.nome}
                             <b>Data de Fundação:</b> 

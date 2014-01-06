@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <title>Cadastra Casa de Missão</title>
+        <title>#INFORMATIZE</title>
         <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
         <link href="estilo_confirma_edicao_de_coordenacao_de_casas_de_missao.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
     </head>

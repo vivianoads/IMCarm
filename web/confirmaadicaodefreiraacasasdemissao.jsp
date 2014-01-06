@@ -5,7 +5,7 @@
 <html>
     <head>
         <!--<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">-->
-        <title>Cadastro de Casa de Missão</title>
+        <title>#INFORMATIZE</title>
         <link href="EstiloConfirmaadicaodefreiraaCasasDeMissao.css" rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -77,7 +77,7 @@
                     </div>
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
-                            <h3 align="center">Confirma Adição de Freira a fraternidade</h3>
+                            <h3 align="center">Confirmar Adição de Freira a fraternidade</h3>
                             <div id="lado_freira">
                                 ${freira.nomeCivil}
                             </div>
