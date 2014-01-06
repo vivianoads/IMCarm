@@ -224,7 +224,17 @@ public class FraternidadeDao {
 		ps.close();
 		con.close();
 	}
-	
+	public void alteraFraternidade(int idFraternidade) throws SQLException, ClassNotFoundException{
+		Connection con  = conexao.getConnection();
+		String sql = "UPDATE fraternidade SET status = ?, WHERE id_fraternidade = ?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, "inativa");
+                ps.setInt(2, idFraternidade);
+		
+		ps.executeUpdate();
+		ps.close();
+		con.close();
+	}
 	public void apagaFraternidade(Integer idFraternidade) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
 		String sql = "DELETE FROM fraternidade WHERE id_fraternidade = ?";

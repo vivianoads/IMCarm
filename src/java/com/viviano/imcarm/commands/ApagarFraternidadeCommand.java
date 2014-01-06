@@ -28,7 +28,7 @@ public class ApagarFraternidadeCommand implements Command{
         FraternidadeBean fraternidadeBean = new FraternidadeBean();
         try {
             fraternidadeBean = fraternidadeDao.getFraternidade(idFraternidade);
-            fraternidadeDao.apagaFraternidade(idFraternidade);
+            fraternidadeDao.alteraFraternidade(idFraternidade);
             request.setAttribute("fraternidadebean", fraternidadeBean);
         } catch (SQLException ex) {
             Logger.getLogger(ApagarFraternidadeCommand.class.getName()).log(Level.SEVERE, null, ex);

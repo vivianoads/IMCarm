@@ -18,7 +18,10 @@
                     [ ${usuariologado.nomeCivil} ] 
                     <br/>
                     <br/>
-                    <button class="i2Style_logout"> Sair</button>
+                    <form action="/ImCarm_2.0/ServletControler" method="post">
+                        <input type=hidden name="action" value="11">
+                        <input type="submit" class="i2Style_logout" value="Sair">
+                    </form>
                 </div>
             </div>
             <div id="centro">

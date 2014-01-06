@@ -20,7 +20,10 @@
                     [ ${usuarioLogado.nomeCivil} ] 
                     <br/>
                     <br/>
-                    <button class="i2Style_logout"> Sair</button>
+                    <form action="/ImCarm_2.0/ServletControler" method="post">
+                        <input type=hidden name="action" value="11">
+                        <input type="submit" class="i2Style_logout" value="Sair">
+                    </form>
                 </div>
             </div>
             <div id="centro">
@@ -157,11 +160,18 @@
                                 <br/>
                                 <b>Profissão Perpétua: </b>
                                 <input type="date" name="data_profissao_perpetua" value="${freira.dataProfissaoPerpetua}">
-                                <b>Atividade: </b>
+                                <b>Atividade: </b>${freira.ativo}
                                 <input type="radio" name="ativo" value="sim" checked> Ativa
                                 <input type="radio" name="ativo" value="nao"> Inativa
-                                <b>Tipo de Atividade: </b>
-                                <input size="46" type="text" name="tipo_ativo" value="${formanda.tipoAtivo}">
+                                <b>Tipo de Atividade: </b>${formanda.tipoAtivo}
+                                <select name="tipo_ativo">
+                                    <option value="regular">Regular</option>
+                                    <option value="licenca">Licença</option>
+                                    <option value="enclaustrada">Enclaustrada</option>
+                                    <option value="saida">Saída</option>
+                                    <option value="obito">Óbito</option>
+                                </select>
+                                <!--<input size="46" type="text" name="tipo_ativo" value="${formanda.tipoAtivo}">-->
                                 <br/>
                                 
                                 
