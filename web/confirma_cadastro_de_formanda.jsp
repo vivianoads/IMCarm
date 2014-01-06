@@ -86,48 +86,46 @@
                             
                             
                             
-                            <b>Nome: ${formandagravada.nome}</b>
-                                
-                                <b>Data de Nascimento: ${formandagravada.dataNascimento}</b>
+                                <b>Nome: </b>${formandagravada.nome}
+                                <b>Data de Nascimento: </b>${formandagravada.dataNascimento}
                                 <br/>
-                                <b>Pai: ${formandagravada.pai}</b>
-                                <b>Mãe: ${formandagravada.mae}</b>
-                                <br/>
-                                <br/>
-                                <b>Rua: ${formandagravada.rua}</b>
-                                <b>Núm.: ${formandagravada.numero}</b>
-                                <b>Bairro:${formandagravada.bairro}</b>
+                                <b>Pai: </b>${formandagravada.pai}
+                                <b>Mãe: </b>${formandagravada.mae}
                                 <br/>
                                 <br/>
-                                <b>Cidade:${formandagravada.cidade}</b>
-                                <b>Estado: ${formandagravada.uf}</b>
-                                <b>CEP: ${formandagravada.cep}</b>
+                                <b>Rua: </b>${formandagravada.rua}
+                                <b>Núm.: </b>${formandagravada.numero}
+                                <b>Bairro: </b>${formandagravada.bairro}
                                 <br/>
                                 <br/>
-                                <b>Email: ${formandagravada.email}</b>
-                                <b>Tel.: ${formandagravada.telefone}</b>
-                                <b>Diocese: ${formandagravada.diocese}</b>
+                                <b>Cidade: </b>${formandagravada.cidade}
+                                <b>UF: </b>${formandagravada.uf}
+                                <b>CEP: </b>${formandagravada.cep}
                                 <br/>
                                 <br/>
-                                <b>Etapa de Formação Atual: ${formandagravada.etapa}</b>
-                                <b>Data de Ingressso nesta Etapa:${formandagravada.dataEtapaAtual}</b>
+                                <b>Email: </b>${formandagravada.email}
+                                <b>Tel.: </b>${formandagravada.telefone}
+                                <b>Diocese: </b>${formandagravada.diocese}
+                                <br/>
+                                <br/>
+                                <b>Etapa de Formação Atual: </b>${formandagravada.etapa}
+                                <b>Data de Ingressso nesta Etapa: </b>${formandagravada.dataEtapaAtual}
                                 <br/>
                                 <b>Atividade: </b>
                                 <c:choose>
                                     <c:when test="${formandagravada.atividade eq 'sim'}">
-                                        <b>Formanda Ativa</b>
+                                        Formanda Ativa
                                     </c:when>
                                     <c:otherwise>
-                                        <b>Formanda Inativa</b>
+                                        Formanda Inativa
                                         <b>
-                                            Motivo : ${formandagravada.motivoInatividade}
+                                            Motivo : 
                                         </b>
+                                        ${formandagravada.motivoInatividade}
                                     </c:otherwise>
                                 </c:choose>
                                 <br/>
                                 <br/>
-                            
-                            ${formandagravada.idFormanda}
                             
                             
                             

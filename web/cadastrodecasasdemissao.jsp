@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <title>Bem Vindo</title>
+        <title>#INFORMATIZE</title>
         <link href="EstiloCadastroDeCasasDeMissao.css" rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -127,7 +127,7 @@
                                         <input type=hidden name="action" value="10">
                                         <input type=hidden name="initial_index" value="0">
                                         <input type=hidden name="next_url" value="listacadasdemissaoparaeditar.jsp">
-                                        <button class="i2Style_menu">Apagar Fraternidade</button>
+                                        <button class="i2Style_menu">Dar Baixa em Fraternidade</button>
                                     </form>
                                 </div>
                                 <div id="conteudo_menu_interno4">

@@ -81,7 +81,7 @@
                             <h3 align="center">Coordenação da fraternidade ** ${fraternidade.nome} **</h3>
                             <h5>${mensagem_erro}</h5>
                             <b>Fraternidade:</b>
-                            <b>${fraternidade.nome}</b>
+                            ${fraternidade.nome}
                             <br/>
                             <br/>
                             <b>Coordenadora:</b> 

@@ -29,43 +29,47 @@
                         </form>-->
                     </div>
                             <h3 align="center">Listar Formandas</h3>
-                            <b>Nome: ${formanda.nome}</b>
+                            <br/>
+                                <b>Nome: </b>${formanda.nome}
                                 <br/>
                                 <br/>
-                                <b>Data de Nascimento: ${formanda.dataNascimento}</b>
-                                <br/>
-                                <b>Pai: ${formanda.pai}</b>
-                                <b>Mãe: ${formanda.mae}</b>
+                                <b>Data de Nascimento: </b>${formanda.dataNascimento}
                                 <br/>
                                 <br/>
-                                <b>Rua: ${formanda.rua}</b>
-                                <b>Núm.: ${formanda.numero}</b>
-                                <b>Bairro:${formanda.bairro}</b>
+                                <b>Pai: </b>${formanda.pai}
+                                <b>Mãe: </b>${formanda.mae}
                                 <br/>
                                 <br/>
-                                <b>Cidade:${formanda.cidade}</b>
-                                <b>Estado: ${formanda.uf}</b>
-                                <b>CEP: ${formanda.cep}</b>
+                                <b>Rua: </b>${formanda.rua}
+                                <b>Núm.: </b>${formanda.numero}
+                                <b>Bairro: </b>${formanda.bairro}
                                 <br/>
                                 <br/>
-                                <b>Email: ${formanda.email}</b>
-                                <b>Tel.: ${formanda.telefone}</b>
-                                <b>Diocese: ${formanda.diocese}</b>
+                                <b>Cidade: </b>${formanda.cidade}
+                                <b>Estado: </b>${formanda.uf}
+                                <b>CEP: </b>${formanda.cep}
                                 <br/>
                                 <br/>
-                                <b>Etapa de Formação Atual: ${formanda.etapa}</b>
-                                <b>Data de Ingressso nesta Etapa:${formanda.dataEtapaAtual}</b>
+                                <b>Email: </b>${formanda.email}
+                                <b>Tel.: </b>${formanda.telefone}
+                                <b>Diocese: </b>${formanda.diocese}
+                                <br/>
+                                <br/>
+                                <b>Etapa de Formação Atual: </b>${formanda.etapa}
+                                <b>Data de Ingressso nesta Etapa:</b>${formanda.dataEtapaAtual}
+                                <br/>
                                 <br/>
                                 <b>Atividade: </b>
                                 <c:choose>
                                     <c:when test="${formanda.atividade eq 'sim'}">
-                                        <b>Formanda Ativa</b>
+                                        Formanda Ativa
                                     </c:when>
                                     <c:otherwise>
-                                        <b>Formanda Inativa</b>
+                                        Formanda Inativa
                                         <b>
-                                            Motivo : ${formanda.motivoInatividade}
+                                            Motivo : 
                                         </b>
+                                        ${formanda.motivoInatividade}
                                     </c:otherwise>
                                 </c:choose>
                                 <br/>

@@ -115,7 +115,6 @@
                             <b>Co-fundador</b>
                             ${congregacao.coFundador}
                             <br/>
-                            id = ${congregacao.idCongregacao}
                             <br/>
                             <div id="linha_buttons">
                                 <div id="option_buttons_1">

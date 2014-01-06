@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <title>Cadastra Casa de Missão</title>
+        <title>#INFORMATIZE</title>
         <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
         <link href="estilo_submenu_de_consulta_freira.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
     </head>
@@ -79,7 +79,7 @@
                         <div id="conteudo_funcionalidade">
                             <div id="conteudo_funcionalidade_conteudo_right">
                                 <div id="left">
-                                    <h3 align="center">Consultar Freiras</h3>
+                                    <h3 align="center">Consultar Equipes de Serviço</h3>
                                     <br/>
                                     <b>Irmãs por Equipe: </b> 
                                     <br/>

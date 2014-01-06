@@ -86,62 +86,70 @@
                             
                             
                             
-                            <b>Nome Civil: ${freira.nomeCivil}</b>
-                                <b>Nome Religioso: ${freira.nomeReligioso}</b>
+                                <b>Nome Civil: </b>${freira.nomeCivil}
                                 <br/>
-                                <b>Data de Nascimento: ${freira.dataNascimento}</b>
-                                <b>CPF: ${freira.cpf}</b>
-                                <b>RG: ${freira.rg}</b>
-                                </br>
-                                <b>Pai: ${freira.nomePai}</b>
-                                <b>Mãe: ${freira.nomeMae}</b>
                                 <br/>
-                                <b>Rua: ${freira.ruaFamilia}</b>
-                                <b>Núm.: ${freira.numeroFamilia}</b>
-                                <b>Bairro: ${freira.bairroFamilia}</b>
+                                <b>Nome Religioso: </b>${freira.nomeReligioso}
                                 <br/>
-                                <b>Cidade: ${freira.cidadeFamilia}</b>
-                                <b>UF: ${freira.estadoFamilia}</b>
-                                <b>CEP: ${freira.cepFamilia}</b>
                                 <br/>
-                                <b>Diocese: ${freira.diocese}</b>
-                                <b>Tel.: ${freira.telefone}</b>
-                                <b>Email: ${freira.email}</b>
+                                <b>Data de Nascimento: </b>${freira.dataNascimento}
+                                <b>CPF: </b>${freira.cpf}
+                                <b>RG: </b>${freira.rg}
                                 <br/>
-                                <b>Aspirantado: ${freira.dataAspirantado}</b>
-                                <b>Postulantado: ${freira.dataPostulantado}</b>
-                                <b>Noviciado Canônico: ${freira.dataNoviciadoCanonico}</b>
                                 <br/>
-                                <b>Noviciado Apostólico: ${freira.dataNoviciadoApostolico}</b>
-                                <b>Juniorado: ${freira.datasJuniorado}</b>
-                                <b>Juniorado I Renovação: ${freira.datasJunioradoI}</b>
+                                <b>Pai: </b>${freira.nomePai}
+                                <b>Mãe: </b>${freira.nomeMae}
                                 <br/>
-                                <b>Juniorado II Renov.: ${freira.datasJunioradoII}</b>
-                                <b>Juniorado III Renov.: ${freira.datasJunioradoIII}</b>
-                                <b>Juniorado IV Renov.: ${freira.datasJunioradoIV}</b>
                                 <br/>
-                                <b>Juniorado V Renov.: ${freira.datasJunioradoV}</b>
-                                <b>Juniorado VI Renov.: ${freira.datasJunioradoVI}</b>
-                                <b>Juniorado VII Renov.: ${freira.datasJunioradoVII}</b>
+                                <b>Rua: </b>${freira.ruaFamilia}
+                                <b>Núm.: </b>${freira.numeroFamilia}
+                                <b>Bairro: </b>${freira.bairroFamilia}
+                                <b>Cidade: </b>${freira.cidadeFamilia}
+                                <b>UF: </b>${freira.estadoFamilia}
+                                <b>CEP: </b>${freira.cepFamilia}
                                 <br/>
-                                <b>Juniorado VIII Renov.: ${freira.datasJunioradoVIII}</b>
-                                <b>Juniorado IX Renov.: ${freira.datasJunioradoIX}</b>
-                                <b>Profissão Simples: ${freira.dataProfissaoTemporaria}</b>
                                 <br/>
-                                <b>Profissão Perpétua: ${freira.dataProfissaoPerpetua}</b>
+                                <b>Diocese: </b>${freira.diocese}
+                                <b>Tel.: </b>${freira.telefone}
+                                <b>Email: </b>${freira.email}
+                                <br/>
+                                <br/>
+                                <b>Aspirantado: </b>${freira.dataAspirantado}
+                                <b>Postulantado: </b>${freira.dataPostulantado}
+                                <b>Noviciado Canônico: </b>${freira.dataNoviciadoCanonico}
+                                <b>Noviciado Apostólico: </b>${freira.dataNoviciadoApostolico}
+                                <br/>
+                                <br/>
+                                <b>Juniorado: </b>${freira.datasJuniorado}
+                                <b>Juniorado I Renovação: </b>${freira.datasJunioradoI}
+                                <b>Juniorado II Renov.: </b>${freira.datasJunioradoII}
+                                <b>Juniorado III Renov.: </b>${freira.datasJunioradoIII}
+                                <br/>
+                                <br/>
+                                <b>Juniorado IV Renov.: </b>${$freira.datasJunioradoIV}
+                                <b>Juniorado V Renov.: </b>${freira.datasJunioradoV}
+                                <b>Juniorado VI Renov.: </b>${freira.datasJunioradoVI}
+                                <b>Juniorado VII Renov.: </b>${freira.datasJunioradoVII}
+                                <br/>
+                                <br/>
+                                <b>Juniorado VIII Renov.: </b>${freira.datasJunioradoVIII}
+                                <b>Juniorado IX Renov.: </b>${freira.datasJunioradoIX}
+                                <b>Profissão Simples: </b>${freira.dataProfissaoTemporaria}
+                                <br/>
+                                <br/>
+                                <b>Profissão Perpétua: </b>${freira.dataProfissaoPerpetua}
                                 <b>Atividade: <c:choose>
                                     <c:when test="${freira.ativo eq 'sim'}">
-                                        <b>Freira Ativa</b>
+                                        Freira Ativa
                                     </c:when>
                                     <c:otherwise>
-                                        <b>Freira Inativa</b>
+                                        Freira Inativa
                                     </c:otherwise>
                                 </c:choose>
-                                <b>Tipo de Atividade: ${freira.tipoAtivo}</b>
-                                <br/>
+                                <b>Tipo de Atividade: </b>${freira.tipoAtivo}
                             
                             
-                            ${freira.id}
+                            
                             
                             
                             

@@ -86,49 +86,48 @@
                             
                             
                             
-                            <b>Nome: ${formanda.nome}</b>
-                                
-                                <b>Data de Nascimento: ${formanda.dataNascimento}</b>
+                            
+                            <b>Nome: </b>${formandagravada.nome}
+                                <b>Data de Nascimento: </b>${formandagravada.dataNascimento}
                                 <br/>
-                                <b>Pai: ${formanda.pai}</b>
-                                <b>Mãe: ${formanda.mae}</b>
-                                <br/>
-                                <br/>
-                                <b>Rua: ${formanda.rua}</b>
-                                <b>Núm.: ${formanda.numero}</b>
-                                <b>Bairro:${formanda.bairro}</b>
+                                <b>Pai: </b>${formandagravada.pai}
+                                <b>Mãe: </b>${formandagravada.mae}
                                 <br/>
                                 <br/>
-                                <b>Cidade:${formanda.cidade}</b>
-                                <b>Estado: ${formanda.uf}</b>
-                                <b>CEP: ${formanda.cep}</b>
+                                <b>Rua: </b>${formandagravada.rua}
+                                <b>Núm.: </b>${formandagravada.numero}
+                                <b>Bairro: </b>${formandagravada.bairro}
                                 <br/>
                                 <br/>
-                                <b>Email: ${formanda.email}</b>
-                                <b>Tel.: ${formanda.telefone}</b>
-                                <b>Diocese: ${formanda.diocese}</b>
+                                <b>Cidade: </b>${formandagravada.cidade}
+                                <b>UF: </b>${formandagravada.uf}
+                                <b>CEP: </b>${formandagravada.cep}
                                 <br/>
                                 <br/>
-                                <b>Etapa de Formação Atual: ${formanda.etapa}</b>
-                                <b>Data de Ingressso nesta Etapa:${formanda.dataEtapaAtual}</b>
+                                <b>Email: </b>${formandagravada.email}
+                                <b>Tel.: </b>${formandagravada.telefone}
+                                <b>Diocese: </b>${formandagravada.diocese}
+                                <br/>
+                                <br/>
+                                <b>Etapa de Formação Atual: </b>${formandagravada.etapa}
+                                <b>Data de Ingressso nesta Etapa: </b>${formandagravada.dataEtapaAtual}
                                 <br/>
                                 <b>Atividade: </b>
                                 <c:choose>
-                                    <c:when test="${formanda.atividade eq 'sim'}">
-                                        <b>Formanda Ativa</b>
+                                    <c:when test="${formandagravada.atividade eq 'sim'}">
+                                        Formanda Ativa
                                     </c:when>
                                     <c:otherwise>
-                                        <b>Formanda Inativa</b>
+                                        Formanda Inativa
                                         <b>
-                                            Motivo : ${formanda.motivoInatividade}
+                                            Motivo : 
                                         </b>
+                                        ${formandagravada.motivoInatividade}
                                     </c:otherwise>
                                 </c:choose>
                                 <br/>
                                 <br/>
-                            
-                            ${formanda.idFormanda}
-                            
+                                                        
                             
                             
                             

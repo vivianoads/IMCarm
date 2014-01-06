@@ -78,16 +78,16 @@
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
                             <h3 align="center">Permuta de Formanda cadastrada com Sucesso</h3>
-                            <b>Nome: ${fase_formacao.formanda.nome}</b>
-                                <b>Data de Nascimento: ${fase_formacao.formanda.dataNascimento}</b>
+                            <b>Nome: </b>${fase_formacao.formanda.nome}
+                                <b>Data de Nascimento: </b>${fase_formacao.formanda.dataNascimento}
                                 <br/>
-                                <b>Etapa de Formação ANTIGA: ${fase_formacao.nome}</b>
+                                <b>Etapa de Formação ANTIGA: </b>${fase_formacao.nome}
                                 <br/>
-                                <b>Data de Ingressso na Etapa ANTIGA:${fase_formacao.dataEntrada}</b>
-                                <b>Data de Saída na Etapa ANTIGA:${fase_formacao.dataSaida}</b>
+                                <b>Data de Ingressso na Etapa ANTIGA: </b>${fase_formacao.dataEntrada}
+                                <b>Data de Saída na Etapa ANTIGA: </b>${fase_formacao.dataSaida}
                                 <br/>
-                                <b>Etapa de Formação Atual: ${fase_formacao.formanda.etapa}</b>
-                                <b>Data de Ingressso nesta Etapa:${fase_formacao.formanda.dataEtapaAtual}</b>
+                                <b>Etapa de Formação Atual: </b>${fase_formacao.formanda.etapa}
+                                <b>Data de Ingressso nesta Etapa: </b>${fase_formacao.formanda.dataEtapaAtual}
                                 <br/>
                             <div id="linha_buttons">
                                 <div id="option_buttons_1">

@@ -108,47 +108,46 @@
                         <div id="conteudo_funcionalidade">
                             <h3 align="center">Confirma Cadastro de Fraternidade</h3>
                             <b>Nome:</b>
-                            <b>${fraternidadebean.nome}</b>
+                            ${fraternidadebean.nome}
                             <b>Data de Fundação:</b> 
-                            <b>${fraternidadebean.dataFundacao}</b>
+                            ${fraternidadebean.dataFundacao}
                             <br/>
                             <br/>
                             <br/>
                             <b>Rua:</b>
-                            <b>${fraternidadebean.rua}</b>
+                            ${fraternidadebean.rua}
                             <b>Numero:</b>
-                            <b>${fraternidadebean.numeroCasa}</b>
+                            ${fraternidadebean.numeroCasa}
                             <b>Bairro:</b>
-                            <b>${fraternidadebean.bairro}</b>
+                            ${fraternidadebean.bairro}
                             <br/>
                             <br/>
                             <br/>
                             <b>Cidade:</b>
-                            <b>${fraternidadebean.cidade}</b>
+                            ${fraternidadebean.cidade}
                             <b>CEP:</b>
-                            <b>${fraternidadebean.cep}</b>
+                            ${fraternidadebean.cep}
                             <b>UF:</b>
-                            <b>${fraternidadebean.uf}</b>
+                            ${fraternidadebean.uf}
                             <br/>
                             <br/>
                             <br/>
                             <b>Telefone:</b>
-                            <b>${fraternidadebean.telefone}</b>
+                            ${fraternidadebean.telefone}
                             <b>Email:</b>
-                            <b>${fraternidadebean.email}</b>
+                            ${fraternidadebean.email}
                             <br/>
                             <br/>
                             <br/>
                             <b>Diocese</b>
-                            <b>${fraternidadebean.diocese}</b>
+                            ${fraternidadebean.diocese}
                             <b>Bispo</b>
-                            <b>${fraternidadebean.bispo}</b>
+                            ${fraternidadebean.bispo}
                             <br/>
                             <br/>
                             <br/>
                             <b>Status</b>
-                            <b>${fraternidadebean.status}</b>
-                            ${fraternidadebean.idFraternidade}
+                            ${fraternidadebean.status}
                             <br/>
                             <div id="linha_buttons">
                                 <div id="option_buttons_1">

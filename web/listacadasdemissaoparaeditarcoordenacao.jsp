@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <title>Cadastra Casa de Missão</title>
+        <title>#INFORMATIZE</title>
         <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
         <link href="estilolistacasasdemissaoparaeditarcoordenacao.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
     </head>
@@ -81,7 +81,7 @@
                             <c:forEach items="${fraternidadespaginada}" var="fraternidade">
                                 <div id="linha_conteudo">
                                     <div id="linha_conteudo_nome">
-                                        ${fraternidade.nome} + ${fraternidade.idFraternidade}
+                                        ${fraternidade.nome}
                                     </div>
 <!--                                    <div id="linha_conteudo_alterar">
                                         <form action="/ImCarm_2.0/ServletControler" method="post">

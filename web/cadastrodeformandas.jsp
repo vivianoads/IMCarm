@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <title>Bem Vindo</title>
+        <title>#INFORMATIZE</title>
         <link href="EstiloCadastroDeCongregacoes.css" rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -120,10 +120,10 @@
                                     </form>
                                 </div>
                                 <div id="conteudo_menu_interno7">
-                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+<!--                                    <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
                                         <input type=hidden name="action" value="*">
                                         <button class="i2Style_menu">**</button>
-                                    </form>
+                                    </form>-->
                                 </div>
                             </div>
                         </div>

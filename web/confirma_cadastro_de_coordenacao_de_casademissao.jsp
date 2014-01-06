@@ -81,7 +81,7 @@
                             <h3 align="center">Coordenação de Casa de Missão Cadastrada com Sucesso</h3>
                             <h5>${mensagem_erro}</h5>
                             <b>Fraternidade:</b>
-                            <b>${fraternidade.nome}</b>
+                            ${fraternidade.nome}
                             <br/>
                             <br/>
                             <b>Coordenadora:</b> 
@@ -142,10 +142,10 @@
                             <br/>
                             <c:choose>
                                 <c:when test="${is_atual eq 'Não'}">
-                                    <b>Esta NÃO é a Coordenação Atual desta Fraternidade</b>
+                                    Esta NÃO é a Coordenação Atual desta Fraternidade
                                 </c:when>
                                 <c:when test="${is_atual eq 'Sim'}">
-                                    <b>Esta É a Coordenação Atual desta Fraternidade</b>
+                                   Esta É a Coordenação Atual desta Fraternidade
                                 </c:when>
                             </c:choose>
                             <br/>
@@ -170,7 +170,6 @@
                                 <div id="option_buttons_1">
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
                                         <input type="hidden" name="action" value="27">
-                                        id coordenacao = ${id_coordenacao}
                                         <input type="hidden" name="id_coordenacao_fraternidade" value="${id_coordenacao}">
                                         <input type="submit" class="i2Style_apagar" value="Calcelar">
                                     </form>

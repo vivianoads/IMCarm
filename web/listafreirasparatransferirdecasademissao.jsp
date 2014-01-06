@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <title>Cadastra Casa de Missão</title>
+        <title>#INFORMATIZE</title>
         <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
         <link href="Estilolistairmasparatransferiridecasasdemissao.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
     </head>
@@ -33,45 +33,45 @@
                                     <!--<input type=hidden name="next_url" value="cadastrodecasasdemissao.jsp">-->
                                     <input type="image" src="IconeCadastrarCasaDeMissao.png">
                                 </form>
-<!--                                <a href="/ImCarm_2.0/cadastrodecasasdemissao.jsp">
-                                    <img src="IconeCadastrarCasaDeMissao.png">
-                                </a>-->
+                                <!--                                <a href="/ImCarm_2.0/cadastrodecasasdemissao.jsp">
+                                                                    <img src="IconeCadastrarCasaDeMissao.png">
+                                                                </a>-->
                             </div>
                             <div id="linha_menu">
                                 <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
                                     <input type=hidden name="action" value="29">
                                     <input type="image" src="IconeCadastrarCongregacao.png">
                                 </form>
-<!--                                <a href="/ImCarm_2.0/cadastrodecongregacoes.jsp">
-                                    <img src="IconeCadastrarCongregacao.png">
-                                </a>-->
+                                <!--                                <a href="/ImCarm_2.0/cadastrodecongregacoes.jsp">
+                                                                    <img src="IconeCadastrarCongregacao.png">
+                                                                </a>-->
                             </div>
                             <div id="linha_menu">
                                 <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
                                     <input type=hidden name="action" value="34">
                                     <input type="image" src="IconeCadastrarFormandas.png">
                                 </form>
-<!--                                <a href="/ImCarm_2.0/cadastrodeformandas.jsp">
-                                    <img src="IconeCadastrarFormandas.png">
-                                </a>-->
+                                <!--                                <a href="/ImCarm_2.0/cadastrodeformandas.jsp">
+                                                                    <img src="IconeCadastrarFormandas.png">
+                                                                </a>-->
                             </div>
                             <div id="linha_menu">
                                 <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
                                     <input type=hidden name="action" value="35">
                                     <input type="image" src="IconeCadastrarFreiras.png">
                                 </form>
-<!--                                <a href="/ImCarm_2.0/cadastrodeirmas.jsp">
-                                    <img src="IconeCadastrarFreiras.png">
-                                </a>-->
+                                <!--                                <a href="/ImCarm_2.0/cadastrodeirmas.jsp">
+                                                                    <img src="IconeCadastrarFreiras.png">
+                                                                </a>-->
                             </div>
                             <div id="linha_menu">
                                 <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
                                     <input type=hidden name="action" value="83">
                                     <input type="image" src="IconeRealizarBuscasNoSistema.png">
                                 </form>
-<!--                                <a href="/ImCarm/#">
-                                    <img src="IconeRealizarBuscasNoSistema.png">
-                                </a>-->
+                                <!--                                <a href="/ImCarm/#">
+                                                                    <img src="IconeRealizarBuscasNoSistema.png">
+                                                                </a>-->
                             </div>
                         </div>
                     </div>
@@ -83,13 +83,13 @@
                                     <div id="linha_conteudo_nome">
                                         ${freira.nomeCivil}
                                     </div>
-<!--                                    <div id="linha_conteudo_alterar">
-                                        <form action="/ImCarm_2.0/ServletControler" method="post">
-                                            <input type=hidden name="action" value="13">
-                                            <input type=hidden name="id_fraternidade" value="${fraternidade.idFraternidade}">
-                                            <button class="i2Style_alterar">Adicionar Irmãs</button>
-                                        </form>
-                                    </div>-->
+                                    <!--                                    <div id="linha_conteudo_alterar">
+                                                                            <form action="/ImCarm_2.0/ServletControler" method="post">
+                                                                                <input type=hidden name="action" value="13">
+                                                                                <input type=hidden name="id_fraternidade" value="${fraternidade.idFraternidade}">
+                                                                                <button class="i2Style_alterar">Adicionar Irmãs</button>
+                                                                            </form>
+                                                                        </div>-->
                                     <div id="linha_conteudo_apagar">
                                         <form action="/ImCarm_2.0/ServletControler" method="post">
                                             <input type="hidden" name="action" value="21">
@@ -115,13 +115,13 @@
                                     </c:forEach>
                                 </tr>
                             </table>
-                            
-<!--                                <form action="/ImCarm_2.0/ServletControler" method="post">
-                                    <input type="hidden" name="action" value="17">
-                                    <input type="hidden" name="pagina" value="${pagina}">
-                                    <input type="submit" value="${pagina}">
-                                </form>-->
-                            
+
+                            <!--                                <form action="/ImCarm_2.0/ServletControler" method="post">
+                                                                <input type="hidden" name="action" value="17">
+                                                                <input type="hidden" name="pagina" value="${pagina}">
+                                                                <input type="submit" value="${pagina}">
+                                                            </form>-->
+
                         </div>
                     </div>
                 </div>

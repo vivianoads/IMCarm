@@ -97,7 +97,7 @@ position: absolute;
 #linha_conteudo_apagar{
     width: 20%;
     height: 5%;
-    background-color: red;
+    background-color: transparent;
     position: absolute;
     margin-left: 66%;
 }

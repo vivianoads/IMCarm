@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <title>Cadastra Casa de Missão</title>
+        <title>#INFORMATIZE</title>
         <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
         <link href="estilo_lista_irmas_para_selecionar_madre.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
     </head>
@@ -77,7 +77,7 @@
                     </div>
                     <div id="funcionalidade">
                         <div id="conteudo_funcionalidade">
-                            <h3 align="center"> Escolher a Secretária para a Congregação</h3>
+                            <h3 align="center"> Selecionar a Secretária para a Congregação</h3>
                             <c:forEach items="${freiraspaginada}" var="freira">
                                 <div id="linha_conteudo">
                                     <div id="linha_conteudo_nome">
