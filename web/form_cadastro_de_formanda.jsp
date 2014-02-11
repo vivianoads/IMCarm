@@ -143,7 +143,7 @@
                                 <b>Data de Ingressso nesta Etapa:</b>
                                 <input type="date" name="data_ingresso_etapa_atual" value="${formanda.dataEtapaAtual}">
                                 <br/>
-                                <b>Atividade</b>
+                                <b>Situação:</b>
                                 <input type="radio" name="atividade" value="sim" checked> Ativa
                                 <input type="radio" name="atividade" value="nao"> Inativa
                                 <br/>

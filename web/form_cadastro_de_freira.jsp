@@ -160,7 +160,7 @@
                                 <br/>
                                 <b>Profissão Perpétua: </b>
                                 <input type="date" name="data_profissao_perpetua" value="${freira.dataProfissaoPerpetua}">
-                                <b>Atividade: </b>${freira.ativo}
+                                <b>Situação: </b>${freira.ativo}
                                 <input type="radio" name="ativo" value="sim" checked> Ativa
                                 <input type="radio" name="ativo" value="nao"> Inativa
                                 <b>Tipo de Atividade: </b>${formanda.tipoAtivo}
