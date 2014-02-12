@@ -5,9 +5,8 @@
     <head>
         <title>#INFORMATIZE</title>
         <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
-        <link href="estilo_lista_irmas_consulta.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
+        <link href="estilo_lista_irmas_consulta.css" rel="stylesheet" type="text/css">
     </head>
-
     <body>
         <div id="container"> 
             <div id="topo">
@@ -23,10 +22,6 @@
                     </div>
                     <div id="voltar_menu">
                         <button onClick="javascript:window.print()" class="i2Style_alterar">Imprimir</button>
-<!--                        <form action="/ImCarm_2.0/ServletControler" method="post">
-                            <input type="hidden" name="action" value="83">
-                            <input type="submit" class="i2Style_alterar" value="Menu">
-                        </form>-->
                     </div>
                             <h3 align="center">Listar Fraternidades</h3>
                             <br/>
@@ -73,8 +68,7 @@
                             <b>Status</b>
                             <b>${fraternidadebean.status}</b>
                             ${fraternidadebean.idFraternidade}
-                            <br/>
-                                         
+                            <br/>       
                 </div>
             </div>
         </div>

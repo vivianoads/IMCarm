@@ -7,7 +7,6 @@
         <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
         <link href="estilo_submenus_consulta.css" rel="stylesheet" type="text/css"><!--EstiloCadastroDeIrmas.css-->
     </head>
-
     <body>
         <div id="container"> 
             <div id="topo">
@@ -30,17 +29,17 @@
                 <div id="conteudo_centro">
                     <div id="menu">
                         <div id="conteudo_menu">
+                            <div id="linha_menu_escolhida">
+                                <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
+                                    <input type=hidden name="action" value="29">
+                                    <input type="image" src="IconeCadastrarCongregacao.png">
+                                </form>
+                            </div>
                             <div id="linha_menu">
                                 <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
                                     <input type=hidden name="action" value="12">
                                     <input type=hidden name="next_url" value="cadastrodecasasdemissao.jsp">
                                     <input type="image" src="IconeCadastrarCasaDeMissao.png">
-                                </form>
-                            </div>
-                            <div id="linha_menu_escolhida">
-                                <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
-                                    <input type=hidden name="action" value="29">
-                                    <input type="image" src="IconeCadastrarCongregacao.png">
                                 </form>
                             </div>
                             <div id="linha_menu">
