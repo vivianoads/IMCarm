@@ -39,7 +39,9 @@ public class SalvarFormandaCommand implements Command{
                 String dataIngressoEtapaAtual = request.getParameter("data_ingresso_etapa_atual");
                 String atividade = request.getParameter("atividade");
                 String motivoInatividade = request.getParameter("motivo_inatividade");
-		
+		String cpf = request.getParameter("cpf");
+                String rg = request.getParameter("rg");
+                
                 FormandaBean f = new FormandaBean();
                 
                 f.setNome(nome);
@@ -59,6 +61,8 @@ public class SalvarFormandaCommand implements Command{
                 f.setRua(rua);
                 f.setTelefone(telefone);
                 f.setUf(uf);
+                f.setCpf(cpf);
+                f.setRg(rg);
                 
 		FormandaDao formandaDao = new FormandaDao();
                 String opcao = request.getParameter("opcao");

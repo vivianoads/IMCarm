@@ -80,7 +80,7 @@
                                 <input size="125" type="text" name="lema" value="${congregacao.lema}">
                                 <br/>
                                 <br/>
-                                <b>Data de Agregação à Órdem:</b>
+                                <b>Data de Agregação à Ordem do Carmo:</b>
                                 <input type="date" name="data_agregacao_a_ordem" value="${congregacao.dataAgregacaoOrdem}">
                                 <b>Data de Ereção Canônica:</b>
                                 <input type="date" name="data_erecao_canonica" value="${congregacao.dataErecaoCanonica}">
@@ -92,7 +92,7 @@
                                 <br/>
                                 <b>Fundador</b>
                                 <input size="52" type="text" name="fundador" value="${congregacao.fundador}">
-                                <b>Cofundador</b>
+                                <b>Co-fundadora</b>
                                 <input size="52" type="text" name="co_fundador" value="${congregacao.coFundador}">
                                 <br/>
                                 <br/>

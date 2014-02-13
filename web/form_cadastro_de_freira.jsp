@@ -113,32 +113,31 @@
                                 <br/>
                                 <b>Noviciado Apostólico: </b>
                                 <input type="date" name="data_noviciado_apostolico" value="${freira.dataNoviciadoApostolico}">
-                                <b>Juniorado: </b>
-                                <input type="date" name="data_juniorado" value="${freira.datasJuniorado}">
-                                <b>Juniorado I Renovação: </b>
-                                <input type="date" name="data_juniorado_1" value="${freira.datasJunioradoI}">
-                                <br/>
-                                <b>Juniorado II Renov.: </b>
-                                <input type="date" name="data_juniorado_2" value="${freira.datasJunioradoII}">
-                                <b>Juniorado III Renov.: </b>
-                                <input type="date" name="data_juniorado_3" value="${freira.datasJunioradoIII}">
-                                <b>Juniorado IV Renov.: </b>
-                                <input type="date" name="data_juniorado_4" value="${freira.datasJunioradoIV}">
-                                <br/>
-                                <b>Juniorado V Renov.: </b>
-                                <input type="date" name="data_juniorado_5" value="${freira.datasJunioradoV}">
-                                <b>Juniorado VI Renov.: </b>
-                                <input type="date" name="data_juniorado_6" value="${freira.datasJunioradoVI}">
-                                <b>Juniorado VII Renov.: </b>
-                                <input type="date" name="data_juniorado_7" value="${freira.datasJunioradoVII}">
-                                <br/>
-                                <b>Juniorado VIII Renov.: </b>
-                                <input type="date" name="data_juniorado_8" value="${freira.datasJunioradoVIII}">
-                                <b>Juniorado IX Renov.: </b>
-                                <input type="date" name="data_juniorado_9" value="${freira.datasJunioradoIX}">
-                                <b>Profissão Simples: </b>
+                                 <b>Profissão Simples: </b>
                                 <input type="date" name="data_profissao_temporaria" value="${freira.dataProfissaoTemporaria}">
                                 <br/>
+                                <b>Juniorato I Renovação: </b>
+                                <input type="date" name="data_juniorado_1" value="${freira.datasJunioradoI}">
+                                <br/>
+                                <b>Juniorato II Renov.: </b>
+                                <input type="date" name="data_juniorado_2" value="${freira.datasJunioradoII}">
+                                <b>Juniorato III Renov.: </b>
+                                <input type="date" name="data_juniorado_3" value="${freira.datasJunioradoIII}">
+                                <b>Juniorato IV Renov.: </b>
+                                <input type="date" name="data_juniorado_4" value="${freira.datasJunioradoIV}">
+                                <br/>
+                                <b>Juniorato V Renov.: </b>
+                                <input type="date" name="data_juniorado_5" value="${freira.datasJunioradoV}">
+                                <b>Juniorato VI Renov.: </b>
+                                <input type="date" name="data_juniorado_6" value="${freira.datasJunioradoVI}">
+                                <b>Juniorato VII Renov.: </b>
+                                <input type="date" name="data_juniorado_7" value="${freira.datasJunioradoVII}">
+                                <br/>
+                                <b>Juniorato VIII Renov.: </b>
+                                <input type="date" name="data_juniorado_8" value="${freira.datasJunioradoVIII}">
+                                <b>Juniorato IX Renov.: </b>
+                                <input type="date" name="data_juniorado_9" value="${freira.datasJunioradoIX}">
+                               
                                 <b>Profissão Perpétua: </b>
                                 <input type="date" name="data_profissao_perpetua" value="${freira.dataProfissaoPerpetua}">
                                 <b>Situação: </b>${freira.ativo}

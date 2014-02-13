@@ -67,6 +67,10 @@
                                 <b>Nome: </b>${formandagravada.nome}
                                 <b>Data de Nascimento: </b>${formandagravada.dataNascimento}
                                 <br/>
+                                <b>CPF: </b>${formandagravada.cpf}
+                                <b>RG: </b>${formandagravada.rg}
+                                <br/>
+                                <br/>
                                 <b>Pai: </b>${formandagravada.pai}
                                 <b>Mãe: </b>${formandagravada.mae}
                                 <br/>

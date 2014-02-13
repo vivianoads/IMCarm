@@ -23,6 +23,8 @@
                         <button onClick="javascript:window.print()" class="i2Style_alterar">Imprimir</button>
                     </div>
                             <h3 align="center">Listar Formandas</h3>
+                            <br/>
+                            <b>Total = </b> ${quantidade}
                             <c:forEach items="${formandas}" var="formanda">
                                 <div id="linha_conteudo">
                                     <div id="linha_conteudo_nome">

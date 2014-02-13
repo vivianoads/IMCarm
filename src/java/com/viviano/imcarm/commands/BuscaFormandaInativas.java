@@ -46,6 +46,7 @@ public class BuscaFormandaInativas implements Command{
         }
         
         request.setAttribute("formandas", formandas);
+        request.setAttribute("quantidade", formandas.size());
         return nextPage;
     }
     

@@ -40,12 +40,6 @@
                             </div>
                             <div id="linha_menu">
                                 <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
-                                    <input type=hidden name="action" value="29">
-                                    <input type="image" src="IconeCadastrarCongregacao.png">
-                                </form>
-                            </div>
-                            <div id="linha_menu">
-                                <form name="cad_fraternidade" action="/ImCarm_2.0/ServletControler" method="post">
                                     <input type=hidden name="action" value="34">
                                     <input type="image" src="IconeCadastrarFormandas.png">
                                 </form>
@@ -101,17 +95,16 @@
                                             <option value="Postulantado">Postulantado</option>
                                             <option value="Noviciado Canônico">Noviciado Canônico</option>
                                             <option value="Noviciado Apostólico">Noviciado Apostólico</option>
-                                            <option value="Juniorado">Juniorado</option>
-                                            <option value="Juniorado - I Renovação">Juniorado - I Renovação</option>
-                                            <option value="Juniorado - II Renovação">Juniorado - II Renovação</option>
-                                            <option value="Juniorado - III Renovação">Juniorado - III Renovação</option>
-                                            <option value="Juniorado - IV Renovação">Juniorado - IV Renovação</option>
-                                            <option value="Juniorado - V Renovação">Juniorado - V Renovação</option>
-                                            <option value="Juniorado - VI Renovação">Juniorado - VI Renovação</option>
-                                            <option value="Juniorado - VII Renovação">Juniorado - VII Renovação</option>
-                                            <option value="Juniorado - VIII Renovação">Juniorado - VIII Renovação</option>
-                                            <option value="Juniorado - IX Renovação">Juniorado - IX Renovação</option>
                                             <option value="Profissão Simples">Profissão Simples</option>
+                                            <option value="I Renovação">I Renovação</option>
+                                            <option value="II Renovação">II Renovação</option>
+                                            <option value="III Renovação">III Renovação</option>
+                                            <option value="IV Renovação">IV Renovação</option>
+                                            <option value="V Renovação">V Renovação</option>
+                                            <option value="VI Renovação">VI Renovação</option>
+                                            <option value="VII Renovação">VII Renovação</option>
+                                            <option value="VIII Renovação">VIII Renovação</option>
+                                            <option value="IX Renovação">IX Renovação</option>
                                             <option value="Profissão Perpétua">Profissão Perpétua</option>
                                         </select>
                                         <input type="hidden" name="action" value="99">

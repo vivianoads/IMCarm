@@ -22,17 +22,17 @@ import javax.servlet.http.HttpServletRequest;
  *
  * @author viviano
  */
-public class BuscaFormandaPorFase implements Command{
+public class BuscaFormandaVotosSimples implements Command{
 
     @Override
     public String execute(HttpServletRequest request) {
         String nextPage = "lista_formanda_consulta.jsp";
-        String nome = request.getParameter("formanda_por_etapa");
+//        String nome = request.getParameter("formanda_por_etapa");
         List<FormandaBean> formandas = new ArrayList<FormandaBean>();
         FormandaDao formandaDao = new FormandaDao();
         
         try {
-            formandas = formandaDao.getAllFormandaBeanPorEtapa(nome);
+            formandas = formandaDao.getAllFormandaBeanEmProfisãoSimplesGeral();
 //            for(FreiraBean f : aux){
 //                if(UtilData.getIdade(f.getDataNascimento()).equals(idade)){
 //                freiras.add(f);
@@ -40,9 +40,9 @@ public class BuscaFormandaPorFase implements Command{
 //            }
 //            
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(BuscaFormandaPorFase.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BuscaFormandaVotosSimples.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(BuscaFormandaPorFase.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BuscaFormandaVotosSimples.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         request.setAttribute("formandas", formandas);

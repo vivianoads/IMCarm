@@ -20,7 +20,7 @@ public class FormandaDao {
 
 	public void gravaFormanda(FormandaBean formandaBean) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "INSERT INTO formanda (nome, nome_pai, nome_mae, rua, numero, bairro, cidade, uf, diocese, telefone, cep, email, ativo, inativo_motivo, data_etapa_atual, data_nascimento, etapa_formacao) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	String sql = "INSERT INTO formanda (nome, nome_pai, nome_mae, rua, numero, bairro, cidade, uf, diocese, telefone, cep, email, ativo, inativo_motivo, data_etapa_atual, data_nascimento, etapa_formacao, cpf, rg) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, formandaBean.getNome());
 		ps.setString(2, formandaBean.getPai());
@@ -39,6 +39,8 @@ public class FormandaDao {
                 ps.setString(15, formandaBean.getDataEtapaAtual());
                 ps.setString(16, formandaBean.getDataNascimento());
                 ps.setString(17, formandaBean.getEtapa());
+                ps.setString(18, formandaBean.getCpf());
+                ps.setString(19, formandaBean.getRg());
 		
                 ps.execute();
 		ps.close();
@@ -71,6 +73,8 @@ public class FormandaDao {
                     formandaBean.setDataEtapaAtual(rs.getString("data_etapa_atual"));
                     formandaBean.setDataNascimento(rs.getString("data_nascimento"));
                     formandaBean.setEtapa(rs.getString("etapa_formacao"));
+                    formandaBean.setCpf(rs.getString("cpf"));
+                    formandaBean.setRg(rs.getString("rg"));
             }
 		rs.close();
 		ps.close();
@@ -105,6 +109,8 @@ public class FormandaDao {
                     formandaBean.setDataEtapaAtual(rs.getString("data_etapa_atual"));
                     formandaBean.setDataNascimento(rs.getString("data_nascimento"));
                     formandaBean.setEtapa(rs.getString("etapa_formacao"));
+                    formandaBean.setCpf(rs.getString("cpf"));
+                    formandaBean.setRg(rs.getString("rg"));
             }
 		rs.close();
 		ps.close();
@@ -138,6 +144,8 @@ public class FormandaDao {
                     formandaBean.setDataEtapaAtual(rs.getString("data_etapa_atual"));
                     formandaBean.setDataNascimento(rs.getString("data_nascimento"));
                     formandaBean.setEtapa(rs.getString("etapa_formacao"));
+                    formandaBean.setCpf(rs.getString("cpf"));
+                    formandaBean.setRg(rs.getString("rg"));
             }
 		rs.close();
 		ps.close();
@@ -173,6 +181,8 @@ public class FormandaDao {
                     formandaBean.setDataEtapaAtual(rs.getString("data_etapa_atual"));
                     formandaBean.setDataNascimento(rs.getString("data_nascimento"));
                     formandaBean.setEtapa(rs.getString("etapa_formacao"));
+                    formandaBean.setCpf(rs.getString("cpf"));
+                    formandaBean.setRg(rs.getString("rg"));
                     formandas.add(formandaBean);
 		}
 		rs.close();
@@ -209,6 +219,8 @@ public class FormandaDao {
                     formandaBean.setDataEtapaAtual(rs.getString("data_etapa_atual"));
                     formandaBean.setDataNascimento(rs.getString("data_nascimento"));
                     formandaBean.setEtapa(rs.getString("etapa_formacao"));
+                    formandaBean.setCpf(rs.getString("cpf"));
+                    formandaBean.setRg(rs.getString("rg"));
                     formandas.add(formandaBean);
 		}
 		rs.close();
@@ -245,6 +257,8 @@ public class FormandaDao {
                     formandaBean.setDataEtapaAtual(rs.getString("data_etapa_atual"));
                     formandaBean.setDataNascimento(rs.getString("data_nascimento"));
                     formandaBean.setEtapa(rs.getString("etapa_formacao"));
+                    formandaBean.setCpf(rs.getString("cpf"));
+                    formandaBean.setRg(rs.getString("rg"));
                     formandas.add(formandaBean);
 		}
 		rs.close();
@@ -281,6 +295,8 @@ public class FormandaDao {
                     formandaBean.setDataEtapaAtual(rs.getString("data_etapa_atual"));
                     formandaBean.setDataNascimento(rs.getString("data_nascimento"));
                     formandaBean.setEtapa(rs.getString("etapa_formacao"));
+                    formandaBean.setCpf(rs.getString("cpf"));
+                    formandaBean.setRg(rs.getString("rg"));
                     formandas.add(formandaBean);
 		}
 		rs.close();
@@ -316,6 +332,45 @@ public class FormandaDao {
                     formandaBean.setDataEtapaAtual(rs.getString("data_etapa_atual"));
                     formandaBean.setDataNascimento(rs.getString("data_nascimento"));
                     formandaBean.setEtapa(rs.getString("etapa_formacao"));
+                    formandaBean.setCpf(rs.getString("cpf"));
+                    formandaBean.setRg(rs.getString("rg"));
+                    formandas.add(formandaBean);
+		}
+		rs.close();
+		stat.close();
+		con.close();
+		return formandas;
+	}
+        
+        public List<FormandaBean> getAllFormandaBeanEmProfisãoSimplesGeral() throws ClassNotFoundException, SQLException{
+		Connection con = conexao.getConnection();
+		String sql = "(SELECT * FROM formanda WHERE  etapa_formacao ilike '%Renovação') UNION (SELECT * FROM formanda WHERE etapa_formacao ilike 'Profissão Simples')";
+		PreparedStatement stat = con.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		ResultSet rs = stat.executeQuery();
+		List<FormandaBean> formandas = new ArrayList<FormandaBean>();
+                FormandaBean formandaBean = null;
+		while (rs.next()){
+                    formandaBean = new FormandaBean();
+                    formandaBean.setIdFormanda(rs.getInt("id_formanda"));
+                    formandaBean.setNome(rs.getString("nome"));
+                    formandaBean.setPai(rs.getString("nome_pai"));
+                    formandaBean.setMae(rs.getString("nome_mae"));
+                    formandaBean.setRua(rs.getString("rua"));
+                    formandaBean.setNumero(rs.getString("numero"));
+                    formandaBean.setBairro(rs.getString("bairro"));
+                    formandaBean.setCidade(rs.getString("cidade"));
+                    formandaBean.setUf(rs.getString("uf"));
+                    formandaBean.setDiocese(rs.getString("diocese"));
+                    formandaBean.setTelefone(rs.getString("telefone"));
+                    formandaBean.setCep(rs.getString("cep"));
+                    formandaBean.setEmail(rs.getString("email"));
+                    formandaBean.setAtividade(rs.getString("ativo"));
+                    formandaBean.setMotivoInatividade(rs.getString("inativo_motivo"));
+                    formandaBean.setDataEtapaAtual(rs.getString("data_etapa_atual"));
+                    formandaBean.setDataNascimento(rs.getString("data_nascimento"));
+                    formandaBean.setEtapa(rs.getString("etapa_formacao"));
+                    formandaBean.setCpf(rs.getString("cpf"));
+                    formandaBean.setRg(rs.getString("rg"));
                     formandas.add(formandaBean);
 		}
 		rs.close();
@@ -351,6 +406,8 @@ public class FormandaDao {
                     formandaBean.setDataEtapaAtual(rs.getString("data_etapa_atual"));
                     formandaBean.setDataNascimento(rs.getString("data_nascimento"));
                     formandaBean.setEtapa(rs.getString("etapa_formacao"));
+                    formandaBean.setCpf(rs.getString("cpf"));
+                    formandaBean.setRg(rs.getString("rg"));
                     formandas.add(formandaBean);
 		}
 		rs.close();
@@ -360,7 +417,7 @@ public class FormandaDao {
 	}
 	public void alteraFormanda(int idFormanda, FormandaBean formandaBean) throws ClassNotFoundException, SQLException{
 		Connection con = conexao.getConnection();
-		String sql = "UPDATE formanda SET nome = ?, nome_pai = ?, nome_mae = ?, rua = ?, numero = ?, bairro = ?, cidade = ?, uf = ?, diocese = ?, telefone = ?, cep = ?, email = ?, ativo = ?, inativo_motivo = ?, data_etapa_atual = ?, data_nascimento = ?, etapa_formacao = ? WHERE id_formanda = ?";
+		String sql = "UPDATE formanda SET nome = ?, nome_pai = ?, nome_mae = ?, rua = ?, numero = ?, bairro = ?, cidade = ?, uf = ?, diocese = ?, telefone = ?, cep = ?, email = ?, ativo = ?, inativo_motivo = ?, data_etapa_atual = ?, data_nascimento = ?, etapa_formacao = ?, cpf = ?, rg = ? WHERE id_formanda = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, formandaBean.getNome());
 		ps.setString(2, formandaBean.getPai());
@@ -380,6 +437,8 @@ public class FormandaDao {
                 ps.setString(16, formandaBean.getDataNascimento());
                 ps.setString(17, formandaBean.getEtapa());
                 ps.setInt(18, idFormanda);
+                ps.setString(19, formandaBean.getCpf());
+                ps.setString(20, formandaBean.getRg());
 		
 		ps.executeUpdate();
 		ps.close();

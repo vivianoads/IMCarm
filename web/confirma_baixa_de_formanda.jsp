@@ -108,6 +108,7 @@
                                     <form action="/ImCarm_2.0/ServletControler" method="post">
                                         <input type="hidden" name="action" value="61">
                                         <input type="hidden" name="id_formanda_Cancelar" value="${formanda.idFormanda}">
+                                        <input type="hidden" name="initial_index_formanda" value="0">
                                         <input type="submit" class="i2Style_apagar" value="Calcelar Baixa">
                                     </form>
                                 </div>

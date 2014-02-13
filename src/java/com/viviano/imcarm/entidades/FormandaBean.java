@@ -19,6 +19,8 @@ public class FormandaBean {
         private String motivoInatividade;
         private String etapa;
         private String dataEtapaAtual;
+        private String cpf;
+        private String rg;
 
     public int getIdFormanda() {
         return idFormanda;
@@ -163,6 +165,22 @@ public class FormandaBean {
 
     public void setDataEtapaAtual(String dataEtapaAtual) {
         this.dataEtapaAtual = dataEtapaAtual;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
     }
 
    
