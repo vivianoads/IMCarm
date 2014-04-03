@@ -25,37 +25,37 @@ public class SalvaAlteracoes extends HttpServlet {
 		String acao = request.getParameter("acao");
 		FreiraDao freiraDao = new FreiraDao();
 		
-		if (acao.equalsIgnoreCase("apagar")){
-			try {
-				freiraDao.apagaFreira(cpf);
-				response.sendRedirect("/ImCarm/cadastrodeirmas.jsp");
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		else{
-		FreiraBean freiraBean = new FreiraBean(new Double(request.getParameter("cpf")), new Double(request.getParameter("rg")), request.getParameter("nome_civil"), request.getParameter("nome_religioso"), request.getParameter("nome_pai"), request.getParameter("nome_mae"), request.getParameter("data_nascimento"), request.getParameter("data_aspirantado"), request.getParameter("data_postulantado"), request.getParameter("data_noviciado"), request.getParameter("data_profissao_temporaria"), request.getParameter("data_profissao_perpetua"));
-		
-		try {
-			freiraDao.alteraFreira(cpf, freiraBean);
-			request.setAttribute("irmagravar", freiraBean);
-			RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/cadastrairma.jsp");
-			dispatcher.forward(request, response);
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ServletException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//		if (acao.equalsIgnoreCase("apagar")){
+//			try {
+//				freiraDao.apagaFreira(cpf);
+//				response.sendRedirect("/ImCarm/cadastrodeirmas.jsp");
+//			} catch (ClassNotFoundException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+//		else{
+//		FreiraBean freiraBean = new FreiraBean(new Double(request.getParameter("cpf")), new Double(request.getParameter("rg")), request.getParameter("nome_civil"), request.getParameter("nome_religioso"), request.getParameter("nome_pai"), request.getParameter("nome_mae"), request.getParameter("data_nascimento"), request.getParameter("data_aspirantado"), request.getParameter("data_postulantado"), request.getParameter("data_noviciado"), request.getParameter("data_profissao_temporaria"), request.getParameter("data_profissao_perpetua"));
+//		
+//		try {
+//			freiraDao.alteraFreira(cpf, freiraBean);
+//			request.setAttribute("irmagravar", freiraBean);
+//			RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/cadastrairma.jsp");
+//			dispatcher.forward(request, response);
+//		} catch (ClassNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (ServletException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 
 }
 	}

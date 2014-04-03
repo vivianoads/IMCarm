@@ -25,34 +25,34 @@ public class GravaIrma extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
-		FreiraBean freiraBean = new FreiraBean(new Double(request.getParameter("cpf")), new Double(request.getParameter("rg")), request.getParameter("nome_civil"), request.getParameter("nome_religioso"), request.getParameter("nome_pai"), request.getParameter("nome_mae"), request.getParameter("data_nascimento"), request.getParameter("data_aspirantado"), request.getParameter("data_postulantado"), request.getParameter("data_noviciado"), request.getParameter("data_profissao_temporaria"), request.getParameter("data_profissao_perpetua"));
-		FreiraDao freiraDao = new FreiraDao();
-		String mensagemDeErro = new String();
-		
-		try {
-			if(freiraDao.getFreiraBean(freiraBean.getCpf()) == null){
-				
-				freiraDao.gravaFreira(freiraBean);
-				FreiraBean freiraBeanaux = freiraDao.getFreiraBean(freiraBean.getCpf());
-				request.setAttribute("irmagravar", freiraBeanaux);
-				RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/cadastrairma.jsp");
-				try {
-					dispatcher.forward(request, response);
-				} catch (ServletException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-			
-			else{
-				response.sendRedirect("/ImCarm/errousuarioduplicado.html");
-				
-			}
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+//		FreiraBean freiraBean = new FreiraBean(new Double(request.getParameter("cpf")), new Double(request.getParameter("rg")), request.getParameter("nome_civil"), request.getParameter("nome_religioso"), request.getParameter("nome_pai"), request.getParameter("nome_mae"), request.getParameter("data_nascimento"), request.getParameter("data_aspirantado"), request.getParameter("data_postulantado"), request.getParameter("data_noviciado"), request.getParameter("data_profissao_temporaria"), request.getParameter("data_profissao_perpetua"));
+//		FreiraDao freiraDao = new FreiraDao();
+//		String mensagemDeErro = new String();
+//		
+//		try {
+//			if(freiraDao.getFreiraBean(freiraBean.getCpf()) == null){
+//				
+//				freiraDao.gravaFreira(freiraBean);
+//				FreiraBean freiraBeanaux = freiraDao.getFreiraBean(freiraBean.getCpf());
+//				request.setAttribute("irmagravar", freiraBeanaux);
+//				RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/cadastrairma.jsp");
+//				try {
+//					dispatcher.forward(request, response);
+//				} catch (ServletException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//			}
+//			
+//			else{
+//				response.sendRedirect("/ImCarm/errousuarioduplicado.html");
+//				
+//			}
+//		} catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
 	
 		
 //		Date x = new Date(request.getParameter("data_nascimento"));

@@ -13,9 +13,10 @@ public class Conexao implements InterfaceConexao {
 
 	public Conexao() {
 		this.driver = "org.postgresql.Driver";
-		this.url = "jdbc:postgresql://localhost:5433/postgres";
+		this.url = "jdbc:postgresql://localhost:5432/postgres";
 		this.user = "postgres";
-		this.password = "123";
+                this.password = "123";
+//		this.password = "ircarm1302";
 	}
 
 	public Connection getConnection() throws SQLException {

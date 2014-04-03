@@ -22,7 +22,7 @@ public class GravaFormanda extends HttpServlet{
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
-		FormandaBean formandaBean = new FormandaBean(request.getParameter("nome_civil"), request.getParameter("nome_pai"), request.getParameter("nome_mae"), request.getParameter("rua"), request.getParameter("bairro"), request.getParameter("cidade"), request.getParameter("uf"), request.getParameter("diocese"), request.getParameter("numero"));
+//		FormandaBean formandaBean = new FormandaBean(request.getParameter("nome_civil"), request.getParameter("nome_pai"), request.getParameter("nome_mae"), request.getParameter("rua"), request.getParameter("bairro"), request.getParameter("cidade"), request.getParameter("uf"), request.getParameter("diocese"), request.getParameter("numero"));
 		
 		FormandaDao formandaDao = new FormandaDao();
 //		if (!formandaBean.getNome().isEmpty()){
@@ -45,25 +45,25 @@ public class GravaFormanda extends HttpServlet{
 //		out.println("</body>");
 //		out.println("</html>");
 //		}
-		if (!formandaBean.getNome().isEmpty())
-		try {
-			formandaDao.gravaFormanda(formandaBean);
-			RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/cadastraformanda.jsp");
-			request.setAttribute("formandagravada", formandaBean);
-			dispatcher.forward(request, response);
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ServletException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		else{
-			response.sendRedirect("/ImCarm/erronomeformandanaoinformado.html");
-		}
+//		if (!formandaBean.getNome().isEmpty())
+//		try {
+//			formandaDao.gravaFormanda(formandaBean);
+//			RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/cadastraformanda.jsp");
+//			request.setAttribute("formandagravada", formandaBean);
+//			dispatcher.forward(request, response);
+//		} catch (ClassNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (ServletException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		else{
+//			response.sendRedirect("/ImCarm/erronomeformandanaoinformado.html");
+//		}
 	}
 
 }

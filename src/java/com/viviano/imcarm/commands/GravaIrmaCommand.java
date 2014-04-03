@@ -18,28 +18,28 @@ public class GravaIrmaCommand implements Command{
 		String nextPage = "";
 		
 		FreiraDao freiraDao = new FreiraDao();
-		FreiraBean freiraBean = new FreiraBean(new Double(request.getParameter("cpf")), new Double(request.getParameter("rg")), request.getParameter("nome_civil"), request.getParameter("nome_religioso"), request.getParameter("nome_pai"), request.getParameter("nome_mae"), request.getParameter("data_nascimento"), request.getParameter("data_aspirantado"), request.getParameter("data_postulantado"), request.getParameter("data_noviciado"), request.getParameter("data_profissao_temporaria"), request.getParameter("data_profissao_perpetua"));
-		
-		
-		try {
-			if(freiraDao.getFreiraBean(freiraBean.getCpf()) == null){
-				
-				freiraDao.gravaFreira(freiraBean);
-				FreiraBean freiraBeanaux = freiraDao.getFreiraBean(freiraBean.getCpf());
-				request.setAttribute("irmagravar", freiraBeanaux);
-				
-				nextPage = "/cadastrairma.jsp";
-			}
-			
-			else{
-				nextPage = "/errousuarioduplicado.html";
-				
-			}
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+//		FreiraBean freiraBean = new FreiraBean(new Double(request.getParameter("cpf")), new Double(request.getParameter("rg")), request.getParameter("nome_civil"), request.getParameter("nome_religioso"), request.getParameter("nome_pai"), request.getParameter("nome_mae"), request.getParameter("data_nascimento"), request.getParameter("data_aspirantado"), request.getParameter("data_postulantado"), request.getParameter("data_noviciado"), request.getParameter("data_profissao_temporaria"), request.getParameter("data_profissao_perpetua"));
+//		
+//		
+//		try {
+//			if(freiraDao.getFreiraBean(freiraBean.getCpf()) == null){
+//				
+//				freiraDao.gravaFreira(freiraBean);
+//				FreiraBean freiraBeanaux = freiraDao.getFreiraBean(freiraBean.getCpf());
+//				request.setAttribute("irmagravar", freiraBeanaux);
+//				
+//				nextPage = "/cadastrairma.jsp";
+//			}
+//			
+//			else{
+//				nextPage = "/errousuarioduplicado.html";
+//				
+//			}
+//		} catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
 		return nextPage;
 	}
 

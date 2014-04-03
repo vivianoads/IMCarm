@@ -30,42 +30,42 @@ public class AlteraIrma extends HttpServlet{
 		if (opcao.equalsIgnoreCase("cpf")){
 			double cpf = new Double(request.getParameter("dados"));
 			
-			try {
-				
-				FreiraBean freiraAux = freiraDao.getFreiraBean(cpf);
-				
-				if((cpf == 0)||(freiraAux == null)){
-					response.sendRedirect("/ImCarm/errousuarionaoencontrado.html");
-				}
-				else{
-					
-					if(acao.equalsIgnoreCase("apagar")){
-						RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/cadastrairma.jsp");
-						request.setAttribute("irmagravar", freiraAux);
-						try {
-							dispatcher.forward(request, response);
-						} catch (ServletException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}
-					else{
-					RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/formalteradadosirma.jsp");
-					request.setAttribute("freiracpf", freiraAux);
-					try {
-						dispatcher.forward(request, response);
-					} catch (ServletException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					}
-				}
-			} catch (ClassNotFoundException e) {
-				response.sendRedirect("/ImCarm/errousuarionaoencontrado.html");
-			} catch (SQLException e) {
-				response.sendRedirect("/ImCarm/errousuarionaoencontrado.html");
-				
-			}
+//			try {
+//				
+//				FreiraBean freiraAux = freiraDao.getFreiraBean(cpf);
+//				
+//				if((cpf == 0)||(freiraAux == null)){
+//					response.sendRedirect("/ImCarm/errousuarionaoencontrado.html");
+//				}
+//				else{
+//					
+//					if(acao.equalsIgnoreCase("apagar")){
+//						RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/cadastrairma.jsp");
+//						request.setAttribute("irmagravar", freiraAux);
+//						try {
+//							dispatcher.forward(request, response);
+//						} catch (ServletException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
+//					}
+//					else{
+//					RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/formalteradadosirma.jsp");
+//					request.setAttribute("freiracpf", freiraAux);
+//					try {
+//						dispatcher.forward(request, response);
+//					} catch (ServletException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
+//					}
+//				}
+//			} catch (ClassNotFoundException e) {
+//				response.sendRedirect("/ImCarm/errousuarionaoencontrado.html");
+//			} catch (SQLException e) {
+//				response.sendRedirect("/ImCarm/errousuarionaoencontrado.html");
+//				
+//			}
 			
 		}
 		else{

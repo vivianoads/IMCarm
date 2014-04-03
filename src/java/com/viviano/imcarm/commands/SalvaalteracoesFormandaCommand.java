@@ -58,19 +58,19 @@ public class SalvaalteracoesFormandaCommand implements Command{
 			}
 		}
 		
-		else if (acao.equalsIgnoreCase("salvar")) {
-			FormandaBean formandaBean = new FormandaBean(dados, request.getParameter("numero"), request.getParameter("nome_civil"), request.getParameter("nome_pai"), request.getParameter("nome_mae"), request.getParameter("rua"), request.getParameter("bairro"), request.getParameter("cidade"), request.getParameter("uf"), request.getParameter("diocese"));
-			                            
-			try {
-				formandaDao.alteraFormanda(dados, formandaBean);
-				nextPage = "/cadastraformanda.jsp";
-				request.setAttribute("formandagravada", formandaBean);
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} 
-		}
+//		else if (acao.equalsIgnoreCase("salvar")) {
+//			FormandaBean formandaBean = new FormandaBean(dados, request.getParameter("numero"), request.getParameter("nome_civil"), request.getParameter("nome_pai"), request.getParameter("nome_mae"), request.getParameter("rua"), request.getParameter("bairro"), request.getParameter("cidade"), request.getParameter("uf"), request.getParameter("diocese"));
+//			                            
+//			try {
+//				formandaDao.alteraFormanda(dados, formandaBean);
+//				nextPage = "/cadastraformanda.jsp";
+//				request.setAttribute("formandagravada", formandaBean);
+//			} catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//			} catch (SQLException e) {
+//				e.printStackTrace();
+//			} 
+//		}
 
 		return nextPage;
 	}

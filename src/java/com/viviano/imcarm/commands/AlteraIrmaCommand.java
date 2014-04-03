@@ -22,27 +22,27 @@ public class AlteraIrmaCommand implements Command{
 		if (opcao.equalsIgnoreCase("cpf")){
 			double cpf = new Double(request.getParameter("dados"));
 			
-			try {
-				FreiraBean freiraAux = freiraDao.getFreiraBean(cpf);
-				if((cpf == 0)||(freiraAux == null)){
-					nextPage = "/errousuarionaoencontrado.html";
-				}
-				else{
-					if(acao.equalsIgnoreCase("apagar")){
-						request.setAttribute("irmagravar", freiraAux);
-						nextPage = "/cadastrairma.jsp";
-					}
-					else{
-						nextPage = "/formalteradadosirma.jsp";
-						request.setAttribute("freiracpf", freiraAux);
-					}
-				}
-			} catch (ClassNotFoundException e) {
-				nextPage = "/ImCarm/errousuarionaoencontrado.html";
-			} catch (SQLException e) {
-				nextPage = "/ImCarm/errousuarionaoencontrado.html";
-				
-			}
+//			try {
+////				FreiraBean freiraAux = freiraDao.getFreiraBean(cpf);
+//				if((cpf == 0)||(freiraAux == null)){
+//					nextPage = "/errousuarionaoencontrado.html";
+//				}
+//				else{
+//					if(acao.equalsIgnoreCase("apagar")){
+//						request.setAttribute("irmagravar", freiraAux);
+//						nextPage = "/cadastrairma.jsp";
+//					}
+//					else{
+//						nextPage = "/formalteradadosirma.jsp";
+//						request.setAttribute("freiracpf", freiraAux);
+//					}
+//				}
+//			} catch (ClassNotFoundException e) {
+//				nextPage = "/ImCarm/errousuarionaoencontrado.html";
+//			} catch (SQLException e) {
+//				nextPage = "/ImCarm/errousuarionaoencontrado.html";
+//				
+//			}
 			
 		}
 		else{
